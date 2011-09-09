@@ -1,3 +1,5 @@
 .config
 index.php
 *.tar.gz
+*.tar.bz2
+*~
