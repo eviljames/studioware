@@ -1,0 +1,3 @@
+aubio ( extract annotations from audio signals. ) 
+
+aubio is a tool designed for the extraction of annotations from audio signals. Its features include segmenting a sound file before each of its attacks, performing pitch detection, tapping the beat and producing midi streams from live audio.

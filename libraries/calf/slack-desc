@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+    |-----handy-ruler------------------------------------------------------|
+calf: calf ( calf audio plugin pack ) 
+calf:
+calf: The Calf project aims at providing a set of high quality open source 
+calf: audio plugins for musicians. All the included plugins are designed to
+calf: be used with multitrack software, as software replacement for        
+calf: instruments and guitar stomp boxes (and not as single modules in a   
+calf: modular synthesizer, which was a primary design goal in some other   
+calf: open source plugin packages[*]).                                     
+calf:
+calf: Homepage: http://calf.sourceforge.net/
+calf:

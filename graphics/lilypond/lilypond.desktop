@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Lilypond Music Typesetter
+GenericName=Lilypond Music Typesetter
+Comment=Lilypond Music Typesetter
+Exec=lilypond
+Icon=/usr/share/pixmaps/lily-home.png
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;

@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+       |-----handy-ruler------------------------------------------------------|
+t1utils: t1utils ( command-line tools for dealing with Type 1 fonts ) 
+t1utils:
+t1utils: Six free UNIX/Windows command-line tools for dealing with Type 1  
+t1utils: fonts. This is a revision of I. Lee Hetherington’s beloved t1utils
+t1utils: package. 
+t1utils:
+t1utils: Homepage: http://www.lcdf.org/type/#t1utils
+t1utils:
+t1utils:
+t1utils:
+t1utils:

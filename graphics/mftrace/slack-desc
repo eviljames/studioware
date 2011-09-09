@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+       |-----handy-ruler------------------------------------------------------|
+mftrace: mftrace ( trace a TeX bitmap font into a PFA, PFB or TTF font ) 
+mftrace:
+mftrace: mftrace is a small Python program that lets you trace a TeX bitmap   
+mftrace: font into a PFA or PFB font (A PostScript Type1 Scalable Font) or TTF
+mftrace: (TrueType) font. It is licensed under the GNU GPL.                   
+mftrace:
+mftrace: Homepage: http://www.lilypond.org/mftrace/
+mftrace:
+mftrace:
+mftrace:
+mftrace:

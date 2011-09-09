@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+lilypond: lilypond ( a music typesetter ) 
+lilypond:
+lilypond: LilyPond is a music engraving program, devoted to producing the     
+lilypond: highest-quality sheet music possible. It brings the aesthetics of   
+lilypond: traditionally engraved music to computer printouts. LilyPond is free
+lilypond: software and part of the GNU Project.                               
+lilypond:
+lilypond: Homepage: http://www.lilypond.org/
+lilypond:
+lilypond:
+lilypond:

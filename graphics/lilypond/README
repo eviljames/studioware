@@ -1,0 +1,9 @@
+lilypond ( a music typesetter ) 
+
+LilyPond is a music engraving program, devoted to producing the highest-quality sheet music possible. It brings the aesthetics of traditionally engraved music to computer printouts. LilyPond is free software and part of the GNU Project.
+
+Dependencies:
+
+The t/ series
+fontforge
+mftrace -> potrace, t1utils

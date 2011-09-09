@@ -1,0 +1,9 @@
+fontforge ( An outline font editor ) 
+
+An outline font editor that lets you create your own postscript, truetype, opentype, cid-keyed, multi-master, cff, svg and bitmap (bdf, FON, NFNT) fonts, or edit existing ones. Also lets you convert one format to another. FontForge has support for many macintosh font formats.
+
+Other tarballs required:
+
+http://downloads.sourceforge.net/fontforge/fontforge_full-20100501.tar.bz2 
+http://fontforge.sf.net/cidmaps.tgz 
+http://slackware.osuosl.org/slackware-13.1/source/l/freetype/freetype-2.3.12.tar.xz

@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+     |-----handy-ruler------------------------------------------------------|
+wxX11: wxX11 ( wxWidgets Framework ) 
+wxX11:
+wxX11: wxWidgets is a C++ library that lets developers create applications 
+wxX11: for Windows, OS X, Linux and UNIX on 32-bit and 64-bit architectures
+wxX11: as well as several mobile platforms including Windows Mobile, iPhone
+wxX11: SDK and embedded GTK+.                                              
+wxX11:
+wxX11: Homepage: http://www.wxwidgets.org/
+wxX11:
+wxX11:
+wxX11:

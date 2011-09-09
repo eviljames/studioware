@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+ 
+      |-----handy-ruler------------------------------------------------------|
+scrollkeeper: ScrollKeeper (Cataloging System)
+scrollkeeper:
+scrollkeeper: ScrollKeeper is a cataloging system for documentation on open
+scrollkeeper: systems. It manages documentation metadata and provides a
+scrollkeeper: simple API to allow help browsers to find, sort, and search the
+scrollkeeper: document catalog. It will also be able to communicate with 
+scrollkeeper: catalog servers on the Net to search for documents which are not
+scrollkeeper: on the local system.
+scrollkeeper:
+scrollkeeper: http://scrollkeeper.sourceforge.net
+scrollkeeper:

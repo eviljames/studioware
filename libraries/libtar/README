@@ -1,0 +1,5 @@
+Libtar (tar file manipulation API)
+
+Libtar is a C library for manipulating POSIX tar files. It handles adding and extracting files to/from a tar archive.
+
+http://www.feep.net/libtar 

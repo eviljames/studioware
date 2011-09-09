@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+     |-----handy-ruler------------------------------------------------------|
+pyxdg: pyxdg ( python library to access freedesktop.org standards ) 
+pyxdg:
+pyxdg: PyXDG is a python library to access freedesktop.org standards.
+pyxdg: Currently supported are:                                      
+pyxdg: Base Directory Specification Version 0.6                      
+pyxdg: Menu Specification Version 1.0                                
+pyxdg: Desktop Entry Specification Version 1.0                       
+pyxdg: Icon Theme Specification Version 0.8                          
+pyxdg: Recent File Spec 0.2                                          
+pyxdg: Shared-MIME-Database Specification 0.13                       
+pyxdg: Homepage: http://freedesktop.org/wiki/Software/pyxdg
