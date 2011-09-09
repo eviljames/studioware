@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+guitarix2: guitarix2 ( virtual guitar amp )
+guitarix2:
+guitarix2: guitarix is a virtual guitar amplifier for Linux running with jack 
+guitarix2: (Jack Audio Connection Kit). It is free as in speech and free as in
+guitarix2: beer. Its free sourcecode allows to build it for other UNIX-like   
+guitarix2: systems also, namely for BSD and for MacOSX.                       
+guitarix2:
+guitarix2:
+guitarix2:
+guitarix2:
+guitarix2:

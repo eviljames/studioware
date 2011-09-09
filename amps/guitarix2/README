@@ -1,0 +1,9 @@
+guitarix2 ( virtual guitar amp )
+
+guitarix is a virtual guitar amplifier for Linux running with jack 
+(Jack Audio Connection Kit). It is free as in speech and free as in
+beer. Its free sourcecode allows to build it for other UNIX-like   
+systems also, namely for BSD and for MacOSX.                       
+
+Deps:
+jack, gtkmm, glibmm, libsigc++, cairomm, ladspa_sdk, clearlooks

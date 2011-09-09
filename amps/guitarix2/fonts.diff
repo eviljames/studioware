@@ -1,0 +1,399 @@
+diff -Naur a/rcstyles/common.rc b/rcstyles/common.rc
+--- a/rcstyles/common.rc	2010-11-25 05:17:30.000000000 +0000
++++ b/rcstyles/common.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -1,13 +1,13 @@
+ style "guitarix_caption"
+ {
+-  font_name = "sans 8"
++  font_name = "sans 10"
+ }
+ 
+ style "guitarix_regler"
+ {
+   GxRegler::value-spacing = 2
+   GxRegler::value-border = { 6, 6, 3, 3 }
+-  font_name = "sans 7.5"
++  font_name = "sans 12.5"
+ }
+ 
+ style "guitarix_value_display"
+@@ -19,7 +19,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "sans 7.5"
++  font_name = "sans 12.5"
+ }
+ 
+ style "guitarix_switch"
+@@ -35,7 +35,6 @@
+   GtkButton::child-displacement-y = 0
+   engine "clearlooks" {
+     #disable_focus = TRUE
+-    style = CLASSIC
+   }
+ }
+ 
+@@ -47,7 +46,7 @@
+   GtkRange::stepper-size = 8
+   GtkRange::stepper-spacing = 2
+   GxRegler::value-border = { 2, 0, 0, 0 }
+-  font_name = "sans 7.5"
++  font_name = "sans 12.5"
+   xthickness = 10
+   ythickness = 1
+ }
+@@ -55,7 +54,7 @@
+ style "guitarix_waveview"
+ {
+   fg[NORMAL] = 	{ 0.48, 0.48, 0.12 } # RGBA: 0.8, 0.8, 0.2, 0.6
+-  font_name = "sans 6"
++  font_name = "sans 10"
+ }
+ 
+ style "guitarix_slider"
+@@ -65,12 +64,12 @@
+ 
+ style "guitarix_eqslider"
+ {
+-  font_name = "sans 6"
++  font_name = "sans 10"
+ }
+ 
+ style "guitarix_bold_label"
+ {
+-  font_name = "sans bold 8"
++  font_name = "sans bold 10"
+ }
+ 
+ style "guitarix_fastmeter"
+diff -Naur a/rcstyles/gx_head_gx1-alloy.rc b/rcstyles/gx_head_gx1-alloy.rc
+--- a/rcstyles/gx_head_gx1-alloy.rc	2011-06-29 18:07:32.000000000 +0000
++++ b/rcstyles/gx_head_gx1-alloy.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -164,7 +164,7 @@
+   base[PRELIGHT]     = { 0.20, 0.20, 0.20 }
+   base[INSENSITIVE]  = "#4c5159"
+   base[SELECTED]     = { 0.25, 0.25, 0.25 }
+-  font_name = "sans 9"
++  font_name = "sans 12"
+ }
+ 
+ widget_class "*GtkMenu*" style:highest "gx_head-menu"
+@@ -232,7 +232,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "URW Chancery L Medium Italic 12"
++  font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx_head-v_black"
+@@ -242,7 +242,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "URW Chancery L Medium Italic 12"
++  font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx_head-b_black"
+@@ -252,7 +252,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "sans 9"
++  font_name = "sans 12"
+ }
+ 
+ style "gx_head-rack"
+@@ -262,7 +262,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "URW Chancery L Medium Italic 12"
++  font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx_rack-slider"
+@@ -272,7 +272,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "sans 6"
++  font_name = "sans 10"
+ }
+ 
+ style "gx1_barbutton_style"
+@@ -379,7 +379,7 @@
+ 	fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ 	fg[INSENSITIVE] = { 0.3, 0.3, 0.3 }
+ 	fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-	font_name = "sans 7"
++	font_name = "sans 12"
+ }
+ 
+ style "gx_head_pa_style"
+diff -Naur a/rcstyles/gx_head_gx2-emerald.rc b/rcstyles/gx_head_gx2-emerald.rc
+--- a/rcstyles/gx_head_gx2-emerald.rc	2011-06-19 07:32:11.000000000 +0000
++++ b/rcstyles/gx_head_gx2-emerald.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -169,7 +169,7 @@
+ base[PRELIGHT] = { 0.20, 0.20, 0.20 }
+ base[INSENSITIVE] = "#4c5159"
+ base[SELECTED] = { 0.25, 0.25, 0.25 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ widget_class "*GtkMenu*" style:highest "gx2_head-menu"
+@@ -248,7 +248,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx2_head-v_black"
+@@ -258,7 +258,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx2_head-b_black"
+@@ -268,7 +268,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.1, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ style "gx2_head-rack"
+@@ -279,7 +279,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx2_rack-slider"
+@@ -289,7 +289,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 6"
++font_name = "sans 10"
+ }
+ 
+ widget "*.effekt_label" style:highest "gx2_head-v_black"
+@@ -386,7 +386,7 @@
+ fg[PRELIGHT] = { 0.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.3, 0.3, 0.3 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 7"
++font_name = "sans 12"
+ }
+ 
+ style "gx2_head_pa_style"
+diff -Naur a/rcstyles/gx_head_gx3-dezert.rc b/rcstyles/gx_head_gx3-dezert.rc
+--- a/rcstyles/gx_head_gx3-dezert.rc	2011-06-29 18:07:32.000000000 +0000
++++ b/rcstyles/gx_head_gx3-dezert.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -187,7 +187,7 @@
+ base[PRELIGHT] = { 0.60, 0.50, 0.40 }
+ base[INSENSITIVE] = { 0.60, 0.60, 0.70 }
+ base[SELECTED] = { 0.25, 0.25, 0.25 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ widget_class "*GtkMenu*" style:highest "gx_dezert-menu"
+@@ -258,7 +258,7 @@
+   fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+   fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+   fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-  font_name = "URW Chancery L Medium Italic 12"
++  font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ 
+@@ -270,7 +270,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.5, 0.4, 0.7 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx_dezert-b_black"
+@@ -291,7 +291,7 @@
+ fg[ACTIVE] = { 0.2, 0.2, 0.2 }
+ fg[PRELIGHT] = { 0.50, 0.60, 0.60 }
+ fg[INSENSITIVE] = { 0.1, 0.1, 0.1 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx_dezert_rack-slider"
+@@ -301,7 +301,7 @@
+ fg[ACTIVE] = { 0.2, 0.2, 0.2 }
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+-font_name = "sans 6"
++font_name = "sans 10"
+ }
+ 
+ style "gx3_barbutton_style"
+@@ -419,7 +419,7 @@
+ 	fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ 	fg[INSENSITIVE] = { 0.3, 0.3, 0.3 }
+ 	fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-	font_name = "sans 7"
++	font_name = "sans 12"
+ }
+ 
+ style "gx_dezert_pa_style"
+diff -Naur a/rcstyles/gx_head_gx4-black.rc b/rcstyles/gx_head_gx4-black.rc
+--- a/rcstyles/gx_head_gx4-black.rc	2011-06-29 18:07:32.000000000 +0000
++++ b/rcstyles/gx_head_gx4-black.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -160,7 +160,7 @@
+ base[PRELIGHT] = { 0.20, 0.20, 0.20 }
+ base[INSENSITIVE] = "#4c5159"
+ base[SELECTED] = { 0.25, 0.25, 0.25 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ widget_class "*GtkMenu*" style:highest "gx4_head-menu"
+@@ -242,7 +242,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx4_head-v_black"
+@@ -252,7 +252,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx4_head-b_black"
+@@ -262,7 +262,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.1, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ style "gx4_head-rack"
+@@ -273,7 +273,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "URW Chancery L Medium Italic 12"
++font_name = "URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx4_rack-slider"
+@@ -283,7 +283,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 6"
++font_name = "sans 10"
+ }
+ 
+ widget "*.effekt_label" style:highest "gx4_head-v_black"
+@@ -381,7 +381,7 @@
+ fg[PRELIGHT] = { 0.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.3, 0.3, 0.3 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 7"
++font_name = "sans 12"
+ }
+ 
+ style "gx4_head_pa_style"
+diff -Naur a/rcstyles/gx_head_gx5-gree.rc b/rcstyles/gx_head_gx5-gree.rc
+--- a/rcstyles/gx_head_gx5-gree.rc	2011-06-29 18:07:32.000000000 +0000
++++ b/rcstyles/gx_head_gx5-gree.rc	2011-09-08 23:57:43.000000000 +0000
+@@ -160,7 +160,7 @@
+ base[PRELIGHT] = { 0.20, 0.20, 0.20 }
+ base[INSENSITIVE] = "#4c5159"
+ base[SELECTED] = { 0.25, 0.25, 0.25 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ widget_class "*GtkMenu*" style:highest "gx5_head-menu"
+@@ -242,7 +242,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "Zapf Chancery Medium Italic 12, URW Chancery L Medium Italic 12"
++font_name = "Zapf Chancery Medium Italic 16, URW Chancery L Medium Italic 16"
+ 
+ }
+ 
+@@ -253,7 +253,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.8, 0.8, 0.8 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "Zapf Chancery Medium Italic 12, URW Chancery L Medium Italic 12"
++font_name = "Zapf Chancery Medium Italic 16, URW Chancery L Medium Italic 16"
+ 
+ }
+ 
+@@ -264,7 +264,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.1, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 9"
++font_name = "sans 12"
+ }
+ 
+ style "gx5_head-rack"
+@@ -275,7 +275,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "Zapf Chancery Medium Italic 12, URW Chancery L Medium Italic 12"
++font_name = "Zapf Chancery Medium Italic 16, URW Chancery L Medium Italic 16"
+ }
+ 
+ style "gx5_effect-rack"
+@@ -286,7 +286,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "Zapf Chancery Medium Italic 12, URW Chancery L Medium Italic 12"
++font_name = "Zapf Chancery Medium Italic 16, URW Chancery L Medium Italic 16"
+ 
+ }
+ 
+@@ -297,7 +297,7 @@
+ fg[PRELIGHT] = { 1.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.0, 0.0, 0.0 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 6"
++font_name = "sans 10"
+ }
+ 
+ widget "*.effekt_label" style:highest "gx5_head-v_gree"
+@@ -395,7 +395,7 @@
+ fg[PRELIGHT] = { 0.0, 1.0, 1.0 }
+ fg[INSENSITIVE] = { 0.3, 0.3, 0.3 }
+ fg[SELECTED] = { 0.8, 0.8, 0.8 }
+-font_name = "sans 7"
++font_name = "sans 12"
+ }
+ 
+ style "gx5_head_pa_style"
