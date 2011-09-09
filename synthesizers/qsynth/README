@@ -1,0 +1,5 @@
+Qsynth (Fluidsynth GUI front-end)
+
+Qsynth is a fluidsynth GUI front-end application written in C++ around  the Qt4 toolkit using Qt Designer.
+
+http://qsynth.sourceforge.net

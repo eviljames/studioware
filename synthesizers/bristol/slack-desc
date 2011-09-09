@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+       |-----handy-ruler------------------------------------------------------|
+bristol: bristol ( Bristol Synthesiser Emulations )
+bristol:
+bristol: Bristol is an emulation package for a number of different 'classic'
+bristol: synthesisers including additive and subtractive and a few organs. The
+bristol: application consists of the engine, which is called bristol, and its
+bristol: own GUI library called brighton that represents all the emulations.
+bristol:
+bristol:
+bristol:
+bristol:
+bristol:

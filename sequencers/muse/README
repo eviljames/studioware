@@ -1,0 +1,7 @@
+MusE (MIDI/Audio sequencer)
+
+MusE is a MIDI/Audio sequencer with recording and editing capabilities written by Werner Schweer. MusE aims to be complete multitrack virtual studio for Linux, it is published under the GNU General Public license.
+ 
+http://www.muse-sequencer.org
+
+Deps: dssi

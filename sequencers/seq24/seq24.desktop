@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=seq24
+Icon=/usr/share/pixmaps/seq24.png
+Name=Seq24
+GenericName=Interactive MIDI Sequencer
+StartupNotify=true
+Type=Application
+Categories=AudioVideo;Audio;
