@@ -1,7 +1,8 @@
 e8a22495fed54b959b917096f50fb219  ./editors/denemo/denemo.tar.gz
 cde71a108745c0e759bfbcb1ec6d7f84  ./editors/rosegarden/rosegarden.tar.gz
 3762dbe83d77b0bf30ac907ef92a1a0c  ./editors/mscore/mscore.tar.gz
-0c7b531271e72a9ae110d95e813fedce  ./system/jack/jack.tar.gz
+f893415b94d21438badf75540482a023  ./system/jack/jack.tar.gz
+2fa58bfd47378204d1d889554af0584e  ./system/meterbridge/meterbridge.tar.gz
 d94d3880a89ca5695c6ff43384eda1af  ./system/rt-tests/rt-tests.tar.gz
 e4ddaf1e89b7d031e7f4df0a7dd75bde  ./system/jack-audio-connection-kit/jack-audio-connection-kit.tar.gz
 47ba0151438c3870f186245d3ac1c9d7  ./system/lirc/lirc.tar.gz
@@ -24,6 +25,7 @@ db85e86d614f63d9a1c48270d6c222d3  ./multitrack/ecasound/ecasound.tar.gz
 f79032d748b6bca6a523c67e1ed7c588  ./multitrack/qtractor/qtractor.tar.gz
 3256e26eb7d82af66d82918400e4ec47  ./multitrack/ardour/ardour.tar.gz
 a70c50a739c30558800e747a5781730d  ./multitrack/jokosher/jokosher.tar.gz
+e61ece4a2903e7feccd3692baa341f2a  ./effects/rakarrack/rakarrack.tar.gz
 e71d91029fe11e0f95f595eec0616219  ./effects/jack-rack/jack-rack.tar.gz
 e6f38a7cdfbb76cb045b77b9d52959fe  ./graphics/potrace/potrace.tar.gz
 98b4e1c8aab335175d8a6dfe049cf397  ./graphics/lilypond/lilypond.tar.gz
@@ -36,6 +38,7 @@ c6621b62f2c99edee11e349a46440b8d  ./graphics/t1utils/t1utils.tar.gz
 a4265d2825eff485dd3df2470849e2fe  ./libraries/glibmm/glibmm.tar.gz
 4170e3b9968ba242c8d7e73fd4b9eda8  ./libraries/libgnomecanvas/libgnomecanvas.tar.gz
 437672bba5be8f991aa58f09af9959d5  ./libraries/cairomm/cairomm.tar.gz
+7c12d44c08bdf984a6c905f804765012  ./libraries/fltk/fltk.tar.gz
 6bb206c6845922d4a7c31c04b0d5b418  ./libraries/calf/calf.tar.gz
 9db3a149527d7b6bee785c44558c1060  ./libraries/liblo/liblo.tar.gz
 8a24c131783e625171d86c841cebe608  ./libraries/pangomm/pangomm.tar.gz
@@ -55,6 +58,8 @@ b23876381608404493d7c686da5970f3  ./libraries/lash/lash.tar.gz
 2de8ea415518e4ee3765afb54247d2f9  ./libraries/ladspa_sdk/ladspa_sdk.tar.gz
 8ebd846cdb6abe49d4c20a88085ddde1  ./libraries/gst-python/gst-python.tar.gz
 302fb471b4f25bd4a89f8c80b3a02e14  ./libraries/raptor2/raptor2.tar.gz
+13ae5e78ee5279eaf21ce4be73853293  ./amps/guitarix2/guitarix2.tar.gz
 7f17a080952f3f5cbde95af8d86e960c  ./mixers/mixxx/mixxx.tar.gz
 9cc815c43fb75d144bab314c0dd8a74c  ./drums/hydrogen/hydrogen.tar.gz
 e9a14347d818e123dc1e45d221cefd44  ./recorders/timemachine/timemachine.tar.gz
+a214afbba5960e61a6646d385cf14b6f  ./desktop/clearlooks/clearlooks.tar.gz

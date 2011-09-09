@@ -1,0 +1,6 @@
+SPECIMEN is an open source, MIDI controllable audio sampler for Linux.
+
+Deps: 
+
+specimen: phat
+phat: libgnomecanvas

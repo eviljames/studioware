@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SooperLooper
+GenericName=SooperLooper
+Comment=Live Looping Sampler
+Icon=sl_logo.xpm
+Exec=slgui
+Terminal=0
+Type=Application
+Categories=Application;Audio;Player;
+# vi: encoding=utf-8

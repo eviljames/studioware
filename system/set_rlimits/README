@@ -1,0 +1,5 @@
+set_rlimits ( access realtime scheduling ) 
+
+It is a small program written to give unpriviledged users access to realtime scheduling via the new rlimits added to kernel 2.6.12.
+
+The new name reflects the fact that the program can control resource limits rather than just those related to realtime priorities. This new version adds a more flexible configuration file format, easier command line use and the ability to control the memlock resource limit. Read the enclosed README file and manpage for full details.

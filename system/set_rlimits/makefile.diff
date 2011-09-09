@@ -1,0 +1,45 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2008-05-15 11:44:21.000000000 +0100
++++ b/Makefile	2011-08-24 00:31:43.000000000 +0100
+@@ -4,6 +4,10 @@
+ # C compiler to use
+ CC=gcc
+ 
++# CFLAGS to use
++CFLAGS = -Wall -g
++EXTRA_CFLAGS =
++
+ # Installation locations.  If SYSCONFDIR is changed, the CONFIG_FILE define
+ # in set_rtlimits.c will need changing to match.
+ PREFIX=/usr/local
+@@ -12,19 +16,19 @@
+ all:	set_rlimits
+ 
+ set_rlimits:	set_rlimits.c
+-	$(CC) -Wall -g -o set_rlimits set_rlimits.c
++	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -o set_rlimits set_rlimits.c
+ 
+ install:	set_rlimits
+-	test -d $(PREFIX)/bin || mkdir -p $(PREFIX)/bin
+-	test -d $(PREFIX)/man/man8 || mkdir -p $(PREFIX)/man/man8
+-	test -d $(SYSCONFDIR) || mkdir -p $(SYSCONFDIR)
+-	cp -p set_rlimits $(PREFIX)/bin/
+-	chown 0.0 $(PREFIX)/bin/set_rlimits
+-	chmod u+s $(PREFIX)/bin/set_rlimits
+-	test -e $(SYSCONFDIR)/set_rlimits.conf || cp set_rlimits.conf $(SYSCONFDIR)/
+-	chown 0.0 $(SYSCONFDIR)/set_rlimits.conf
+-	cp -p set_rlimits.8 $(PREFIX)/man/man8/
+-	chown 0.0 $(PREFIX)/man/man8/set_rlimits.8
++	test -d $(DESTDIR)/$(PREFIX)/bin || mkdir -p $(DESTDIR)/$(PREFIX)/bin
++	test -d $(DESTDIR)/$(PREFIX)/man/man8 || mkdir -p $(DESTDIR)/$(PREFIX)/man/man8
++	test -d $(DESTDIR)/$(SYSCONFDIR) || mkdir -p $(DESTDIR)/$(SYSCONFDIR)
++	cp -p set_rlimits $(DESTDIR)/$(PREFIX)/bin/
++	chown 0.0 $(DESTDIR)/$(PREFIX)/bin/set_rlimits
++	chmod u+s $(DESTDIR)/$(PREFIX)/bin/set_rlimits
++	test -e $(DESTDIR)/$(SYSCONFDIR)/set_rlimits.conf || cp set_rlimits.conf $(DESTDIR)/$(SYSCONFDIR)/
++	chown 0.0 $(DESTDIR)/$(SYSCONFDIR)/set_rlimits.conf
++	cp -p set_rlimits.8 $(DESTDIR)/$(PREFIX)/man/man8/
++	chown 0.0 $(DESTDIR)/$(PREFIX)/man/man8/set_rlimits.8
+ 
+ .PHONY:	clean tidy
+ 
