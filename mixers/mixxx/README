@@ -1,0 +1,9 @@
+Mixxx (DJ Software)
+
+Mixxx is free, open source DJ software that gives you everything you need to perform live mixes.
+
+http://www.mixxx.org 
+
+Deps:
+
+libshout, portmidi, scons

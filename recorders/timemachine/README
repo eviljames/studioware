@@ -1,0 +1,5 @@
+Timemachine is an application that pre-records the last 10 seconds of audio for you. When you press record it will record the previous ten seconds up to realtime.
+
+Deps:
+
+jack, lash, liblo

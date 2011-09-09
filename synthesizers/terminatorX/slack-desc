@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+ 
+           |-----handy-ruler------------------------------------------------------|
+terminatorX: TerminatorX (RealTime Audio Synthesizer)
+terminatorX:
+terminatorX: TerminatorX is a realtime audio synthesizer that allows you to
+terminatorX: scratch on digitally sampled audio data (*.wav, *.au, *.ogg, 
+terminatorX: *.mp3, etc.) the way hiphop-DJs scratch on vinyl records. It 
+terminatorX: features multiple turntables, realtime effects (built-in as well
+terminatorX: as LADSPA plugin effects), a sequencer and MIDI interface - all 
+terminatorX: accessible through an easy-to-use gtk+ GUI.
+terminatorX:
+terminatorX: http://www.terminatorX.org
+terminatorX:

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=timemachine
+Icon=/usr/share/timemachine/pixmaps/timemachine-icon.png
+Name=Time Machine
+GenericName=Time Machine Recorder
+StartupNotify=true
+Type=Application
+Categories=AudioVideo;Audio;
