@@ -1,0 +1,6 @@
+scons
+libtar
+jack-audio-connection-kit 
+ladspa_sdk
+liblrdf
+lash 
