@@ -1,6 +1,8 @@
-scons
 libtar
-jack-audio-connection-kit 
+jack
 ladspa_sdk
 liblrdf
-lash 
+lash
+portaudio
+portmidi
+scon

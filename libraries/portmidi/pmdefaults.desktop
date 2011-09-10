@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=Set default input and output devices for PortMidi
+GenericName=PortMidi Settings
+Exec=pmdefaults
+Icon=pmdefaults-icon
+Name=PortMidi Defaults
+NoDisplay=false
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Audio;AudioVideo;

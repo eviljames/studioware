@@ -1,0 +1,9 @@
+portaudio ( audio I/O library )
+
+PortAudio is a free, cross-platform, open-source, audio I/O library.
+It lets you write simple audio programs in 'C' or C++ that will
+compile and run on many platforms including Windows, Macintosh OS X,
+and Unix (OSS/ALSA). It is intended to promote the exchange of audio
+software between developers on different platforms.
+
+Homepage: http://www.portaudio.com/
