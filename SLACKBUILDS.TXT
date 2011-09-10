@@ -1,11 +1,13 @@
 e8a22495fed54b959b917096f50fb219  ./editors/denemo/denemo.tar.gz
 cde71a108745c0e759bfbcb1ec6d7f84  ./editors/rosegarden/rosegarden.tar.gz
 3762dbe83d77b0bf30ac907ef92a1a0c  ./editors/mscore/mscore.tar.gz
-f893415b94d21438badf75540482a023  ./system/jack/jack.tar.gz
+88647843ba92ee48f8e2bf182b087a8f  ./system/jack/jack.tar.gz
 2fa58bfd47378204d1d889554af0584e  ./system/meterbridge/meterbridge.tar.gz
+e5067923e380dd9f712f52cb4e9f3284  ./system/portmidi/portmidi.tar.gz
 d94d3880a89ca5695c6ff43384eda1af  ./system/rt-tests/rt-tests.tar.gz
 e4ddaf1e89b7d031e7f4df0a7dd75bde  ./system/jack-audio-connection-kit/jack-audio-connection-kit.tar.gz
 47ba0151438c3870f186245d3ac1c9d7  ./system/lirc/lirc.tar.gz
+5386e580cb56869e15ba4b0fb63c0116  ./system/portaudio/portaudio.tar.gz
 baac0735dda082f77cfd16f36260c6c1  ./system/set_rlimits/set_rlimits.tar.gz
 6d93b8497a6ff40196d993e048314e58  ./development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 92dfdbe0146df2537240d05d8466420c  ./development/phat/phat.tar.gz
@@ -15,6 +17,7 @@ baac0735dda082f77cfd16f36260c6c1  ./system/set_rlimits/set_rlimits.tar.gz
 828e899b3b9e771c7d9fec4e6e0f93cb  ./development/scons/scons.tar.gz
 a2d2a6641a15cc47dd8d20275da5c176  ./development/scrollkeeper/scrollkeeper.tar.gz
 b9bf2cc788c28ab23e0842fb481895aa  ./samplers/specimen/specimen.tar.gz
+873f0fa63481d75e8683b98101f55934  ./samplers/giada/giada.tar.gz
 d3e7447cdbd8aa36d0ef89eabf64101d  ./samplers/sooperlooper/sooperlooper.tar.gz
 133ece9d418b56ceea0d1bc308201df1  ./synthesizers/qsynth/qsynth.tar.gz
 5adf2f15843fb77c18dd7ef75ce97ff7  ./synthesizers/bristol/bristol.tar.gz
@@ -60,6 +63,6 @@ b23876381608404493d7c686da5970f3  ./libraries/lash/lash.tar.gz
 302fb471b4f25bd4a89f8c80b3a02e14  ./libraries/raptor2/raptor2.tar.gz
 13ae5e78ee5279eaf21ce4be73853293  ./amps/guitarix2/guitarix2.tar.gz
 7f17a080952f3f5cbde95af8d86e960c  ./mixers/mixxx/mixxx.tar.gz
-9cc815c43fb75d144bab314c0dd8a74c  ./drums/hydrogen/hydrogen.tar.gz
+ab1392ba8d113c830fc596adae48e0d4  ./drums/hydrogen/hydrogen.tar.gz
 e9a14347d818e123dc1e45d221cefd44  ./recorders/timemachine/timemachine.tar.gz
 a214afbba5960e61a6646d385cf14b6f  ./desktop/clearlooks/clearlooks.tar.gz
