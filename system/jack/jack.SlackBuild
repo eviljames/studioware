@@ -23,7 +23,7 @@
 
 PRGNAM=jack
 VERSION=${VERSION:-1.9.7}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -70,14 +70,17 @@ find . \
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-./waf configure --prefix=/usr --alsa 
+./waf configure --prefix=/usr --alsa \
+  --libdir=/lib${LIBDIRSUFFIX} \
+  --libdir32=/lib \
+  --mandir=/man \
+  --classic 
+
 ./waf build 
 ./waf install --destdir=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-mv $PKG/usr/share/man $PKG/usr/.
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
