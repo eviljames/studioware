@@ -23,7 +23,7 @@
 
 PRGNAM=giada
 VERSION=${VERSION:-0.3.0_lin}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -77,6 +77,10 @@ find . \
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
+mkdir -p $PKG/usr/share/{applications,pixmaps}
+cp $CWD/giada.desktop $PKG/usr/share/applications
+cp $CWD/giada.png $PKG/usr/share/pixmaps
+
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
     CHANGELOG $CWD/README \
@@ -85,6 +89,7 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Giada
+Comment=Hardcore Loop Machine
+
+GenericName=Loop Machine
+
+Version=1.0
+
+Type=Application
+Categories=AudioVideo;Audio
+
+MimeType=text/xml;
+
+Exec=giada
+TryExec=giada
+Terminal=false
+StartupNotify=true
+
+Icon=/usr/share/pixmaps/giada.png
