@@ -237,8 +237,7 @@ installpkgs()
 	    if [ ! -r $SBCACHEDIR/$b.tar.gz ]; then
                 $WGET -c -O $SBCACHEDIR/$b.tar.gz $SBSERVER/$i
             fi
-            cp $SBCACHEDIR/$b.tar.gz .
-            tar xf $b.tar.gz
+            tar xf $SBCACHEDIR/$b.tar.gz
             (
              cd $b                                         
              source ./$b.info        
