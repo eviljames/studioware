@@ -1,8 +1,11 @@
 .\" Comment, for the sake of comment.
-.TH SEPKG 8 "September 2011" Studioware "More text"
+.TH SEPKG 8 "September 2011" Studioware 
 .SH NAME
 sepkg \- the Studioware package builder.
 .SH SYNOPSIS
+.B sepkg a|auto
+\- auto mode without prompt or dialog (use with care)
+.br
 .B sepkg b|build
 .I package1, package2
 \- Build packages
@@ -16,73 +19,82 @@ sepkg \- the Studioware package builder.
 \- Install packages from queue file.
 .br
 .B sepkg l|latest
-\- Check latest version of sepkg and optionally
-.br
-                 download/install
+\- Check latest version of sepkg 
 .br
 .B sepkg r|read
 .I package
-\- download and print readme (needs lynx)
+\- print readme for package
 .br
 .B sepkg s|search
 .I [grep term]
 \- Search for package name or part name
 .br
 .B sepkg u|update
-\- Syncs with file server
+\- syncs filelist with file server's
 .br
-.B sepkg
-.B delete-cache
-delete all cached packages
+.B sepkg delete-cache
+\- delete all cached slackbuilds and filelist
+.br
+.B sepkg delete-source
+\- delete all cached sources
+.br
+.B sepkg delete-all
+\- delete all cached slackbuilds, filelist & source
+.br
+.B sepkg -h
+\- show usage
+.br
+.B sepkg -v
+\- show version
+
 .SH DESCRIPTION
 .B sepkg
-builds Slackware compatible packages.  It pulls a tarball of SlackBuild and
-info files from the source URL listed in 
-.B sepkg.conf(5)
-, subsequently acquires the packages' source(s) and builds a .txz
-.br
-package.
-.br
-.B sepkg
-is intended for use on Slackware 13.1 and up, to build the
-.br
-Studioware package set.  You can pass additional parameters to
-.br
+builds Slackware compatible packages.  It pulls a tarball of the 
+SlackBuild and source(s) and builds a package.
+.P
+.B sepkg 
+is intended for use on Slackware 13.1 and up, to build the 
+Studioware package set.  You can pass additional parameters to the
 build scripts, they will be entered into the build environment
+to control the SlackBuild's behaviour. See a file's readme for options.
 .br
-to control the SlackBuild's behaviour.
 .SH "EXAMPLES"
 .B # sepkg install ardour WIIMOTE=yes
 .br
 Builds and installs the ardour package, with WIIMOTE=yes in the build
-.br
 environment.
-.br
-.br
+.P
 .B # cat queue
 .br
 ardour WIIMOTE=yes
 .br
-.br
 .B # sepkg install < queue
 .br
 The same as above, except via a queue file.  With a queue file,
-.br
-seperate packages on newlines.  When installing via the command line
-.br
-seperate packages with a comma.
-.br
-.br
+packages should be separated with newlines.  When installing via the 
+command line packages should be separated with a comma.
+
+.P
 .B # sepkg install ardour WIIMOTE=yes, dssi, lash
 .br
-Builds and installs packages ardour (with WIIMOTE=yes in the build
+Builds and installs package ardour (with WIIMOTE=yes in the build
+environment), and dssi and lash without options.
+
+.P 
+.B # sepkg auto install hydrogen
 .br
-environment), dssi and lash (neither of which have WIIMOTE=yes in
-.I their
-build environment).
+install everything that matches 'hydrogen' in the file name without
+prompting.
+
+.P 
+.B # sepkg a i jack.tar.gz
+.br
+Install without prompt the jack.tar.gz slackbuild. Note that adding .tar.gz will
+(hopefully) find an exact match.
+
 .SH "FILES"
-.TP
-/etc/sepkg/sepkg.conf
+.br
+/etc/sepkg/sepkg.conf:
 .B sepkg
 configuration file
 .SH "SEE ALSO"

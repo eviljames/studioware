@@ -28,24 +28,22 @@ init()
 {
     # Initial configuration
     APPNAME="sepkg"
-    VERSION="1.2"
-    CONFDIR=${CONFDIR:-/etc/$APPNAME}
+    VERSION="1.3"
+    CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF
-    CACHEDIR=${CACHEDIR:-"/var/cache/$APPNAME/$SWVERSION"}
+    CACHEDIR=${CACHEDIR:-"/var/cache/$APPNAME"}
+    CACHEDIR=$CACHEDIR/$SWVERSION
+    SRCCACHEDIR=$CACHEDIR/source
+    SBCACHEDIR=$CACHEDIR/slackbuilds
     SBSERVER=${SBSERVER:-"http://www.studioware.org/slackbuilds/$SWVERSION"}
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
 
-    # Created needed folders
-    mkdir -p $CACHEDIR
-    if [ ! -z $SCACHEDIR ] ; then
-        mkdir -p $SCACHEDIR
-    fi
-    if [ ! -z $SBCACHEDIR ] ; then
-        mkdir -p $SBCACHEDIR
-    fi
+    # Create needed folders
+    mkdir -p $SRCCACHEDIR
+    mkdir -p $SBCACHEDIR
     
     # Set up temp build dir, trap some signals
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
@@ -68,6 +66,8 @@ cleanup()
 #{{{ Flags
 getflags()
 {
+    if [ "$1" = "auto" ]; then { AUTOBUILD=1; shift; }; fi
+    if [ "$1" = "a" ]; then { AUTOBUILD=1; shift; }; fi
     if [ "$1" = "update" ]; then { update; cleanup; }; fi
     if [ "$1" = "u" ]; then { update; cleanup; }; fi
     if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
@@ -76,7 +76,9 @@ getflags()
     if [ "$1" = "b" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
     if [ "$1" = "install" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
     if [ "$1" = "i" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "delete-cache" ]; then { deletecache "$@"; cleanup; }; fi
+    if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
+    if [ "$1" = "delete-source" ]; then { deletesource; cleanup; }; fi
+    if [ "$1" = "delete-all" ]; then { deletecache; deletesource; cleanup; }; fi
     if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
     if [ "$1" = "l" ]; then { latest; cleanup; }; fi
     if [ "$1" = "read" ]; then { readme $2; cleanup; }; fi
@@ -91,7 +93,7 @@ readme()
     file=$(grep $1.tar.gz $FILELIST | awk '{print $2}' | cut -d'/' -f1-3)/README
     shortname=$(echo $file | cut -d'/' -f5 | rev | cut -d- -f4- | rev)
     url=$SBSERVER/$file
-    lynx -dump $url
+    curl -s $url | fmt
     cleanup
 }
 #}}}
@@ -99,7 +101,7 @@ readme()
 latest()
 {
     cd /tmp
-    LATEST=$(lynx -dump http://www.studioware.org/$APPNAME/LATEST)
+    LATEST=$(curl -s http://www.studioware.org/$APPNAME/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it (y/n)? "
@@ -129,12 +131,15 @@ $APPNAME $VERSION
 
 Options
 
+$APPNAME auto/a - auto mode with no prompt/dialog (use with care)
 $APPNAME build/b package1, package2 ... - build packages
-$APPNAME delete-cache [all] - delete [all] cached files
+$APPNAME delete-cache - delete cached SlackBuilds and filelist
+$APPNAME delete-source - delete cached sources
+$APPNAME delete-all - delete SlackBuilds and sources
 $APPNAME install/i package1, package2 ... - build & install packages
 $APPNAME install/i < <queuefile> - install packages from file
 $APPNAME latest/l - checks for newer version of $APPNAME
-$APPNAME read/r <package> - download and print readme (needs lynx)
+$APPNAME read/r <package> - download and print readme 
 $APPNAME search/s - search for package name or part name
 $APPNAME update/u - syncs with file server
 $APPNAME -h - help
@@ -145,6 +150,11 @@ Files
 /etc/$APPNAME/$APPNAME.conf
 
 This file contains the mirror URL and should be edited for 32bit or 64bit.
+
+Hints
+
+When package name has .tar.gz suffix it should lead to an exact match.
+
 EOF
 }
 #}}}
@@ -224,23 +234,17 @@ installpkgs()
     do
         if [ -n "$i" ]; then
             b=$(basename $i .tar.gz)
-	     if [ -d $SBCACHEDIR ]; then
-                 $WGET -c -O $SBCACHEDIR/$b.tar.gz $SBSERVER/$i
-                 cp $SBCACHEDIR/$b.tar.gz .
-             else
-                 $WGET -c -O $b.tar.gz $SBSERVER/$i
-             fi
-             tar xf $b.tar.gz
+	    if [ ! -r $SBCACHEDIR/$b.tar.gz ]; then
+                $WGET -c -O $SBCACHEDIR/$b.tar.gz $SBSERVER/$i
+            fi
+            cp $SBCACHEDIR/$b.tar.gz .
+            tar xf $b.tar.gz
             (
              cd $b                                         
              source ./$b.info        
              LOCAL=$(basename $DOWNLOAD)
-             if [ -d $SCACHEDIR ]; then
-                 $WGET -c -O $SCACHEDIR/$LOCAL $DOWNLOAD
-		 cp $SCACHEDIR/$LOCAL .
-             else
-                 $WGET -c -O $LOCAL $DOWNLOAD
-             fi
+             $WGET -c -O $SRCCACHEDIR/$LOCAL $DOWNLOAD
+             ln -sf $SRCCACHEDIR/$LOCAL .
 
              if [ "$(md5sum $LOCAL | awk '{print $1}')" != "$MD5SUM" ]; then 
                 echo "Checksums don't match. Did you run 'update' first?"
@@ -248,13 +252,7 @@ installpkgs()
                 read ANS
                 if [ "$ANS" != "c" ]; then exit 1; fi
             fi
-            options=$(grep $b $QUEUE | cut -f2- | sed "s/$b//")
-            # Deal with the specific edge case of when you want to build a
-            # specific .tar.gz
-            if [ -n $options ]; then
-                if [ "$options" = ".tar.gz" ]; then options=""; fi
-            fi
-
+            options=$(grep $b $QUEUE | cut -f2- | sed "s/$b//;s/\.tar\.gz//g")
  	    eval $options source ./$b.SlackBuild
             if [ "$INSTALL" = "1" ]; then
                 $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
@@ -295,10 +293,14 @@ search()
     fi
 }
 #}}}
-#{{{ Delete Cache !DANGER WILL ROBINSON!
+#{{{ Delete Cache 
 deletecache()
 {
-    rm -f $CACHEDIR/$FILELIST
+    echo "Deleting $FILELIST"
+    rm -f $FILELIST
+    echo "Deleting $SBCACHEDIR/*.tar.gz"
+    rm -f $SBCACHEDIR/*.tar.gz
+
     shift
     arg=$*
     if [ -n "$arg" ]; then
@@ -306,9 +308,16 @@ deletecache()
             rm -rf $CACHEDIR
         fi
     fi
-    rm -rf $TMPROOT
     echo "Cache Deleted"
-    cleanup
+}
+#}}}
+#{{{ Delete sourc
+deletesource()
+{
+    echo "Deleting $SRCCACHEDIR/*"
+    rm -f $SRCCACHEDIR/*
+
+    echo "All Sources Deleted"
 }
 #}}}
 init

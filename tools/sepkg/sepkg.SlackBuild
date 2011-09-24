@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for studiopkg
+# Slackware build script for sepkg
 # Copyright 2011 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
@@ -41,9 +41,16 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PRGNAM-$VERSION
-cat sepkg > $PKG/usr/sbin/sepkg
+install -m 755 sepkg $PKG/usr/sbin/sepkg
 cat sepkg.conf.new > $PKG/etc/sepkg/sepkg.conf.new
 cat README > $PKG/usr/doc/$PRGNAM-$VERSION/README
+
+mkdir -p $PKG/usr/man/man{5,8}
+cat sepkg.8 > $PKG/usr/man/man8/sepkg.8
+cat sepkg.conf.5 > $PKG/usr/man/man5/sepkg.conf.5
+
+find $PKG/usr/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

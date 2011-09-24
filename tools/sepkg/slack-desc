@@ -6,14 +6,14 @@
 # customary to leave one space after the ':'.
 
      |-----handy-ruler------------------------------------------------------|
-sepkg: sepkg - studioware package builder
+sepkg: sepkg - studioware.org package builder
 sepkg:
-sepkg: Be sure to read /usr/doc/sepkg/README
+sepkg: Be sure to read the man pages:
+sepkg: man 8 sepkg
+sepkg: man 5 sepkg.conf
+sepkg:
+sepkg: sepkg -h is also useful
 sepkg:
 sepkg: Homepage: http://www.studioware.org
-sepkg:
-sepkg:
-sepkg:
-sepkg:
 sepkg:
 sepkg:
