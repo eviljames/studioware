@@ -1,0 +1,89 @@
+.\" Comment, for the sake of comment.
+.TH SEPKG 8 "September 2011" Studioware "More text"
+.SH NAME
+sepkg \- the Studioware package builder.
+.SH SYNOPSIS
+.B sepkg b|build
+.I package1, package2
+\- Build packages
+.br
+.B sepkg i|install
+.I package1, package2
+\- Install packages
+.br
+.B sepkg i|install
+.I < queue
+\- Install packages from queue file.
+.br
+.B sepkg l|latest
+\- Check latest version of sepkg and optionally
+.br
+                 download/install
+.br
+.B sepkg r|read
+.I package
+\- download and print readme (needs lynx)
+.br
+.B sepkg s|search
+.I [grep term]
+\- Search for package name or part name
+.br
+.B sepkg u|update
+\- Syncs with file server
+.br
+.B sepkg
+.B delete-cache
+delete all cached packages
+.SH DESCRIPTION
+.B sepkg
+builds Slackware compatible packages.  It pulls a tarball of SlackBuild and
+info files from the source URL listed in 
+.B sepkg.conf(5)
+, subsequently acquires the packages' source(s) and builds a .txz
+.br
+package.
+.br
+.B sepkg
+is intended for use on Slackware 13.1 and up, to build the
+.br
+Studioware package set.  You can pass additional parameters to
+.br
+build scripts, they will be entered into the build environment
+.br
+to control the SlackBuild's behaviour.
+.SH "EXAMPLES"
+.B # sepkg install ardour WIIMOTE=yes
+.br
+Builds and installs the ardour package, with WIIMOTE=yes in the build
+.br
+environment.
+.br
+.br
+.B # cat queue
+.br
+ardour WIIMOTE=yes
+.br
+.br
+.B # sepkg install < queue
+.br
+The same as above, except via a queue file.  With a queue file,
+.br
+seperate packages on newlines.  When installing via the command line
+.br
+seperate packages with a comma.
+.br
+.br
+.B # sepkg install ardour WIIMOTE=yes, dssi, lash
+.br
+Builds and installs packages ardour (with WIIMOTE=yes in the build
+.br
+environment), dssi and lash (neither of which have WIIMOTE=yes in
+.I their
+build environment).
+.SH "FILES"
+.TP
+/etc/sepkg/sepkg.conf
+.B sepkg
+configuration file
+.SH "SEE ALSO"
+.BR sepkg.conf (5)

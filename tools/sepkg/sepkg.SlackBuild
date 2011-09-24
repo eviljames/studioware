@@ -22,14 +22,32 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=sepkg
-VERSION=${VERSION:-1.2}
+VERSION=${VERSION:-1.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-daw}
 ARCH=noarch
+CWD=$(pwd)
+TMP=${TMP:-/tmp/se}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
 set -e
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+mkdir -p $PKG/usr/sbin $PKG/usr/doc/$PRGNAM-$VERSION \
+	$PKG/etc/$PRGNAM $PKG/install
+
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
 cd $PRGNAM-$VERSION
-/sbin/makepkg -l y -c n ../$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
-cd ..
+cat sepkg > $PKG/usr/sbin/sepkg
+cat sepkg.conf.new > $PKG/etc/sepkg/sepkg.conf.new
+cat README > $PKG/usr/doc/$PRGNAM-$VERSION/README
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+cd $OUTPUT
 md5sum $PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz} > \
 	$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.md5
-echo $VERSION > LATEST
+echo $VERSION > $CWD/LATEST

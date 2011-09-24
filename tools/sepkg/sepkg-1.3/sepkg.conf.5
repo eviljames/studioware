@@ -1,0 +1,47 @@
+.\" Comment for the sake of comment.
+.TH SEPKG.CONF 5 "September 2011" Studioware "More text"
+.SH NAME
+sepkg.conf \- sepkg(8) configuration file
+.SH SYNOPSIS
+.B /etc/sepkg/sepkg.conf
+.SH DESCRIPTION
+The
+.I sepkg.conf
+file consists of a series of environment variables used by sepkg
+.br
+when getting SlackBuilds, fetching sources and outputting packages.
+.SH "ENVIRONMENT VARIABLES"
+.IP SWVERSION
+The version of Slackware that these packages should be built for.
+.br
+Important for pulling SlackBuilds from studioware.org.
+.IP SBSERVER
+The server from which you want to pull SlackBuild archives.
+.IP CONFDIR
+The directory in which the configuration file will be found.
+.IP CONF
+.br
+The name of the configuration file within CONFDIR
+.IP CACHEDIR
+.I optional
+Where to cache downloaded files.
+.IP SCACHEDIR
+.I optional
+Where to cache downloaded source files 
+.br
+[default: $CACHEDIR/source]
+.IP SBCACHEDIR
+.I optional
+Where to cache downloaded SlackBuild archives 
+.br
+[default: $CACHEDIR/slackbuild]
+.br
+.br
+.IP "This file can also be used for controlling certain global variables as well"
+.IP OUTPUT
+.I optional
+Where to put the final output of
+.B sepkg
+builds, the txz.
+.SH "SEE ALSO"
+.BR sepkg(8)
