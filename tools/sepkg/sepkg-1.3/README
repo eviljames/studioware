@@ -2,16 +2,19 @@ Sepkg - The Studioware Package Builder
 
 Options
 
-sepkg update/u - syncs with file server
-sepkg search/s <grep term> - search for package name or part name
-sepkg build/b package1, package2, ... - build packages
-sepkg install/i package1, package2, ... - install packages
-sepkg install/i < <queuefile> - install packages from file
-sepkg read/r <package> - download and print readme (needs lynx)
-sepkg delete-cache - delete all cached packages
-sepkg latest/l - check latest version and optionally download/install
+sepkg [-a|auto] <command> - auto mode with not prompt/dialog (use with care)
+sepkg [-a|auto] -b|build package1, package2, ... - build packages
+sepkg [-a|auto] -i|install package1, package2, ... - install packages
+sepkg [-a|auto] -i|install < <queuefile> - install packages from file
+sepkg -l|latest - check latest version and optionally download/install
+sepkg -r|read <package> - download and print readme (needs lynx)
+sepkg -s|search <grep term> - search for package name or part name
+sepkg -u|pdate - syncs with file server
 sepkg -h - help
 sepkg -v - give version and exit
+sepkg delete-cache - delete all cached slackbuilds and file list
+sepkg delete-source - delete all cached sources
+sepkg delete-all - delete both the above
 
 Files:
 /etc/sepkg/sepkg.conf

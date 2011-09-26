@@ -137,19 +137,20 @@ $APPNAME [-a|auto] -i|install package1, package1, ...
 $APPNAME -s|search <package>
 
 Options:
-$APPNAME -a|auto - auto mode with no prompt/dialog (use with care)
-$APPNAME -b|build package1, package2 ... - build packages
-$APPNAME delete-cache - delete cached SlackBuilds and filelist
-$APPNAME delete-source - delete cached sources
-$APPNAME delete-all - delete SlackBuilds and sources
-$APPNAME -i|install package1, package2 ... - build & install packages
-$APPNAME -i|install < <queuefile> - install packages from file
+$APPNAME [-a|auto] - auto mode with no prompt/dialog (use with care)
+$APPNAME [-a|auto] -b|build package1, package2 ... - build packages
+$APPNAME [-a|auto] -b|build < <queuefile> - build from queue file
+$APPNAME [-a|auto] -i|install package1, package2 ... - build & install packages
+$APPNAME [-a|auto] -i|install < <queuefile> - install packages from file
 $APPNAME -l|latest - checks for newer version of $APPNAME
 $APPNAME -r|read <package> - download and print readme 
 $APPNAME -s|search - search for package name or part name
 $APPNAME -u|update - syncs with file server
 $APPNAME -h - help
 $APPNAME -v - give version and exit
+$APPNAME delete-cache - delete cached SlackBuilds and filelist
+$APPNAME delete-source - delete cached sources
+$APPNAME delete-all - delete SlackBuilds and sources
 
 Files
 
