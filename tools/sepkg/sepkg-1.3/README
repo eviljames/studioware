@@ -2,7 +2,7 @@ Sepkg - The Studioware Package Builder
 
 Options
 
-sepkg [-a|auto] <command> - auto mode with not prompt/dialog (use with care)
+sepkg [-a|auto] <command> - auto mode with no prompt/dialog (use with care)
 sepkg [-a|auto] -b|build package1, package2, ... - build packages
 sepkg [-a|auto] -i|install package1, package2, ... - install packages
 sepkg [-a|auto] -i|install < <queuefile> - install packages from file
