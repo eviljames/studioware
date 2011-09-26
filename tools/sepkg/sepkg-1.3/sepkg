@@ -2,7 +2,7 @@
 
 #{{{ Copyright
 # Studioware package building script
-# Copyright 2011 David Woodfall <dave@dawoodfall.net>
+# Copyright 2011 David Woodfall <dave@studioware.org>
 # some modification 2011 James Purdy <james@studioware.org>
 # All rights reserved.
 #
@@ -32,7 +32,7 @@ init()
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
-    touch $CONF
+    if [ ! -e "$CONF" ]; then touch $CONF; fi
     source $CONF
     CACHEDIR=${CACHEDIR:-"/var/cache/$APPNAME"}
     CACHEDIR=$CACHEDIR/$SWVERSION
@@ -66,25 +66,27 @@ cleanup()
 #{{{ Flags
 getflags()
 {
-    if [ "$1" = "auto" ]; then { AUTOBUILD=1; shift; }; fi
-    if [ "$1" = "a" ]; then { AUTOBUILD=1; shift; }; fi
     if [ "$1" = "update" ]; then { update; cleanup; }; fi
-    if [ "$1" = "u" ]; then { update; cleanup; }; fi
-    if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
-    if [ "$1" = "s" ]; then { search $2; cleanup; }; fi
-    if [ "$1" = "build" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "b" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "install" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "i" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
+    if [ "$1" = "-u" ]; then { update; cleanup; }; fi
+    if [ "$1" = "search" ]; then { search "$2"; cleanup; }; fi
+    if [ "$1" = "-s" ]; then { search "$2"; cleanup; }; fi
     if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
     if [ "$1" = "delete-source" ]; then { deletesource; cleanup; }; fi
     if [ "$1" = "delete-all" ]; then { deletecache; deletesource; cleanup; }; fi
     if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "l" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "read" ]; then { readme $2; cleanup; }; fi
-    if [ "$1" = "r" ]; then { readme $2; cleanup; }; fi
+    if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
+    if [ "$1" = "read" ]; then { readme "$2"; cleanup; }; fi
+    if [ "$1" = "-r" ]; then { readme "$2"; cleanup; }; fi
     if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
+    if [ "$1" = "auto" ]; then { AUTOBUILD=1; shift; }; fi
+    if [ "$1" = "-a" ]; then { AUTOBUILD=1; shift; }; fi
+    if [ "$1" = "build" ]; then { INSTALL=0; BUILD=1; shift; }; fi
+    if [ "$1" = "-b" ]; then { INSTALL=0; BUILD=1; shift; }; fi
+    if [ "$1" = "install" ]; then { INSTALL=1; BUILD=1; shift; }; fi
+    if [ "$1" = "-i" ]; then { INSTALL=1; BUILD=1; shift; }; fi
+
+    if [ "$BUILD" = "1" ]; then { listpkgs "$@"; cleanup; }; fi
 }
 #}}}
 #{{{ Readme
@@ -129,32 +131,29 @@ usage()
 cat << EOF
 $APPNAME $VERSION
 
-Options
+Usage Examples:
+$APPNAME [-a|auto] -b|build package1, package1, ...
+$APPNAME [-a|auto] -i|install package1, package1, ...
+$APPNAME -s|search <package>
 
-$APPNAME auto/a - auto mode with no prompt/dialog (use with care)
-$APPNAME build/b package1, package2 ... - build packages
+Options:
+$APPNAME -a|auto - auto mode with no prompt/dialog (use with care)
+$APPNAME -b|build package1, package2 ... - build packages
 $APPNAME delete-cache - delete cached SlackBuilds and filelist
 $APPNAME delete-source - delete cached sources
 $APPNAME delete-all - delete SlackBuilds and sources
-$APPNAME install/i package1, package2 ... - build & install packages
-$APPNAME install/i < <queuefile> - install packages from file
-$APPNAME latest/l - checks for newer version of $APPNAME
-$APPNAME read/r <package> - download and print readme 
-$APPNAME search/s - search for package name or part name
-$APPNAME update/u - syncs with file server
+$APPNAME -i|install package1, package2 ... - build & install packages
+$APPNAME -i|install < <queuefile> - install packages from file
+$APPNAME -l|latest - checks for newer version of $APPNAME
+$APPNAME -r|read <package> - download and print readme 
+$APPNAME -s|search - search for package name or part name
+$APPNAME -u|update - syncs with file server
 $APPNAME -h - help
 $APPNAME -v - give version and exit
 
 Files
 
 /etc/$APPNAME/$APPNAME.conf
-
-This file contains the mirror URL and should be edited for 32bit or 64bit.
-
-Hints
-
-When package name has .tar.gz suffix it should lead to an exact match.
-
 EOF
 }
 #}}}
@@ -175,9 +174,9 @@ listpkgs()
 
     cd $TMPROOT || cleanup
     unset pkgs
-    shift
 
     cl=$*
+
     if [ -z "$cl" ]; then
         cat /dev/stdin | sed "s/,/\n/g" > $QUEUE
     else
