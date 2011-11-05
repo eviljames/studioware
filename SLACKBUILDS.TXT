@@ -3,11 +3,9 @@ cde71a108745c0e759bfbcb1ec6d7f84  ./editors/rosegarden/rosegarden.tar.gz
 3762dbe83d77b0bf30ac907ef92a1a0c  ./editors/mscore/mscore.tar.gz
 88647843ba92ee48f8e2bf182b087a8f  ./system/jack/jack.tar.gz
 2fa58bfd47378204d1d889554af0584e  ./system/meterbridge/meterbridge.tar.gz
-e5067923e380dd9f712f52cb4e9f3284  ./system/portmidi/portmidi.tar.gz
 d94d3880a89ca5695c6ff43384eda1af  ./system/rt-tests/rt-tests.tar.gz
 e4ddaf1e89b7d031e7f4df0a7dd75bde  ./system/jack-audio-connection-kit/jack-audio-connection-kit.tar.gz
 47ba0151438c3870f186245d3ac1c9d7  ./system/lirc/lirc.tar.gz
-5386e580cb56869e15ba4b0fb63c0116  ./system/portaudio/portaudio.tar.gz
 baac0735dda082f77cfd16f36260c6c1  ./system/set_rlimits/set_rlimits.tar.gz
 6d93b8497a6ff40196d993e048314e58  ./development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 92dfdbe0146df2537240d05d8466420c  ./development/phat/phat.tar.gz
@@ -17,7 +15,7 @@ baac0735dda082f77cfd16f36260c6c1  ./system/set_rlimits/set_rlimits.tar.gz
 828e899b3b9e771c7d9fec4e6e0f93cb  ./development/scons/scons.tar.gz
 a2d2a6641a15cc47dd8d20275da5c176  ./development/scrollkeeper/scrollkeeper.tar.gz
 b9bf2cc788c28ab23e0842fb481895aa  ./samplers/specimen/specimen.tar.gz
-873f0fa63481d75e8683b98101f55934  ./samplers/giada/giada.tar.gz
+6d2a646c77c1b58227bffb5b3d228e64  ./samplers/giada/giada.tar.gz
 d3e7447cdbd8aa36d0ef89eabf64101d  ./samplers/sooperlooper/sooperlooper.tar.gz
 133ece9d418b56ceea0d1bc308201df1  ./synthesizers/qsynth/qsynth.tar.gz
 5adf2f15843fb77c18dd7ef75ce97ff7  ./synthesizers/bristol/bristol.tar.gz
@@ -43,6 +41,7 @@ a4265d2825eff485dd3df2470849e2fe  ./libraries/glibmm/glibmm.tar.gz
 437672bba5be8f991aa58f09af9959d5  ./libraries/cairomm/cairomm.tar.gz
 7c12d44c08bdf984a6c905f804765012  ./libraries/fltk/fltk.tar.gz
 6bb206c6845922d4a7c31c04b0d5b418  ./libraries/calf/calf.tar.gz
+e5067923e380dd9f712f52cb4e9f3284  ./libraries/portmidi/portmidi.tar.gz
 9db3a149527d7b6bee785c44558c1060  ./libraries/liblo/liblo.tar.gz
 8a24c131783e625171d86c841cebe608  ./libraries/pangomm/pangomm.tar.gz
 40bb797db0e5e3078aba273064389cdf  ./libraries/libtar/libtar.tar.gz
@@ -53,6 +52,7 @@ a4265d2825eff485dd3df2470849e2fe  ./libraries/glibmm/glibmm.tar.gz
 6b45ec8b7299f21e0bb857dc37512d38  ./libraries/atkmm/atkmm.tar.gz
 de600fa83b3af996844166915405c37f  ./libraries/wxPython/wxPython.tar.gz
 b23876381608404493d7c686da5970f3  ./libraries/lash/lash.tar.gz
+5386e580cb56869e15ba4b0fb63c0116  ./libraries/portaudio/portaudio.tar.gz
 98aa7d5d76349b17fa6d58565ae16f3c  ./libraries/wxGTK/wxGTK.tar.gz
 2a5c3b4a0fda5c7df8674c0439be7b7f  ./libraries/mm-common/mm-common.tar.gz
 25ac9109319c4f0ff6a10b540f9b3175  ./libraries/aubio/aubio.tar.gz
@@ -62,7 +62,8 @@ b23876381608404493d7c686da5970f3  ./libraries/lash/lash.tar.gz
 8ebd846cdb6abe49d4c20a88085ddde1  ./libraries/gst-python/gst-python.tar.gz
 302fb471b4f25bd4a89f8c80b3a02e14  ./libraries/raptor2/raptor2.tar.gz
 13ae5e78ee5279eaf21ce4be73853293  ./amps/guitarix2/guitarix2.tar.gz
+d032081f141792c777cae50da1e83f60  ./mixers/qasmixer/qasmixer.tar.gz
 7f17a080952f3f5cbde95af8d86e960c  ./mixers/mixxx/mixxx.tar.gz
-ab1392ba8d113c830fc596adae48e0d4  ./drums/hydrogen/hydrogen.tar.gz
+71fecd208f396e74559b3c0d1512ea4b  ./drums/hydrogen/hydrogen.tar.gz
 e9a14347d818e123dc1e45d221cefd44  ./recorders/timemachine/timemachine.tar.gz
 a214afbba5960e61a6646d385cf14b6f  ./desktop/clearlooks/clearlooks.tar.gz
