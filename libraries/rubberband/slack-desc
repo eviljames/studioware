@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+          |-----handy-ruler------------------------------------------------------|
+rubberband: Rubberband ( Audio Time Stretching Library )
+rubberband:
+rubberband: Rubber Band Library is a high quality software library for audio
+rubberband: time-stretching and pitch-shifting. It permits you to change the
+rubberband: tempo and pitch of an audio stream or recording dynamically and
+rubberband: independently of one another.
+rubberband:
+rubberband:
+rubberband:
+rubberband:
+rubberband:
