@@ -42,6 +42,7 @@ a4265d2825eff485dd3df2470849e2fe  ./libraries/glibmm/glibmm.tar.gz
 7c12d44c08bdf984a6c905f804765012  ./libraries/fltk/fltk.tar.gz
 6bb206c6845922d4a7c31c04b0d5b418  ./libraries/calf/calf.tar.gz
 e5067923e380dd9f712f52cb4e9f3284  ./libraries/portmidi/portmidi.tar.gz
+794f267a6e7627d98bac82c4e239b578  ./libraries/rubberband/rubberband.tar.gz
 9db3a149527d7b6bee785c44558c1060  ./libraries/liblo/liblo.tar.gz
 8a24c131783e625171d86c841cebe608  ./libraries/pangomm/pangomm.tar.gz
 40bb797db0e5e3078aba273064389cdf  ./libraries/libtar/libtar.tar.gz
@@ -65,5 +66,6 @@ b23876381608404493d7c686da5970f3  ./libraries/lash/lash.tar.gz
 d032081f141792c777cae50da1e83f60  ./mixers/qasmixer/qasmixer.tar.gz
 7f17a080952f3f5cbde95af8d86e960c  ./mixers/mixxx/mixxx.tar.gz
 71fecd208f396e74559b3c0d1512ea4b  ./drums/hydrogen/hydrogen.tar.gz
+e96f291d60e58f5d62fe616cee577dc0  ./drums/hydrogen/hydrogen-0.9.5.tar.gz
 e9a14347d818e123dc1e45d221cefd44  ./recorders/timemachine/timemachine.tar.gz
 a214afbba5960e61a6646d385cf14b6f  ./desktop/clearlooks/clearlooks.tar.gz
