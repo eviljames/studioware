@@ -1,0 +1,7 @@
+qjackctl ( Jack Control Application )
+
+Provides a simple GUI dialog for setting several JACK daemon parameters, which are properly saved between sessions, and a way control of the status of the audio server daemon. With time, this primordial interface has become richer by including a enhanced patchbay and connection control features.
+
+Homepage: http://qjackctl.sourceforge.net/
+
+Be sure to read: http://www.rncbc.org/drupal/node/76
