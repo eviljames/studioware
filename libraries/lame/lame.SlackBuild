@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for raptor2
+# Slackware build script for lame
 # Copyright 2011 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=raptor2
-VERSION=${VERSION:-2.0.4}
+PRGNAM=lame
+VERSION=${VERSION:-3.99.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -78,10 +78,14 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --htmldir=/usr/doc/$PRGNAM-$VERSION \
+  --enable-nasm \
   --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
+
+rm -r $PKG/usr/share
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
@@ -91,7 +95,7 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING.LIB COPYING ChangeLog.1 ChangeLog.2 ChangeLog.3 ChangeLog.4 ChangeLog.5 ChangeLog.6 ChangeLog.7 ChangeLog.8 ChangeLog.9 ChangeLog ChangeLog.10 ChangeLog.11 INSTALL.html INSTALL LICENSE-2.0.txt LICENSE.html LICENSE.txt NEWS NEWS.html README README.html docs *.txt \
+   COPYING ChangeLog HACKING INSTALL.configure INSTALL LICENSE README README.WINGTK TODO doc \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

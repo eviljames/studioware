@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for raptor2
+# Slackware build script for traverso
 # Copyright 2011 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=raptor2
-VERSION=${VERSION:-2.0.4}
+PRGNAM=traverso
+VERSION=${VERSION:-0.49.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -68,35 +68,37 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
-./configure \
-  --prefix=/usr \
-  --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --sysconfdir=/etc \
-  --localstatedir=/var \
-  --mandir=/usr/man \
-  --infodir=/usr/info \
-  --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --build=$ARCH-slackware-linux
-
-make
-make install DESTDIR=$PKG
+mkdir build
+cd build
+  cmake \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+    -DMAN_INSTALL_DIR=/usr/man \
+    -DMP3_DECODE_SUPPORT:string="on" \
+    -DMP3_ENCODE_SUPPORT:string="on" \
+    -DWANT_LV2:STRING="off" \
+    -DJACK_SUPPORT:string="on" \
+    -DALSA_SUPPORT:string="on" \
+    -DSSE_OPTIMIZATIONS:string="on" \
+    -DCMAKE_BUILD_TYPE=Release ..
+  make
+  make install DESTDIR=$PKG
+cd ..
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
-
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING.LIB COPYING ChangeLog.1 ChangeLog.2 ChangeLog.3 ChangeLog.4 ChangeLog.5 ChangeLog.6 ChangeLog.7 ChangeLog.8 ChangeLog.9 ChangeLog ChangeLog.10 ChangeLog.11 INSTALL.html INSTALL LICENSE-2.0.txt LICENSE.html LICENSE.txt NEWS NEWS.html README README.html docs *.txt \
+  AUTHORS COPYING COPYRIGHT ChangeLog INSTALL README TODO *.txt \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
