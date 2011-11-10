@@ -6,4 +6,4 @@ http://www.denemo.org
 
 Deps:
 
-gtksourceview, fluidsynth, portaudio, aubio
+gtksourceview, fluidsynth, portaudio, aubio, lash, jack
