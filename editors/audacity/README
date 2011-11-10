@@ -1,0 +1,10 @@
+Audacity ( Sound Editor and Recorder )
+
+Audacity® is free, open source software for recording and editing sounds. It is available for Mac OS X, Microsoft Windows, GNU/Linux, and other operating systems.
+
+Homepage: http://audacity.sourceforge.net/
+
+Deps:
+
+wxGTK
+Jack for optional Jack support
