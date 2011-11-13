@@ -2,8 +2,7 @@
 
 #{{{ Copyright
 # Studioware package building script
-# Copyright 2011 David Woodfall <dave@studioware.org>
-# some modification 2011 James Purdy <james@studioware.org>
+# Copyright 2011 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,34 +25,23 @@
 #{{{ Init 
 init()
 {
-    # Initial configuration
     APPNAME="sepkg"
-    VERSION="1.3"
-    CONFDIR=/etc/$APPNAME
-    mkdir -p $CONFDIR
-    CONF=$CONFDIR/$APPNAME.conf
-    if [ ! -e "$CONF" ]; then touch $CONF; fi
-    source $CONF
-    CACHEDIR=${CACHEDIR:-"/var/cache/$APPNAME"}
-    CACHEDIR=$CACHEDIR/$SWVERSION
-    SRCCACHEDIR=$CACHEDIR/source
-    SBCACHEDIR=$CACHEDIR/slackbuilds
-    SBSERVER=${SBSERVER:-"http://www.studioware.org/slackbuilds/$SWVERSION"}
-    FILELIST=$CACHEDIR/SLACKBUILDS.TXT
-
-    # Create needed folders
-    mkdir -p $SRCCACHEDIR
-    mkdir -p $SBCACHEDIR
-    
-    # Set up temp build dir, trap some signals
+    VERSION="1.7"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
+    trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
     PKGLIST=$TMPROOT/pkglist
-    trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
-
-    # Command aliases
     WGET="wget --no-check-certificate"
     UP="upgradepkg --reinstall --install-new"
+    CONFDIR=/etc/$APPNAME/
+    mkdir -p $CONFDIR
+    CONF=$CONFDIR/$APPNAME.conf
+    touch $CONF
+    source $CONF 
+    SBSERVER="http://www.studioware.org/slackbuilds/$SWVERSION"
+    CACHEDIR=/var/cache/$APPNAME/$SWVERSION
+    mkdir -p $CACHEDIR
+    FILELIST=$CACHEDIR/SLACKBUILDS.TXT
 }
 #}}}
 #{{{ Cleanup and exit
@@ -68,34 +56,28 @@ getflags()
 {
     if [ "$1" = "update" ]; then { update; cleanup; }; fi
     if [ "$1" = "-u" ]; then { update; cleanup; }; fi
-    if [ "$1" = "search" ]; then { search "$2"; cleanup; }; fi
-    if [ "$1" = "-s" ]; then { search "$2"; cleanup; }; fi
+    if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
+    if [ "$1" = "-s" ]; then { search $2; cleanup; }; fi
+    if [ "$1" = "build" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
+    if [ "$1" = "-b" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
+    if [ "$1" = "install" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
+    if [ "$1" = "-i" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
     if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
-    if [ "$1" = "delete-source" ]; then { deletesource; cleanup; }; fi
-    if [ "$1" = "delete-all" ]; then { deletecache; deletesource; cleanup; }; fi
     if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
     if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "read" ]; then { readme "$2"; cleanup; }; fi
-    if [ "$1" = "-r" ]; then { readme "$2"; cleanup; }; fi
+    if [ "$1" = "read" ]; then { readme $2; cleanup; }; fi
+    if [ "$1" = "-r" ]; then { readme $2; cleanup; }; fi
     if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
-    if [ "$1" = "auto" ]; then { AUTOBUILD=1; shift; }; fi
-    if [ "$1" = "-a" ]; then { AUTOBUILD=1; shift; }; fi
-    if [ "$1" = "build" ]; then { INSTALL=0; BUILD=1; shift; }; fi
-    if [ "$1" = "-b" ]; then { INSTALL=0; BUILD=1; shift; }; fi
-    if [ "$1" = "install" ]; then { INSTALL=1; BUILD=1; shift; }; fi
-    if [ "$1" = "-i" ]; then { INSTALL=1; BUILD=1; shift; }; fi
-
-    if [ "$BUILD" = "1" ]; then { listpkgs "$@"; cleanup; }; fi
 }
 #}}}
 #{{{ Readme
 readme()
 {
-    file=$(grep $1.tar.gz $FILELIST | awk '{print $2}' | cut -d'/' -f1-3)/README
+    file=$(grep -i $1.tar.gz $FILELIST | awk '{print $2}' | cut -d'/' -f1-3)/README
     shortname=$(echo $file | cut -d'/' -f5 | rev | cut -d- -f4- | rev)
     url=$SBSERVER/$file
-    curl -s $url | fmt
+    lynx -dump $url
     cleanup
 }
 #}}}
@@ -103,7 +85,7 @@ readme()
 latest()
 {
     cd /tmp
-    LATEST=$(curl -s http://www.studioware.org/$APPNAME/LATEST)
+    LATEST=$(lynx -dump http://www.studioware.org/$APPNAME/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it (y/n)? "
@@ -131,30 +113,24 @@ usage()
 cat << EOF
 $APPNAME $VERSION
 
-Usage Examples:
-$APPNAME [-a|auto] -b|build package1, package1, ...
-$APPNAME [-a|auto] -i|install package1, package1, ...
-$APPNAME -s|search <package>
+Options
 
-Options:
-$APPNAME [-a|auto] - auto mode with no prompt/dialog (use with care)
-$APPNAME [-a|auto] -b|build package1, package2 ... - build packages
-$APPNAME [-a|auto] -b|build < <queuefile> - build from queue file
-$APPNAME [-a|auto] -i|install package1, package2 ... - build & install packages
-$APPNAME [-a|auto] -i|install < <queuefile> - install packages from file
-$APPNAME -l|latest - checks for newer version of $APPNAME
-$APPNAME -r|read <package> - download and print readme 
-$APPNAME -s|search - search for package name or part name
-$APPNAME -u|update - syncs with file server
+$APPNAME build/-b package1, package2 ... - build packages
+$APPNAME delete-cache - delete all cached files
+$APPNAME install/-i package1, package2 ... - build & install packages
+$APPNAME install/-i < <queuefile> - install packages from file
+$APPNAME latest/-l - checks for newer version of $APPNAME
+$APPNAME read/-r <package> - download and print readme (needs lynx)
+$APPNAME search/-s - search for package name or part name
+$APPNAME update/-u - syncs with file server
 $APPNAME -h - help
 $APPNAME -v - give version and exit
-$APPNAME delete-cache - delete cached SlackBuilds and filelist
-$APPNAME delete-source - delete cached sources
-$APPNAME delete-all - delete SlackBuilds and sources
 
 Files
 
 /etc/$APPNAME/$APPNAME.conf
+
+This file contains the mirror URL and should be edited for 32bit or 64bit.
 EOF
 }
 #}}}
@@ -175,9 +151,9 @@ listpkgs()
 
     cd $TMPROOT || cleanup
     unset pkgs
+    shift
 
     cl=$*
-
     if [ -z "$cl" ]; then
         cat /dev/stdin | sed "s/,/\n/g" > $QUEUE
     else
@@ -187,7 +163,7 @@ listpkgs()
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(grep $name $FILELIST | awk '{print $2}' | cut -d'/' -f4)
+        pkg=$(grep -i $name $FILELIST | awk '{print $2}' | cut -d'/' -f4)
         pkgs=$pkgs" "$pkg
     done < $QUEUE
 
@@ -201,19 +177,9 @@ listpkgs()
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
 
-    if [ $AUTOBUILD -eq "1" ]; then
-        # make installist into pkglist, warning: generous grepping may cause
-	# too many packages to be built.
-        for i in $pkgs
-        do
-            echo "$i" >> $PKGLIST
-        done
-    else
-        dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-            --checklist "Choose packages to install:" \
-            19 70 13 $INSTALLLIST 2>$PKGLIST
-    fi
-
+    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+        --checklist "Choose packages to install:" \
+        19 70 13 $INSTALLLIST 2>$PKGLIST
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
     installpkgs
@@ -227,32 +193,45 @@ installpkgs()
 
     for i in $(cat $PKGLIST)
     do
-        pkgs=$pkgs" "$(grep $i $FILELIST | awk '{print $2}')
+        pkgs=$pkgs" "$(grep -i $i $FILELIST | awk '{print $2}')
     done
 
     for i in $pkgs
     do
         if [ -n "$i" ]; then
             b=$(basename $i .tar.gz)
-	    if [ ! -r $SBCACHEDIR/$b.tar.gz ]; then
-                $WGET -c -O $SBCACHEDIR/$b.tar.gz $SBSERVER/$i
-            fi
-            tar xf $SBCACHEDIR/$b.tar.gz
+             $WGET -c -O $b.tar.gz $SBSERVER/$i
+             tar xf $b.tar.gz
             (
-             cd $b                                         
-             source ./$b.info        
-             LOCAL=$(basename $DOWNLOAD)
-             $WGET -c -O $SRCCACHEDIR/$LOCAL $DOWNLOAD
-             ln -sf $SRCCACHEDIR/$LOCAL .
+            cd $b
+            source ./$b.info        
+            LOCAL=$(basename $DOWNLOAD)
+            unset MD5MATCH
 
-             if [ "$(md5sum $LOCAL | awk '{print $1}')" != "$MD5SUM" ]; then 
-                echo "Checksums don't match. Did you run 'update' first?"
-                echo -n "(a)bort or (c)ontinue? "
-                read ANS
-                if [ "$ANS" != "c" ]; then exit 1; fi
-            fi
-            options=$(grep $b $QUEUE | cut -f2- | sed "s/$b//;s/\.tar\.gz//g")
- 	    eval $options source ./$b.SlackBuild
+            while [ -z "$MD5MATCH" ]
+            do
+                if [ ! -r $CACHEDIR/$LOCAL ]; then
+                    $WGET -c -O $CACHEDIR/$LOCAL $DOWNLOAD
+                fi
+                
+                ln -sf $CACHEDIR/$LOCAL $LOCAL
+
+                if [ "$(md5sum $LOCAL | awk '{print $1}')" != "$MD5SUM" ]; then 
+                    echo "Checksums don't match."
+                    echo -n "(A)bort (C)ontinue (R)edownload "
+                    read ANS
+                    if [[ "$ANS" = [rR] ]]; then 
+                        rm -r $CACHEDIR/$LOCAL
+                    elif [[ "$ANS" = [cC] ]]; then
+                        break
+                    else exit 1
+                    fi
+                else MD5MATCH=1
+                fi
+            done
+
+            options=$(grep $b $QUEUE | cut -f2- | sed "s/$b//")
+            eval $options source ./$b.SlackBuild
             if [ "$INSTALL" = "1" ]; then
                 $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
             fi
@@ -273,7 +252,7 @@ search()
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
-    inrepo=$(grep $1 $FILELIST | awk '{print $2}')
+    inrepo=$(grep -i $1 $FILELIST | awk '{print $2}')
 
     if [ -n "$inrepo" ]; then
         for g in $inrepo
@@ -292,31 +271,13 @@ search()
     fi
 }
 #}}}
-#{{{ Delete Cache 
+#{{{ Delete Cache !DANGER WILL ROBINSON!
 deletecache()
 {
-    echo "Deleting $FILELIST"
-    rm -f $FILELIST
-    echo "Deleting $SBCACHEDIR/*.tar.gz"
-    rm -f $SBCACHEDIR/*.tar.gz
-
-    shift
-    arg=$*
-    if [ -n "$arg" ]; then
-        if [ "$arg" = "all" ]; then
-            rm -rf $CACHEDIR
-        fi
-    fi
+    rm -f $CACHEDIR/$FILELIST 
+    rm -rf $TMPROOT
     echo "Cache Deleted"
-}
-#}}}
-#{{{ Delete sourc
-deletesource()
-{
-    echo "Deleting $SRCCACHEDIR/*"
-    rm -f $SRCCACHEDIR/*
-
-    echo "All Sources Deleted"
+    cleanup
 }
 #}}}
 init

@@ -1,0 +1,25 @@
+Studiopkg - The Studioware Package Installer
+
+Options
+
+studiopkg update/u - syncs with file server
+studiopkg search/s - search for package name or part name
+studiopkg install/i package1 package2 ... - install packages
+studiopkg install/i < <queuefile> - install packages from file
+studiopkg upgrade/up <package> - upgrade package
+studiopkg upgrade-all/upall - upgrade all packages
+studiopkg remove/r <package> - remove package
+studiopkg latest/l - check for new version
+studiopkg delete-cache - delete all cached packages
+studiopkg -h - help
+studiopkg -v - give version and exit
+
+Files
+
+/etc/studiopkg/studiopkg.conf
+
+This file contains the mirror URL and should be edited for 32bit or 64bit.
+
+Notes
+
+searching for '.' will list all files and so will 'install .' etc
