@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="2.2"
+    VERSION="2.3"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -86,16 +86,16 @@ getflags()
 latest()
 {
     cd /tmp
-    LATEST=$(lynx -dump http://www.studioware.org/$APPNAME/LATEST)
+    LATEST=$(lynx -dump http://www.studioware.org/files/$APPNAME/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it (y/n)? "
         read REPLY
         if [ "$REPLY" = "y" ]; then
             $WGET -O $APPNAME-$LATEST-noarch-1daw.txz \
-                http://www.studioware.org/$APPNAME/$APPNAME-$LATEST-noarch-1daw.txz
+                http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.txz
             $WGET -O $APPNAME-$LATEST-noarch-1daw.md5 \
-                http://www.studioware.org/$APPNAME/$APPNAME-$LATEST-noarch-1daw.md5
+                http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Checking md5... "
             md5sum -c $APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Upgrade now (y/n)? "
