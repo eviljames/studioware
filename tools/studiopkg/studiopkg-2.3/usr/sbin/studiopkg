@@ -44,7 +44,7 @@ init()
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
-    PKGSERVER="http://www.studioware.org/packages/slackware$ARCH-$SWVERSION"
+    PKGSERVER="http://www.studioware.org/files/packages/slackware$ARCH-$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILE_LIST.TXT

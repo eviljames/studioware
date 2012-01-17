@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="1.7"
+    VERSION="1.8"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -38,7 +38,7 @@ init()
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
-    SBSERVER="http://www.studioware.org/slackbuilds/$SWVERSION"
+    SBSERVER="http://www.studioware.org/files/slackbuilds/$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
