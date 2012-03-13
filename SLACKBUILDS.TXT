@@ -5,7 +5,6 @@ cde71a108745c0e759bfbcb1ec6d7f84  ./editors/rosegarden/rosegarden.tar.gz
 88647843ba92ee48f8e2bf182b087a8f  ./system/jack/jack.tar.gz
 2fa58bfd47378204d1d889554af0584e  ./system/meterbridge/meterbridge.tar.gz
 d94d3880a89ca5695c6ff43384eda1af  ./system/rt-tests/rt-tests.tar.gz
-e4ddaf1e89b7d031e7f4df0a7dd75bde  ./system/jack-audio-connection-kit/jack-audio-connection-kit.tar.gz
 47ba0151438c3870f186245d3ac1c9d7  ./system/lirc/lirc.tar.gz
 10b6ad1ef0fdae4d25f89f14a3a6c050  ./system/qjackctl/qjackctl.tar.gz
 baac0735dda082f77cfd16f36260c6c1  ./system/set_rlimits/set_rlimits.tar.gz
