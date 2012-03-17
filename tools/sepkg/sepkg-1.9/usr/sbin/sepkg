@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="1.8"
+    VERSION="1.9"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -160,6 +160,8 @@ listpkgs()
         echo $cl | sed "s/,/\n/g" > $QUEUE
     fi
 
+    exec <&1
+
     while read line
     do
         name=$(echo $line | awk '{print $1}')
@@ -193,7 +195,7 @@ installpkgs()
 
     for i in $(cat $PKGLIST)
     do
-        pkgs=$pkgs" "$(grep -i $i $FILELIST | awk '{print $2}')
+        pkgs=$pkgs" "$(grep -wi $i $FILELIST | awk '{print $2}')
     done
 
     for i in $pkgs
@@ -230,7 +232,9 @@ installpkgs()
                 fi
             done
 
-            options=$(grep $b $QUEUE | cut -f2- | sed "s/$b//")
+            echo $b
+            read
+            options=$(grep -x $b $QUEUE | cut -f2- | sed "s/$b//")
             eval $options source ./$b.SlackBuild
             if [ "$INSTALL" = "1" ]; then
                 $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
