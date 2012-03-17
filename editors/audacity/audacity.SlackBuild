@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=audacity
-VERSION=${VERSION:-1.3.13}
+VERSION=${VERSION:-2.0.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -58,9 +58,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-src-$VERSION-beta
-tar xvf $CWD/$PRGNAM-minsrc-$VERSION-beta.tar.bz2
-cd $PRGNAM-src-$VERSION-beta
+rm -rf $PRGNAM-src-$VERSION
+tar xvf $CWD/$PRGNAM-minsrc-$VERSION.tar.bz2
+cd $PRGNAM-src-$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -82,17 +82,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --enable-unicode \
-  --enable-nyquist \
-  --enable-vamp \
-  --with-expat \
-  --with-libvorbis \
-  --with-libmad \
-  --with-libflac \
-  --with-libsndfile \
-  --with-libid3tag \
-  --with-libresample \
   --build=$ARCH-slackware-linux
-
 make
 make install DESTDIR=$PKG
 
