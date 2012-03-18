@@ -24,7 +24,7 @@
 
 PRGNAM=vamp-plugin-sdk
 VERSION=${VERSION:-2.2.1}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -77,7 +77,7 @@ CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --enable-programs=${PRG_BUILD:-yes} \
+  --enable-programs=${PRG_BUILD:-3es} \
   --build=$ARCH-slackware-linux
 
 make

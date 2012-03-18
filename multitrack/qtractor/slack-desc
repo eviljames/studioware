@@ -6,7 +6,7 @@
 # leave one space after the ':'.
  
         |-----handy-ruler-----------------------------------------------------|
-qtractor: Qtractor (Audio/MIDI multi-track sequencer application)
+qtractor: Qtractor ( Audio/MIDI multi-track sequencer application )
 qtractor:
 qtractor: Qtractor is an Audio/MIDI multi-track sequencer application 
 qtractor: written in C++ with the Qt4 framework. Target platform is Linux, 

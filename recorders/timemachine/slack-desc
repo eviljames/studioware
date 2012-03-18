@@ -6,7 +6,7 @@
 # customary to leave one space after the ':'.
 
            |-----handy-ruler--------------------------------------------------|
-timemachine: JACK timemachine 0.3.2
+timemachine: JACK timemachine ( Audio Capture App )
 timemachine: 
 timemachine: JACK timemachine allows you to pre-record a buffer, and then
 timemachine: capture it after it has already been played.  That is, you can

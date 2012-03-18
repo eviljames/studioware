@@ -6,7 +6,7 @@
 # leave one space after the ':'.
  
       |-----handy-ruler------------------------------------------------------|
-qsynth: Qsynth (Fluidsynth GUI front-end)
+qsynth: Qsynth ( Fluidsynth GUI front-end )
 qsynth:
 qsynth: Qsynth is a fluidsynth GUI front-end application written in C++
 qsynth: around  the Qt4 toolkit using Qt Designer. 

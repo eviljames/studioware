@@ -23,7 +23,7 @@
 
 PRGNAM=mftrace
 VERSION=${VERSION:-1.2.17}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

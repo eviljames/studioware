@@ -23,7 +23,7 @@
 
 PRGNAM=raptor2
 VERSION=${VERSION:-2.0.4}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

@@ -23,7 +23,7 @@
 
 PRGNAM=rakarrack
 VERSION=${VERSION:-0.6.1}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

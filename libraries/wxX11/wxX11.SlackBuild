@@ -23,7 +23,7 @@
 
 PRGNAM=wxX11
 VERSION=${VERSION:-2.8.12}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

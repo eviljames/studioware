@@ -1,3 +1,5 @@
+Bristol ( Bristol Synthesiser Emulations )
+
 Bristol is an emulation package for a number of different 'classic' synthesisers including additive and subtractive and a few organs. The application consists of the engine, which is called bristol, and its own GUI library called brighton that represents all the emulations.
 
 There are currently twenty something different emulations, each does sound different although the author maintains that the quality and accuracy of each emulation is subjective. One of the main reasons for putting together this site (host by Sourceforge which provides the rest of the services required by bristol) is to depict all the different emulations. 

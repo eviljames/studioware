@@ -23,7 +23,7 @@
 
 PRGNAM=t1utils
 VERSION=${VERSION:-1.36}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

@@ -23,7 +23,7 @@
 
 PRGNAM=jack
 VERSION=${VERSION:-1.9.7}
-BUILD=${BUILD:-5}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

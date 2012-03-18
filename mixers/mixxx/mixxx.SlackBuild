@@ -24,7 +24,7 @@
 PRGNAM=mixxx
 VERSION=${VERSION:-1.9.0}
 SRCDIR=$PRGNAM-$VERSION~release-1.9.x~bzr2720
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

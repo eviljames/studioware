@@ -24,7 +24,7 @@
 PRGNAM=qasmixer
 VERSION=${VERSION:-0.15}
 SRCNAM=${PRGNAM}_$VERSION
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

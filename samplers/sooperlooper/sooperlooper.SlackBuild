@@ -23,7 +23,7 @@
 
 PRGNAM=sooperlooper
 VERSION=${VERSION:-1.6.14}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
