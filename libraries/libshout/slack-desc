@@ -1,0 +1,12 @@
+        |-----handy-ruler------------------------------------------------------|
+libshout: libshout
+libshout:
+libshout: Libshout is a library for communicating with and sending data to an
+libshout: icecast server.  It handles the socket connection, the timing of the
+libshout: data, and prevents bad data from getting to the icecast server.
+libshout:
+libshout:
+libshout:
+libshout:
+libshout: Website: http://www.icecast.org
+libshout:

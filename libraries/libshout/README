@@ -1,0 +1,3 @@
+Libshout is a library for communicating with and sending data to an
+icecast server.  It handles the socket connection, the timing of the
+data, and prevents bad data from getting to the icecast server.
