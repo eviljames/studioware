@@ -1,8 +1,8 @@
-libtar
 jack
 ladspa_sdk
 liblrdf
 lash
-portaudio
 portmidi
-scon
+portaudio
+scons
+hydrogen
