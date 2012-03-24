@@ -1,8 +1,6 @@
 jack
 rubberband
 liblo
-libslv2 -- MAKE SLACKBUILD OR REPLACE WITH liblilv ?
-liblilv -- MAKE SLACKBUILD?
-dssi
 lv2core
+dssi
 qtractor
