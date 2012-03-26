@@ -48,6 +48,7 @@ aa0b62fc95f8e8fd2842c39ae4887956  ./tools/sepkg/sepkg-2.0.tar.gz
 8ff1e3a808e1d53bd0787961d8ad493d  ./libraries/gtksourceview/gtksourceview.tar.gz
 499cbfdeaf97281071fb61854823a797  ./libraries/libgnomecanvas/libgnomecanvas.tar.gz
 c17c5d750a00ea78d8a0a3fa5104624f  ./libraries/cairomm/cairomm.tar.gz
+a35e2e392e7b0aabfbf9b0d565dfd58d  ./libraries/libshout/libshout.tar.gz
 3c6090efef48bcc474c4a8b44b1b5be7  ./libraries/fltk/fltk.tar.gz
 3e35748f76adfcd8ef305d3053954a5c  ./libraries/calf/calf.tar.gz
 0cd329371f88b6a870a9a72607b568c9  ./libraries/portmidi/portmidi.tar.gz
