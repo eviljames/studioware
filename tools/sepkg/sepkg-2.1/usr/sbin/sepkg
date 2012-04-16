@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.0"
+    VERSION="2.1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -207,29 +207,37 @@ installpkgs()
             (
             cd $b
             source ./$b.info        
-            LOCAL=$(basename $DOWNLOAD)
-            unset MD5MATCH
+            unset loop
+            MD5SUM=($MD5SUM)
 
-            while [ -z "$MD5MATCH" ]
+            for D in $DOWNLOAD
             do
-                if [ ! -r $CACHEDIR/$LOCAL ]; then
-                    $WGET -c -O $CACHEDIR/$LOCAL $DOWNLOAD
-                fi
-                
-                ln -sf $CACHEDIR/$LOCAL $LOCAL
+                LOCAL=$(basename $D)
+                MD5=${MD5SUM[loop]}
+                unset MD5MATCH
 
-                if [ "$(md5sum $LOCAL | awk '{print $1}')" != "$MD5SUM" ]; then 
-                    echo "Checksums don't match."
-                    echo -n "(A)bort (C)ontinue (R)edownload "
-                    read ANS
-                    if [[ "$ANS" = [rR] ]]; then 
-                        rm -r $CACHEDIR/$LOCAL
-                    elif [[ "$ANS" = [cC] ]]; then
-                        break
-                    else exit 1
+                while [ -z "$MD5MATCH" ]
+                do
+                    if [ ! -r $CACHEDIR/$LOCAL ]; then
+                        $WGET -c -O $CACHEDIR/$LOCAL $D
                     fi
-                else MD5MATCH=1
-                fi
+                    
+                    ln -sf $CACHEDIR/$LOCAL $LOCAL
+
+                    if [ "$(md5sum $LOCAL | awk '{print $1}')" != "$MD5" ]; then 
+                        echo "Checksums don't match."
+                        echo -n "(A)bort (C)ontinue (R)edownload "
+                        read ANS
+                        if [[ "$ANS" = [rR] ]]; then 
+                            rm -r $CACHEDIR/$LOCAL
+                        elif [[ "$ANS" = [cC] ]]; then
+                            break
+                        else exit 1
+                        fi
+                    else MD5MATCH=1
+                    fi
+                done
+                let loop=$loop+1
             done
 
             options=$(grep -x $b $QUEUE | cut -f2- | sed "s/$b//")
@@ -276,7 +284,8 @@ search()
 #{{{ Delete Cache !DANGER WILL ROBINSON!
 deletecache()
 {
-    rm -f $CACHEDIR/$FILELIST 
+    rm -f $FILELIST 
+    rm -f $CACHEDIR/*.{gz,bz2,tgz,txz}
     rm -rf $TMPROOT
     echo "Cache Deleted"
     cleanup
