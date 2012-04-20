@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="2.4"
+    VERSION="2.6"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -44,7 +44,8 @@ init()
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
-    PKGSERVER="http://www.studioware.org/files/packages/slackware$ARCH-$SWVERSION"
+    MAINURL="http://www.studioware.org"
+    PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILE_LIST.TXT
@@ -86,16 +87,16 @@ getflags()
 latest()
 {
     cd /tmp
-    LATEST=$(lynx -dump http://www.studioware.org/files/$APPNAME/LATEST)
+    LATEST=$(curl -s $MAINURL/files/slackbuilds/$SWVERSION/tools/$APPNAME/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it (y/n)? "
         read REPLY
         if [ "$REPLY" = "y" ]; then
             $WGET -O $APPNAME-$LATEST-noarch-1daw.txz \
-                http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.txz
+                $MAINURL/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.txz
             $WGET -O $APPNAME-$LATEST-noarch-1daw.md5 \
-                http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.md5
+                $MAINURL/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Checking md5... "
             md5sum -c $APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Upgrade now (y/n)? "

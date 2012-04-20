@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.2"
+    VERSION="2.4"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -38,7 +38,8 @@ init()
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
-    SBSERVER="http://www.studioware.org/files/slackbuilds/$SWVERSION"
+    MAINURL="http://www.studioware.org"
+    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
@@ -87,7 +88,7 @@ readme()
 latest()
 {
     cd /tmp
-    LATEST=$(lynx -dump http://www.studioware.org/files/$APPNAME/LATEST)
+    LATEST=$(curl -s $MAINURL/files/slackbuilds/$SWVERSION/tools/$APPNAME/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it (y/n)? "
