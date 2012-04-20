@@ -45,8 +45,8 @@ init()
     touch $CONF
     source $CONF 
     MAINURL="http://www.studioware.org"
-    PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     TOOLURL="$MAINURL/files/slackbuilds/$SWVERSION/tools/$APPNAME"
+    PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILE_LIST.TXT
