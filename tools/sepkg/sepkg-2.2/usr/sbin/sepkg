@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.1"
+    VERSION="2.2"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -58,15 +58,17 @@ getflags()
     if [ "$1" = "-u" ]; then { update; cleanup; }; fi
     if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
     if [ "$1" = "-s" ]; then { search $2; cleanup; }; fi
-    if [ "$1" = "build" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "-b" ]; then { INSTALL=0; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "install" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
-    if [ "$1" = "-i" ]; then { INSTALL=1; listpkgs "$@"; cleanup; }; fi
+    if [ "$1" = "build" ]; then { INSTALL=0; set_queue "$@"; cleanup; }; fi
+    if [ "$1" = "-b" ]; then { INSTALL=0; set_queue "$@"; cleanup; }; fi
+    if [ "$1" = "install" ]; then { INSTALL=1; set_queue "$@"; cleanup; }; fi
+    if [ "$1" = "-i" ]; then { INSTALL=1; set_queue "$@"; cleanup; }; fi
     if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
     if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
     if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
     if [ "$1" = "read" ]; then { readme $2; cleanup; }; fi
     if [ "$1" = "-r" ]; then { readme $2; cleanup; }; fi
+    if [ "$1" = "-q" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
+    if [ "$1" = "queue" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
     if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
 }
@@ -142,15 +144,36 @@ update()
     cleanup
 }
 #}}}
-#{{{ List packages
-listpkgs()
+#{{{ Download Queue
+get_queue()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
     cd $TMPROOT || cleanup
-    unset pkgs
+    
+    CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
+    APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
+
+    curl -fs $SBSERVER/$CAT/$APP/$APP.queue > $QUEUE
+
+    if [ "$?" = "22" ]; then
+        echo "Queue not found."
+        cleanup
+    fi
+    
+    listpkgs
+}
+#}}}
+#{{{ Set Queue
+set_queue()
+{
+    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
+        cleanup; } fi
+
+    cd $TMPROOT || cleanup
     shift
 
     cl=$*
@@ -160,14 +183,22 @@ listpkgs()
         echo $cl | sed "s/,/\n/g" > $QUEUE
     fi
 
+    listpkgs
+}
+#}}}
+#{{{ List Packages
+listpkgs()
+{
     exec <&1
-
+    unset pkgs
     while read line
     do
         name=$(echo $line | awk '{print $1}')
         pkg=$(grep -i $name.tar.gz $FILELIST | cut -d'/' -f4)
         pkgs=$pkgs" "$pkg
     done < $QUEUE
+
+    echo sasasasa
 
     for i in $pkgs
     do
@@ -202,8 +233,8 @@ installpkgs()
     do
         if [ -n "$i" ]; then
             b=$(basename $i .tar.gz)
-             $WGET -c -O $b.tar.gz $SBSERVER/$i
-             tar xf $b.tar.gz
+            $WGET -c -O $b.tar.gz $SBSERVER/$i
+            tar xf $b.tar.gz
             (
             cd $b
             source ./$b.info        
