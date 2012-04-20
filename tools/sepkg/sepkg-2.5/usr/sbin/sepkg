@@ -39,6 +39,7 @@ init()
     touch $CONF
     source $CONF 
     MAINURL="http://www.studioware.org"
+    TOOLURL="$MAINURL/files/slackbuilds/$SWVERSION/tools/$APPNAME"
     SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
@@ -94,10 +95,10 @@ latest()
         echo -n "Newer version available. Download it (y/n)? "
         read REPLY
         if [ "$REPLY" = "y" ]; then
-           $WGET -O $APPNAME-$LATEST-noarch-1daw.txz \
-           http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.txz
-           $WGET -O sepkg-$LATEST-noarch-1daw.md5 \
-           http://www.studioware.org/files/$APPNAME/$APPNAME-$LATEST-noarch-1daw.md5
+            $WGET -O $APPNAME-$LATEST-noarch-1daw.txz \
+            $TOOLURL/$APPNAME-$LATEST-noarch-1daw.txz
+            $WGET -O sepkg-$LATEST-noarch-1daw.md5 \
+            $TOOLURL/$APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Checking md5... "
             md5sum -c $APPNAME-$LATEST-noarch-1daw.md5
             echo "Package saved to /tmp"
