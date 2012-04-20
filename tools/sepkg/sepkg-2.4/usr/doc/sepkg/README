@@ -3,21 +3,22 @@ Sepkg - The Studioware Package Builder
 Options
 
 sepkg update/-u - syncs with file server
-sepkg search/-s <grep term> - search for package name or part name
+sepkg search/-s &lt;grep term&gt; - search for package name or part name
 sepkg build/-b package1, package2, ... - build packages
 sepkg install/-i package1, package2, ... - install packages
-sepkg install/-i < <queuefile> - install packages from file
-sepkg read/-r <package> - download and print readme (needs lynx)
+sepkg install/-i &lt; &lt;queuefile&gt; - install packages from file
+sepkg read/-r &lt;package&gt; - download and print readme (needs lynx)
 sepkg delete-cache - delete all cached packages
 sepkg latest/-l - check latest version and optionally download/install
+sepkg queue/-q <appname> - will download and use appname.queue (if it exists)
 sepkg -h - help
 sepkg -v - give version and exit
 
 Files:
 /etc/sepkg/sepkg.conf
-This file contains the mirror URL and should be edited for slackware version.
+This file contains the slackware version.
 
-Notes:
+Notes
 searching for '.' will list all files and so will 'install .' etc
 
 Install options can be given on the command line or in a file:

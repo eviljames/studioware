@@ -10,6 +10,7 @@ sepkg install/-i &lt; &lt;queuefile&gt; - install packages from file
 sepkg read/-r &lt;package&gt; - download and print readme (needs lynx)
 sepkg delete-cache - delete all cached packages
 sepkg latest/-l - check latest version and optionally download/install
+sepkg queue/-q <appname> - will download and use appname.queue (if it exists)
 sepkg -h - help
 sepkg -v - give version and exit
 
