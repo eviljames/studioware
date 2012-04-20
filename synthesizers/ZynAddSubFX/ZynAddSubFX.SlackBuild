@@ -23,7 +23,7 @@
 
 PRGNAM=ZynAddSubFX
 VERSION=${VERSION:-2.4.1}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -89,6 +89,10 @@ cp $CWD/ZynAddSubFX.desktop $PKG/usr/share/applications
 
 mkdir -p $PKG/usr/share/pixmaps
 cp zynaddsubfx_icon.ico $PKG/usr/share/pixmaps
+
+mkdir -p $PKG/usr/share/ZynAddSubFX
+cp -a banks $PKG/usr/share/ZynAddSubFX/
+cp -a examples $PKG/usr/share/ZynAddSubFX/
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
