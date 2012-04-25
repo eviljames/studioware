@@ -200,8 +200,6 @@ listpkgs()
         pkgs=$pkgs" "$pkg
     done < $QUEUE
 
-    echo sasasasa
-
     for i in $pkgs
     do
         shortname=$(echo $i | cut -d'.' -f1)
