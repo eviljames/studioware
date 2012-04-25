@@ -70,8 +70,9 @@ find . \
 
 sed -i 's#Name=amsynth#Name=amSynth#' amsynth.desktop.in
 
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
+INCLUDES=`pkg-config --cflags gtk+-2.0 gtkmm-2.4` 
+CFLAGS="$SLKCFLAGS $INCLUDES" \
+CXXFLAGS="$SLKCFLAGS $INCLUDES" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \

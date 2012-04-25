@@ -1,5 +1,5 @@
 jack
-sigc++
+libsigc++
 glibmm
 cairomm
 mm-common

@@ -23,7 +23,7 @@ f3cdfddd306381c414a9e7f7db66374b  ./synthesizers/pd/pd.tar.gz
 be7c78f84de04b920285b1846b9f1cb9  ./synthesizers/aeolus/aeolus.tar.gz
 6c32b96c9a2a9e124c861ffb982a9dce  ./synthesizers/bristol/bristol.tar.gz
 4ebbf4fddb2598e45ae109468c243130  ./synthesizers/terminatorX/terminatorX.tar.gz
-333348086954596e17149bd63854a6ac  ./synthesizers/amSynth/amSynth.tar.gz
+b9306b47dd87a8c6f67d50961cf10718  ./synthesizers/amSynth/amSynth.tar.gz
 e77fe0a36be679aa1fad0184e7fc0bf4  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 677443a3463e0a8c0deaebb128dff842  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 c7ce20f1b616a14e56e8b4a06f5cc7b5  ./multitrack/ecasound/ecasound.tar.gz
