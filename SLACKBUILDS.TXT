@@ -25,7 +25,7 @@ be7c78f84de04b920285b1846b9f1cb9  ./synthesizers/aeolus/aeolus.tar.gz
 4ebbf4fddb2598e45ae109468c243130  ./synthesizers/terminatorX/terminatorX.tar.gz
 b9306b47dd87a8c6f67d50961cf10718  ./synthesizers/amSynth/amSynth.tar.gz
 e77fe0a36be679aa1fad0184e7fc0bf4  ./synthesizers/fluidsynth/fluidsynth.tar.gz
-677443a3463e0a8c0deaebb128dff842  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
+fbf6631882ff77e9aaedcea823359022  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 c7ce20f1b616a14e56e8b4a06f5cc7b5  ./multitrack/ecasound/ecasound.tar.gz
 d39d00fb348f90b8f8d211b8995aad79  ./multitrack/qtractor/qtractor.tar.gz
 76d801c6b26da4aed0f885fb5e8c00cb  ./multitrack/ardour/ardour.tar.gz
