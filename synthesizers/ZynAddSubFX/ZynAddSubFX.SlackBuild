@@ -23,7 +23,7 @@
 
 PRGNAM=ZynAddSubFX
 VERSION=${VERSION:-2.4.1}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,21 +68,19 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-patch -p1 --verbose < $CWD/jack-lash.patch
+cd src
+    make \
+        LINUX_AUDIOOUT=JACK \
+        LINUX_USE_LASH=YES
 
-mkdir build
-cd build
-  cmake \
-    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-    -DMAN_INSTALL_DIR=/usr/man \
-    -DLINUX_AUDIOOUT=JACK \
-    -DLINUX_USE_LASH=YES \
-    -DCMAKE_BUILD_TYPE=Release ..
-  make 
-  make install DESTDIR=$PKG
+    mkdir -p $PKG/usr/bin
+    install -m 755 zynaddsubfx $PKG/usr/bin/
+cd ..
+
+
+cd doc
+    sed -i 's/___________/===========/' zynaddsubfx.txt
+    make
 cd ..
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
