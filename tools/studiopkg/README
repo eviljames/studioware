@@ -6,6 +6,7 @@ studiopkg update/-u - syncs with file server
 studiopkg search/-s &lt;grep term&gt; - search for package name or part name
 studiopkg install/-i package1 package2 ... - install packages
 studiopkg install/-i &lt; <queuefile> - install packages from file
+studiopkg install-all - install all packages from studioware collection
 studiopkg upgrade/-up &lt;package&gt; - upgrade package
 studiopkg upgrade-all/-upall - upgrade all packages
 studiopkg remove/-r &lt;package&gt; - remove package
