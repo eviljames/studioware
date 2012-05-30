@@ -23,7 +23,7 @@
 
 PRGNAM=traverso
 VERSION=${VERSION:-0.49.2}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -74,14 +74,10 @@ cd build
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-    -DMAN_INSTALL_DIR=/usr/man \
-    -DMP3_DECODE_SUPPORT:string="on" \
-    -DMP3_ENCODE_SUPPORT:string="on" \
+    -DWANT_MP3_DECODE:string="on" \
+    -DWANT_MP3_ENCODE:string="on" \
     -DWANT_LV2:STRING="off" \
-    -DJACK_SUPPORT:string="on" \
-    -DALSA_SUPPORT:string="on" \
-    -DSSE_OPTIMIZATIONS:string="on" \
+    -DWANT_PORTAUDIO:string="on" \
     -DCMAKE_BUILD_TYPE=Release ..
   make
   make install DESTDIR=$PKG

@@ -2,12 +2,11 @@ Traverso ( Multitrack DAW )
 
 Traverso is an audio recording and editing program which is very well suited to record a single voice, a band, an ensemble, a whole orchestra or any other source of music.
 
-Homepage: http://traverso-daw.org
-
 Deps:
 
-Jack support: libjack
-liblame (Optional for MP3 write support) (Seems broken for now)
+portaudio (optional)
+jack (optional)
+lame (optional for MP3 write support) 
 raptor2
 
 For LV2 support the stock redland and rasqal packages need upgrading so this option is turned off currently.
