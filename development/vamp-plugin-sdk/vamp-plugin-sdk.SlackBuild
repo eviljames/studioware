@@ -2,7 +2,7 @@
 
 # Slackware build script for vamp-plugin-sdk
 
-# Copyright 2011 David Woodfall <dave@dawoodfall.net>
+# Copyright 2011-12 David Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,7 +24,7 @@
 
 PRGNAM=vamp-plugin-sdk
 VERSION=${VERSION:-2.2.1}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -77,7 +77,7 @@ CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --enable-programs=${PRG_BUILD:-3es} \
+  --enable-programs=${PRG_BUILD:-yes} \
   --build=$ARCH-slackware-linux
 
 make

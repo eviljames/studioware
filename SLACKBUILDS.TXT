@@ -11,7 +11,7 @@ b856c2ef94a7f57a7c6a1d75a4bd01c6  ./system/qjackctl/qjackctl.tar.gz
 f3bd5f8a86803a9b22f8efde6932f7fa  ./development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 9469a1957b9d67a75f778c3a4e47d19d  ./development/phat/phat.tar.gz
 225a4922c125daf365fdcddbba950cdc  ./development/libsigc++/libsigc++.tar.gz
-c1d87544ab46b3ac36c8e56fe866ecc5  ./development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
+357ca90761884cf5ebc85cad6f29e295  ./development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
 88b843f3f3ece9798d1399495fe0f6c7  ./development/pysetuptools/pysetuptools.tar.gz
 c37d2e46eea258980860e83d719862ed  ./development/scons/scons.tar.gz
 21510c4de1b85b5c7382dfef04a101e9  ./development/scrollkeeper/scrollkeeper.tar.gz
