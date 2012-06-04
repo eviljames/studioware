@@ -39,7 +39,6 @@ e94221f585dfeb0abfebfa0000787079  ./graphics/lilypond/lilypond.tar.gz
 09a0b4b303154246734664bc43a45dbc  ./graphics/fontforge/fontforge.tar.gz
 dc17aa393eb55c201ef2bdfa0ee0d12f  ./graphics/mftrace/mftrace.tar.gz
 ffcc369e907f779d8c6e1f6cc8256c57  ./graphics/frescobaldi/frescobaldi.tar.gz
-87a7d378c4186ad83d98518e003c68a1  ./plugins/tap-plugins/tap-plugins-0.7.1.tar.gz
 eb92bea0b8854cc3bfb211bf0e23ee11  ./plugins/tap-plugins/tap-plugins.tar.gz
 a2ac546166d08a1c9e9ec49ced64bf28  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 795eb5e7623887500524669875becf5f  ./plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
@@ -67,7 +66,7 @@ e30c0ad997f27490e86cadff7c9b36db  ./libraries/wxX11/wxX11.tar.gz
 6138ebfaec34d4d55e535586260be36c  ./libraries/gnonlin/gnonlin.tar.gz
 3b5d3db33c94ba2b4a663ccc318f0b4a  ./libraries/atkmm/atkmm.tar.gz
 a2d16d9bfb1d00c06a3c710638d0bd21  ./libraries/wxPython/wxPython.tar.gz
-c2d24cc588dd9644b477e911b4c3c1fd  ./libraries/lash/lash.tar.gz
+d688cb3277421fef02a9feccac5a05ed  ./libraries/lash/lash.tar.gz
 6d33b551976018762531db21bc2c4809  ./libraries/portaudio/portaudio.tar.gz
 281569d2d0222e81f34b4ee079b6ba7e  ./libraries/wxGTK/wxGTK.tar.gz
 1d81fd0788ac19fe37acff19155ecf9d  ./libraries/mm-common/mm-common.tar.gz
