@@ -1,5 +1,5 @@
 0483e3095f3a8df982c291399c7b3fd1  ./editors/denemo/denemo.tar.gz
-96765b963d02dc9d06ad765e49ca637a  ./editors/audacity/audacity.tar.gz
+dee7f6076e8061eae61c07942240e4c6  ./editors/audacity/audacity.tar.gz
 030de2e26be2e802c2320927987020d0  ./editors/rosegarden/rosegarden.tar.gz
 0983cfd519b9cba4ddda9cffb3ebabb2  ./editors/mscore/mscore.tar.gz
 1ce6c4e468934cdba5055decd6d1eecb  ./system/jack/jack.tar.gz
