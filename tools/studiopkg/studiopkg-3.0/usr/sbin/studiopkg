@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="2.9"
+    VERSION="3.0"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -125,6 +125,7 @@ $APPNAME clean-system/clean - remove all studioware packages dialog
 $APPNAME delete-cache - delete all cached packages
 $APPNAME install/-i package1 package2 ... - install packages
 $APPNAME install/-i < <queuefile> - install packages from file
+$APPNAME install-all - install all packages
 $APPNAME latest/-l - checks for latest version of $APPNAME
 $APPNAME remove/-r <package> - remove package
 $APPNAME search/-s - search for package name or part name
@@ -151,7 +152,7 @@ update()
     cleanup
 }
 #}}}
-#{{ Install Everything
+#{{{ Install Everything
 installall()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
