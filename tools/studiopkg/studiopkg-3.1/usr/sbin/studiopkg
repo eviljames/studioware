@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.0"
+    VERSION="3.1"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -51,9 +51,6 @@ init()
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILE_LIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
 }
 #}}}
 #{{{ Cleanup and exit
@@ -182,6 +179,10 @@ installall()
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
 
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to install:" $rows $cols $mrows \
         $INSTALLLIST 2> $TMP/pkglist
@@ -207,6 +208,7 @@ install()
     else
         echo $cl | sed "s/ /\n/g" > $QUEUE
     fi
+    exec <&1
 
     while read line
     do
@@ -231,6 +233,10 @@ install()
     done
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
+
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
 
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to install:" \
@@ -261,6 +267,10 @@ remove()
 
     if [ -z "$RMLIST" ]; then cleanup; fi
 
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to remove:" \
         $rows $cols $mrows $RMLIST 2> $TMP/pkglist
@@ -286,6 +296,10 @@ cleansystem()
     done
 
     if [ -z "$RMLIST" ]; then cleanup; fi
+
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
 
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to remove:" \
@@ -342,6 +356,10 @@ upgrade()
 
     if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
 
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
     dialog --separate-output --title upgrade-all --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to upgrade:" \
         $rows $cols $mrows $UPLIST 2>$TMP/pkglist
@@ -390,6 +408,10 @@ upgradeall()
     done
 
     if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
+
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
 
     dialog --separate-output --title upgrade-all --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to upgrade:" \
