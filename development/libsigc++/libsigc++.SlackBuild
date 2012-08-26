@@ -3,6 +3,8 @@
 # Slackware build script for libsigc++ 
 
 # Copyright (C) 2011 David Woodfall <dave@dawoodfall.net>
+# Modified 2012 James Purdy <james@studioware.org>
+#
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=libsigc++
-VERSION=2.2.9
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-2.2.10}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -60,7 +62,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
+tar xvf $CWD/$PRGNAM-$VERSION.tar.?z*
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
