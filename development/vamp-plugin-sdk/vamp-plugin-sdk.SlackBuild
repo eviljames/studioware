@@ -3,6 +3,7 @@
 # Slackware build script for vamp-plugin-sdk
 
 # Copyright 2011-12 David Woodfall <dave@studioware.org>
+# Modified 2012 James Purdy <james@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,8 +24,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vamp-plugin-sdk
-VERSION=${VERSION:-2.2.1}
-BUILD=${BUILD:-4}
+VERSION=${VERSION:-2.4}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
