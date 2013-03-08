@@ -26,8 +26,8 @@
 
 
 PRGNAM=hydrogen
-VERSION=${VERSION:-0.9.5}
-BUILD=${BUILD:-4}
+VERSION=${VERSION:-0.9.5.1}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -73,7 +73,7 @@ find . \
  -exec chmod 644 {} \;
 
 if [ "${PORTAUDIO:-yes}" = "yes" ]; then
-  patch --verbose -p0 < patches/portaudio.patch
+  #patch --verbose -p0 < patches/portaudio.patch
   EXTRACONF="portaudio=1 portmidi=1"
 fi
 
