@@ -13,10 +13,10 @@ for SB in $( find $PKGDIR -name '*.SlackBuild' -type f); do
     #echo $PKG
     #echo $PARENT
     
-    mkdir -vp $CWD/tarballs/$PARENT
-    rm -vf $CWD/tarballs/$PARENT/$PKG.tar.gz
+    mkdir -vp $CWD/tarballs/$PARENT/$PKG
+    rm -vf $CWD/tarballs/$PARENT/$PKG/$PKG.tar.gz
     (
         cd $PKGDIR/$PARENT
-        tar -czvf $CWD/tarballs/$PARENT/$PKG.tar.gz $PKG
+        tar -czvf $CWD/tarballs/$PARENT/$PKG/$PKG.tar.gz $PKG
     )
 done
