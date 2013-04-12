@@ -276,6 +276,9 @@ installpkgs()
             if [ "$INSTALL" = "1" ]; then
                 $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
             fi
+            if [ -n "$ARCHIVE" ]; then
+                mv $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz} $ARCHIVE
+            fi
             )
             if [ "$?" = "1" ]; then
                 cleanup
