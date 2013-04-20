@@ -10,8 +10,8 @@ gtkmm
 libgnomecanvas
 jack
 raptor2
-liblrdf
 ladspa_sdk
+liblrdf
 lash
 scrollkeeper
 vamp-plugin-sdk
