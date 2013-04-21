@@ -12,9 +12,11 @@ jack
 raptor2
 ladspa_sdk
 liblrdf
-lash
+qjackctl
 scrollkeeper
 vamp-plugin-sdk
 phat
 guitarix2
+portaudio
+portmidi
 hydrogen
