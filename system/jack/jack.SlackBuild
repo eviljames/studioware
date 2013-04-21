@@ -71,8 +71,8 @@ find . \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./waf configure --prefix=/usr --alsa \
-  --libdir=/lib${LIBDIRSUFFIX} \
-  --libdir32=/lib \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --libdir32=/usr/lib \
   --mandir=/man \
   --classic 
 
