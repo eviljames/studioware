@@ -2,7 +2,7 @@
 dee7f6076e8061eae61c07942240e4c6  ./editors/audacity/audacity.tar.gz
 030de2e26be2e802c2320927987020d0  ./editors/rosegarden/rosegarden.tar.gz
 0983cfd519b9cba4ddda9cffb3ebabb2  ./editors/mscore/mscore.tar.gz
-1ce6c4e468934cdba5055decd6d1eecb  ./system/jack/jack.tar.gz
+207096b43d7dcaadf191232e00b85b7e  ./system/jack/jack.tar.gz
 dcd28fb515506dd321c625fe313808ee  ./system/meterbridge/meterbridge.tar.gz
 8c3a439ae51451d147bf5add2dab130d  ./system/rt-tests/rt-tests.tar.gz
 bbd76b50710c270da600b8e9c580a7d6  ./system/lirc/lirc.tar.gz
