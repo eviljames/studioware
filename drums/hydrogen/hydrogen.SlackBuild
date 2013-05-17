@@ -88,6 +88,7 @@ else
 fi
 
 QTDIR=$QT4DIR \
+    CCFLAGS="-I /usr/include" \
 scons \
   prefix=/usr \
   oss=0 \

@@ -8,6 +8,7 @@ c37d2e46eea258980860e83d719862ed  ./development/scons/scons.tar.gz
 dcf80eab04e3c2f8b83ac74db792cc3e  ./recorders/timemachine/timemachine.tar.gz
 77a044a991658666c1b1ae4d9e4d695b  ./desktop/clearlooks/clearlooks.tar.gz
 4472cd639bd5645aee7b8405e00d30a8  ./amps/guitarix2/guitarix2.tar.gz
+52f3a528705818c65acf546a3be4c6fb  ./drums/hydrogen/hydrogen-0.9.5.1.tar.gz
 ce3e5853282fbca3267c560e93d9146c  ./drums/hydrogen/hydrogen.tar.gz
 d39d00fb348f90b8f8d211b8995aad79  ./multitrack/qtractor/qtractor.tar.gz
 76d801c6b26da4aed0f885fb5e8c00cb  ./multitrack/ardour/ardour.tar.gz
@@ -43,7 +44,7 @@ b9306b47dd87a8c6f67d50961cf10718  ./synthesizers/amSynth/amSynth.tar.gz
 39b77b731e5b978224e3c1a445884562  ./synthesizers/qsynth/qsynth.tar.gz
 33ec672e0eddc1ed22c609b7d4a41cf3  ./libraries/liblrdf/liblrdf.tar.gz
 cf4d88c0ef88f6dba78644f2af64c6b1  ./libraries/pyxdg/pyxdg.tar.gz
-a21b12341044662b52b7f81e83b78f42  ./libraries/aubio/aubio.tar.gz
+fdf378c2d1b5962f81f6e33cc465f980  ./libraries/aubio/aubio.tar.gz
 6138ebfaec34d4d55e535586260be36c  ./libraries/gnonlin/gnonlin.tar.gz
 c17c5d750a00ea78d8a0a3fa5104624f  ./libraries/cairomm/cairomm.tar.gz
 ab487562a8443c1576879d4b21e74b32  ./libraries/liblo/liblo.tar.gz
