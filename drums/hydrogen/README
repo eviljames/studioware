@@ -4,7 +4,7 @@ Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring p
 
 Deps: 
 libtar
-jack-audio-connection-kit (optional, default=yes)
+jack (optional, default=yes)
 ladspa_sdk
 liblrdf
 lash (optional, default=yes)
@@ -22,3 +22,24 @@ PORTAUDIO=yes enables portmidi support.
 
 *Note: if portaudio was built with jack support then
 hydrogen will require it too.
+
+*Note2: There is a problem in this version that output device options
+aren't saved. Unfortunately the previous versions no longer build in
+slackware 14.0. You will need to edit ~/.hydrogen/hydrogen.conf manually
+to set your output device. Examples:
+
+<audio_driver>Jack</audio_driver> # note the capital 'J'
+<jack_driver>
+    <jack_port_name_1>alsa_pcm:playback_1</jack_port_name_1>
+    <jack_port_name_2>alsa_pcm:playback_2</jack_port_name_2>
+    <jack_transport_mode>USE_JACK_TRANSPORT</jack_transport_mode>
+    <jack_transport_mode_master>NO_JACK_TIME_MASTER</jack_transport_mode_master>
+    <jack_connect_defaults>true</jack_connect_defaults>
+    <jack_track_output_mode>0</jack_track_output_mode>
+    <jack_track_outs>false</jack_track_outs>
+</jack_driver> 
+
+<audio_driver>Alsa</audio_driver> # note the capital 'A'
+<alsa_audio_driver>
+    <alsa_audio_device>hw:2</alsa_audio_device>             
+</alsa_audio_driver>
