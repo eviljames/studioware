@@ -10,5 +10,5 @@ For building ardour with support for VST-plugins, you have to pass VST=yes to th
 
 Deps:
 
-liblo, liblrdf, scons, libgnomecanvas, aubio, jack-audio-connection-kit.
+liblo, liblrdf, scons, libgnomecanvas, libgnomecanvasmm, aubio, jack.
 

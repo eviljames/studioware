@@ -4,5 +4,6 @@ liblo
 liblrdf
 scons
 libgnomecanvas
+libgnomecanvasmm
 aubio
 ardour

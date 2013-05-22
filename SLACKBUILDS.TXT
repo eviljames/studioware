@@ -10,7 +10,7 @@ dcf80eab04e3c2f8b83ac74db792cc3e  ./recorders/timemachine/timemachine.tar.gz
 4472cd639bd5645aee7b8405e00d30a8  ./amps/guitarix2/guitarix2.tar.gz
 1dfc2a533572333f9291220e96c150ed  ./drums/hydrogen/hydrogen.tar.gz
 d39d00fb348f90b8f8d211b8995aad79  ./multitrack/qtractor/qtractor.tar.gz
-76d801c6b26da4aed0f885fb5e8c00cb  ./multitrack/ardour/ardour.tar.gz
+267df846d8d23a762ffcd829cf008f7a  ./multitrack/ardour/ardour.tar.gz
 196c622a8ffe6e5774bd8dd6abbfd254  ./multitrack/jokosher/jokosher.tar.gz
 19847d14c095052a7efa9e6acadabc5b  ./multitrack/traverso/traverso.tar.gz
 c7ce20f1b616a14e56e8b4a06f5cc7b5  ./multitrack/ecasound/ecasound.tar.gz
@@ -54,6 +54,7 @@ a2d16d9bfb1d00c06a3c710638d0bd21  ./libraries/wxPython/wxPython.tar.gz
 1d81fd0788ac19fe37acff19155ecf9d  ./libraries/mm-common/mm-common.tar.gz
 001823505638af7370c00c8bc6d58e8a  ./libraries/dssi/dssi.tar.gz
 b09ae2f9c928a263ee71cddabcf7aeb3  ./libraries/clthreads/clthreads.tar.gz
+edbe2bcd8f85507017f466e2b3a3b472  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 426fb8d6297e5ddb2b547408005775b8  ./libraries/gst-python/gst-python.tar.gz
 9ffa7c05749a9b855bdacd06beb253ed  ./libraries/libtar/libtar.tar.gz
 47fd89b23909a3a8107674d14cefefbc  ./libraries/lame/lame.tar.gz

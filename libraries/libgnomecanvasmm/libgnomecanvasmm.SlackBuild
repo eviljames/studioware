@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for ardour
-
-# Copyright 2008-2012 Heinz Wiesinger, Amsterdam, The Netherlands
+# Slackware build script for libgnomecanvasmm
+# Copyright 2013 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,10 +21,10 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=ardour
-VERSION=2.8.14
+PRGNAM=libgnomecanvasmm
+VERSION=${VERSION:-2.26.0}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -36,46 +35,22 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-
-if [ "${LV2:-no}" = "no" ]; then
-  lv2opt="LV2=0 LV2_UI=0"
-else
-  lv2opt="LV2=1 LV2_UI=1"
-fi
-
-if [ "${WIIMOTE:-no}" = "no" ]; then
-  wiiopt="WIIMOTE=0"
-else
-  wiiopt="WIIMOTE=1"
-fi
-
-if [ "${VST:-no}" = "no" ]; then
-  vstopt="VST=0"
-else
-  vstopt="VST=1"
-fi
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
   LIBDIRSUFFIX=""
-  TARGET="i386"
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
-  TARGET="i686"
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
-  TARGET="x86_64"
-  vstopt="VST=0"
 else
   SLKCFLAGS="-O2"
   LIBDIRSUFFIX=""
-  TARGET="$ARCH"
-  vstopt="VST=0"
 fi
 
 set -e
@@ -93,60 +68,32 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-# Make FREEDESKTOP work with DESTDIR
-patch -d gtk2_ardour -p0 -i $CWD/SConscript.diff
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --infodir=/usr/info \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --build=$ARCH-slackware-linux
 
-# Omit -O3 from the CFLAGS
-patch -p1 -i $CWD/SConstruct.diff
-
-scons \
-  PREFIX=/usr \
-  LIBDIR=/usr/lib${LIBDIRSUFFIX} \
-  DIST_TARGET="$TARGET" \
-  ARCH="$(echo $SLKCFLAGS)" \
-  FREEDESKTOP=1 \
-  SYSLIBS=1 \
-  $wiiopt \
-  $lv2opt \
-  $vstopt
-
-scons \
-  --implicit-deps-unchanged \
-  PREFIX=/usr \
-  LIBDIR=/usr/lib${LIBDIRSUFFIX} \
-  DIST_TARGET="$TARGET" \
-  ARCH="$(echo $SLKCFLAGS)" \
-  FREEDESKTOP=1 \
-  SYSLIBS=1 \
-  $wiiopt \
-  $lv2opt \
-  $vstopt \
-  DESTDIR=$PKG \
-  install
-
-if [ $vstopt = "VST=1" ]; then
-  ln -s /usr/bin/ardourvst $PKG/usr/bin/ardour2
-fi
+make
+make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a COPYING PACKAGER_README README \
+cp -a \
+  AUTHORS COPYING ChangeLog INSTALL NEWS README TODO docs \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
-
-# Let's not clobber config files
-cd $PKG/etc/ardour2
-  for i in * ; do
-    mv $i $i.new
-    echo "config etc/ardour2/$i.new" >> $PKG/install/doinst.sh
-  done
-cd -
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
