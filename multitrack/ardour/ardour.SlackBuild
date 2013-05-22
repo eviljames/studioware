@@ -23,7 +23,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=ardour
-VERSION=2.8.11
+VERSION=2.8.16
 BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
@@ -98,6 +98,9 @@ patch -d gtk2_ardour -p0 -i $CWD/SConscript.diff
 
 # Omit -O3 from the CFLAGS
 patch -p1 < $CWD/SConstruct.diff
+
+# Glib fixup
+find . -type f -name "*.[ch]" | xargs sed -i 's%glib/.*\.h%glib.h%g'
 
 scons \
   PREFIX=/usr \
