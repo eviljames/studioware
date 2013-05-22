@@ -8,6 +8,7 @@ pangomm
 atkmm
 gtkmm
 libgnomecanvas
+libgnomecanvasmm
 jack
 raptor2
 ladspa_sdk
