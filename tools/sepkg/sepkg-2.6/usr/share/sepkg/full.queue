@@ -10,13 +10,13 @@ gtkmm
 libgnomecanvas
 libgnomecanvasmm
 jack
-raptor2
 ladspa_sdk
 liblrdf
 qjackctl
 lash
 scrollkeeper
 vamp-plugin-sdk
+rubberband
 phat
 guitarix2
 portaudio
@@ -25,3 +25,4 @@ liblo
 aubio
 ardour
 hydrogen
+qtractor
