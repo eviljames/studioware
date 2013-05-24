@@ -92,7 +92,6 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp AUTHORS README.SECURITY COPYING ChangeLog ChangeLog.old NEWS INSTALL README \
-    docs/lash-manual-html-one-page/lash-manual.html \
     $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
