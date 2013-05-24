@@ -8,7 +8,7 @@ c37d2e46eea258980860e83d719862ed  ./development/scons/scons.tar.gz
 dcf80eab04e3c2f8b83ac74db792cc3e  ./recorders/timemachine/timemachine.tar.gz
 77a044a991658666c1b1ae4d9e4d695b  ./desktop/clearlooks/clearlooks.tar.gz
 4472cd639bd5645aee7b8405e00d30a8  ./amps/guitarix2/guitarix2.tar.gz
-1dfc2a533572333f9291220e96c150ed  ./drums/hydrogen/hydrogen.tar.gz
+13e9232f3af738ceb4f674bfd998eb03  ./drums/hydrogen/hydrogen.tar.gz
 d39d00fb348f90b8f8d211b8995aad79  ./multitrack/qtractor/qtractor.tar.gz
 267df846d8d23a762ffcd829cf008f7a  ./multitrack/ardour/ardour.tar.gz
 196c622a8ffe6e5774bd8dd6abbfd254  ./multitrack/jokosher/jokosher.tar.gz
