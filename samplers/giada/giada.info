@@ -5,6 +5,7 @@ DOWNLOAD="http://www.monocasual.com/giada/download.php?dist=linux&file=bin/giada
 MD5SUM="0e01fd15ea6e39d79ba5c526d183dc3c"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="David Woodfall"
 EMAIL="dave@dawoodfall.net"
 APPROVED=""

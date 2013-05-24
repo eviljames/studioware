@@ -5,6 +5,7 @@ DOWNLOAD="http://sourceforge.net/projects/qasmixer/files/0.15/qasmixer_0.15.tar.
 MD5SUM="58f716327667be7e8c0c62e034431ad8"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="David Woodfall"
 EMAIL="dave@dawoodfall.net"
 APPROVED=""

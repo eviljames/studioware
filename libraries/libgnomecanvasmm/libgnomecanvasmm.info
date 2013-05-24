@@ -5,6 +5,7 @@ DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/libgnomecanvasmm/2.26/libgnome
 MD5SUM="a148c99311d46397de6e4a31736771ab"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 REQUIRES="gtkmm libgnomecanvas"
 MAINTAINER="Dave Woodfall"
 EMAIL="dave@studioware.org"

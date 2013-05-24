@@ -5,6 +5,7 @@ DOWNLOAD="http://downloads.sourceforge.net/project/sysexxer/SimpleSysexxer-0.3/S
 MD5SUM="59c1b91089bb15050e3a58aa602332db"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="Michales Michaloudes"
 EMAIL="korgie@gmail.com"
 APPROVED="Dave Woodfall"

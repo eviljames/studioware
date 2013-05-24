@@ -5,6 +5,7 @@ DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/gtksourceview/2.11/gtksourcevi
 MD5SUM="2a39aecb212e1bd3a3a0e5a3eca32623"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="David Woodfall"
 EMAIL="dave@dawoodfall.net"
 APPROVED=""

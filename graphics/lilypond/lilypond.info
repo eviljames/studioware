@@ -5,5 +5,6 @@ DOWNLOAD="http://download.linuxaudio.org/lilypond/sources/v2.13/lilypond-2.13.61
 MD5SUM="de6cbd4fd95f90522c2da4887df26203"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="David Woodfall"
 EMAIL="dave@dawoodfall.net"

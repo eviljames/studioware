@@ -5,5 +5,6 @@ DOWNLOAD="http://downloads.sourceforge.net/project/lmuse/muse-2.0/muse-2.0beta2.
 MD5SUM="1da3b10bcde157b1fee5921267ada8ac"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="David Woodfall"
 EMAIL="dave@studioware.org"
