@@ -6,6 +6,5 @@ Homepage: http://audacity.sourceforge.net/
 
 Deps:
 
-wxGTK
 Jack for optional Jack support
 lame for optional mp3 export support

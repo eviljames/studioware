@@ -3,14 +3,10 @@ Hydrogen ( Advanced drum machine )
 Hydrogen is an advanced drum machine for GNU/Linux. It's main goal is to bring professional yet simple and intuitive pattern-based drum programming. 
 
 Deps: 
-libtar
 jack (optional, default=yes)
-ladspa_sdk
-liblrdf
 lash (optional, default=yes)
 portaudio (optional, default=yes)
 portmidi (optional, default=yes)
-scons
 
 Optional deps can be set with the following flags:
 

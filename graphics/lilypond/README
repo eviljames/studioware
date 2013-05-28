@@ -5,5 +5,4 @@ LilyPond is a music engraving program, devoted to producing the highest-quality 
 Dependencies:
 
 The t/ series
-fontforge
-mftrace -> potrace, t1utils
+
