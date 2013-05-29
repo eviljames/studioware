@@ -22,9 +22,14 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=fontforge
-VERSION=${VERSION:-20110222}
+VERSION=${VERSION:-20120731_b}
 BUILD=${BUILD:-3}
 TAG=${TAG:-se}
+
+TARVERS=$(printf $VERSION | tr _ -)
+
+ENABLE_BCINT=${ENABLE_BCINT:-yes}
+FREETYPE=${FREETYPE:-"2.4.10"}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -58,10 +63,12 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION freetype-2.4.4
-tar xvf $CWD/${PRGNAM}_full-${VERSION}.tar.bz2
-tar xvf $CWD/freetype-2.4.4.tar.bz2
-cd $PRGNAM-$VERSION
+rm -rf $PRGNAM-$VERSION freetype-$FREETYPE
+tar xvf $CWD/${PRGNAM}_full-${TARVERS}.tar.bz2
+tar xvf $CWD/freetype-$FREETYPE.tar.xz
+chown -R root:root $PRGNAM-$TARVERS freetype-$FREETYPE
+chmod -R u+w,go+r-w,a-s $PRGNAM-$TARVERS freetype-$FREETYPE
+cd $PRGNAM-$TARVERS
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -76,8 +83,8 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --mandir=/usr/man \
   --with-x \
-  --with-freetype-src=$TMP/freetype-2.4.4 \
-  --with-freetype-bytecode=yes\
+  --with-freetype-src=$TMP/freetype-${FREETYPE} \
+  --with-freetype-bytecode=$ENABLE_BCINT \
   --enable-libff \
   --enable-pyextension \
   --enable-type3 \
