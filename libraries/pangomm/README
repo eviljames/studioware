@@ -1,6 +1,1 @@
 Pangomm is a C++ API for Pango.
-
-Deps:
-glibmm, cairomm
-
-glibmm: sigc++

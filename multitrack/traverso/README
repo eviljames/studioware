@@ -7,6 +7,5 @@ Deps:
 portaudio (optional)
 jack (optional)
 lame (optional for MP3 write support) 
-raptor2
 
 For LV2 support the stock redland and rasqal packages need upgrading so this option is turned off currently.

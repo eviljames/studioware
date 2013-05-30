@@ -1,5 +1,7 @@
 .config
 index.php
+build-tarballs.sh
+#tar.sh
 *.tar.bz2
 *.tar.gz
 *.tar.xz

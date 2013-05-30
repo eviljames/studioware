@@ -3,7 +3,3 @@ Denemo (Music Notation Editor)
 Denemo is a free opensource music notation editor for Linux, MacOS and Windows that lets you rapidly enter notation for typesetting via the LilyPond music engraver.
  
 http://www.denemo.org
-
-Deps:
-
-gtksourceview, fluidsynth, portaudio, aubio, lash, jack

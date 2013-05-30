@@ -1,4 +1,1 @@
 atkmm is the C++ binding for the ATK library.
-
-Deps:
-pangomm
