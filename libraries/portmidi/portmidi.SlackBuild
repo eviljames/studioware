@@ -2,7 +2,7 @@
 
 # Slackware build script for portmidi
 
-# Copyright 2009-2011  David Woodfall <dave@dawoodfall.net>
+# Copyright 2009-  David Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -27,7 +27,7 @@
 PRGNAM=portmidi
 VERSION=${VERSION:-217}
 BUILD=${BUILD:-4}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -38,7 +38,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -86,6 +86,10 @@ cmake . \
   -DJAVA_INCLUDE_PATH2="/usr/lib$LIBDIRSUFFIX/java/include/linux" \
   -DCMAKE_CACHEFILE_DIR=$(pwd) \
   -DJAVA_JVM_LIBRARY="/usr/lib$LIBDIRSUFFIX/libjvm.so"
+
+# some wrong paths expose with openjdk, fix them
+# https://bugs.archlinux.org/task/29214
+sed -i "s|pm_java/pm_java|pm_java|" pm_java/CMakeFiles/pmdefaults_target.dir/build.make
 
 make all \
   CFLAGS="-fPIC" \

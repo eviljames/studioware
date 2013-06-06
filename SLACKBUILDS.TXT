@@ -64,7 +64,7 @@ e6e15a23a1feb09ba5f0e9accacbb4d2  ./libraries/libtar/libtar.tar.gz
 e569b387b5c1b465f96a377f1ebacabf  ./libraries/wxGTK/wxGTK.tar.gz
 554df27da79a7e53c3b5db3e92038ee2  ./libraries/lash/lash.tar.gz
 ba958b8987d121faf807c966b32f9c09  ./libraries/calf/calf.tar.gz
-5a618f1fe3a81984c2594cf7e9efb636  ./libraries/portmidi/portmidi.tar.gz
+0e3f2bcb5fa68a9b76938c62ae70a414  ./libraries/portmidi/portmidi.tar.gz
 bd2b1d49e8351e41a8384e5e6ec18eec  ./libraries/glibmm/glibmm.tar.gz
 ee4e43d411d20c7b0dbbfb3585686b97  ./libraries/portaudio/portaudio.tar.gz
 0fbf867872dccd97d3e0d85fd08f2c7d  ./libraries/pangomm/pangomm.tar.gz
