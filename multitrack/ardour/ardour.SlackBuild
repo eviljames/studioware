@@ -41,7 +41,7 @@ TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ "${LV2:-no}" = "no" ]; then
+if [ "${LV2:-yes}" = "no" ]; then
   lv2opt="LV2=0 LV2_UI=0"
 else
   lv2opt="LV2=1 LV2_UI=1"
