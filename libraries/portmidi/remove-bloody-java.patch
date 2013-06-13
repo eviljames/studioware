@@ -1,0 +1,47 @@
+diff -Naur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2010-09-20 19:57:48.000000000 +0000
++++ b/CMakeLists.txt	2013-06-13 18:41:54.900439172 +0000
+@@ -73,5 +73,5 @@
+ add_subdirectory(pm_dylib)
+ 
+ # Cannot figure out how to make an xcode Java application with CMake
+-add_subdirectory(pm_java)
++#add_subdirectory(pm_java)
+ 
+diff -Naur a/pm_java/pmdefaults/PmDefaultsFrame.java b/pm_java/pmdefaults/PmDefaultsFrame.java
+--- a/pm_java/pmdefaults/PmDefaultsFrame.java	2010-09-28 23:41:47.000000000 +0000
++++ b/pm_java/pmdefaults/PmDefaultsFrame.java	2013-06-13 18:25:37.819460976 +0000
+@@ -103,13 +103,13 @@
+     }
+ 
+     private JLabel inputLabel;
+-    private JComboBox inputSelection;
++    private JComboBox<String> inputSelection;
+     // inputIds maps from the index of an item in inputSelection to the
+     // device ID. Used to open the selected device.
+     private ArrayList<Integer> inputIds;
+     private ActivityLight inputActivity;
+     private JLabel outputLabel;
+-    private JComboBox outputSelection;
++    private JComboBox<String> outputSelection;
+     // analogous to inputIds, outputIds maps selection index to device ID
+     private ArrayList<Integer> outputIds;
+     private JButton testButton;
+@@ -326,7 +326,7 @@
+         inputLabel.setText("Default Input");
+         wholePanel.add(inputLabel);
+ 
+-        inputSelection = new JComboBox();
++        JComboBox<String> inputSelection = new JComboBox<String>();
+         inputSelection.addActionListener(this);
+         inputSelection.setLocation(20, 30);
+         inputSelection.setSize(inputSelection.getPreferredSize());
+@@ -341,7 +341,7 @@
+         outputLabel.setText("Default Output");
+         wholePanel.add(outputLabel);
+ 
+-        outputSelection = new JComboBox();
++        JComboBox<String> outputSelection = new JComboBox<String>();
+         outputSelection.addActionListener(this);
+         wholePanel.add(outputSelection);
+         testButton = new JButton();

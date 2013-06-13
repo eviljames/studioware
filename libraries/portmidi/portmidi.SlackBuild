@@ -74,6 +74,7 @@ find . \
 
 # cmake install dir & 64 bit fixes
 patch --verbose -p1 -i $CWD/portmidi-cmake.patch
+patch --verbose -p1 -i $CWD/remove-bloody-java.patch
 
 cmake . \
   -DCMAKE_C_FLAGS="$SLKCFLAGS" \
@@ -89,7 +90,7 @@ cmake . \
 
 # some wrong paths expose with openjdk, fix them
 # https://bugs.archlinux.org/task/29214
-sed -i "s|pm_java/pm_java|pm_java|" pm_java/CMakeFiles/pmdefaults_target.dir/build.make
+#sed -i "s|pm_java/pm_java|pm_java|" pm_java/CMakeFiles/pmdefaults_target.dir/build.make
 
 make all \
   CFLAGS="-fPIC" \
