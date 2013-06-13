@@ -7,6 +7,7 @@ c764866feed2528a71775b6cba8296fc  ./development/distribute/distribute.tar.gz
 4f6bdc32fd790237efc59779a726fc90  ./development/scons/scons.tar.gz
 3b79e620c2b2f7c98b9b2f25b626623e  ./recorders/timemachine/timemachine.tar.gz
 2f385b35558f778f16bedba37884acb1  ./desktop/clearlooks/clearlooks.tar.gz
+910f4f8e0296fcc5a0212c6e4de1ff8e  ./desktop/evince/evince.tar.gz
 830b657451498f95d06d35922a36cac3  ./amps/guitarix2/guitarix2.tar.gz
 352458cf5fa0a8c34ebc8fd9edb1515c  ./drums/hydrogen/hydrogen.tar.gz
 8adbe288b440a5cc91dcc11c753831bf  ./multitrack/qtractor/qtractor.tar.gz
