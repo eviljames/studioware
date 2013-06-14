@@ -23,7 +23,7 @@
 
 PRGNAM=gtksourceview
 VERSION=${VERSION:-3.7.2}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
