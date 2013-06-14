@@ -22,7 +22,7 @@ b4a76d7923ac8081158e7fe87e2d1898  ./editors/audacity/audacity.tar.gz
 e681a0186bab3b282e0870b8c93a211c  ./mixers/mixxx/mixxx.tar.gz
 623fdd76eb9c9744d5de60312ef90021  ./mixers/qasmixer/qasmixer.tar.gz
 1485b44657fea833078f2b92828158f2  ./misc/SimpleSysexxer/SimpleSysexxer.tar.gz
-5f978f0b1dd5d69fa3a2204c1d0f57bf  ./misc/protobuf/protobuf.tar.gz
+9fc41a7fbaf71de79015d75313f7a243  ./misc/protobuf/protobuf.tar.gz
 1f761ad60ced2387632e7a98a087ac7d  ./misc/stops/stops.tar.gz
 5bc80afbc98edfeef3ed218bea689102  ./sequencers/seq24/seq24.tar.gz
 61b693ae5dff67b1039e102fb76ce562  ./sequencers/muse/muse.tar.gz
