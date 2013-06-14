@@ -73,7 +73,7 @@ ee4e43d411d20c7b0dbbfb3585686b97  ./libraries/portaudio/portaudio.tar.gz
 bc247893ab4a59c15302a91cb2b638b2  ./libraries/raptor2/raptor2.tar.gz
 4f16b6974e6b3e5fed4d40da55749602  ./libraries/atkmm/atkmm.tar.gz
 7bbf1e29e3f224c9572f02f33c39b357  ./libraries/gtkmm/gtkmm.tar.gz
-75f4aa36916918469f9f5a51d1fb5e62  ./libraries/gtksourceview/gtksourceview.tar.gz
+75bcff9010c53d21509eefe6c0816082  ./libraries/gtksourceview/gtksourceview.tar.gz
 1c377b7777e36b114d3778642283d5d0  ./libraries/mxml/mxml.tar.gz
 5b387b561c1451edd629bc7e89847da7  ./libraries/wxX11/wxX11.tar.gz
 cd401d135d3d30e580bab843da69d27c  ./libraries/fltk/fltk.tar.gz
