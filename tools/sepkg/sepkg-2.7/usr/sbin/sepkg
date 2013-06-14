@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.6"
+    VERSION="2.7"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -56,6 +56,8 @@ cleanup()
 #{{{ Flags
 getflags()
 {
+    if [ "$1" = "info" ]; then { info $2; cleanup; }; fi
+    if [ "$1" = "-f" ]; then { info $2; cleanup; }; fi
     if [ "$1" = "update" ]; then { update; cleanup; }; fi
     if [ "$1" = "-u" ]; then { update; cleanup; }; fi
     if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
@@ -73,6 +75,15 @@ getflags()
     if [ "$1" = "queue" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
     if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
+}
+#}}}
+#{{{ info
+info()
+{
+    APP=$1
+    CAT=$(grep -wi $APP $FILELIST | cut -d/ -f2)
+    info="$(curl -s $SBSERVER/$CAT/$APP/$APP.info)"
+    echo "$info"
 }
 #}}}
 #{{{ Readme
