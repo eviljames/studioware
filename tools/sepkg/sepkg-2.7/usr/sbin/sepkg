@@ -77,7 +77,7 @@ getflags()
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
 }
 #}}}
-#{{{ info
+#{{{ Info
 info()
 {
     APP=$1
@@ -130,6 +130,7 @@ $APPNAME $VERSION
 
 Options
 
+$APPNAME info/-f package - read info file
 $APPNAME build/-b package1, package2 ... - build packages
 $APPNAME delete-cache - delete all cached files
 $APPNAME install/-i package1, package2 ... - build & install packages
