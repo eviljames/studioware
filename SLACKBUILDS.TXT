@@ -31,7 +31,7 @@ c84586d4aef161e9f9ec50f7bc25c94f  ./system/set_rlimits/set_rlimits.tar.gz
 04cea8e83cc2c0ac638cc056efc96999  ./system/lirc/lirc.tar.gz
 5f04b95465534ce84105952b52627fd7  ./system/jack/jack.tar.gz
 bc5ffa53b1fe0592771ba73379ae1dd1  ./system/rt-tests/rt-tests.tar.gz
-557cc5c4df722a271beddb1815bfcd54  ./system/qjackctl/qjackctl.tar.gz
+2618a077d52b0dcab1ef6ad1ee0976b4  ./system/qjackctl/qjackctl.tar.gz
 1e4f06937570341bd5af4b382e01dc1d  ./samplers/giada/giada.tar.gz
 ebc83a972928c00496f04e0f487c2644  ./samplers/sooperlooper/sooperlooper.tar.gz
 cf228754b8dfc2d7cbbb2f18d4400942  ./samplers/specimen/specimen.tar.gz
