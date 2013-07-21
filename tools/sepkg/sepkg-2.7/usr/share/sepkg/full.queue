@@ -11,6 +11,7 @@ libgnomecanvas
 libgnomecanvasmm
 jack
 ladspa_sdk
+fluidsynth
 liblrdf
 qjackctl
 lash
@@ -26,4 +27,17 @@ liblo
 aubio
 ardour
 hydrogen
+qsynth
 qtractor
+pd
+muse
+potrace
+t1utils
+mftrace
+evince
+fontforge
+lilypond
+perl-xml-twig
+rosegarden
+gtksourceview
+denemo
