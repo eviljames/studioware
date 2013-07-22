@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.7"
+    VERSION="2.8"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -130,7 +130,7 @@ $APPNAME $VERSION
 
 Options
 
-$APPNAME info/-f package - read info file
+$APPNAME info/-f package1 - read info file
 $APPNAME build/-b package1, package2 ... - build packages
 $APPNAME delete-cache - delete all cached files
 $APPNAME install/-i package1, package2 ... - build & install packages
@@ -139,6 +139,7 @@ $APPNAME latest/-l - checks for newer version of $APPNAME
 $APPNAME read/-r <package> - download and print readme (needs lynx)
 $APPNAME search/-s - search for package name or part name
 $APPNAME update/-u - syncs with file server
+$APPNAME queue/-q - download and install queue from file server
 $APPNAME -h - help
 $APPNAME -v - give version and exit
 
@@ -170,7 +171,7 @@ get_queue()
     CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
     APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
 
-    curl -fs $SBSERVER/$CAT/$APP/$APP.queue > $QUEUE
+    curl -fs $SBSERVER/$CAT/$APP/$APP.queue | sed '$s/$/\n/' > $QUEUE
 
     if [ "$?" = "22" ]; then
         echo "Queue not found."
@@ -192,9 +193,9 @@ set_queue()
 
     cl=$*
     if [ -z "$cl" ]; then
-        cat /dev/stdin | sed "s/,/\n/g" > $QUEUE
+        cat /dev/stdin | sed 's/,/\n/g;$s/$/\n/' > $QUEUE 
     else
-        echo $cl | sed "s/,/\n/g" > $QUEUE
+        echo $cl | sed 's/,/\n/g;$s/$/\n/' > $QUEUE
     fi
 
     listpkgs
