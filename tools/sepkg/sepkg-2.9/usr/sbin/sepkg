@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="2.8"
+    VERSION="2.9"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
@@ -171,7 +171,7 @@ get_queue()
     CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
     APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
 
-    curl -fs $SBSERVER/$CAT/$APP/$APP.queue | sed '$s/$/\n/' > $QUEUE
+    curl -fs $SBSERVER/$CAT/$APP/$APP.queue | sed '/^$/d;$s/$/\n/' > $QUEUE
 
     if [ "$?" = "22" ]; then
         echo "Queue not found."
@@ -193,9 +193,9 @@ set_queue()
 
     cl=$*
     if [ -z "$cl" ]; then
-        cat /dev/stdin | sed 's/,/\n/g;$s/$/\n/' > $QUEUE 
+        cat /dev/stdin | sed 's/,/\n/g;/^$/d;$s/$/\n/' > $QUEUE 
     else
-        echo $cl | sed 's/,/\n/g;$s/$/\n/' > $QUEUE
+        echo $cl | sed 's/,/\n/g;/^$/d;$s/$/\n/' > $QUEUE
     fi
 
     listpkgs

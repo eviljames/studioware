@@ -42,7 +42,7 @@ d203fed85bf399cb5ddfed1d1057fcfd  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 cfdee493099aea958dbecf3c55a6423d  ./synthesizers/bristol/bristol.tar.gz
 9c490d0454c4b53c9fa5e000fb78ff54  ./synthesizers/aeolus/aeolus.tar.gz
 1f562ff4e531f211f2333f45d4333e28  ./synthesizers/amSynth/amSynth.tar.gz
-0a2ce953b54a08222d3de45e6b86dfc1  ./synthesizers/qsynth/qsynth.tar.gz
+723b2eaf464914968a7b348571b8ad87  ./synthesizers/qsynth/qsynth.tar.gz
 5be2ca1b32719598946d3975257838e4  ./libraries/liblrdf/liblrdf.tar.gz
 7cf8e8a895422022ac66cbcce4875c3e  ./libraries/pyxdg/pyxdg.tar.gz
 0b5a406d64f8211c4bd3b7d20b5d7e3a  ./libraries/aubio/aubio.tar.gz
