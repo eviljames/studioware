@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.2"
+    VERSION="3.3"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -204,9 +204,9 @@ install()
 
     cl=$*
     if [ -z "$cl" ]; then
-        cat /dev/stdin | sed 's/,/\n/g;/^$/d;$s/$/\n/' > $QUEUE
+        cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
     else
-        echo $cl | sed 's/,/\n/g;/^$/d;$s/$/\n/' > $QUEUE
+        echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
     fi
     exec <&1
 
