@@ -1,5 +1,5 @@
 libsigc++
-pysetuptools
+distribute
 scons
 mm-common
 glibmm
