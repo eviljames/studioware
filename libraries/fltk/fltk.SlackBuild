@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=fltk
-VERSION=${VERSION:-1.1.10}
+VERSION=${VERSION:-1.3.2}
 BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION-source.tar.bz2
+tar xvf $CWD/$PRGNAM-$VERSION-source.tar.gz
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
@@ -101,7 +101,6 @@ cp -a \
   $PKG/usr/doc/$PRGNAM-$VERSION
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/html
-mv $PKG/usr/share/doc/$PRGNAM/*.{html,gif,jpg} $PKG/usr/doc/$PRGNAM-$VERSION/html/
 mv $PKG/usr/share/doc/$PRGNAM/examples $PKG/usr/doc/$PRGNAM-$VERSION
 rm -rf $PKG/usr/share
 rm -rf $PKG/usr/man/cat{1,3}
