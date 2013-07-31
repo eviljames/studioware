@@ -1,0 +1,73 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2012-10-11 20:52:24.000000000 +0000
++++ b/Makefile	2013-07-30 23:53:34.992126694 +0000
+@@ -37,13 +37,13 @@
+ 	numamon.c shm.c stream_lib.c stream_main.c syscall.c util.c mt.c \
+ 	clearcache.c test/*.c affinity.c sysfs.c rtnetlink.c
+ 
+-ifeq ($(strip $(PREFIX)),)
++ifeq ($(strip ${PREFIX}),)
+ prefix := /usr
+ else
+-prefix := $(PREFIX)
++prefix := ${PREFIX}
+ endif
+ libdir := ${prefix}/$(shell ./getlibdir)
+-docdir := ${prefix}/share/doc
++docdir := ${PREFIX}/${prefix}/doc
+ 
+ all: numactl migratepages migspeed libnuma.so numademo numamon memhog \
+      test/tshared stream test/mynode test/pagesize test/ftok test/prefered \
+@@ -146,30 +146,28 @@
+ MANPAGES := numa.3 numactl.8 numastat.8 migratepages.8 migspeed.8
+ 
+ install: numactl migratepages migspeed numademo.c numamon memhog libnuma.so.1 numa.h numaif.h numacompat1.h numastat ${MANPAGES}
+-	mkdir -p ${prefix}/bin
+-	install -m 0755 numactl ${prefix}/bin
+-	install -m 0755 migratepages ${prefix}/bin
+-	install -m 0755 migspeed ${prefix}/bin
+-	install -m 0755 numademo ${prefix}/bin
+-	install -m 0755 memhog ${prefix}/bin
+-	mkdir -p ${prefix}/share/man/man2 ${prefix}/share/man/man8 ${prefix}/share/man/man3
+-	install -m 0644 migspeed.8 ${prefix}/share/man/man8
+-	install -m 0644 migratepages.8 ${prefix}/share/man/man8
+-	install -m 0644 numactl.8 ${prefix}/share/man/man8
+-	install -m 0644 numastat.8 ${prefix}/share/man/man8
+-	install -m 0644 numa.3 ${prefix}/share/man/man3
+-	( cd ${prefix}/share/man/man3 ; for i in $$(./manlinks) ; do ln -sf numa.3 $$i.3 ; done )
+-	mkdir -p ${libdir}
+-	install -m 0755 libnuma.so.1 ${libdir}
+-	cd ${libdir} ; ln -sf libnuma.so.1 libnuma.so
+-	install -m 0644 libnuma.a ${libdir}
+-	mkdir -p ${prefix}/include
+-	install -m 0644 numa.h numaif.h numacompat1.h ${prefix}/include
+-	install -m 0755 numastat ${prefix}/bin
+-	if [ -d ${docdir} ] ; then \
+-		mkdir -p ${docdir}/numactl/examples ; \
+-		install -m 0644 numademo.c ${docdir}/numactl/examples ; \
+-	fi	
++	mkdir -p ${DESTDIR}/${prefix}/bin
++	install -m 0755 numactl ${DESTDIR}/${prefix}/bin
++	install -m 0755 migratepages ${DESTDIR}/${prefix}/bin
++	install -m 0755 migspeed ${DESTDIR}/${prefix}/bin
++	install -m 0755 numademo ${DESTDIR}/${prefix}/bin
++	install -m 0755 memhog ${DESTDIR}/${prefix}/bin
++	mkdir -p ${DESTDIR}/${prefix}/man/man2 ${DESTDIR}/${prefix}/man/man8 ${DESTDIR}/${prefix}/man/man3
++	install -m 0644 migspeed.8 ${DESTDIR}/${prefix}/man/man8
++	install -m 0644 migratepages.8 ${DESTDIR}/${prefix}/man/man8
++	install -m 0644 numactl.8 ${DESTDIR}/${prefix}/man/man8
++	install -m 0644 numastat.8 ${DESTDIR}/${prefix}/man/man8
++	install -m 0644 numa.3 ${DESTDIR}/${prefix}/man/man3
++	( cd ${DESTDIR}/${prefix}/man/man3 ; for i in $$(./manlinks) ; do ln -sf numa.3 $$i.3 ; done )
++	mkdir -p ${DESTDIR}/${libdir}
++	install -m 0755 libnuma.so.1 ${DESTDIR}/${libdir}
++	cd ${DESTDIR}/${libdir} ; ln -sf libnuma.so.1 libnuma.so
++	install -m 0644 libnuma.a ${DESTDIR}/${libdir}
++	mkdir -p ${DESTDIR}/${prefix}/include
++	install -m 0644 numa.h numaif.h numacompat1.h ${DESTDIR}/${prefix}/include
++	install -m 0755 numastat ${DESTDIR}/${prefix}/bin
++	mkdir -p ${DESTDIR}/${docdir}/numactl/examples ; \
++	install -m 0644 numademo.c ${DESTDIR}/${docdir}/numactl/examples ; \
+ 
+ HTML := html/numactl.html html/numa.html
+ 
