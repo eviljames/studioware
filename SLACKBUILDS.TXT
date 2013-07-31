@@ -13,7 +13,7 @@ b81dab140d2f9995b6fb1a32e293139b  ./recorders/timemachine/timemachine.tar.gz
 7ee5ad43c5b275d360b3ab9b643659c8  ./multitrack/ardour/ardour.tar.gz
 1b26c41bacbc5ddf97cbf38315f1d2ce  ./multitrack/jokosher/jokosher.tar.gz
 cbfb242b80303177754f8c8525db8acf  ./multitrack/ecasound/ecasound.tar.gz
-c5af0e5a19d1328d03d5ab78736c43ed  ./editors/mscore/mscore.tar.gz
+c87fc7c950edba19c15b9dea4ee9862e  ./editors/mscore/mscore.tar.gz
 34e8d1c1c0cf8aa52381db69077fe84a  ./editors/rosegarden/rosegarden.tar.gz
 b4a76d7923ac8081158e7fe87e2d1898  ./editors/audacity/audacity.tar.gz
 0eecb71e9ed024566bafcbfcd199f521  ./editors/denemo/denemo.tar.gz
