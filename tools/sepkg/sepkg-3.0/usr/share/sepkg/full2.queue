@@ -40,7 +40,7 @@ lilypond
 rosegarden
 gtksourceview
 denemo
-rt_tests 
+rt_tests
 set_rlimits
 fltk
 rakarrack
@@ -65,13 +65,11 @@ specimen
 graphviz
 seq24
 mxml
-fltk
 zynaddsubfx
 clthreads
 clxclient
 clalsadrv
 stops
 aeolus
-graphviz
 amsynth
 bristol
