@@ -8,14 +8,16 @@
 # -miscellanous script tweaks
 # No additional license terms
 # Modified by Michales Michaloudes <korgie@gmail.com> (2011)
+# Modfified by Dave Woodfall <dave@studioware.org> (2013)
 # - version bump
 # - desktop icon
 # - enable jack and portmidi
 
 PRGNAM=pd
-VERSION=${VERSION:-0.43-0}
-CANONICALIZEDVERSION=$(echo $VERSION | tr - .)
-BUILD=${BUILD:-2}
+SRCVERSION=0.43-0
+VERSION=${VERSION:-VERSION}
+VERSION=${SRCVERSION/-/.}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -50,9 +52,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.src.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf $PRGNAM-$SRCVERSION
+tar xvf $CWD/$PRGNAM-$SRCVERSION.src.tar.gz
+cd $PRGNAM-$SRCVERSION
 chown -R root:root .
 chmod -R u+w,go+r-w,a-s .
 
@@ -81,23 +83,23 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 mkdir -p $PKG/usr/share/applications
 mkdir -p $PKG/usr/share/$PRGNAM
 cp -a $CWD/$PRGNAM.desktop $PKG/usr/share/applications
-convert $TMP/$PRGNAM-$VERSION/src/pd.ico $TMP/$PRGNAM\_48.xpm
+convert $TMP/$PRGNAM-$SRCVERSION/src/pd.ico $TMP/$PRGNAM\_48.xpm
 cp $TMP/$PRGNAM\_48-3.xpm $PKG/usr/share/$PRGNAM
 
 # For 0.43-0 version
 mkdir -p $PKG/usr/lib/pd/tcl/
-cp -a $TMP/$PRGNAM-$VERSION/tcl/*.tcl $PKG/usr/lib/pd/tcl/
+cp -a $TMP/$PRGNAM-$SRCVERSION/tcl/*.tcl $PKG/usr/lib/pd/tcl/
 
 mv $PKG/usr/share/man $PKG/usr/man
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$CANONICALIZEDVERSION
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a INSTALL.txt README.txt LICENSE.txt src/CHANGELOG.txt \
-  $PKG/usr/doc/$PRGNAM-$CANONICALIZEDVERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$CANONICALIZEDVERSION/$PRGNAM.SlackBuild
-ln -s /usr/lib/pd/doc/ $PKG/usr/doc/$PRGNAM-$CANONICALIZEDVERSION/docs
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+ln -s /usr/lib/pd/doc/ $PKG/usr/doc/$PRGNAM-$VERSION/docs
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$CANONICALIZEDVERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

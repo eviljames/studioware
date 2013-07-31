@@ -71,8 +71,9 @@ find . \
 # tsk...
 sed -i 's/-Werror//' configure
 
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
+LDFLAGS="$LDFLAGS -lm" \
+CFLAGS="$SLKCFLAGS -lm" \
+CXXFLAGS="$SLKCFLAGS -lm" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for traverso
-# Copyright 2011 David Woodfall <dave@dawoodfall.net>
+# Slackware build script for amSynth-1.3
+# Copyright 2011 David Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=traverso
-VERSION=${VERSION:-0.49.2}
+PRGNAM=amsynth
+VERSION=${VERSION:-1.4.0}
 BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
@@ -68,27 +68,30 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-mkdir build
-cd build
-  cmake \
-    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
-    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS -I/usr/include/raptor2" \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DWANT_MP3_DECODE:string="on" \
-    -DWANT_MP3_ENCODE:string="on" \
-    -DWANT_LV2:STRING="off" \
-    -DWANT_PORTAUDIO:string="on" \
-    -DCMAKE_BUILD_TYPE=Release ..
-  make
-  make install DESTDIR=$PKG
-cd ..
+sed -i 's#Name=amsynth#Name=amSynth#' amsynth.desktop.in
+
+INCLUDES=`pkg-config --cflags gtk+-2.0 gtkmm-2.4` 
+CFLAGS="$SLKCFLAGS $INCLUDES" \
+CXXFLAGS="$SLKCFLAGS $INCLUDES" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --enable-static=no \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --build=$ARCH-slackware-linux
+
+make
+make install-strip DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING COPYRIGHT ChangeLog INSTALL README TODO *.txt \
+  AUTHORS COPYING ChangeLog INSTALL NEWS README  \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
