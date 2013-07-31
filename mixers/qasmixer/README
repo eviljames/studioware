@@ -1,5 +1,0 @@
-QasMixer is a graphical mixer application for the Linux sound system ALSA. It is written in C++ using only the standard and Qt libraries.
-
-QasMixer is the successor to Alsamixer-Qt4.
-
-Homepage: http://xwmw.org/qasmixer

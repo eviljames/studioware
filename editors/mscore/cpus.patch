@@ -1,0 +1,11 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2013-02-27 11:35:16.000000000 +0000
++++ b/Makefile	2013-07-31 15:22:12.132227411 +0000
+@@ -20,6 +20,7 @@
+ 
+ REVISION  = `cat mscore/mscore/revision.h`
+ CPUS      = `grep -c processor /proc/cpuinfo`
++CPUS      = 6
+ 
+ PREFIX    = "/usr/local"
+ #VERSION   = "1.2r${REVISION}"
