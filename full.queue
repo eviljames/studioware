@@ -13,7 +13,7 @@ cairomm
 pangomm
 atkmm
 gtkmm
-libgnomecanva
+libgnomecanvas
 libgnomecanvasmm
 jack
 ladspa_sdk
