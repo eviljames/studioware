@@ -89,4 +89,4 @@ ab57c34ae962f11d916bcc96cbecf4c3  ./graphics/frescobaldi/frescobaldi.tar.gz
 70e7bca4b1cd13fe7e7d819505cf0fe6  ./graphics/mftrace/mftrace.tar.gz
 ecef93cd0ffa693abc95cfcf7314f2cb  ./graphics/fontforge/fontforge.tar.gz
 06c18a3869629d7c0124d8db5f172a78  ./effects/jack-rack/jack-rack.tar.gz
-5921bc4123425e34bf9d6d20ccf8dd89  ./effects/rakarrack/rakarrack.tar.gz
+14284791bbd0ba01493641c3164af560  ./effects/rakarrack/rakarrack.tar.gz

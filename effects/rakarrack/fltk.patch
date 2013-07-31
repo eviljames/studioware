@@ -1,0 +1,24 @@
+diff -Naur a/src/global.h b/src/global.h
+--- a/src/global.h	2010-10-01 01:44:53.000000000 +0000
++++ b/src/global.h	2013-07-31 07:42:50.223343118 +0000
+@@ -99,7 +99,7 @@
+ #include <X11/xpm.h>
+ #include <jack/jack.h>
+ #include <jack/midiport.h>
+-#include <Fl/Fl_Preferences.H>
++#include <FL/Fl_Preferences.H>
+ #include "FPreset.h"
+ #include "Reverb.h"
+ #include "Chorus.h"
+diff -Naur a/src/process.C b/src/process.C
+--- a/src/process.C	2010-10-01 01:45:12.000000000 +0000
++++ b/src/process.C	2013-07-31 07:44:55.107340334 +0000
+@@ -28,7 +28,7 @@
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+-#include <Fl/Fl_Preferences.H>
++#include <FL/Fl_Preferences.H>
+ #include "global.h"
+ 
+ int Pexitprogram, preset;
