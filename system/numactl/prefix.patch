@@ -1,6 +1,6 @@
 diff -Naur a/Makefile b/Makefile
---- a/Makefile	2012-10-11 20:52:24.000000000 +0000
-+++ b/Makefile	2013-07-30 23:53:34.992126694 +0000
+--- a/Makefile	2012-10-11 21:52:24.000000000 +0100
++++ b/Makefile	2013-08-01 22:06:22.787959340 +0100
 @@ -37,13 +37,13 @@
  	numamon.c shm.c stream_lib.c stream_main.c syscall.c util.c mt.c \
  	clearcache.c test/*.c affinity.c sysfs.c rtnetlink.c
@@ -12,8 +12,9 @@ diff -Naur a/Makefile b/Makefile
 -prefix := $(PREFIX)
 +prefix := ${PREFIX}
  endif
- libdir := ${prefix}/$(shell ./getlibdir)
+-libdir := ${prefix}/$(shell ./getlibdir)
 -docdir := ${prefix}/share/doc
++libdir := @LIBDIR@
 +docdir := ${PREFIX}/${prefix}/doc
  
  all: numactl migratepages migspeed libnuma.so numademo numamon memhog \
