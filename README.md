@@ -21,4 +21,6 @@ Get Involved!
 We want to hear about your experiences too. Any hints or tips or other useful things that you've discovered while building or running packages you'd like to share will be welcome.
 
 
-All content © 2011-2013 studioware.org  Slackware® © Patrick Volkerding  Linux® © Linus Torvalds  
+All content © 2011-2013 studioware.org  
+Slackware® © Patrick Volkerding  
+Linux® © Linus Torvalds  
