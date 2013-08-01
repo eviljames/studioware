@@ -33,7 +33,7 @@ c84586d4aef161e9f9ec50f7bc25c94f  ./system/set_rlimits/set_rlimits.tar.gz
 5b65e966df8ceaf4b4b76601b067c52a  ./samplers/giada/giada.tar.gz
 ebc83a972928c00496f04e0f487c2644  ./samplers/sooperlooper/sooperlooper.tar.gz
 dfe083782d0f028cddcfc68eda87ca76  ./samplers/specimen/specimen.tar.gz
-1f3745a12d5679cd43de74107e4c1a03  ./synthesizers/terminatorX/terminatorX.tar.gz
+fbe05d33e94dfd231abaf257278adf09  ./synthesizers/terminatorX/terminatorX.tar.gz
 966bd8de3a7a2dcf7f1d2a7990e4f55c  ./synthesizers/pd/pd.tar.gz
 d203fed85bf399cb5ddfed1d1057fcfd  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 c037c438c6a281915496c0c87968cc6d  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz

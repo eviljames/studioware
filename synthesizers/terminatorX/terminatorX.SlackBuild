@@ -69,7 +69,9 @@ find . \
  -exec chmod 644 {} \;
 
 sed -i 's#Name=terminatorX#Name=TerminatorX#' gnome-support/terminatorX.desktop
+patch -p1 --verbose < $CWD/tx_midiin.patch
 
+LDFLAGS="-ldl" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

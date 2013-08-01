@@ -1,0 +1,12 @@
+diff -Naur a/src/tX_midiin.cc b/src/tX_midiin.cc
+--- a/src/tX_midiin.cc	2011-11-13 12:53:51.000000000 +0000
++++ b/src/tX_midiin.cc	2013-08-01 10:08:20.113877376 +0100
+@@ -447,7 +447,7 @@
+ 
+ void tX_midiin::store_connections(FILE *rc, char *indent) 
+ {
+-	gzFile *rz=NULL;
++	gzFile rz=NULL;
+ 	
+ 	tX_store("%s<midi_connections>\n", indent);
+ 
