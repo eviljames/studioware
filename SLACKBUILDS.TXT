@@ -74,7 +74,7 @@ c181df3e93bba2f71304b182dc6c5600  ./libraries/mxml/mxml.tar.gz
 ba5b9b8a786d5dd76760e4d03e10cd5f  ./libraries/fltk/fltk.tar.gz
 97b64e721ab4c927af0ddfda07cb92c4  ./plugins/tap-plugins/tap-plugins.tar.gz
 f10e64f7551c6f9cc9ed6cc0955904b6  ./plugins/swh-plugins/swh-plugins.tar.gz
-c2f14034a801c9b130ef2fdc3e6b496c  ./plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
+213bde9c48f63b104308b3a7377ca3f1  ./plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 5ff12caae47bc15fc31d1adf960fd4dc  ./plugins/lv2core/lv2core.tar.gz
 61e0434d98833736ff73c5e170f96cb8  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 e739bf2dae0644b0c0e177b81d6d79d9  ./graphics/t1utils/t1utils.tar.gz
