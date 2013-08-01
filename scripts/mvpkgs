@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# After running mkdirs in the main release-package dir
+# Copy all packages to main dir
+# Run this script to move all packages to correct subdirs
+
+for pkg in *txz
+do
+    PRGNAM=$(echo $pkg | rev | cut -d- -f4-| rev)
+    DIR=$(find ~/git/dev -name $PRGNAM | cut -d'/' -f5)
+    mv -f $pkg ./$DIR/.
+done
+
+# vim tw=0

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cat << EOF > CHECKSUMS.md5
+These are the MD5 message digests for the files in this directory.
+If you want to test your files, use 'md5sum' and compare the values to
+the ones listed here.
+
+To test all these files, use this command:
+
+md5sum -c CHECKSUMS.md5 | less
+
+'md5sum' can be found in the GNU coreutils package on ftp.gnu.org in
+/pub/gnu, or at any GNU mirror site.
+
+MD5 message digest                Filename
+EOF
+
+for i in $(find . -name "*.txz" -o -name "*tar.gz")
+do	
+	md5sum $i >> CHECKSUMS.md5
+done
+#chown studioware:users CHECKSUMS.md5

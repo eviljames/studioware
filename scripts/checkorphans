@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checks for orphans in queue given as argument. EG: checkorphans full.queue
+
+find ~/git/dev -name \*\.info | cut -d'/' -f6 | while read line
+do
+    if [ -z "$(grep $line $1)" ]; then
+        echo "Orphan: $(find ~/git/dev -name $line | awk -F '/' '{print $5"/"$6}')"
+    fi
+done 
+
+# vim: tw=0

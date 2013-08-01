@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -n "$(date -R | grep zic)" ]; then
+    echo "Timezone must be set. Please use tzselect and export it in your shell"
+    exit 1
+fi
+
+mkchecksums
+date -R > FILE_LIST.TXT
+ 
+printf "\nFile list for this directory.\n\n" >> FILE_LIST.TXT
+ls -l `find . -type f -name "*[txz|TXT|md5]" | sort` >> FILE_LIST.TXT
+chown -R root:root *
+
+
+# vim: tw=0

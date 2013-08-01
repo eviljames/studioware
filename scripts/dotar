@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PRGNAM=$(pwd | awk -F '/' '{print $NF}')
+TAR=$PRGNAM.tar.gz
+
+if [ -r "$TAR" ]; then
+    mv $TAR ../
+fi
+
+cd ..
+tar cfpzv $TAR $PRGNAM
+mv $TAR $PRGNAM

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Checks and filters dupes from queue given as argument and saves into # unduped.queue
+
+touch unduped.queue
+
+for i in `cat $1`
+do
+    if [ -z "$(grep -w $i unduped.queue)" ]; then
+        echo $i >> unduped.queue
+    else
+        echo $i
+    fi
+done
