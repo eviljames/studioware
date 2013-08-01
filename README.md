@@ -13,7 +13,7 @@ Although Studioware is quite a small project, we are Slackware users of many yea
 Network
 -------
 
-Apart from this website we also have an IRC channel and mailing list. Everyone is welcome to join #studioware on irc.freenode.net. The mailing list can be found here: http://groups.google.com/ group/studioware
+Apart from this website we also have an IRC channel and mailing list. Everyone is welcome to join #studioware on irc.freenode.net. The mailing list can be found here: (http://groups.google.com/group/studioware)
 
 Get Involved!
 -------------
