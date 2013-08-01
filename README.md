@@ -1,10 +1,10 @@
-studioware
+Studioware
 ==========
 
 SlackBuilds for the Studioware Project
 
 About The Studioware Project
-============================
+----------------------------
 
 Studioware is a project aimed at providing build scripts and packages of the best open source music and audio editing software available for Slackware Linux.
 We also include libraries and other dependencies with a comprehensive dependency list for each package so you will know exactly what you need to install.
