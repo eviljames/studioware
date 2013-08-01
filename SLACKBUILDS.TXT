@@ -51,7 +51,7 @@ cfdee493099aea958dbecf3c55a6423d  ./synthesizers/bristol/bristol.tar.gz
 34fda3b92d786d13c49f9a1d83cfaca3  ./libraries/rubberband/rubberband.tar.gz
 ecaadb4abcbc4ae370d44cdc72225668  ./libraries/clxclient/clxclient.tar.gz
 91be5f980627fa5298486f0e0d3f1328  ./libraries/mm-common/mm-common.tar.gz
-373c9578ef45a4bc1234038a5b9965ff  ./libraries/dssi/dssi.tar.gz
+b9b8d1d3f21b53c21add30f6acbea4e2  ./libraries/dssi/dssi.tar.gz
 e567f3e0fbbcb4021c584c1c75425793  ./libraries/clthreads/clthreads.tar.gz
 c6ee5a1249f2a29a65ea699810bf4199  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 5a77bc42baa071aadf84857c2e6dee32  ./libraries/gst-python/gst-python.tar.gz
