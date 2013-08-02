@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.3"
+    VERSION="3.4"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -45,7 +45,7 @@ init()
     touch $CONF
     source $CONF 
     MAINURL="http://www.studioware.org"
-    TOOLURL="$MAINURL/files/slackbuilds/$SWVERSION/tools/$APPNAME"
+    TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
