@@ -61,7 +61,6 @@ c6ee5a1249f2a29a65ea699810bf4199  ./libraries/libgnomecanvasmm/libgnomecanvasmm.
 956b2be0651573265874a7481b335dc5  ./libraries/ladspa_sdk/ladspa_sdk.tar.gz
 e569b387b5c1b465f96a377f1ebacabf  ./libraries/wxGTK/wxGTK.tar.gz
 554df27da79a7e53c3b5db3e92038ee2  ./libraries/lash/lash.tar.gz
-00922c4889cc59390cb2cc16618f08bf  ./libraries/calf/calf.tar.gz
 ef8583201a55ff38d2ee9965d4ad6c6a  ./libraries/portmidi/portmidi.tar.gz
 bd2b1d49e8351e41a8384e5e6ec18eec  ./libraries/glibmm/glibmm.tar.gz
 ee4e43d411d20c7b0dbbfb3585686b97  ./libraries/portaudio/portaudio.tar.gz
@@ -76,6 +75,7 @@ ba5b9b8a786d5dd76760e4d03e10cd5f  ./libraries/fltk/fltk.tar.gz
 f10e64f7551c6f9cc9ed6cc0955904b6  ./plugins/swh-plugins/swh-plugins.tar.gz
 213bde9c48f63b104308b3a7377ca3f1  ./plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 5ff12caae47bc15fc31d1adf960fd4dc  ./plugins/lv2core/lv2core.tar.gz
+00922c4889cc59390cb2cc16618f08bf  ./plugins/calf/calf.tar.gz
 61e0434d98833736ff73c5e170f96cb8  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 e739bf2dae0644b0c0e177b81d6d79d9  ./graphics/t1utils/t1utils.tar.gz
 a9958b83e8c382d8c7b716b894e5700f  ./graphics/lilypond/lilypond.tar.gz
