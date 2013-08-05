@@ -67,7 +67,6 @@ ee4e43d411d20c7b0dbbfb3585686b97  ./libraries/portaudio/portaudio.tar.gz
 0fbf867872dccd97d3e0d85fd08f2c7d  ./libraries/pangomm/pangomm.tar.gz
 4f16b6974e6b3e5fed4d40da55749602  ./libraries/atkmm/atkmm.tar.gz
 7bbf1e29e3f224c9572f02f33c39b357  ./libraries/gtkmm/gtkmm.tar.gz
-d34ce2d6fdb2bfa36d359e4cbdbc42cf  ./libraries/rasqal/rasqal.tar.gz
 75bcff9010c53d21509eefe6c0816082  ./libraries/gtksourceview/gtksourceview.tar.gz
 c181df3e93bba2f71304b182dc6c5600  ./libraries/mxml/mxml.tar.gz
 ba5b9b8a786d5dd76760e4d03e10cd5f  ./libraries/fltk/fltk.tar.gz
