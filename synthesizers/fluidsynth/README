@@ -4,7 +4,3 @@ FluidSynth is a real-time software synthesizer based on the SoundFont
 2 specifications.
 
 Homepage: https://sourceforge.net/apps/trac/fluidsynth/
-
-Deps:
-
-ladspa_sdk

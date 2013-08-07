@@ -2,6 +2,7 @@ Sepkg - The Studioware Package Builder
 
 Options
 
+sepkg info/-f package - shows info file
 sepkg update/-u - syncs with file server
 sepkg search/-s &lt;grep term&gt; - search for package name or part name
 sepkg build/-b package1, package2, ... - build packages

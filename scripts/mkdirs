@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Create main packages directory for the release - ie slackware64-14.0
+# cd into it and run mkdirs
+
+DIRS=$(find ~/git/dev -type d -maxdepth 1 -print | cut -d'/' -f5 | sed '/\.git/d;/^$/d')
+
+mkdir -p $DIRS
+
+
+# vim: tw=0

@@ -1,0 +1,5 @@
+amSynth ( Analogue Modeling SYNTHesizer )
+
+It provides virtual analogue synthesis in the style of the classic Moog Minimoog/Roland Junos. It offers an easy-to-use interface and synth engine, while still creating varied sounds.
+
+If you want to use this package with jack it will pick up on whether jack is installed during configure. Note that this is 'jack' _not_ 'jack-audio-connection-kit'.

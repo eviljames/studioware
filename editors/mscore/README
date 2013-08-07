@@ -1,3 +1,7 @@
 MuseScore ( music notation editor ) 
 
 MuseScore is a free cross-platform WYSIWYG music notation program, that offers a cost-effective alternative to professional programs such as Sibelius and Finale.  You can print beautifully engraved sheet music or save it as PDF or MIDI file.
+
+The Makefile sets the number of jobs to the number of CPU cores by default. You can change the number of jobs by doing, for example:
+
+JOBS=6 ./mscore.SlackBuild

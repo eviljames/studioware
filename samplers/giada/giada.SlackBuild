@@ -22,8 +22,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=giada
-VERSION=${VERSION:-0.3.0_lin}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-0.7.2}
+SRCVERSION=0.7.2-lin
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -61,11 +62,11 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 mkdir $PRGNAM-$VERSION
 cd $PRGNAM-$VERSION
-tar xvf $CWD/${PRGNAM}_$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$SRCVERSION.tar.gz
 ar x ${PRGNAM}_*.deb
 tar xvf data.tar.gz
 mkdir -p $PKG/usr/bin
-mv usr/local/bin/giada_lin $PKG/usr/bin/giada
+mv usr/bin/giada_lin $PKG/usr/bin/giada
 
 chown -R root:root .
 find . \
@@ -83,7 +84,7 @@ cp $CWD/giada.png $PKG/usr/share/pixmaps
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-    CHANGELOG $CWD/README \
+    ChangeLog README.md \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

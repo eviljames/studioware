@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=jack
-VERSION=${VERSION:-1.9.7}
-BUILD=${BUILD:-6}
+VERSION=${VERSION:-1.9.9.5}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -71,9 +71,10 @@ find . \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./waf configure --prefix=/usr --alsa \
-  --libdir=/lib${LIBDIRSUFFIX} \
-  --libdir32=/lib \
-  --mandir=/man \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --libdir32=/usr/lib \
+  --mandir=/usr/man/man1 \
+  --dbus \
   --classic 
 
 ./waf build 

@@ -71,7 +71,7 @@ find . \
 patch -p1 --verbose < $CWD/makefile.diff
 sed -i "s/lib\//lib$LIBDIRSUFFIX\//g" Makefile
 
-make
+make -j1
 make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \

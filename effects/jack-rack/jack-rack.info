@@ -5,6 +5,7 @@ DOWNLOAD="http://downloads.sourceforge.net/project/jack-rack/jack-rack/1.4.7/jac
 MD5SUM="a29ef4001ee2916a1b758952c936adca"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES="jack ladspa_sdk liblrdf raptor lash"
 MAINTAINER="David Woodfall"
 EMAIL="dave@studioware.org"
 APPROVED=""

@@ -1,8 +1,10 @@
 jack
+evince
 ladspa_sdk
 gtksourceview
 fluidsynth
 portaudio
+portmidi
 lash
 aubio
 denemo

@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=terminatorX
-VERSION=${VERSION:-3.83}
+VERSION=${VERSION:-3.84}
 BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
@@ -69,7 +69,9 @@ find . \
  -exec chmod 644 {} \;
 
 sed -i 's#Name=terminatorX#Name=TerminatorX#' gnome-support/terminatorX.desktop
+patch -p1 --verbose < $CWD/tx_midiin.patch
 
+LDFLAGS="-ldl" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

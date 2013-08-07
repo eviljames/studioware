@@ -22,9 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=mixxx
-VERSION=${VERSION:-1.9.0}
-SRCDIR=$PRGNAM-$VERSION~release-1.9.x~bzr2720
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-1.11.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -59,9 +58,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $SRCDIR
+rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION-src.tar.gz
-cd $SRCDIR
+cd $PRGNAM-$VERSION
 
 patch -p1 --verbose < $CWD/desktop.diff
 

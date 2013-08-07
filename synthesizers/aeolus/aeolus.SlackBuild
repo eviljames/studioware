@@ -52,8 +52,9 @@ find . \
 sed -i -e 's+/usr/local+/usr+' -e '/ldconfig/d' $TMP/$PRGNAM-$VERSION/source/Makefile
 cd $TMP/$PRGNAM-$VERSION/source/
 
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
+LDFLAGS="-ldl $LDFLAGS" \
+CFLAGS="-ldl $SLKCFLAGS" \
+CXXFLAGS="-ldl $SLKCFLAGS" \
 make
 make install DESTDIR=$PKG
 

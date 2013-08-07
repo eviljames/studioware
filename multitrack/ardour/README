@@ -8,7 +8,3 @@ If you want support for controlling ardour via a wiimote device, you'll need to 
 
 For building ardour with support for VST-plugins, you have to pass VST=yes to the script. This will additionally require wine. Please note that VST-support will not be built on x86_64, regardless of the option passed.
 
-Deps:
-
-liblo, liblrdf, scons, libgnomecanvas, aubio, jack-audio-connection-kit.
-

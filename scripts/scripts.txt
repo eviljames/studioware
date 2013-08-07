@@ -1,0 +1,15 @@
+Useful scripts
+
+For package tree:
+mkchecksums: builds the CHECKSUMS.md5
+mkfilelist: builds a FILE_LIST.TXT and CHECKSUMS.md5 (uses mkchecksums)
+mkdirs: scans ~/git/dev for directories and recreates them in current dir
+mvpkgs: moves all packages in current dir into correct subdirs according to ~/git/dev layout
+
+For slackbuilds tree:
+mkbuilds: builds the SLACKBUILDS.TXT
+dotar: builds the slackbuild .tar.gz. Run from inside the slackbuild dir
+
+Queue stuff:
+checkorphans: Checks for orphans in queue given as argument. EG: checkorphans full.queue
+checkdupes: Filters dupes from queue given as argument and saves into unduped.queue

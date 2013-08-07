@@ -1,0 +1,20 @@
+#!/bin/sh
+
+exec 1>CHECKSUMS.md5
+
+cat <<END
+These are the MD5 message digests for the files in this directory.
+If you want to test your files, use 'md5sum' and compare the values to
+the ones listed here.
+
+To test all these files, use this command:
+
+md5sum -c CHECKSUMS.md5 | less
+
+'md5sum' can be found in the GNU coreutils package on ftp.gnu.org in
+/pub/gnu, or at any GNU mirror site.
+
+MD5 message digest                Filename
+END
+
+find . -name \*.txz -exec md5sum {} \; >> CHECKSUMS.md5
