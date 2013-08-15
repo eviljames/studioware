@@ -1,6 +1,0 @@
-distribute ( a fork of the Setuptools project )
-
-Distribute is intended to replace Setuptools as the standard method
-for working with Python module distributions.
-
-Homepage: https://pythonhosted.org/distribute/
