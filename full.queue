@@ -1,7 +1,7 @@
 jack
 lame
 libsigc++
-distribute
+pysetuptools
 scons
 lv2core
 t1utils
