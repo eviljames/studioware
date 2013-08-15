@@ -1,9 +1,9 @@
 e7e0be8e7b78dd80cbf53b5085e68f99  ./development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
 ece767ef0569d6655f2f648ae86e2bb5  ./development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 d452abe30fde646adef958f2b3dee015  ./development/scrollkeeper/scrollkeeper.tar.gz
+04c7ad66ac4eb2edbe72868644192b88  ./development/pysetuptools/pysetuptools.tar.gz
 90b4d40b455861a50b25ca4f8ded2c10  ./development/phat/phat.tar.gz
 8022af27f8ec1f2e914d6071b0267a76  ./development/libsigc++/libsigc++.tar.gz
-c764866feed2528a71775b6cba8296fc  ./development/distribute/distribute.tar.gz
 4f6bdc32fd790237efc59779a726fc90  ./development/scons/scons.tar.gz
 b81dab140d2f9995b6fb1a32e293139b  ./recorders/timemachine/timemachine.tar.gz
 910f4f8e0296fcc5a0212c6e4de1ff8e  ./desktop/evince/evince.tar.gz
@@ -11,7 +11,7 @@ b81dab140d2f9995b6fb1a32e293139b  ./recorders/timemachine/timemachine.tar.gz
 57355e77047bd489fd3ac2a0b8bbe643  ./drums/hydrogen/hydrogen.tar.gz
 8adbe288b440a5cc91dcc11c753831bf  ./multitrack/qtractor/qtractor.tar.gz
 7ee5ad43c5b275d360b3ab9b643659c8  ./multitrack/ardour/ardour.tar.gz
-1b26c41bacbc5ddf97cbf38315f1d2ce  ./multitrack/jokosher/jokosher.tar.gz
+b04cd91c68b4b82dc322e3160f5a5c09  ./multitrack/jokosher/jokosher.tar.gz
 cbfb242b80303177754f8c8525db8acf  ./multitrack/ecasound/ecasound.tar.gz
 c87fc7c950edba19c15b9dea4ee9862e  ./editors/mscore/mscore.tar.gz
 34e8d1c1c0cf8aa52381db69077fe84a  ./editors/rosegarden/rosegarden.tar.gz
@@ -20,7 +20,7 @@ b4a76d7923ac8081158e7fe87e2d1898  ./editors/audacity/audacity.tar.gz
 1058551a063b768b139429bc6216d285  ./mixers/qastools/qastools.tar.gz
 e681a0186bab3b282e0870b8c93a211c  ./mixers/mixxx/mixxx.tar.gz
 1485b44657fea833078f2b92828158f2  ./misc/SimpleSysexxer/SimpleSysexxer.tar.gz
-9fc41a7fbaf71de79015d75313f7a243  ./misc/protobuf/protobuf.tar.gz
+ae4c99e99d7b5f7413f783c9b8102ad6  ./misc/protobuf/protobuf.tar.gz
 1f761ad60ced2387632e7a98a087ac7d  ./misc/stops/stops.tar.gz
 5bc80afbc98edfeef3ed218bea689102  ./sequencers/seq24/seq24.tar.gz
 ddbfabef35af8026ed1007e1961ed8f7  ./sequencers/muse/muse.tar.gz
