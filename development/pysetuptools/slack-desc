@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+            |-----handy-ruler------------------------------------------------------|
+pysetuptools: setuptools ( collection of enhancements to the Python distutils ) 
+pysetuptools:
+pysetuptools: setuptools is a collection of enhancements to the Python distutils   
+pysetuptools: (for Python 2.3.5 and up on most platforms; 64-bit platforms require 
+pysetuptools: a minimum of Python 2.4) that allow you to more easily build and     
+pysetuptools: distribute Python packages, especially ones that have dependencies on
+pysetuptools: other packages.
+pysetuptools:
+pysetuptools:
+pysetuptools:
+pysetuptools:
