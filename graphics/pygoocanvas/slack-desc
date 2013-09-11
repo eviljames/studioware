@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+           |-----handy-ruler------------------------------------------------------|
+pygoocanvas: pygoocanvas ( Python bindings for goocanvas )
+pygoocanvas:
+pygoocanvas: PyGoocanvas are the python bindings for GooCanvas which is a canvas
+pygoocanvas: widget for GTK+ that uses the cairo 2D library for drawing.
+pygoocanvas:
+pygoocanvas: Homepage: https://wiki.gnome.org/PyGoocanvas
+pygoocanvas:
+pygoocanvas:
+pygoocanvas:
+pygoocanvas:
+pygoocanvas:
