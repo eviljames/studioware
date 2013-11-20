@@ -1,0 +1,4 @@
+slv2 ( LV2 library )
+
+SLV2 is a library to make the use of LV2 plugins as simple as 
+possible for applications.
