@@ -1,9 +1,8 @@
 libsigc++
 glibmm
-graphviz
 cairomm
-mm-common
 pangomm
 atkmm
+mm-common
 gtkmm
 seq24

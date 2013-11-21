@@ -6,5 +6,6 @@ atkmm
 mm-common
 gtkmm
 ladspa_sdk
+liblrdf
 jack
 guitarix2
