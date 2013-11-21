@@ -1,4 +1,5 @@
-frei0r
-mlt
-pygoocanvas
 pyxdg
+pygoocanvas
+mlt
+frei0r-plugins
+openshot

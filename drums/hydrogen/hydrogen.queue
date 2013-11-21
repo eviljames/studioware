@@ -1,8 +1,4 @@
-jack
+scons
 ladspa_sdk
 liblrdf
-lash
-portmidi
-portaudio
-scons
 hydrogen

@@ -5,6 +5,3 @@ pangomm
 atkmm
 mm-common
 gtkmm
-ladspa_sdk
-jack
-guitarix2

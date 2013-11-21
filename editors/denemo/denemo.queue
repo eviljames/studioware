@@ -1,10 +1,11 @@
 jack
-evince
-ladspa_sdk
-gtksourceview
-fluidsynth
-portaudio
-portmidi
 lash
 aubio
+portmidi
+portaudio
+ladspa_sdk
+fluidsynth
+gtksourceview
+dconf
+evince
 denemo
