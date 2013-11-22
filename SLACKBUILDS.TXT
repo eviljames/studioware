@@ -1,4 +1,5 @@
 6c134241b39fad85394792b68da350c5  ./development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
+256dea8dbba332a46d47cc30c93d30bc  ./development/guile1.8/guile1.8.tar.gz
 0113e768c3ac8c5111719e792c1bd514  ./development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 ba9a2cbebf7765b8fa7539724d3e5d3d  ./development/scrollkeeper/scrollkeeper.tar.gz
 a1a4c901323e1a19df04ba24541d62c6  ./development/pysetuptools/pysetuptools.tar.gz
@@ -35,7 +36,7 @@ e5ebcb3b6beb74e5e025b70f6ed1f4d6  ./system/jack/jack.tar.gz
 65cb99de51a262c15e996d84517f719a  ./samplers/sooperlooper/sooperlooper.tar.gz
 0e8f01e62b27bc753b3e963eaf0f5237  ./samplers/specimen/specimen.tar.gz
 9f718a9e4a8394effccd693b55d22c61  ./synthesizers/terminatorX/terminatorX.tar.gz
-f40ddf8088246b02844efb2528c858a2  ./synthesizers/pd/pd.tar.gz
+a15dddcdb0c173759c9fc5174e12f45c  ./synthesizers/pd/pd.tar.gz
 f839daa62da641d21d48e2dc8d7e2e8e  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 0b5579093e2004138a432bf35d55b46c  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 50d19950e3bff3960144c6a99f336fcf  ./synthesizers/bristol/bristol.tar.gz
@@ -86,7 +87,7 @@ e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 442305661696740c997f8d884dcfde87  ./video/openshot/openshot.tar.gz
 a91b8b3857ec938ad5c4cb95a02c1eeb  ./graphics/t1utils/t1utils.tar.gz
 23837b4af9fdb1b90495ad36dd73b5a8  ./graphics/goocanvas/goocanvas.tar.gz
-8ce2c67b6e952dbf68f9f727ecc13fc1  ./graphics/lilypond/lilypond.tar.gz
+baded551bba8601b60661fd35dc56082  ./graphics/lilypond/lilypond.tar.gz
 8e509a2bc0341d12fd8bee16ba0c38b9  ./graphics/frescobaldi/frescobaldi.tar.gz
 bb041426d06c2e3dec917e1d1ea78e6a  ./graphics/potrace/potrace.tar.gz
 12cb5e4cf1789c0cd804bf9f7e73f0bc  ./graphics/mftrace/mftrace.tar.gz

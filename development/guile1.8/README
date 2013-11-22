@@ -1,0 +1,3 @@
+guile 1.8.8 ( guile legacy build )
+
+Guile is a library designed to help programmers create flexible applications.  Using Guile in an application allows the application's functionality to be extended by users or other programmers with plug-ins, modules, or scripts.  Guile provides what might be described as "practical software freedom," making it possible for users to customize an application to meet their needs without digging into the application's internals.

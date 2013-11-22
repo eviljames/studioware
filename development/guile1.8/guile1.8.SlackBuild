@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Studioware <studioware.org> build script for lilypond
-# Copyright 2011 David Woodfall <dave@dawoodfall.net>
+# Slackware build script for guile
+# Copyright 2013 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -21,12 +21,10 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Some modifictions taken from Kyle Guinn's slackbuild at
-# slackbuilds.org to build on Slackware 14.1
-
-PRGNAM=lilypond
-VERSION=${VERSION:-2.16.2}
-BUILD=${BUILD:-3}
+SRCNAM=guile
+PRGNAM=guile1.8
+VERSION=${VERSION:-1.8.8}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -61,9 +59,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -71,11 +69,6 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-sed -i 's|GUILE_CFLAGS=.*|GUILE_CFLAGS="`pkg-config --cflags guile-1.8`"|' configure
-sed -i 's|GUILE_LDFLAGS=.*|GUILE_LDFLAGS="`pkg-config --libs guile-1.8`"|' configure
-
-GUILE=/usr/bin/guile1.8 \
-GUILE_CONFIG=/usr/bin/guile-config1.8 \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -83,6 +76,9 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
+  --with-threads \
+  --program-suffix=1.8 \
+  --disable-error-on-warning \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
@@ -100,15 +96,11 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 rm -f $PKG/usr/info/dir
 gzip -9 $PKG/usr/info/*.info*
 
-mkdir -p $PKG/usr/share/applications
-cp $CWD/lilypond.desktop $PKG/usr/share/applications
-
-mkdir -p $PKG/usr/share/pixmaps
-cp Documentation/pictures/lily-home.png $PKG/usr/share/pixmaps
+find $PKG -name "perllocal.pod" -o -name ".packlist"  -o -name "*.bs"  | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS.txt COPYING HACKING INSTALL.txt NEWS.txt README.txt THANKS VERSION *.txt \
+  AUTHORS COPYING.LESSER ChangeLog ChangeLog-2008 HACKING INSTALL LICENSE NEWS README THANKS GUILE-VERSION doc \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
