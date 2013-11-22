@@ -4,6 +4,7 @@
 ba9a2cbebf7765b8fa7539724d3e5d3d  ./development/scrollkeeper/scrollkeeper.tar.gz
 a1a4c901323e1a19df04ba24541d62c6  ./development/pysetuptools/pysetuptools.tar.gz
 2d973e55381dcf03b93d1ae48603e2af  ./development/phat/phat.tar.gz
+ab0c153c019523009b3d808001f129b9  ./development/ntk/ntk.tar.gz
 e3dc7043aae4b612b4bdc2372868a5e9  ./development/libsigc++/libsigc++.tar.gz
 cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 e1dfe6f560aae4590ed5ae3e8cec25e0  ./recorders/timemachine/timemachine.tar.gz
@@ -21,6 +22,7 @@ a5cd12256ac9ba616dd14c6def6c7155  ./editors/rosegarden/rosegarden.tar.gz
 f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
 df27549c43f1c1160bfefbe05ef2bf00  ./mixers/mixxx/mixxx.tar.gz
 be50c84c7f916c0fdecd05ab6c86e345  ./misc/SimpleSysexxer/SimpleSysexxer.tar.gz
+9a0aea7d025939447086b09fbc08332a  ./misc/non/non.tar.gz
 f7cea85fe50a95d6ed8ca4ced7894256  ./misc/protobuf/protobuf.tar.gz
 8ff063fcda231d940f477f9471b021ad  ./misc/stops/stops.tar.gz
 81ea20a84504f61fc9b7396551a799b8  ./sequencers/seq24/seq24.tar.gz

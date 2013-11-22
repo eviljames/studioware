@@ -1,0 +1,13 @@
+ntk is a fast and lightweight GUI toolkit for the Non-DAW application
+suite. It is a build requirement of Non, and is distributed along with
+Non source code. It is packaged separately for SlackBuilds.org because
+in order for Non-* to build, ntk must be installed first. Ergo,
+install this first, and then build and install Non.
+
+The only official download is available as a git repository. In order
+to standardize this SlackBuild, a snapshot of the git repository as of
+the 1.1.0 release has been posted to http://slackermedia.info, which
+this SlackBuild uses.
+
+http://non.tuxfamily.org
+
