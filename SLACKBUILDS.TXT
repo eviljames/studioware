@@ -62,7 +62,7 @@ f301286d57ae003458608b7d2b527700  ./libraries/libgnomecanvasmm/libgnomecanvasmm.
 e5a67736be08a9941a60711225ec0520  ./libraries/lame/lame.tar.gz
 156765755a9a12d0ab135e2247450e01  ./libraries/libgnomecanvas/libgnomecanvas.tar.gz
 e37432d6a8aaa7f49e3ffa1f2cf05b11  ./libraries/libshout/libshout.tar.gz
-3b541e2a627a353fd96c753a8dfb18d7  ./libraries/raptor/raptor.tar.gz
+37f5fa39833d7413315493efeaf927da  ./libraries/raptor/raptor.tar.gz
 b547a4a4792f88afe1de5b479666073d  ./libraries/ladspa_sdk/ladspa_sdk.tar.gz
 4dea52ca03c5f3b85cfe4965a74b9426  ./libraries/wxGTK/wxGTK.tar.gz
 4c43882a08a8858b108839e348965fae  ./libraries/lash/lash.tar.gz

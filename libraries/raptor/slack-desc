@@ -6,14 +6,23 @@
 # customary to leave one space after the ':'.
 
       |-----handy-ruler------------------------------------------------------|
-raptor: raptor (  )
+raptor: raptor ( RDF Generator )
 raptor:
-raptor:
-raptor:
-raptor:
-raptor:
-raptor:
-raptor:
-raptor:
-raptor:
-raptor:
+raptor: Raptor is a free software / Open Source C library that provides a set of
+raptor: parsers and serializers that generate Resource Description Framework
+raptor: (RDF) triples by parsing syntaxes or serialize the triples into a
+raptor: syntax. The supported parsing syntaxes are RDF/XML, N-Quads, N-Triples,
+raptor: TRiG, Turtle, RDFa 1.0 and 1.1, RSS tag soup including all versions of
+raptor: RSS, Atom 1.0 and 0.3, GRDDL and microformats for HTML, XHTML and XML.
+raptor: The serializing syntaxes are RDF/XML (regular, and abbreviated), Atom
+raptor: 1.0, GraphViz, JSON, N-Quads, N-Triples, RSS 1.0 and XMP.
+raptor: Homepage: http://librdf.org/raptor/
+
+
+
+
+
+
+
+
+
