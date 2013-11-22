@@ -40,7 +40,7 @@ a15dddcdb0c173759c9fc5174e12f45c  ./synthesizers/pd/pd.tar.gz
 f839daa62da641d21d48e2dc8d7e2e8e  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 0b5579093e2004138a432bf35d55b46c  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 50d19950e3bff3960144c6a99f336fcf  ./synthesizers/bristol/bristol.tar.gz
-d5dbe081eaf355efcb6dfbe0236d5860  ./synthesizers/amsynth/amsynth.tar.gz
+1acda00cf723562f3c65b8b6c4b423e2  ./synthesizers/amsynth/amsynth.tar.gz
 d752375bb795c3351e559c17a5d1625c  ./synthesizers/aeolus/aeolus.tar.gz
 2235392b09a2a7b2ead7574916e19f3b  ./synthesizers/qsynth/qsynth.tar.gz
 65600e76e71166b62ba123a3a98c91f1  ./libraries/liblrdf/liblrdf.tar.gz
