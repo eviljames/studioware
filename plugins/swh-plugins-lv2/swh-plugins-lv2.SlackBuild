@@ -7,7 +7,7 @@
 PRGNAM=swh-plugins-lv2
 VERSION=${VERSION:-1.0.15}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-se}
 
 TARNAME="swh-lv2"
 
@@ -20,7 +20,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
