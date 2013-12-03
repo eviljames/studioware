@@ -26,31 +26,41 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.1"
-    TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
-    trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
-    QUEUE=$TMPROOT/queue
-    PKGLIST=$TMPROOT/pkglist
-    WGET="wget --no-check-certificate"
-    UP="upgradepkg --reinstall --install-new"
+    VERSION="3.2"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
+    TMP=${TMP:-/tmp/se}
+    OUTPUT=${OUTPUT:-/tmp}
+    TMPROOT=$(mktemp -d -p $OUTPUT $APPNAME-XXXXXX) || exit
+    trap "cleanupbad" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
+    QUEUE=$TMPROOT/queue
+    PKGLIST=$TMPROOT/pkglist
+    WGET="wget --no-check-certificate"
+    UP="upgradepkg --reinstall --install-new"
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
+    ERR="0"
 }
 #}}}
 #{{{ Cleanup and exit
 cleanup()
 {
     rm -rf $TMPROOT
-    exit 
+    exit 0
+}
+#}}}
+#{{{ Cleanup and exit 1
+cleanupbad()
+{
+    rm -rf $TMPROOT
+    exit 1
 }
 #}}}
 #{{{ Flags
@@ -99,7 +109,7 @@ readme()
 #{{{ Latest
 latest()
 {
-    cd /tmp
+    cd $TMPROOT
     LATEST=$(curl -s $TOOLURL/LATEST)
     echo "Installed version: $VERSION. Latest version: $LATEST."
     if [ "$VERSION" != "$LATEST" ]; then
@@ -112,7 +122,7 @@ latest()
             $TOOLURL/$APPNAME-$LATEST-noarch-1daw.md5
             echo -n "Checking md5... "
             md5sum -c $APPNAME-$LATEST-noarch-1daw.md5
-            echo "Package saved to /tmp"
+            echo "Package saved to $TMPROOT"
             echo -n "Upgrade now (y/n)? "
             read REPLY
             if [ "$REPLY" = "y" ]; then
@@ -171,7 +181,7 @@ get_queue()
     CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
     APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
 
-    curl -fs $SBSERVER/$CAT/$APP/$APP.queue | sed '/^$/d;$s/$/\n/' > $QUEUE
+    curl -fs $SBSERVER/$CAT/$APP/$APP.queue > $QUEUE 
 
     if [ "$?" = "22" ]; then
         echo "Queue not found."
@@ -206,10 +216,11 @@ listpkgs()
 {
     exec <&1
     unset pkgs
+    
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(grep -i $name.tar.gz $FILELIST | cut -d'/' -f4)
+        pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $name.tar.gz)
         pkgs=$pkgs" "$pkg
     done < $QUEUE
 
@@ -228,6 +239,7 @@ listpkgs()
         19 70 13 $INSTALLLIST 2>$PKGLIST
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
+    #cat $QUEUE > $PKGLIST
     installpkgs
 }
 #}}}
@@ -239,7 +251,7 @@ installpkgs()
 
     for i in $(cat $PKGLIST)
     do
-        pkgs=$pkgs" "$(grep -wi $i $FILELIST | awk '{print $2}')
+        pkgs=$pkgs" "$(grep -wie "\/.*\/$i" $FILELIST | awk '{print $2}')
     done
 
     for i in $pkgs
@@ -293,11 +305,17 @@ installpkgs()
                 mv $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz} $ARCHIVE
             fi
             )
-            if [ "$?" = "1" ]; then
-                cleanup
+            ERR=$?
+
+            if [ "$ERR" != "0" ]; then
+                break
             fi
         fi
     done
+
+    if [ "$ERR" != "0" ]; then
+        cleanupbad
+    fi
 
     cleanup
 }
@@ -321,8 +339,8 @@ search()
             if [ -e "$installed" ]; then 
                 version=$(echo $installed | cut -d'/' -f5 | rev | cut -d- -f3 \
                     | rev)
-                echo "[Installed]         $dir/$shortname $version"
-            else echo "[Not Installed]     $dir/$shortname"
+                echo "[Installed]	$dir/$(echo $installed | cut -d'/' -f5)"
+            else echo "[Not Installed]	$dir/$shortname"
             fi
         done
     fi
