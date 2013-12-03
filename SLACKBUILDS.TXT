@@ -88,7 +88,7 @@ c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 680d8fc0d41e50c2b9655d1a7c341a16  ./plugins/calf/calf.tar.gz
 e55aec08037408bf3239a77343dc70e1  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
-62abb6d6fb388554f25a29ee57224f74  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
+c998aeae7107ed92d095c0ddd5c5e04d  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 442305661696740c997f8d884dcfde87  ./video/openshot/openshot.tar.gz
