@@ -4,16 +4,15 @@
 # on the right side marks the last column you can put a character in.  You must
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
-
-      |-----handy-ruler-----------------------------------------------------|
-ardour: Ardour ( Professional Audio Editor )
-ardour:
-ardour: Ardour is an application to fit the needs of musicians under
-ardour: Linux. It is designed to be a fully functional professional
-ardour: audio application, that uses the professional sound server
-ardour: jack for sound i/o.
-ardour:
-ardour: Homepage: http://ardour.org
-ardour:
-ardour:
-ardour:
+       |-----handy-ruler-----------------------------------------------------|
+ardour3: Ardour ( Professional Audio Editor )
+ardour3:
+ardour3: Ardour is an application to fit the needs of musicians under
+ardour3: Linux. It is designed to be a fully functional professional
+ardour3: audio application, that uses the professional sound server
+ardour3: jack for sound i/o.
+ardour3:
+ardour3: Homepage: http://ardour.org
+ardour3:
+ardour3:
+ardour3:

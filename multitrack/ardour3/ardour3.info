@@ -1,4 +1,4 @@
-PRGNAM="ardour"
+PRGNAM="ardour3"
 VERSION="3.5.74"
 HOMEPAGE="http://ardour.org"
 DOWNLOAD="http://studioware.org/files/slackbuilds/source/ardour-3.5.74.tar.gz"

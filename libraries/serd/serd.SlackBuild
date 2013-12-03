@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for ardour
+# Slackware build script for serd
 # Copyright 2013 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=ardour
-VERSION=${VERSION:-3.5.74}
+PRGNAM=serd
+VERSION=${VERSION:-0.18.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -72,8 +72,7 @@ find -L . \
     --prefix=/usr \
     --libdir=/usr/lib${LIBDIRSUFFIX} \
     --mandir=/usr/man \
-    --docdir=/usr/doc/$PRGNAM-$VERSION 
-
+    --docdir=/usr/doc/$PRGNAM-$VERSION
 ./waf
 ./waf install --destdir=$PKG
 
@@ -82,7 +81,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   COPYING PACKAGER_README README doc \
+  AUTHORS COPYING INSTALL NEWS README doc \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
