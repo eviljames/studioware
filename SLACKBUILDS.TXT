@@ -13,7 +13,7 @@ e1dfe6f560aae4590ed5ae3e8cec25e0  ./recorders/timemachine/timemachine.tar.gz
 770d52e7c97edca21453b1887abe592e  ./drums/hydrogen/hydrogen.tar.gz
 20a38183181a2f5c6f93e69d797614b6  ./multitrack/qtractor/qtractor.tar.gz
 6b9b526fe84a445af4d65a9439ad4df5  ./multitrack/ardour/ardour.tar.gz
-2401287ea974a3ffe2a27c7b0d278efd  ./multitrack/ardour3/ardour3.tar.gz
+68583b0c4dac96dea9b16d199100524b  ./multitrack/ardour3/ardour3.tar.gz
 54ad1d23ed850bdff39b70ed54db0c5b  ./multitrack/jokosher/jokosher.tar.gz
 08d0c90b74de0591d084e3821f23f8ce  ./multitrack/ecasound/ecasound.tar.gz
 9cc153c9f29b3f9b6444f8452fc8bf03  ./editors/mscore/mscore.tar.gz
