@@ -4,8 +4,8 @@ glibmm
 lv2
 serd
 sord
-lilv
 sratom
+lilv
 cairomm
 pangomm
 atkmm
