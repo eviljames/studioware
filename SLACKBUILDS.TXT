@@ -78,7 +78,7 @@ b6cc3a178d36fcba02f5c2d3b7e736f8  ./libraries/pangomm/pangomm.tar.gz
 fa0402f28a860685dba6f48d36ca743b  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz
-33563cf1cff6b2f2a460743d848d8fdf  ./libraries/libslv2/libslv2.tar.gz
+446bb2ee7a908811e3b4e6198794732e  ./libraries/libslv2/libslv2.tar.gz
 c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 4d24370ba978bfe1102960d1f1e626e3  ./libraries/fltk/fltk.tar.gz
 4bc46e2d55bd2d8f5bb30fa65253bc6a  ./plugins/tap-plugins/tap-plugins.tar.gz
@@ -88,7 +88,7 @@ c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 680d8fc0d41e50c2b9655d1a7c341a16  ./plugins/calf/calf.tar.gz
 e55aec08037408bf3239a77343dc70e1  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
-91e62a15b2d1cb250fe1c5f1be59f03b  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
+62abb6d6fb388554f25a29ee57224f74  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 442305661696740c997f8d884dcfde87  ./video/openshot/openshot.tar.gz
