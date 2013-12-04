@@ -101,3 +101,5 @@ swh-plugins
 tap-plugins
 terminatorX
 timemachine
+x264
+ffmpeg
