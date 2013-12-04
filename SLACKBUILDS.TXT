@@ -90,7 +90,7 @@ e55aec08037408bf3239a77343dc70e1  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
 c998aeae7107ed92d095c0ddd5c5e04d  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
-71abc86f4e4f1f7af1275e275b10ba7e  ./video/kdenlive/kdenlive.tar.gz
+c8f43563d5415a71d27af6d1b72a00e3  ./video/kdenlive/kdenlive.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 f723df725751e067bc7935f1d71df571  ./video/ffmpeg/ffmpeg.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
