@@ -70,7 +70,9 @@ fi
 # --enable-runtime-cpu is meant for libswscale only and
 # has no influence on the other parts of ffmpeg so there's
 # not really a point in bothering
-PKGARCH=$(uname -m)_custom
+
+# Breaks sepkg
+#PKGARCH=$(uname -m)_custom
 
 # Configure ffmpeg features not autodetected by default
 # Unfortunately ffmpeg's configure doesn't support --enable-feature=yes
@@ -196,4 +198,4 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$PKGARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
