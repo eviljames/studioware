@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.4"
+    VERSION="3.5"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -49,7 +49,7 @@ init()
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
-    FILELIST=$CACHEDIR/FILE_LIST.TXT
+    FILELIST=$CACHEDIR/FILELIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
 }
 #}}}
@@ -144,7 +144,7 @@ EOF
 update()
 {   
     cd $CACHEDIR || cleanup
-    $WGET -O FILE_LIST.TXT $PKGSERVER/FILE_LIST.TXT
+    $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT
     $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5
     cleanup
 }
@@ -203,16 +203,20 @@ install()
     shift
 
     cl=$*
+
     if [ -z "$cl" ]; then
         cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
     else
         echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
     fi
+
     exec <&1
 
     while read line
     do
-        pkg="$(grep -wi $line $FILELIST | grep txz | cut -d'/' -f3)"
+        pkg=$(grep -ie .*/$line.*txz$ $FILELIST \
+        | awk '{print $9}' | cut -d'/' -f3)
+
         for p in $pkg
         do
             name=$(echo "$p" | rev | cut -d- -f4- | rev)
@@ -221,7 +225,7 @@ install()
             fi
         done
     done < $QUEUE
-    
+
     exec <&1
 
     for i in $pkgs
@@ -243,6 +247,7 @@ install()
         $rows $cols $mrows $INSTALLLIST 2> $TMP/pkglist
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $TMP/pkglist)" ]; then cleanup; fi
+
     installpkgs
 }
 #}}}
@@ -425,31 +430,29 @@ upgradeall()
 #{{{ Install Packages
 installpkgs()
 {
-    PKGS="$(cat $TMP/pkglist)"
-
-    for k in $PKGS
+    cat $TMP/pkglist | while read APP
     do
-        p=$(grep -i "$k" $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
-        dir=$(grep -i "$p" $FILELIST | awk '{print $9}' | cut -d'/' -f2)
+        p=$(egrep -i .*$APP$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
+        dir=$(egrep -i .*$p$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-3)
 
-        mkdir -p $dir || cleanup
-        if [ -e "$p" ]; then
-            md5 $p
-            if [ $? -ne 0 ]; then 
-                $WGET -O $p $PKGSERVER/$p || cleanup
-            fi
-        else
-            $WGET -c -O $p $PKGSERVER/$p || cleanup
-            md5 $p
-            if [ $? -ne 0 ]; then 
-                echo "Checksums don't match. Did you run 'update' first?"
-                echo "You may need to delete the cache."
-                echo -n "(a)bort or (c)ontinue? "
-                read ANS
-                if [ "$ANS" != "c" ]; then cleanup; fi
-            fi
+        $WGET -O $APP.md5 $PKGSERVER/$p.md5 || cleanup
+    
+        if [ ! -r "$APP" ]; then
+            $WGET -O $APP $PKGSERVER/$p || cleanup
         fi
-        $INSTALL $p || cleanup
+
+        echo "Checksum..."
+        md5sum -c $APP.md5
+
+        if [ $? -ne 0 ]; then 
+            echo "Checksums don't match. Did you run 'update' first?"
+            echo "You may need to delete the cache."
+            echo -n "(a)bort or (c)ontinue? "
+            read ANS
+            if [ "$ANS" != "c" ]; then cleanup; fi
+        fi
+
+        $INSTALL $APP || cleanup
     done
     cleanup
 }
@@ -477,12 +480,14 @@ search()
         dir=$(echo $p | cut -d'/' -f2) 
         installed=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
             2>/dev/null | rev | cut -d- -f4- | rev)
-        version=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
-            2>/dev/null | rev | cut -d- -f3 | rev)
+#        version=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
+#            2>/dev/null | rev | cut -d- -f3 | rev)
 
-        in="[Not Installed]     $dir/$shortname"
+        found=$(echo $p | cut -d'/' -f2-)
+
+        in="[Not Installed]	$found"
         if [ "$shortname" = "$installed" ]; then 
-            in="[Installed]         $dir/$shortname $version"; fi
+            in="[Installed]	$found"; fi
         echo "$in"
     done
 }
