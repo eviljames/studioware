@@ -91,7 +91,7 @@ d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
 c998aeae7107ed92d095c0ddd5c5e04d  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
-99a754a415641f52dad2a46f7454e504  ./video/ffmpeg/ffmpeg.tar.gz
+f723df725751e067bc7935f1d71df571  ./video/ffmpeg/ffmpeg.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 442305661696740c997f8d884dcfde87  ./video/openshot/openshot.tar.gz
 a91b8b3857ec938ad5c4cb95a02c1eeb  ./graphics/t1utils/t1utils.tar.gz
