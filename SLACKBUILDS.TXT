@@ -12,6 +12,7 @@ b6bef9b9333a08eec5e697ac523680b7  ./desktop/evince/evince.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./codecs/faac/faac.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./codecs/faad2/faad2.tar.gz
 7daa506d08c877643716961209c46cc8  ./codecs/a52dec/a52dec.tar.gz
+8e6701f81d85f79fd348f211e5c56e17  ./codecs/xvidcore/xvidcore.tar.gz
 c92d3d6743e06d8ba9679c0c32bede1e  ./amps/guitarix2/guitarix2.tar.gz
 a597b2e2576b18bae025e7cc71607c3d  ./drums/hydrogen/hydrogen.tar.gz
 81ff7ee757b417a8cc71b6bd440267d5  ./multitrack/qtractor/qtractor.tar.gz
@@ -67,6 +68,7 @@ ddf38072e222ffb51890598f195bd2d3  ./libraries/dssi/dssi.tar.gz
 01e8af6bdef8bea334dd2d1507bb4f73  ./libraries/libiec61883/libiec61883.tar.gz
 aceabdba68d0be7bf9ea1baf79c7cd78  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 576aa52dc08c6b4f6f6142d51d0d1971  ./libraries/gst-python/gst-python.tar.gz
+ac22380b905ff89a0ea798f9f666ec7d  ./libraries/libdca/libdca.tar.gz
 e5a67736be08a9941a60711225ec0520  ./libraries/lame/lame.tar.gz
 156765755a9a12d0ab135e2247450e01  ./libraries/libgnomecanvas/libgnomecanvas.tar.gz
 e37432d6a8aaa7f49e3ffa1f2cf05b11  ./libraries/libshout/libshout.tar.gz
@@ -98,6 +100,7 @@ d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
 bc792a7bb1a9f71ab468b0fe17b0a1a4  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
 0b6f5506e1afe89ce034296d297cb3e7  ./video/kdenlive/kdenlive.tar.gz
+56c0612938bfbd08b7e6d58a5424490b  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 cbeb9f791f0132cbcc8df55fc07bf775  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
