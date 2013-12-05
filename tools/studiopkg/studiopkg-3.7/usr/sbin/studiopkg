@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.6"
+    VERSION="3.7"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -36,23 +36,23 @@ init()
         x86_64) ARCH=64 ;;
     esac
 
-    QUEUE=$TMP/queue
-    PKGLIST=$TMP/pkglist
-    WGET="wget --no-check-certificate"
-    INSTALL="upgradepkg --reinstall --install-new"
-    CONFDIR=/etc/$APPNAME/
+    export QUEUE=$TMP/queue
+    export PKGLIST=$TMP/pkglist
+    export WGET="wget --no-check-certificate"
+    export INSTALL="upgradepkg --reinstall --install-new"
+    export CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
-    CONF=$CONFDIR/$APPNAME.conf
+    export CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
     source $CONF 
-    MAINURL="http://www.studioware.org"
-    TOOLURL="$MAINURL/files/tools/$APPNAME"
-    PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
-    CACHEDIR=/var/cache/$APPNAME/$SWVERSION
+    export MAINURL="http://www.studioware.org"
+    export TOOLURL="$MAINURL/files/tools/$APPNAME"
+    export PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
+    export SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    export CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
-    FILELIST=$CACHEDIR/FILELIST.TXT
-    CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
+    export FILELIST=$CACHEDIR/FILELIST.TXT
+    export CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
 }
 #}}}
 #{{{ Cleanup and exit
@@ -180,21 +180,21 @@ listpkgs()
 {
     exec <&1
     unset pkgs
+    unset INSTALLLIST
     
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        txz=$(egrep -wi .*$name-[0-9].*txz$ $FILELIST | cut -d/ -f3)
-        pkgs=$pkgs" "$txz
-    done < $QUEUE
+        pkg=$(egrep -wi .*$name-.*txz$ $FILELIST | cut -d/ -f3)
 
-    for i in $pkgs
-    do
-        shortname=$(echo $i | cut -d'.' -f1)
-        if [ -n "$i" ]; then
-            INSTALLLIST=$INSTALLLIST" "$i" "$shortname" ""on "
-        fi
-    done
+        for txz in $pkg
+        do
+            p=$(echo "$txz" | rev | cut -d- -f4- | rev)
+            if [ "$p" = "$name" ]; then
+                INSTALLLIST=$INSTALLLIST" "$txz" "$name" ""on "
+            fi
+        done
+    done < $QUEUE
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
 
@@ -216,9 +216,10 @@ installall()
 
     unset pkgs
 
+    exec <&1
     while read line
     do
-        name=$(echo $line | grep txz | cut -d'/' -f3)
+        name=$(echo $line | egrep .*txz$ | cut -d'/' -f3)
         if [ -n "$name" ]; then
             pkgs=$pkgs" "$name
         fi
@@ -429,30 +430,41 @@ upgradeall()
 #{{{ Install Packages
 installpkgs()
 {
-    cat $PKGLIST | while read APP
+    exec <&1
+    while read TXZ
     do
-        p=$(egrep -i .*$APP$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
-        dir=$(egrep -i .*$p$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-3)
+        REMOTE=$(egrep .*$TXZ$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
+        let exit=99
 
-        $WGET -O $APP.md5 $PKGSERVER/$p.md5 || cleanup
-    
-        if [ ! -r "$APP" ]; then
-            $WGET -O $APP $PKGSERVER/$p || cleanup
-        fi
+        while [[ $exit -ne 0 ]]
+        do
+            $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5
 
-        echo "Checksum..."
-        md5sum -c $APP.md5
+            if [ ! -r "$TXZ" ]; then
+                $WGET -O $TXZ $PKGSERVER/$REMOTE
+            fi
 
-        if [ $? -ne 0 ]; then 
-            echo "Checksums don't match. Did you run 'update' first?"
-            echo "You may need to delete the cache."
-            echo -n "(a)bort or (c)ontinue? "
-            read ANS
-            if [ "$ANS" != "c" ]; then cleanup; fi
-        fi
+            echo "Checksum..."
+            md5sum -c $TXZ.md5
+            let exit=$?
 
-        $INSTALL $APP || cleanup
-    done
+            if [ $exit -ne 0 ]; then 
+                echo "Checksums don't match. Did you run '-u|update' first?"
+                echo "You may need to delete the cache."
+                echo -n "(r)edownload, (a)bort or (c)ontinue? "
+                read ANS <&1
+
+                if [ "$ANS" = "r" ]; then
+                    rm -f $TXZ
+                    $WGET -O $TXZ $PKGSERVER/$REMOTE
+                fi
+
+                if [ "$ANS" = "a" ]; then cleanup; fi
+            else
+                $INSTALL $TXZ
+            fi
+        done
+    done < $PKGLIST
     cleanup
 }
 #}}}
