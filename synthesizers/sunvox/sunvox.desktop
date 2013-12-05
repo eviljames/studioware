@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SunVox
+Comment=A modular synthesizer
+Exec=sunvox
+Icon=/usr/share/sunvox/icon/sunvox.png
+Terminal=false
+Categories=AudioVideo;Player;
