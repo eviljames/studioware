@@ -103,3 +103,4 @@ terminatorX
 timemachine
 x264
 ffmpeg
+sunvox

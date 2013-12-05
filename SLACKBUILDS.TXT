@@ -9,6 +9,9 @@ e3dc7043aae4b612b4bdc2372868a5e9  ./development/libsigc++/libsigc++.tar.gz
 cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 3e639a2b541c793f2bb34532c22dfe19  ./recorders/timemachine/timemachine.tar.gz
 b6bef9b9333a08eec5e697ac523680b7  ./desktop/evince/evince.tar.gz
+2e630a9e282affda898c3e30b31dd471  ./codecs/faac/faac.tar.gz
+0ba5e54b0f627dba232587c9a5a048ca  ./codecs/faad2/faad2.tar.gz
+7daa506d08c877643716961209c46cc8  ./codecs/a52dec/a52dec.tar.gz
 c92d3d6743e06d8ba9679c0c32bede1e  ./amps/guitarix2/guitarix2.tar.gz
 a597b2e2576b18bae025e7cc71607c3d  ./drums/hydrogen/hydrogen.tar.gz
 81ff7ee757b417a8cc71b6bd440267d5  ./multitrack/qtractor/qtractor.tar.gz
@@ -51,6 +54,7 @@ f0028e60c1c677459620449fd53862c0  ./samplers/sooperlooper/sooperlooper.tar.gz
 7a7ddb74f64a9f2abd37722433395b05  ./libraries/pyxdg/pyxdg.tar.gz
 979f975338f3294a4c31fa35e4a13c95  ./libraries/aubio/aubio.tar.gz
 1ad467f26ad00ad3dea9948984dca7e4  ./libraries/gnonlin/gnonlin.tar.gz
+c5f94af5874652ce13f1da6e526fde17  ./libraries/imlib2/imlib2.tar.gz
 b0f04a39e8687071a51aca389721d059  ./libraries/cairomm/cairomm.tar.gz
 82e2a9f4e8566da4a70f85e5f6c9fac6  ./libraries/liblo/liblo.tar.gz
 30d7bb69d82e720da3bdb2433fc04a74  ./libraries/clalsadrv/clalsadrv.tar.gz
@@ -60,6 +64,7 @@ e55a4682d2bf9816605295370c27ac2c  ./libraries/clxclient/clxclient.tar.gz
 f8221e3e61c8cc5be06bd557b89d7bfa  ./libraries/mm-common/mm-common.tar.gz
 ddf38072e222ffb51890598f195bd2d3  ./libraries/dssi/dssi.tar.gz
 400b7bdcd463cee257f83f0e27e3ae29  ./libraries/clthreads/clthreads.tar.gz
+01e8af6bdef8bea334dd2d1507bb4f73  ./libraries/libiec61883/libiec61883.tar.gz
 aceabdba68d0be7bf9ea1baf79c7cd78  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 576aa52dc08c6b4f6f6142d51d0d1971  ./libraries/gst-python/gst-python.tar.gz
 e5a67736be08a9941a60711225ec0520  ./libraries/lame/lame.tar.gz
@@ -80,6 +85,7 @@ ed067acd44c2bf9c041a12ba78de77e6  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz
 d858be463d962862da3dd86411c043c7  ./libraries/libslv2/libslv2.tar.gz
+0b35e42cfaf9c2330793b831e2326585  ./libraries/libavc1394/libavc1394.tar.gz
 c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 4d24370ba978bfe1102960d1f1e626e3  ./libraries/fltk/fltk.tar.gz
 4bc46e2d55bd2d8f5bb30fa65253bc6a  ./plugins/tap-plugins/tap-plugins.tar.gz
@@ -94,8 +100,10 @@ d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
 0b6f5506e1afe89ce034296d297cb3e7  ./video/kdenlive/kdenlive.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 cbeb9f791f0132cbcc8df55fc07bf775  ./video/ffmpeg/ffmpeg.tar.gz
+a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 10a0101a52f058820bf4236acbc93a6b  ./video/openshot/openshot.tar.gz
+33b681e6a7c90093a201aba5bd360f6e  ./video/cinelerra/cinelerra.tar.gz
 a91b8b3857ec938ad5c4cb95a02c1eeb  ./graphics/t1utils/t1utils.tar.gz
 23837b4af9fdb1b90495ad36dd73b5a8  ./graphics/goocanvas/goocanvas.tar.gz
 370134a275e75192816e8de9d49cf15c  ./graphics/lilypond/lilypond.tar.gz
