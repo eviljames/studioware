@@ -104,6 +104,7 @@ timemachine
 x264
 ffmpeg
 sunvox
+zziplib
 milkytracker
 a52dec
 faad2
