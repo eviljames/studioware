@@ -207,6 +207,52 @@ listpkgs()
     installpkgs
 }
 #}}}
+#{{{ Install
+install()
+{
+    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
+        cleanup; } fi
+
+    unset pkgs
+    shift
+
+    cl=$*
+    if [ -z "$cl" ]; then
+        cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
+    else
+        echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
+    fi
+    exec <&1
+
+    while read line
+    do
+        name=$(echo $line | awk '{print $1}')
+        pkg=$(egrep -wi .*$name-.*txz$ $FILELIST | cut -d/ -f3)
+
+        for txz in $pkg
+        do
+            p=$(echo "$txz" | rev | cut -d- -f4- | rev)
+            if [ "$p" = "$name" ]; then
+                INSTALLLIST=$INSTALLLIST" "$txz" "$name" ""on "
+            fi
+        done
+    done < $QUEUE
+
+    if [ -z "$INSTALLLIST" ]; then cleanup; fi
+
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
+    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+        --checklist "Choose packages to install:" \
+        $rows $cols $mrows $INSTALLLIST 2> $TMP/pkglist
+    if [ $? -ne 0 ]; then cleanup; fi
+    if [ -z "$(cat $TMP/pkglist)" ]; then cleanup; fi
+    installpkgs
+}
+#}}}
 #{{{ Install Everything
 installall()
 {
