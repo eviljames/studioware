@@ -105,4 +105,3 @@ bb041426d06c2e3dec917e1d1ea78e6a  ./graphics/potrace/potrace.tar.gz
 5e78217998a49be78c21402a02741567  ./graphics/fontforge/fontforge.tar.gz
 338c592786d67d56c09f0f8f01494e36  ./effects/jack-rack/jack-rack.tar.gz
 00bf7835f0e3b883d4d6cffee12c06e1  ./effects/rakarrack/rakarrack.tar.gz
-347ca5e156e46766a9930c98dad9f1c2  ./14.1.tar.gz

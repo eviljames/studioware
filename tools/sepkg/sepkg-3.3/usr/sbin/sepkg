@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.2"
+    VERSION="3.3"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -181,7 +181,7 @@ get_queue()
     CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
     APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
 
-    curl -fs $SBSERVER/$CAT/$APP/$APP.queue > $QUEUE 
+    curl -fs $SBSERVER/$CAT/$APP/$APP.sqf > $QUEUE 
 
     if [ "$?" = "22" ]; then
         echo "Queue not found."
