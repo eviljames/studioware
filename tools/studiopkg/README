@@ -10,6 +10,7 @@ studiopkg install-all - install all packages from studioware collection
 studiopkg upgrade/-up &lt;package&gt; - upgrade package
 studiopkg upgrade-all/-upall - upgrade all packages
 studiopkg remove/-r &lt;package&gt; - remove package
+studiopkg queue/-q <appname> - will download and use appname.queue (if it exists)
 studiopkg delete-cache - delete all cached packages
 studiopkg clean-system/clean - dialog to delete all studioware packages
 studiopkg latest/-l - check latest version and optionally download/install
