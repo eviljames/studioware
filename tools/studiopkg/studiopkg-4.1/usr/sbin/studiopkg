@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.0"
+    VERSION="4.1"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -168,8 +168,12 @@ get_queue()
     curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
 
     if [ "$?" = "22" ]; then
-        echo "Queue not found."
-        cleanup
+        curl -fs $SBSERVER/$1.sqf > $QUEUE 
+
+        if [ "$?" = "22" ]; then
+            echo "Queue not found."
+            cleanup
+        fi
     fi
 
     listpkgs

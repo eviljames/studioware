@@ -1,16 +1,16 @@
 Studiopkg - The Studioware Package Installer
 
-Options
+Usage
 
 studiopkg update/-u - syncs with file server
-studiopkg search/-s &lt;grep term&gt; - search for package name or part name
+studiopkg search/-s <grep term> - search for package name or part name
 studiopkg install/-i package1 package2 ... - install packages
-studiopkg install/-i &lt; <queuefile> - install packages from file
+studiopkg install/-i < <queuefile> - install packages from file
 studiopkg install-all - install all packages from studioware collection
-studiopkg upgrade/-up &lt;package&gt; - upgrade package
+studiopkg upgrade/-up <package> - upgrade package
 studiopkg upgrade-all/-upall - upgrade all packages
-studiopkg remove/-r &lt;package&gt; - remove package
-studiopkg queue/-q &lt;appname|category&gt; - will download and use .sqf 
+studiopkg remove/-r <package> - remove package
+studiopkg queue/-q <appname|category> - will download and use an .sqf 
 studiopkg delete-cache - delete all cached packages
 studiopkg clean-system/clean - dialog to delete all studioware packages
 studiopkg latest/-l - check latest version and optionally download/install
@@ -20,8 +20,4 @@ studiopkg -v - give version and exit
 Files
 
 /etc/studiopkg/studiopkg.conf
-This file contains the slackware version. Updating from anything earlier that 1.5 to 1.5+ needs the new conf moved over.
-
-Notes
-
-searching for '.' will list all files and so will 'install .' etc
+This file contains the slackware version.
