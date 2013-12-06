@@ -39,6 +39,16 @@ c748220f0ba2afe58d1fccee4b7bca30  ./system/numactl/numactl.tar.gz
 e5ebcb3b6beb74e5e025b70f6ed1f4d6  ./system/jack/jack.tar.gz
 caae96f3908ddfb0fba789054f35a665  ./system/rt-tests/rt-tests.tar.gz
 ed03fb27d9107cb571328384081501da  ./system/qjackctl/qjackctl.tar.gz
+f629c751fb3af17ac8db22409c9c8f01  ./photo/dcraw/dcraw.tar.gz
+c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
+7615c89cd3f9486e4992445838546e47  ./photo/lensfun/lensfun.tar.gz
+42c144470bd339c6c094908c77962b92  ./photo/photoprint/photoprint.tar.gz
+7b5270f0bc0f1b2e771b90d04b0cfb67  ./photo/gtkimageview/gtkimageview.tar.gz
+01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
+658b8b04e0041ec593faefcbccf7d42b  ./photo/darktable/darktable.tar.gz
+b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
+f47f79e4956975bf3b638255989dd178  ./photo/separate+/separate+.tar.gz
+6e7151be60c2d2cc2ada2d2ce3fae306  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
 0914ea1df6df3d52ba1119d9ae159e84  ./samplers/giada/giada.tar.gz
 f0028e60c1c677459620449fd53862c0  ./samplers/sooperlooper/sooperlooper.tar.gz
 47c0acda032d8707591d84032a196d84  ./samplers/specimen/specimen.tar.gz
