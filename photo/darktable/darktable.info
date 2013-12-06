@@ -1,7 +1,7 @@
 PRGNAM="darktable"
 VERSION="1.4~rc1"
 HOMEPAGE="http://www.darktable.org/"
-DOWNLOAD="https://downloads.sourceforge.net/project/darktable/darktable/1.4/darktable-1.4%7Erc1.tar.xz"
+DOWNLOAD="https://downloads.sourceforge.net/project/darktable/darktable/1.4/darktable-1.4~rc1.tar.xz"
 MD5SUM="da5bea63ff13f217aeb6b64a83171810"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

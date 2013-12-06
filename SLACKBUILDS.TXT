@@ -47,7 +47,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 7b5270f0bc0f1b2e771b90d04b0cfb67  ./photo/gtkimageview/gtkimageview.tar.gz
 17f3580790d1fb57c1aeb7a8458da59f  ./photo/rawstudio/rawstudio.tar.gz
 01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
-658b8b04e0041ec593faefcbccf7d42b  ./photo/darktable/darktable.tar.gz
+ecb73cfd22d3b6436966ac299250a388  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
 f47f79e4956975bf3b638255989dd178  ./photo/separate+/separate+.tar.gz
 f6a9d109432080b7d01a5b6e36623cbf  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
