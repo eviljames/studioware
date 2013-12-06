@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.5b1"
+    VERSION="3.5b2"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -240,7 +240,6 @@ listpkgs()
     do
         name=$(echo $line | awk '{print $1}')
         pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $name.tar.gz)
-        cat $FILELIST | cut -d/ -f4 | grep -xi $name.tar.gz
         pkgs=$pkgs" "$pkg
     done < $QUEUE
 
