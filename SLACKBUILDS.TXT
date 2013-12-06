@@ -8,7 +8,7 @@ b637009eec94385ce9c20873d013e668  ./development/phat/phat.tar.gz
 e3dc7043aae4b612b4bdc2372868a5e9  ./development/libsigc++/libsigc++.tar.gz
 cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 3e639a2b541c793f2bb34532c22dfe19  ./recorders/timemachine/timemachine.tar.gz
-b6bef9b9333a08eec5e697ac523680b7  ./desktop/evince/evince.tar.gz
+2ad827c5d8fa9312583c3e221e5e0d1d  ./desktop/evince/evince.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./codecs/faac/faac.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./codecs/faad2/faad2.tar.gz
 7daa506d08c877643716961209c46cc8  ./codecs/a52dec/a52dec.tar.gz
