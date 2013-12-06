@@ -18,9 +18,6 @@ Files:
 /etc/sepkg/sepkg.conf
 This file contains the slackware version.
 
-Notes
-searching for '.' will list all files and so will 'install .' etc
-
 Install options can be given on the command line or in a file:
 
 Examples:
@@ -33,3 +30,12 @@ ardour WIIMOTE=yes
 With a queue file, seperate packages on newlines. When doing it via command separate packages with a comma:
 
 # sepkg install ardour WIIMOTE=yes, dssi, lash
+
+Notes
+
+The following categories are availble via -q:
+audio
+photo
+video
+full
+

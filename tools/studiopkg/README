@@ -20,8 +20,13 @@ studiopkg -v - give version and exit
 Files
 
 /etc/studiopkg/studiopkg.conf
-This file contains the slackware version. Updating from anything earlier that 1.5 to 1.5+ needs the new conf moved over.
+This file contains the slackware version.
 
 Notes
 
-searching for '.' will list all files and so will 'install .' etc
+The following categories are availble via -q:
+audio
+photo
+video
+full
+

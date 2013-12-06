@@ -21,3 +21,12 @@ Files
 
 /etc/studiopkg/studiopkg.conf
 This file contains the slackware version.
+
+Notes
+
+The following categories are availble via -q:
+audio
+photo
+video
+full
+

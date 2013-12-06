@@ -116,3 +116,14 @@ faac
 libdca
 cinelerra
 avidemux
+gtkimageview
+lensfun
+GraphicsMagick
+openjpeg
+darktable
+photoprint
+iccprofiles
+dcraw
+ufraw
+separate+
+photoprint
