@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+darktable: darktable ( Photo Editor )
+darktable:
+darktable: Darktable is an open source photography workflow application and RAW
+darktable: developer. A virtual lighttable and darkroom for photographers. It
+darktable: manages your digital negatives in a database, lets you view them
+darktable: through a zoomable lighttable and enables you to develop raw images
+darktable: and enhance them. It does non-destructive edits by saving edit data 
+darktable: in .xmp files, which gives it a big advantage over traditional
+darktable: editors like Gimp etc.
+darktable:
+darktable: Homepage: http://www.darktable.org/

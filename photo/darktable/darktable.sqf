@@ -1,0 +1,3 @@
+lensfun
+GraphicsMagick
+darktable
