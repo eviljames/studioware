@@ -48,7 +48,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 658b8b04e0041ec593faefcbccf7d42b  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
 f47f79e4956975bf3b638255989dd178  ./photo/separate+/separate+.tar.gz
-6e7151be60c2d2cc2ada2d2ce3fae306  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
+f6a9d109432080b7d01a5b6e36623cbf  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
 0914ea1df6df3d52ba1119d9ae159e84  ./samplers/giada/giada.tar.gz
 f0028e60c1c677459620449fd53862c0  ./samplers/sooperlooper/sooperlooper.tar.gz
 47c0acda032d8707591d84032a196d84  ./samplers/specimen/specimen.tar.gz
