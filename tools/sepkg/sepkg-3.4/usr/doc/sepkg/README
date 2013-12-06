@@ -3,14 +3,14 @@ Sepkg - The Studioware Package Builder
 Options
 
 sepkg update/-u - syncs with file server
-sepkg search/-s &lt;grep term&gt; - search for package name or part name
+sepkg search/-s <grep term> - search for package name or part name
 sepkg build/-b package1, package2, ... - build packages
 sepkg install/-i package1, package2, ... - install packages
-sepkg install/-i &lt; &lt;queuefile&gt; - install packages from file
-sepkg read/-r &lt;package&gt; - download and print readme (needs lynx)
+sepkg install/-i < <queuefile> - install packages from file
+sepkg read/-r <package> - download and print readme (needs lynx)
 sepkg delete-cache - delete all cached packages
 sepkg latest/-l - check latest version and optionally download/install
-sepkg queue/-q <appname> - will download and use appname.queue (if it exists)
+sepkg queue/-q <appname|category> - will download and use a .sqf
 sepkg -h - help
 sepkg -v - give version and exit
 

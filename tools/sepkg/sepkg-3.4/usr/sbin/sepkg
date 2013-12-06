@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.3"
+    VERSION="3.4"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -183,11 +183,15 @@ get_queue()
 
     curl -fs $SBSERVER/$CAT/$APP/$APP.sqf > $QUEUE 
 
-    if [ "$?" = "22" ]; then
-        echo "Queue not found."
-        cleanup
+    if [ $? != 0 ]; then
+        curl -fs $SBSERVER/$1.sqf > $QUEUE 
+
+        if [ $? != 0 ]; then
+            echo "Queue not found."
+            cleanup
+        fi
     fi
-    
+
     listpkgs
 }
 #}}}
@@ -216,11 +220,12 @@ listpkgs()
 {
     exec <&1
     unset pkgs
-    
+
     while read line
     do
         name=$(echo $line | awk '{print $1}')
         pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $name.tar.gz)
+        cat $FILELIST | cut -d/ -f4 | grep -xi $name.tar.gz
         pkgs=$pkgs" "$pkg
     done < $QUEUE
 

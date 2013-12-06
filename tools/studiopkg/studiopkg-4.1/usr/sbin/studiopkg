@@ -167,10 +167,10 @@ get_queue()
 
     curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
 
-    if [ "$?" = "22" ]; then
+    if [ $? != 0 ]; then
         curl -fs $SBSERVER/$1.sqf > $QUEUE 
 
-        if [ "$?" = "22" ]; then
+        if [ $? != 0 ]; then
             echo "Queue not found."
             cleanup
         fi

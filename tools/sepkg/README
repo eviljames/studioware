@@ -11,7 +11,7 @@ sepkg install/-i &lt; &lt;queuefile&gt; - install packages from file
 sepkg read/-r &lt;package&gt; - download and print readme (needs lynx)
 sepkg delete-cache - delete all cached packages
 sepkg latest/-l - check latest version and optionally download/install
-sepkg queue/-q &lt;appname&gt; - will download and use appname.sqf (if it exists)
+sepkg queue/-q &lt;appname|category&gt; - will download and use a .sqf
 sepkg -h - help
 sepkg -v - give version and exit
 
