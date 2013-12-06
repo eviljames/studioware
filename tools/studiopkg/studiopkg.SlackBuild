@@ -22,11 +22,12 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=studiopkg
-VERSION=${VERSION:-4.1}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-4.2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-daw}
 ARCH=noarch
 set -e
+rm -f *txz *md5
 cd $PRGNAM-$VERSION
 /sbin/makepkg -l y -c n ../$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
 cd ..

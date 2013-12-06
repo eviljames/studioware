@@ -22,12 +22,14 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=sepkg
-VERSION=${VERSION:-3.4}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-3.5}
+BUILD=${BUILD:-1}
 TAG=${TAG:-daw}
 ARCH=noarch
 set -e
+rm -f *txz *md5
 cd $PRGNAM-$VERSION
+
 /sbin/makepkg -l y -c n ../$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
 cd ..
 md5sum $PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz} > \
