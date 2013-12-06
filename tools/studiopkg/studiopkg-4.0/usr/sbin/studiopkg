@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="3.9"
+    VERSION="4.0"
     TMP=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -108,7 +108,7 @@ latest()
             echo -n "Upgrade now (y/n)? "
             read REPLY
             if [ "$REPLY" = "y" ]; then
-                upgradepkg $APPNAME-$LATEST-noarch-1daw.txz
+                $INSTALL $APPNAME-$LATEST-noarch-1daw.txz
             fi
         fi
     fi
