@@ -35,7 +35,6 @@ audacity
 bristol
 fluidsynth
 calf
-dconf
 portmidi
 portaudio
 gtksourceview
