@@ -28,12 +28,12 @@ f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
 c487619740753e2db8bc16e8794b5c04  ./mixers/mixxx/mixxx.tar.gz
 9d2a0fe798a48c264f67e57ee3938db0  ./misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 d29ab35980a6bcd4f01f4201948bdbb0  ./misc/non/non.tar.gz
+24b206a34647106cb43fae69f2f94f7e  ./misc/milkytracker/milkytracker.tar.gz
 b2dd52f1970a6d91b2dbe3d2158a9b50  ./misc/protobuf/protobuf.tar.gz
 ca12dcf53262c8c2aa2c2f05c30393d5  ./misc/stops/stops.tar.gz
 2d137b71b66c641f696964330233b33f  ./sequencers/seq24/seq24.tar.gz
 12189f356a939c6221a7088d63da5c43  ./sequencers/muse/muse.tar.gz
 cdb1ea7f29da013ee29ce3d4f1faac39  ./system/meterbridge/meterbridge.tar.gz
-907a89bb61eda114d75b92d5777b9e43  ./system/dconf/dconf.tar.gz
 91a0d3b0bee030ef02b58681cd3e4ef2  ./system/set_rlimits/set_rlimits.tar.gz
 c748220f0ba2afe58d1fccee4b7bca30  ./system/numactl/numactl.tar.gz
 e5ebcb3b6beb74e5e025b70f6ed1f4d6  ./system/jack/jack.tar.gz
@@ -70,6 +70,7 @@ aceabdba68d0be7bf9ea1baf79c7cd78  ./libraries/libgnomecanvasmm/libgnomecanvasmm.
 576aa52dc08c6b4f6f6142d51d0d1971  ./libraries/gst-python/gst-python.tar.gz
 ac22380b905ff89a0ea798f9f666ec7d  ./libraries/libdca/libdca.tar.gz
 e5a67736be08a9941a60711225ec0520  ./libraries/lame/lame.tar.gz
+34addd1296daf368dd6e1db9a0805bc4  ./libraries/zziplib/zziplib.tar.gz
 156765755a9a12d0ab135e2247450e01  ./libraries/libgnomecanvas/libgnomecanvas.tar.gz
 e37432d6a8aaa7f49e3ffa1f2cf05b11  ./libraries/libshout/libshout.tar.gz
 37f5fa39833d7413315493efeaf927da  ./libraries/raptor/raptor.tar.gz
