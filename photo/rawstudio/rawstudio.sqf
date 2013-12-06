@@ -1,3 +1,4 @@
 lensfun
 flickcurl
+rawstudio
 

@@ -45,7 +45,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 7615c89cd3f9486e4992445838546e47  ./photo/lensfun/lensfun.tar.gz
 42c144470bd339c6c094908c77962b92  ./photo/photoprint/photoprint.tar.gz
 7b5270f0bc0f1b2e771b90d04b0cfb67  ./photo/gtkimageview/gtkimageview.tar.gz
-1fd1db55324ec6a34ec8d4f0fdca3807  ./photo/rawstudio/rawstudio.tar.gz
+17f3580790d1fb57c1aeb7a8458da59f  ./photo/rawstudio/rawstudio.tar.gz
 01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
 658b8b04e0041ec593faefcbccf7d42b  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
