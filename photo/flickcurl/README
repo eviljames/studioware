@@ -1,0 +1,5 @@
+flickcurl ( library for Flickr API )
+
+Flickcurl is a C library for the Flickr API, handling creating the requests,
+signing, token management, calling the API, marshalling request parameters and
+decoding responses.

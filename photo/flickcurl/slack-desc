@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+flickcurl: flickcurl ( library for Flickr API )
+flickcurl:
+flickcurl: Flickcurl is a C library for the Flickr API, handling creating the
+flickcurl: requests, signing, token management, calling the API, marshalling 
+flickcurl: request parameters and decoding responses.
+flickcurl:
+flickcurl:
+flickcurl:
+flickcurl:
+flickcurl: Homepage: http://librdf.org/flickcurl/
+flickcurl:

@@ -9,3 +9,5 @@ dcraw
 ufraw
 separate+
 photoprint
+flickcurl
+rawstudio
