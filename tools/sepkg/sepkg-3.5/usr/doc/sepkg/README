@@ -33,7 +33,7 @@ With a queue file, seperate packages on newlines. When doing it via command sepa
 
 Notes
 
-The following categories are availble via -q:
+The following categories are available via -q:
 audio
 photo
 video
