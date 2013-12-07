@@ -35,3 +35,6 @@ photo
 video
 full
 
+GPG Checking:
+Use 'studiopkg gpg' or 'studiopkg -g' to import the Studioware gpg key.
+
