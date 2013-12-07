@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.5b2"
+    VERSION="3.6b1"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -368,9 +368,8 @@ search()
 #{{{ Delete Cache !DANGER WILL ROBINSON!
 deletecache()
 {
-    rm -f $FILELIST 
-    rm -f $CACHEDIR/*.{gz,bz2,tgz,txz}
-    rm -rf $TMPROOT
+    cd $CACHEDIR || cleanup
+    find . -name *.{gz,bz2,tgz,txz,xz} -exec rm -f {} \;
     echo "Cache Deleted"
     cleanup
 }
