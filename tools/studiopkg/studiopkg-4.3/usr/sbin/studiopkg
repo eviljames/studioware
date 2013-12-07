@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.3b2"
+    VERSION="4.3b3"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
 
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -53,7 +53,6 @@ init()
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
-    UP="upgradepkg --install-new --reinstall"
 }
 #}}}
 #{{{ Cleanup and exit
@@ -125,7 +124,7 @@ latest()
             echo -n "Upgrade now? (y/n) "
             read REPLY
             if [ "$REPLY" = "y" ]; then
-                $UP $PKG
+                $INSTALL $PKG
             fi
         fi
     fi

@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.6b1"
+    VERSION="3.6b2"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -125,8 +125,8 @@ latest()
         read REPLY
 
         if [ "$REPLY" = "y" ]; then
-            $WGET  -O $PKG $TOOLURL/$PKG
-            $WGET  -O $MD5 $TOOLURL/$MD5
+            $WGET -q -O $PKG $TOOLURL/$PKG
+            $WGET -q -O $MD5 $TOOLURL/$MD5
 
             echo "Package saved to $TMPROOT"
             echo "Checking md5... "
