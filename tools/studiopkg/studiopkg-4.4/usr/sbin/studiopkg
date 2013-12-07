@@ -26,9 +26,9 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.3b3"
+    VERSION="4.4b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
-
+    echo "Using $TMPROOT"
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
     case "$( uname -m )" in
@@ -42,9 +42,17 @@ init()
     INSTALL="upgradepkg --reinstall --install-new"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
-    CONF=$CONFDIR/$APPNAME.conf
+    CONF=$CONFDIR$APPNAME.conf
     touch $CONF
-    source $CONF 
+    source $CONF
+    if [ -z "$CHECKGPG" ]; then
+        echo "CHECKGPG not set in $CONF..."
+        echo "Setting to ON. You can change this later by editing $CONF"
+        echo "CHECKGPG=ON" >> $CONF
+        CHECKGPG="ON"
+        echo -n "Press enter to continue"
+        read <&1
+    fi
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
@@ -53,6 +61,8 @@ init()
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
+    STUDIOKEY="Studioware <info@studioware.org>"
+    GPG="gpg --verify --trust-model always"
 }
 #}}}
 #{{{ Cleanup and exit
@@ -82,6 +92,8 @@ getflags()
     if [ "$1" = "clean" ]; then { cleansystem; cleanup; }; fi
     if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
     if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
+    if [ "$1" = "-g" ]; then { importgpg; cleanup; }; fi
+    if [ "$1" = "gpg" ]; then { importgpg; cleanup; }; fi
     if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
     if [ "$1" = "-q" ]; then { get_queue $2; cleanup; }; fi
     if [ "$1" = "queue" ]; then { get_queue $2; cleanup; }; fi
@@ -505,6 +517,7 @@ installpkgs()
         while [[ $exit -ne 0 ]]
         do
             $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5
+            $WGET -O $TXZ.asc $PKGSERVER/$REMOTE.asc
 
             if [ ! -r "$TXZ" ]; then
                 $WGET -O $TXZ $PKGSERVER/$REMOTE
@@ -527,7 +540,39 @@ installpkgs()
 
                 if [ "$ANS" = "a" ]; then cleanup; fi
             else
-                $INSTALL $TXZ
+                if [ ! "$(which gpg 2>/dev/null)" ]&&[ "$CHECKGPG" = "ON" ]; then
+                    echo "gpg package not found"
+                    echo "Please install the gpg package to check signatures and reenable"
+                    echo "CHECKGPG in $CONF"
+                    echo -n "(a)bort or (c)ontinue? "
+                    read ANS <&1
+                    
+                    if [ "$ANS" != "c" ]; then cleanup; fi
+
+                    echo "Continuing without gpg check..."
+                    sed -i 's/CHECKGPG=.*/CHECKGPG=OFF/g' $CONF
+                    $INSTALL $TXZ
+                else
+                    if [ "$CHECKGPG" = "ON" ]; then
+                        echo "Checking gpg..."
+                        # try to surpress the authority warning...
+                        GPGOUT=$($GPG $TXZ.asc $TXZ 2>&1 | head -n2)
+
+                        if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
+                            echo "$GPGOUT"
+                            echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                            cleanup
+                        elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
+                                echo "$GPGOUT"
+                                cleanup
+                        else
+                            echo "$GPGOUT"
+                            $INSTALL $TXZ
+                        fi
+                    else
+                        $INSTALL $TXZ
+                    fi
+                fi
             fi
         done
     done < $PKGLIST
@@ -535,7 +580,7 @@ installpkgs()
 }
 #}}}
 #{{{ Check md5
-md5()
+xxmd5()
 {
     echo -n "Checking md5sum..."
     if [ -z "$(grep -i "$1" "$CHECKSUMS"  | sed 's#./##' | md5sum -c - \
@@ -543,6 +588,22 @@ md5()
         echo " OK"; return 0; fi
     echo " Bad md5sum"
     return 1
+}
+#}}}
+#{{{ Import gpg key
+importgpg()
+{
+    # ripped from slackpkg
+    if ! [ -e ~/.gnupg ]; then
+        mkdir ~/.gnupg
+    fi
+
+    cd $TMPROOT || cleanup
+    $WGET -O gpgkey ${PKGSERVER}/GPG-KEY || cleanup
+    gpg --yes --batch --delete-key "$STUDIOKEY"
+    gpg --import gpgkey
+    echo "Studioware GPG key added"
+    cleanup
 }
 #}}}
 #{{{ Search

@@ -11,6 +11,7 @@ studiopkg upgrade/-up <package> - upgrade package
 studiopkg upgrade-all/-upall - upgrade all packages
 studiopkg remove/-r <package> - remove package
 studiopkg queue/-q <appname|category> - will download and use an .sqf 
+studiopkg gpg/-g - import studioware gpg key
 studiopkg delete-cache - delete all cached packages
 studiopkg clean-system/clean - dialog to delete all studioware packages
 studiopkg latest/-l - check latest version and optionally download/install
@@ -20,7 +21,11 @@ studiopkg -v - give version and exit
 Files
 
 /etc/studiopkg/studiopkg.conf
-This file contains the slackware version.
+This file contains:
+SWVERSION
+CHECKGPG=ON
+
+set CHECKGPG=OFF to stop gpg checking.
 
 Notes
 
