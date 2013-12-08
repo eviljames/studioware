@@ -97,7 +97,7 @@ b547a4a4792f88afe1de5b479666073d  ./libraries/ladspa_sdk/ladspa_sdk.tar.gz
 0b58c05c24c21e41b487b92ae73b067b  ./libraries/pangomm/pangomm.tar.gz
 6be8e5aedc53d6a5f1f143c6ba84bbb5  ./libraries/atkmm/atkmm.tar.gz
 6f3c1cc81f89900035e37f717b310b2a  ./libraries/serd/serd.tar.gz
-c0142b1b3ca42c2c389a98b6d3ccb3bc  ./libraries/opencv/opencv.tar.gz
+97ecc9342c3b0d1e6310b06315e48c1d  ./libraries/opencv/opencv.tar.gz
 ed067acd44c2bf9c041a12ba78de77e6  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz
