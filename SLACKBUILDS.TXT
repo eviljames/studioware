@@ -47,6 +47,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 7b5270f0bc0f1b2e771b90d04b0cfb67  ./photo/gtkimageview/gtkimageview.tar.gz
 17f3580790d1fb57c1aeb7a8458da59f  ./photo/rawstudio/rawstudio.tar.gz
 01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
+58acbbaf6074188c13a817e593873d26  ./photo/digikam/digikam.tar.gz
 287a363932f22191e3bd324ec9fdb3ba  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
 f47f79e4956975bf3b638255989dd178  ./photo/separate+/separate+.tar.gz
@@ -96,6 +97,7 @@ b547a4a4792f88afe1de5b479666073d  ./libraries/ladspa_sdk/ladspa_sdk.tar.gz
 0b58c05c24c21e41b487b92ae73b067b  ./libraries/pangomm/pangomm.tar.gz
 6be8e5aedc53d6a5f1f143c6ba84bbb5  ./libraries/atkmm/atkmm.tar.gz
 6f3c1cc81f89900035e37f717b310b2a  ./libraries/serd/serd.tar.gz
+c0142b1b3ca42c2c389a98b6d3ccb3bc  ./libraries/opencv/opencv.tar.gz
 ed067acd44c2bf9c041a12ba78de77e6  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz

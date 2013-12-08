@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+opencv: opencv ( Open Source Computer Vision Library )
+opencv:
+opencv: OpenCV is an open source computer vision and machine learning        
+opencv: software library. OpenCV was built to provide a common infrastructure
+opencv: for computer vision applications and to accelerate the use of machine
+opencv: perception in the commercial products. Being a BSD-licensed product, 
+opencv: OpenCV makes it easy for businesses to utilize and modify the code.  
+opencv:
+opencv: Homepage: http://opencv.org/
+opencv:
+opencv:
