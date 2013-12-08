@@ -11,6 +11,8 @@ separate+
 photoprint
 flickcurl
 rawstudio
+lame
+x264
 ffmpeg
 opencv
 digikam
