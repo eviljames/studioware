@@ -129,3 +129,5 @@ separate+
 photoprint
 flickcurl
 rawstudio
+opencv
+digikam
