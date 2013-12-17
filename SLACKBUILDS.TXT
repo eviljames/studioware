@@ -14,7 +14,7 @@ cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 7daa506d08c877643716961209c46cc8  ./codecs/a52dec/a52dec.tar.gz
 8e6701f81d85f79fd348f211e5c56e17  ./codecs/xvidcore/xvidcore.tar.gz
 c92d3d6743e06d8ba9679c0c32bede1e  ./amps/guitarix2/guitarix2.tar.gz
-a597b2e2576b18bae025e7cc71607c3d  ./drums/hydrogen/hydrogen.tar.gz
+4fe9686ab7aba1541d1abf6e26b0f56b  ./drums/hydrogen/hydrogen.tar.gz
 81ff7ee757b417a8cc71b6bd440267d5  ./multitrack/qtractor/qtractor.tar.gz
 84149f2ed42eb07ad3ae867a4587e155  ./multitrack/ardour/ardour.tar.gz
 f0031982e28c40b2c763b301931dc3f2  ./multitrack/ardour3/ardour3.tar.gz
