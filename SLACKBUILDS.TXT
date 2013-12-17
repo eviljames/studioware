@@ -62,7 +62,7 @@ f0028e60c1c677459620449fd53862c0  ./samplers/sooperlooper/sooperlooper.tar.gz
 5ba8b461dd8aeac6d1e4419b10108a49  ./synthesizers/bristol/bristol.tar.gz
 3d6b72ebc5d418890e79b0a045bd0739  ./synthesizers/amsynth/amsynth.tar.gz
 21223bb7b37b8883e499e0faa8fbd2a2  ./synthesizers/aeolus/aeolus.tar.gz
-191a0a0462ee39c851957b222a9be71f  ./synthesizers/qsynth/qsynth.tar.gz
+5d24ff00d69b0e22cf0f2274232c219f  ./synthesizers/qsynth/qsynth.tar.gz
 344fa0d4ca8f26a89f3b62a6073d4c82  ./synthesizers/sunvox/sunvox.tar.gz
 53f74f8600f698c66b03c28e32c873d4  ./libraries/liblrdf/liblrdf.tar.gz
 7a7ddb74f64a9f2abd37722433395b05  ./libraries/pyxdg/pyxdg.tar.gz
