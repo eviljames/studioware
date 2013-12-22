@@ -1,3 +1,4 @@
+jack
 scrollkeeper
 ladspa_sdk
 terminatorX

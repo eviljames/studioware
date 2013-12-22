@@ -23,7 +23,7 @@
 
 PRGNAM=amsynth
 VERSION=${VERSION:-1.4.0}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

@@ -1,3 +1,4 @@
+jack
 libsigc++
 glibmm
 cairomm

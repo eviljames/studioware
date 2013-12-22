@@ -1,3 +1,4 @@
+jack
 scons
 portmidi
 libshout
