@@ -56,7 +56,7 @@ f6a9d109432080b7d01a5b6e36623cbf  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
 f0028e60c1c677459620449fd53862c0  ./samplers/sooperlooper/sooperlooper.tar.gz
 47c0acda032d8707591d84032a196d84  ./samplers/specimen/specimen.tar.gz
 57e9992e205fa3929b4cc7181958f09a  ./synthesizers/terminatorX/terminatorX.tar.gz
-dbc7103f508b5869699b99a6d48393d1  ./synthesizers/pd/pd.tar.gz
+ac8be5d1196df137245f2e67e18351dc  ./synthesizers/pd/pd.tar.gz
 a40e45d09a9f21cf450c1416f9966204  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 f0d9281734bc5f34436ee143aa811d0c  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 473f34c0fe7d84269dd672a62d073081  ./synthesizers/bristol/bristol.tar.gz
