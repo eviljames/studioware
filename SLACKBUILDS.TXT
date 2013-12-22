@@ -28,7 +28,7 @@ f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
 ca93446082695cc5792db9f7fa4e0ec4  ./mixers/mixxx/mixxx.tar.gz
 9d2a0fe798a48c264f67e57ee3938db0  ./misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 d29ab35980a6bcd4f01f4201948bdbb0  ./misc/non/non.tar.gz
-24b206a34647106cb43fae69f2f94f7e  ./misc/milkytracker/milkytracker.tar.gz
+befe7aaf433603a8bc0bc92cdf92fa88  ./misc/milkytracker/milkytracker.tar.gz
 b2dd52f1970a6d91b2dbe3d2158a9b50  ./misc/protobuf/protobuf.tar.gz
 ca12dcf53262c8c2aa2c2f05c30393d5  ./misc/stops/stops.tar.gz
 197457c4f89f41da22b237780f3c35dd  ./sequencers/seq24/seq24.tar.gz
