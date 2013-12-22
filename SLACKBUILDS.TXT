@@ -101,7 +101,7 @@ c2c7f48caff6c59b64371f9cfcf0899c  ./libraries/opencv/opencv.tar.gz
 ed067acd44c2bf9c041a12ba78de77e6  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz
-46617587d940d917fc1561d09ce30850  ./libraries/libslv2/libslv2.tar.gz
+a2d60877ec35da3323adc0ea83ada644  ./libraries/libslv2/libslv2.tar.gz
 0b35e42cfaf9c2330793b831e2326585  ./libraries/libavc1394/libavc1394.tar.gz
 c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 4d24370ba978bfe1102960d1f1e626e3  ./libraries/fltk/fltk.tar.gz
