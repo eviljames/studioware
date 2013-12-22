@@ -4,15 +4,15 @@
 # on the right side marks the last column you can put a character in.  You must
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
-        |-----handy-ruler------------------------------------------------------|
-libeslv2: slv2 ( LV2 library )
-libeslv2:
-libeslv2: SLV2 is a library to make the use of LV2 plugins as simple as 
-libeslv2: possible for applications.
-libeslv2:
-libeslv2: Homepage: http://drobilla.net/software/slv2/
-libeslv2:
-libeslv2:
-libeslv2:
-libeslv2:
-libeslv2:
+       |-----handy-ruler------------------------------------------------------|
+libslv2: slv2 ( LV2 library )
+libslv2:
+libslv2: SLV2 is a library to make the use of LV2 plugins as simple as 
+libslv2: possible for applications.
+libslv2:
+libslv2: Homepage: http://drobilla.net/software/slv2/
+libslv2:
+libslv2:
+libslv2:
+libslv2:
+libslv2:
