@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.4b1"
+    VERSION="4.4b2"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     echo "Using $TMPROOT"
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
