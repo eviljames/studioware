@@ -26,7 +26,7 @@
 
 PRGNAM=lilypond
 VERSION=${VERSION:-2.16.2}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -76,6 +76,7 @@ sed -i 's|GUILE_LDFLAGS=.*|GUILE_LDFLAGS="`pkg-config --libs guile-1.8`"|' confi
 
 GUILE=/usr/bin/guile1.8 \
 GUILE_CONFIG=/usr/bin/guile-config1.8 \
+LDFLAGS="-lpthread" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

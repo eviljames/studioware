@@ -1,3 +1,5 @@
 lensfun
 GraphicsMagick
+openjpeg
+flickcurl
 darktable
