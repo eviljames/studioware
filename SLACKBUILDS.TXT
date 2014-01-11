@@ -48,7 +48,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 17f3580790d1fb57c1aeb7a8458da59f  ./photo/rawstudio/rawstudio.tar.gz
 01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
 58acbbaf6074188c13a817e593873d26  ./photo/digikam/digikam.tar.gz
-287a363932f22191e3bd324ec9fdb3ba  ./photo/darktable/darktable.tar.gz
+bd0497ae53451b4a60943cbaf0ca9a78  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
 f47f79e4956975bf3b638255989dd178  ./photo/separate+/separate+.tar.gz
 f6a9d109432080b7d01a5b6e36623cbf  ./photo/GraphicsMagick/GraphicsMagick.tar.gz
@@ -76,7 +76,7 @@ b0f04a39e8687071a51aca389721d059  ./libraries/cairomm/cairomm.tar.gz
 e55a4682d2bf9816605295370c27ac2c  ./libraries/clxclient/clxclient.tar.gz
 1c78ae00f26f524ea281bc7fb69d609f  ./libraries/sord/sord.tar.gz
 f8221e3e61c8cc5be06bd557b89d7bfa  ./libraries/mm-common/mm-common.tar.gz
-8ceda8faca5626087e9f01c4b8d2cbc2  ./libraries/dssi/dssi.tar.gz
+626bd4d8c24f45aee9f9b867e743b374  ./libraries/dssi/dssi.tar.gz
 400b7bdcd463cee257f83f0e27e3ae29  ./libraries/clthreads/clthreads.tar.gz
 01e8af6bdef8bea334dd2d1507bb4f73  ./libraries/libiec61883/libiec61883.tar.gz
 aceabdba68d0be7bf9ea1baf79c7cd78  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
@@ -125,7 +125,7 @@ e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 33b681e6a7c90093a201aba5bd360f6e  ./video/cinelerra/cinelerra.tar.gz
 2081fd8ce413b162698737c89418ecb0  ./graphics/t1utils/t1utils.tar.gz
 f9a50b567fdaf7f2808c23a8870dcca6  ./graphics/goocanvas/goocanvas.tar.gz
-f463fcc05b29bf86bdd7b914aceab8db  ./graphics/lilypond/lilypond.tar.gz
+34c36139be7a2e00bd9eabb21ff260c9  ./graphics/lilypond/lilypond.tar.gz
 a2e9e2c9d471217a9baf74932264e771  ./graphics/frescobaldi/frescobaldi.tar.gz
 8d359783752225a01f37c7dc0683f85b  ./graphics/potrace/potrace.tar.gz
 2b4f3746ffd7b41ce5ca60406ad8f101  ./graphics/mftrace/mftrace.tar.gz
