@@ -1,4 +1,5 @@
 jack
+lv2
 SimpleSysexxer
 lash
 fltk
@@ -26,7 +27,6 @@ aubio
 ardour
 serd
 sord
-lv2
 sratom
 lilv
 ardour3

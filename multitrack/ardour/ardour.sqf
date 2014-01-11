@@ -1,4 +1,5 @@
 jack
+lv2
 aubio
 libgnomecanvas
 libsigc++
