@@ -76,7 +76,7 @@ b0f04a39e8687071a51aca389721d059  ./libraries/cairomm/cairomm.tar.gz
 e55a4682d2bf9816605295370c27ac2c  ./libraries/clxclient/clxclient.tar.gz
 1c78ae00f26f524ea281bc7fb69d609f  ./libraries/sord/sord.tar.gz
 f8221e3e61c8cc5be06bd557b89d7bfa  ./libraries/mm-common/mm-common.tar.gz
-a835054566115c0a8f53103501cd29c4  ./libraries/dssi/dssi.tar.gz
+8ceda8faca5626087e9f01c4b8d2cbc2  ./libraries/dssi/dssi.tar.gz
 400b7bdcd463cee257f83f0e27e3ae29  ./libraries/clthreads/clthreads.tar.gz
 01e8af6bdef8bea334dd2d1507bb4f73  ./libraries/libiec61883/libiec61883.tar.gz
 aceabdba68d0be7bf9ea1baf79c7cd78  ./libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
