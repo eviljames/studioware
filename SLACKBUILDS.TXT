@@ -21,7 +21,7 @@ f0031982e28c40b2c763b301931dc3f2  ./multitrack/ardour3/ardour3.tar.gz
 f6cccead03190d947047c9457e0e3d46  ./multitrack/jokosher/jokosher.tar.gz
 d7df936caf81a7ee112a79fc37376bd8  ./multitrack/ecasound/ecasound.tar.gz
 816aaea50ba4128b18fb82076a4f35e8  ./editors/mscore/mscore.tar.gz
-595b1bfd089fd516d707c1168cafa698  ./editors/rosegarden/rosegarden.tar.gz
+54dd0e1a9362863c637b55aa43201407  ./editors/rosegarden/rosegarden.tar.gz
 9cc70649d290c65bccd5f524424b3ce2  ./editors/audacity/audacity.tar.gz
 1cd04494474c8aced846794bb51fa86e  ./editors/denemo/denemo.tar.gz
 f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
