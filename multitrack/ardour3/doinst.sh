@@ -25,6 +25,6 @@ if [ -x /usr/bin/gtk-update-icon-cache ] \
 fi
 
 if [ -x /sbin/setcap ]; then
-    /sbin/setcap cap_ipc_lock,cap_sys_nice=ep usr/bin/ardour2
+    /sbin/setcap cap_ipc_lock,cap_sys_nice=ep usr/bin/ardour3
 fi
 
