@@ -16,7 +16,7 @@ cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 509a4ca810b5588189bfbbb5b83addb8  ./amps/guitarix2/guitarix2.tar.gz
 aa007c1e08fa2bec486c571f7efc535e  ./drums/hydrogen/hydrogen.tar.gz
 81ff7ee757b417a8cc71b6bd440267d5  ./multitrack/qtractor/qtractor.tar.gz
-5b95ccd083985958fbf8a5069ebeb315  ./multitrack/ardour/ardour.tar.gz
+3afa731098e690ca8ba5b61eb3b53671  ./multitrack/ardour/ardour.tar.gz
 41efa64e0640e43867a5ec4b995fc0bd  ./multitrack/ardour3/ardour3.tar.gz
 f6cccead03190d947047c9457e0e3d46  ./multitrack/jokosher/jokosher.tar.gz
 d7df936caf81a7ee112a79fc37376bd8  ./multitrack/ecasound/ecasound.tar.gz
