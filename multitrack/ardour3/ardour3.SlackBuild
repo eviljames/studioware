@@ -24,7 +24,7 @@
 PRGNAM=ardour3
 SRCNAM=ardour
 VERSION=${VERSION:-3.5.74}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -60,7 +60,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xvf $CWD/$SRCNAM-$VERSION.tar.xz
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -70,10 +70,10 @@ find -L . \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 ./waf configure -p \
-    --prefix=/usr \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --mandir=/usr/man \
-    --docdir=/usr/doc/$PRGNAM-$VERSION 
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION 
 
 ./waf
 ./waf install --destdir=$PKG
@@ -89,6 +89,17 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+# fix /etc for clobbering
+mkdir -p $PKG/etc
+mv $PKG/usr/etc $PKG
+cd $PKG/etc/ardour3
+find . -type f | while read i; do
+    mv $i $i.new
+    echo "config etc/ardour3/$i.new" >> $PKG/install/doinst.sh
+  done
+cd -
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
