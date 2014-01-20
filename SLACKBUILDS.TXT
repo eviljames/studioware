@@ -16,8 +16,8 @@ cdc6e07fdcc0f556c04c796d9332e65a  ./development/scons/scons.tar.gz
 509a4ca810b5588189bfbbb5b83addb8  ./amps/guitarix2/guitarix2.tar.gz
 aa007c1e08fa2bec486c571f7efc535e  ./drums/hydrogen/hydrogen.tar.gz
 81ff7ee757b417a8cc71b6bd440267d5  ./multitrack/qtractor/qtractor.tar.gz
-5609c3636c5c26b070df1c8286478f9d  ./multitrack/ardour/ardour.tar.gz
-222f7131c210582ccd13e79f0e9c0c47  ./multitrack/ardour3/ardour3.tar.gz
+1e708ddee6d5b101513ed7fa4835a327  ./multitrack/ardour/ardour.tar.gz
+8cd5fcb91d9f2f457b3686aeeeaeacb4  ./multitrack/ardour3/ardour3.tar.gz
 f6cccead03190d947047c9457e0e3d46  ./multitrack/jokosher/jokosher.tar.gz
 d7df936caf81a7ee112a79fc37376bd8  ./multitrack/ecasound/ecasound.tar.gz
 816aaea50ba4128b18fb82076a4f35e8  ./editors/mscore/mscore.tar.gz
@@ -102,6 +102,7 @@ ed067acd44c2bf9c041a12ba78de77e6  ./libraries/gtkmm/gtkmm.tar.gz
 a5a5f9cd7e0a4b82a511ce5ef19ffdd6  ./libraries/gtksourceview/gtksourceview.tar.gz
 dcfc742a776b6073609f0aa6fa536019  ./libraries/mxml/mxml.tar.gz
 08a754ab68382de91f7648671017ae09  ./libraries/libslv2/libslv2.tar.gz
+d08527ec26961d43647cdee9427c76d0  ./libraries/suil/suil.tar.gz
 0b35e42cfaf9c2330793b831e2326585  ./libraries/libavc1394/libavc1394.tar.gz
 c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 4d24370ba978bfe1102960d1f1e626e3  ./libraries/fltk/fltk.tar.gz

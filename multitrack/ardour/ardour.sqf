@@ -1,5 +1,10 @@
 jack
+serd
+sord
 lv2
+suil
+sratom
+lilv
 aubio
 libgnomecanvas
 libsigc++

@@ -26,7 +26,7 @@
 
 PRGNAM=ardour
 VERSION=2.8.16
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -42,11 +42,8 @@ TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ "${LV2:-no}" = "no" ]; then
-  lv2opt="LV2=0 LV2_UI=0"
-else
-  lv2opt="LV2=1 LV2_UI=1"
-fi
+# we'll make this the default
+lv2opt="LV2=1 LV2_UI=1"
 
 if [ "${WIIMOTE:-no}" = "no" ]; then
   wiiopt="WIIMOTE=0"

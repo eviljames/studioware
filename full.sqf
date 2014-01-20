@@ -1,5 +1,10 @@
 jack
+serd
+sord
 lv2
+suil
+sratom
+lilv
 SimpleSysexxer
 lash
 fltk
@@ -25,10 +30,6 @@ libgnomecanvas
 libgnomecanvasmm
 aubio
 ardour
-serd
-sord
-sratom
-lilv
 ardour3
 wxGTK
 audacity

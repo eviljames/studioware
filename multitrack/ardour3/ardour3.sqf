@@ -1,11 +1,12 @@
 jack
-libsigc++
-glibmm
-lv2
 serd
 sord
+lv2
+suil
 sratom
 lilv
+libsigc++
+glibmm
 cairomm
 pangomm
 atkmm
