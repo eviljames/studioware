@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.4b2"
+    VERSION="4.5b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     echo "Using $TMPROOT"
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
@@ -111,6 +111,7 @@ latest()
     REMBUILD=$(echo $LATEST | cut -db -f2)
 
     PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
+    ASC=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz.asc
     MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
 
     echo "Installed version: $VERSION. Latest version: $LATEST."
@@ -122,6 +123,7 @@ latest()
         if [ "$REPLY" = "y" ]; then
             $WGET -q -O $PKG $TOOLURL/$PKG
             $WGET -q -O $MD5 $TOOLURL/$MD5
+            $WGET -q -O $ASC $TOOLURL/$ASC
 
             echo "Package saved to $TMPROOT"
             echo "Checking md5... "
@@ -131,6 +133,24 @@ latest()
             if [ $? != 0 ]; then
                 cleanup
             fi
+
+            if [ "$CHECKGPG" = "ON" ]; then
+                echo "Checking gpg..."
+                # try to surpress the authority warning...
+                GPGOUT=$($GPG $ASC $PKG 2>&1 | head -n2)
+
+                if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
+                    echo "$GPGOUT"
+                    echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                    cleanup
+                elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
+                        echo "$GPGOUT"
+                        cleanup
+                else
+                    echo "$GPGOUT"
+                fi
+            fi
+
 
             echo
             echo -n "Upgrade now? (y/n) "
@@ -190,8 +210,7 @@ get_queue()
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
-    CAT=$(egrep -wi .*$1-.*txz$ $FILELIST | cut -d/ -f2)
-    APP=$(egrep -wi .*$1-.*txz$ $FILELIST | cut -d/ -f3)
+    CAT=$(grep -i $1-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
 
     curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
 
@@ -213,26 +232,31 @@ listpkgs()
     exec <&1
     unset pkgs
     unset INSTALLLIST
-    
+    unset MISSING
+
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(egrep -wi .*$name-.*txz$ $FILELIST | cut -d/ -f3)
-
-        for txz in $pkg
-        do
-            p=$(echo "$txz" | rev | cut -d- -f4- | rev)
-            if [ "$p" = "$name" ]; then
-                INSTALLLIST=$INSTALLLIST" "$txz" "$name" ""on "
-            fi
-        done
+        pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
+        if [ -n "$pkg" ]; then
+            INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
+        else
+            MISSING=$MISSING" "$name
+        fi
     done < $QUEUE
+
+    if [ -n "$MISSING" ]; then
+        echo "The following are in the queue, but not in the file list:"
+        echo $MISSING
+        sleep 5
+    fi
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
 
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to install:" \
         19 70 13 $INSTALLLIST 2>$PKGLIST
+
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
 
@@ -260,15 +284,8 @@ install()
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(egrep -wi .*$name-.*txz$ $FILELIST | cut -d/ -f3)
-
-        for txz in $pkg
-        do
-            p=$(echo "$txz" | rev | cut -d- -f4- | rev)
-            if [ "$p" = "$name" ]; then
-                INSTALLLIST=$INSTALLLIST" "$txz" "$name" ""on "
-            fi
-        done
+        pkg=$(grep -i $name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
+        INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
     done < $QUEUE
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
@@ -509,9 +526,10 @@ upgradeall()
 installpkgs()
 {
     exec <&1
+
     while read TXZ
     do
-        REMOTE=$(egrep .*$TXZ$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
+        REMOTE=$(grep .*$TXZ$ $FILELIST | awk '{print $9}' | cut -d'/' -f2-)
         let exit=99
 
         while [[ $exit -ne 0 ]]
