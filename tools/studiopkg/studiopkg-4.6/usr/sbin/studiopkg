@@ -26,9 +26,8 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.5b1"
+    VERSION="4.6b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
-    echo "Using $TMPROOT"
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
     case "$( uname -m )" in
@@ -436,22 +435,36 @@ upgrade()
 
     if [ -z "$sepkgs" ]; then { echo "No packages to upgrade"; cleanup; } fi
 
+ #   for pkg in $sepkgs
+ #   do
+ #       shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
+ #       iversion=$(basename $pkg | rev | cut -d- -f1- | rev)
+ #       nversion="$(grep -i $shortname $FILELIST | awk '{print $9}' | \
+ #           cut -d'/' -f3 | sed 's/\.txz//' | rev \
+ #           | cut -d- -f1- | rev)"
+ #       for i in $nversion
+ #       do
+ #           newshortname=$(echo $i | rev | cut -d- -f4- | rev)
+
+ #           if [ "$iversion" != "$i" ] && [ -n "$shortname" ] \
+ #               && [ "$newshortname" = "$shortname" ]; then
+ #               UPLIST=$UPLIST" "$i" "$shortname" ""on "
+ #           fi
+ #       done
+ #   done
+
     for pkg in $sepkgs
     do
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
-        iversion=$(basename $pkg | rev | cut -d- -f1- | rev)
-        nversion="$(grep -i $shortname $FILELIST | awk '{print $9}' | \
-            cut -d'/' -f3 | sed 's/\.txz//' | rev \
-            | cut -d- -f1- | rev)"
-        for i in $nversion
-        do
-            newshortname=$(echo $i | rev | cut -d- -f4- | rev)
-
-            if [ "$iversion" != "$i" ] && [ -n "$shortname" ] \
-                && [ "$newshortname" = "$shortname" ]; then
-                UPLIST=$UPLIST" "$i" "$shortname" ""on "
-            fi
-        done
+        iversion=$(basename $pkg | rev | cut -d- -f3 | rev)
+        newpkg=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+            cut -d/ -f3)
+        nversion=$(echo $newpkg | rev | cut -d- -f3 | rev)
+        
+        if [ "$iversion" != "$nversion" ]; then # && [ -n "$shortname" ] \
+            #&& [ "$newshortname" = "$shortname" ]; then
+        UPLIST=$UPLIST" "$(echo $newpkg | cut -d/ -f5)" "$shortname" ""on "
+        fi
     done
 
     if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
@@ -492,19 +505,15 @@ upgradeall()
     for pkg in $sepkgs
     do
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
-        iversion=$(basename $pkg | rev | cut -d- -f1- | rev)
-        nversion="$(grep -i $shortname $FILELIST | awk '{print $9}' | \
-            cut -d'/' -f3 | sed 's/\.txz//' | rev \
-            | cut -d- -f1- | rev)"
-        for i in $nversion
-        do
-            newshortname=$(echo $i | rev | cut -d- -f4- | rev)
-
-            if [ "$iversion" != "$i" ] && [ -n "$shortname" ] \
-                && [ "$newshortname" = "$shortname" ]; then
-                UPLIST=$UPLIST" "$i" "$shortname" ""on "
-            fi
-        done
+        iversion=$(basename $pkg | rev | cut -d- -f3 | rev)
+        newpkg=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+            cut -d/ -f3)
+        nversion=$(echo $newpkg | rev | cut -d- -f3 | rev)
+        
+        if [ "$iversion" != "$nversion" ]; then # && [ -n "$shortname" ] \
+            #&& [ "$newshortname" = "$shortname" ]; then
+        UPLIST=$UPLIST" "$(echo $newpkg | cut -d/ -f5)" "$shortname" ""on "
+        fi
     done
 
     if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
