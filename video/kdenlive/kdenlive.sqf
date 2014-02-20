@@ -1,6 +1,6 @@
 lame
 x264
 ffmpeg
-freiOr-plugins
+frei0r-plugins
 mlt
 kdenlive

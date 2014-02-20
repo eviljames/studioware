@@ -111,12 +111,11 @@ c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 26f41fba91566b6e3163f1a992cabcbd  ./plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 33c9b928c3404e6fa9f72a7f50bbd165  ./plugins/lv2/lv2.tar.gz
 8c3ed79108488ccac47caae69b7b418b  ./plugins/calf/calf.tar.gz
-e55aec08037408bf3239a77343dc70e1  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
-d7d5c9ce08e4ac819986c21448f95cd3  ./plugins/frei0r-plugins/frei0r.tar.gz
+a134702c6b772b35ae654db168a50c81  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 61d1f53bdba7be53bff463b39f1e4ae0  ./plugins/alsa-plugins/alsa-plugins.tar.gz
 bc792a7bb1a9f71ab468b0fe17b0a1a4  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
-0b6f5506e1afe89ce034296d297cb3e7  ./video/kdenlive/kdenlive.tar.gz
+4d930d8f25014ab8ec43762ac664a5d3  ./video/kdenlive/kdenlive.tar.gz
 56c0612938bfbd08b7e6d58a5424490b  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 080a228a8cc7f18beac92d7529d18ae2  ./video/ffmpeg/ffmpeg.tar.gz
