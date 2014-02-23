@@ -3,7 +3,6 @@ lensfun
 GraphicsMagick
 openjpeg
 darktable
-photoprint
 iccprofiles
 dcraw
 ufraw

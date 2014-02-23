@@ -127,7 +127,6 @@ iccprofiles
 dcraw
 ufraw
 separate+
-photoprint
 flickcurl
 rawstudio
 opencv
