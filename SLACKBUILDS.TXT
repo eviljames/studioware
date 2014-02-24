@@ -39,7 +39,7 @@ c748220f0ba2afe58d1fccee4b7bca30  ./system/numactl/numactl.tar.gz
 e5ebcb3b6beb74e5e025b70f6ed1f4d6  ./system/jack/jack.tar.gz
 caae96f3908ddfb0fba789054f35a665  ./system/rt-tests/rt-tests.tar.gz
 ed03fb27d9107cb571328384081501da  ./system/qjackctl/qjackctl.tar.gz
-f629c751fb3af17ac8db22409c9c8f01  ./photo/dcraw/dcraw.tar.gz
+c8e0cc84811e64d5e353bb4189224e43  ./photo/dcraw/dcraw.tar.gz
 c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 321df3aa146b82e2636b7a9bf271e051  ./photo/flickcurl/flickcurl.tar.gz
 7615c89cd3f9486e4992445838546e47  ./photo/lensfun/lensfun.tar.gz

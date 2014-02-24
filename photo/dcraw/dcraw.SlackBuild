@@ -30,7 +30,7 @@
 # RAWPHOTO=yes ./dcraw.SlackBuild
 
 PRGNAM="dcraw"
-VERSION=${VERSION:-9.19}
+VERSION=${VERSION:-9.20}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
