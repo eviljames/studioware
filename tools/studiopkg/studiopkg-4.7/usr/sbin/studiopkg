@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.6b1"
+    VERSION="4.7b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -663,6 +663,8 @@ deletecache()
     cd $CACHEDIR || cleanup
     find . -name "*txz" -exec rm -f {} \;
     find . -name "*md5" -exec rm -f {} \;
+    find . -name "*asc" -exec rm -f {} \;
+    find . -iname "*txt" -exec rm -f {} \;
     echo "Cache Deleted"
     cleanup
 }
