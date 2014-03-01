@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.6b2"
+    VERSION="3.7b1"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -258,7 +258,7 @@ listpkgs()
         19 70 13 $INSTALLLIST 2>$PKGLIST
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
-    #cat $QUEUE > $PKGLIST
+
     installpkgs
 }
 #}}}
@@ -368,8 +368,8 @@ search()
 #{{{ Delete Cache !DANGER WILL ROBINSON!
 deletecache()
 {
-    cd $CACHEDIR || cleanup
-    find . -name *.{gz,bz2,tgz,txz,xz} -exec rm -f {} \;
+    rm -r $CACHEDIR 
+    mkdir -p $CACHEDIR 
     echo "Cache Deleted"
     cleanup
 }
