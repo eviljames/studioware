@@ -102,6 +102,7 @@ tap-plugins
 terminatorX
 timemachine
 x264
+xvidcore
 ffmpeg
 sunvox
 zziplib
@@ -131,3 +132,4 @@ flickcurl
 rawstudio
 opencv
 digikam
+kdenlive

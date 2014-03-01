@@ -1,9 +1,9 @@
 jack
 lame
+xvidcore
 libdv
 x264
 ffmpeg
-sunvox
 zziplib
 milkytracker
 a52dec
@@ -17,3 +17,4 @@ faac
 libdca
 cinelerra
 avidemux
+kdenlive
