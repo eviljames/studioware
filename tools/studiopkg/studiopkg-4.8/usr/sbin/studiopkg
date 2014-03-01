@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.7b1"
+    VERSION="4.8b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -639,11 +639,12 @@ search()
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
-    for p in $(grep -i "$2" $FILELIST | grep txz | awk '{print $9}')
+
+    for p in $(grep -i "$2" $FILELIST | egrep txz$ | awk '{print $9}')
     do
         shortname=$(echo $p | cut -d'/' -f3 | rev | cut -d- -f4- | rev)
         dir=$(echo $p | cut -d'/' -f2) 
-        installed=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
+        installed=$(basename $(ls /var/log/packages/$shortname-*se 2>/dev/null) \
             2>/dev/null | rev | cut -d- -f4- | rev)
 #        version=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
 #            2>/dev/null | rev | cut -d- -f3 | rev)
