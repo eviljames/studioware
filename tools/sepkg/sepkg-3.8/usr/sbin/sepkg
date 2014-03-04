@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.7b1"
+    VERSION="3.8b1"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -91,6 +91,17 @@ getflags()
 info()
 {
     APP=$1
+    
+    if [ -z "$APP" ]; then
+        echo "No application name specified!"
+        cleanup
+    fi
+
+    if [ ! -r $FILELIST ]; then
+        echo "No filelist found. Do you need to run sepkg -u?"
+        cleanup
+    fi
+
     CAT=$(grep -wi $APP $FILELIST | cut -d/ -f2)
     info="$(curl -s $SBSERVER/$CAT/$APP/$APP.info)"
     echo "$info"
@@ -99,6 +110,11 @@ info()
 #{{{ Readme
 readme()
 {
+    if [ -z "$1" ]; then
+        echo "No application name specified!"
+        cleanup
+    fi
+
     file=$(grep -i $1.tar.gz $FILELIST | awk '{print $2}' | cut -d'/' -f1-3)/README
     shortname=$(echo $file | cut -d'/' -f5 | rev | cut -d- -f4- | rev)
     url=$SBSERVER/$file
