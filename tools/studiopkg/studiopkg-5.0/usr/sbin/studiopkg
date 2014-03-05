@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="4.9b1"
+    VERSION="5.0b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -78,8 +78,8 @@ getflags()
     if [ "$1" = "-u" ]; then { update; cleanup; }; fi
     if [ "$1" = "search" ]; then { search "$@"; cleanup; }; fi
     if [ "$1" = "-s" ]; then { search "$@"; cleanup; }; fi
-    if [ "$1" = "install" ]; then { install "$@"; cleanup; }; fi
-    if [ "$1" = "-i" ]; then { install "$@"; cleanup; }; fi
+    if [ "$1" = "install" ]; then { local-queue "$@"; cleanup; }; fi
+    if [ "$1" = "-i" ]; then { localqueue "$@"; cleanup; }; fi
     if [ "$1" = "install-all" ]; then { installall "$@"; cleanup; }; fi
     if [ "$1" = "remove" ]; then { remove "$@"; cleanup; }; fi
     if [ "$1" = "-r" ]; then { remove "$@"; cleanup; }; fi
@@ -201,6 +201,28 @@ update()
     cleanup
 }
 #}}}
+#{{{ Local Queue
+localqueue()
+{
+    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+
+    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
+        cleanup; } fi
+
+    unset pkgs
+    shift
+    cl=$*
+
+    if [ -z "$cl" ]; then
+        cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
+    else
+        echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
+    fi
+    exec <&1
+
+    listpkgs
+}
+#}}}
 #{{{ Download Queue
 get_queue()
 {
@@ -269,7 +291,7 @@ listpkgs()
     installpkgs
 }
 #}}}
-#{{{
+#{{{ Clear Installed
 clear_installed()
 {
     while read newpkg
@@ -295,7 +317,7 @@ clear_installed()
 }
 #}}}
 #{{{ Install
-install()
+installxx()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
@@ -320,14 +342,19 @@ install()
     done < $QUEUE
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
-
+echo $INSTALLLIST
+read
     let rows=$(stty size | cut -f1 -d' ')-4
     let cols=$(stty size | cut -f2 -d' ')
     let mrows=$((rows-6))
 
-    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+    dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+        --help-button --help-label "Clear Inst'd" --help-status \
         --checklist "Choose packages to install:" \
         $rows $cols $mrows $INSTALLLIST 2> $TMPROOT/pkglist
+
+    cat $TMPROOT/pkglist
+    read 
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $TMPROOT/pkglist)" ]; then cleanup; fi
     installpkgs

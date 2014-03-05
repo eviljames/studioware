@@ -5,7 +5,7 @@
 
 PRGNAM=frescobaldi
 VERSION=${VERSION:-1.2.0}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -77,5 +77,9 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
+
+find . -name *\.desktop -exec \
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio/' '{}' \;
+
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
 

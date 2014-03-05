@@ -18,3 +18,9 @@ libdca
 cinelerra
 avidemux
 kdenlive
+pyxdg
+goocanvas
+pygoocanvas
+mlt
+frei0r-plugins
+openshot

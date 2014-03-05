@@ -48,7 +48,6 @@ frei0r-plugins
 frescobaldi
 giada
 gnonlin
-goocanvas
 gst-python
 guile1.8
 guitarix2
@@ -77,8 +76,6 @@ muse
 ntk
 non
 numactl
-pygoocanvas
-openshot
 pd
 phat
 qastools

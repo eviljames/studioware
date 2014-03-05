@@ -6,4 +6,4 @@ Name=ZynAddSubFX
 GenericName=ZynAddSubFX Soft Synth
 StartupNotify=true
 Type=Application
-Categories=AudioVideo;Audio;
+Categories=X-Studioware-Audio;
