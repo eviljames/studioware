@@ -1,3 +1,2 @@
-jack
 wxGTK
 audacity
