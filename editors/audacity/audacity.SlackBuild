@@ -82,6 +82,12 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --enable-unicode \
+  --with-libsoxr \
+  --with-libflac \
+  --with-libvamp \
+  --with-lame \
+  --enable-sse \
+  --enable-ladspa \
   --build=$ARCH-slackware-linux
 make
 make install DESTDIR=$PKG
