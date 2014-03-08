@@ -98,18 +98,17 @@ ladspa="";      [ "${LADSPA:-no}" != "no" ]       && ladspa="--enable-ladspa"
 
 opencore_amr="" ; [ "${OPENCORE:-no}" != "no" ] && \
   opencore_amr="--enable-libopencore-amrnb --enable-libopencore-amrwb"
-libfaac=""      ; [ "${FAAC:-no}" != "no" ]     && \
-  { libfaac="--enable-libfaac" ; non_free="--enable-nonfree" ; }
 ssl=""      ; [ "${OPENSSL:-no}" != "no" ]     && \
   { ssl="--enable-openssl" ; non_free="--enable-nonfree" ; }
 openjpeg=""     ; [ "${JP2:-no}" != "no" ]      && \
   { openjpeg="--enable-libopenjpeg" ; \
     SLKCFLAGS="$SLKCFLAGS -I/usr/include/openjpeg-1.5" ; }
 
-mp3lame="--enable-libmp3lame" ; [ "${LAME:-yes}" != "yes" ] && mp3lame=""
-libx264="--enable-libx264"    ; [ "${X264:-yes}" != "yes" ] && libx264=""
-libxvid="--enable-libxvid" ; [ "${XVID:-yes}" != "yes" ] && libxvid=""
-libvpx="--enable-libvpx" ; [ "${VPX:-yes}" != "yes" ] && libvpx=""
+mp3lame="--enable-libmp3lame"
+libx264="--enable-libx264"
+libxvid="--enable-libxvid" 
+libvpx="--enable-libvpx" 
+libfaac="--enable-libfaac" ; non_free="--enable-nonfree" ; 
 
 # opencv support is currently broken: http://code.opencv.org/issues/1925
 #libopencv=""  ; [ "${OPENCV:-no}" != "no" ]       && libopencv="--enable-libopencv"

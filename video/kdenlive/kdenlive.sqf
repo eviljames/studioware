@@ -1,5 +1,11 @@
+jack
 lame
 x264
+xvidcore
+faac
+libvpx
+libdv
+libquicktime
 ffmpeg
 frei0r-plugins
 mlt

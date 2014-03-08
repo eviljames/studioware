@@ -116,10 +116,10 @@ a134702c6b772b35ae654db168a50c81  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 bc792a7bb1a9f71ab468b0fe17b0a1a4  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 bac999fb1342a9ee1126014b930e7b06  ./video/libvpx/libvpx.tar.gz
 11fa262f6722f81abb5986c792496661  ./video/mlt/mlt.tar.gz
-75ee73687a683019b44a0bc2780550a4  ./video/kdenlive/kdenlive.tar.gz
+5897219426f6c3d34c184542e78e69a1  ./video/kdenlive/kdenlive.tar.gz
 56c0612938bfbd08b7e6d58a5424490b  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
-6985e39d5ff498164dbd3e9508b852e4  ./video/ffmpeg/ffmpeg.tar.gz
+84fe9deaa34e69956d6ea4632bafb27a  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 10a0101a52f058820bf4236acbc93a6b  ./video/openshot/openshot.tar.gz
