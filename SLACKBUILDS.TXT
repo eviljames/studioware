@@ -118,7 +118,7 @@ bc792a7bb1a9f71ab468b0fe17b0a1a4  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.
 75ee73687a683019b44a0bc2780550a4  ./video/kdenlive/kdenlive.tar.gz
 56c0612938bfbd08b7e6d58a5424490b  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
-5aa7cc6a3866d6fead90f7ac7a5ac04f  ./video/ffmpeg/ffmpeg.tar.gz
+90b2c76d8bb0c562902a93c6b55278ef  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 10a0101a52f058820bf4236acbc93a6b  ./video/openshot/openshot.tar.gz
