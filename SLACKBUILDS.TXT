@@ -22,7 +22,7 @@ b26361d87af72eb7c7839e0238773c15  ./multitrack/jokosher/jokosher.tar.gz
 d7df936caf81a7ee112a79fc37376bd8  ./multitrack/ecasound/ecasound.tar.gz
 233be47f1aa3d6abd6bb4c0dfb55da27  ./editors/mscore/mscore.tar.gz
 055e6caacbcfdca0d378f2afb1f347df  ./editors/rosegarden/rosegarden.tar.gz
-85c9e730c3f8e101a147b88f8c494b7b  ./editors/audacity/audacity.tar.gz
+cabf5c91f0c04a13b871b16219b4ab48  ./editors/audacity/audacity.tar.gz
 c98e519e33b93157565accd656cd8fc0  ./editors/denemo/denemo.tar.gz
 f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
 828c2d8ddeb748d217118458adcbdcaa  ./mixers/mixxx/mixxx.tar.gz
@@ -114,11 +114,11 @@ c89e068d6b6413c9641f5b6333ded17c  ./libraries/sratom/sratom.tar.gz
 a134702c6b772b35ae654db168a50c81  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 61d1f53bdba7be53bff463b39f1e4ae0  ./plugins/alsa-plugins/alsa-plugins.tar.gz
 bc792a7bb1a9f71ab468b0fe17b0a1a4  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
-d5ae280f3e04b83287d1c13e8dcb23d7  ./video/mlt/mlt.tar.gz
+63f8cca09551b1b34a88118a982c4fb0  ./video/mlt/mlt.tar.gz
 75ee73687a683019b44a0bc2780550a4  ./video/kdenlive/kdenlive.tar.gz
 56c0612938bfbd08b7e6d58a5424490b  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
-080a228a8cc7f18beac92d7529d18ae2  ./video/ffmpeg/ffmpeg.tar.gz
+5aa7cc6a3866d6fead90f7ac7a5ac04f  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 10a0101a52f058820bf4236acbc93a6b  ./video/openshot/openshot.tar.gz
