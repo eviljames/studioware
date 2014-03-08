@@ -123,7 +123,7 @@ fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 13495c2def88879e4d90a170ccfd84fa  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
-10a0101a52f058820bf4236acbc93a6b  ./video/openshot/openshot.tar.gz
+b2c9772f07e047106d82c9993313334a  ./video/openshot/openshot.tar.gz
 33b681e6a7c90093a201aba5bd360f6e  ./video/cinelerra/cinelerra.tar.gz
 f147a8fb90cb9174ea7a39d2e858741f  ./video/libquicktime/libquicktime.tar.gz
 2081fd8ce413b162698737c89418ecb0  ./graphics/t1utils/t1utils.tar.gz

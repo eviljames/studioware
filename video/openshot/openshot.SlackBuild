@@ -23,7 +23,7 @@
 
 PRGNAM=openshot
 VERSION=${VERSION:-1.4.3}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
