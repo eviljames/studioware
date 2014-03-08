@@ -77,20 +77,20 @@ PYTHONSITEPKG=$(python -c "import sys, os; print os.path.join('/usr/lib${LIBDIRS
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
+  --disable-debug \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --sysconfdir=/etc \
-  --localstatedir=/var \
+  --qimage-libdir=${QT4DIR}/qt/lib \
+  --qimage-includedir=${QT4DIR}/qt/include \
   --enable-gpl \
-  --enable-gpl3 \
-  --mandir=/usr/man \
-  --infodir=/usr/info \
-  --swig-languages="perl php python ruby tcl" \
+  --luma-compress \
+  --enable-motion-est \
   $vdpau \
-  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --swig-languages="perl php python ruby tcl" \
   --build=$ARCH-slackware-linux
 
-make
+make clean
+CFLAGS="$SLKCFLAGS" CXXFLAGS="$SLKCFLAGS" make
 make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \

@@ -23,5 +23,7 @@ pyxdg
 goocanvas
 pygoocanvas
 mlt
+opencv
+gavl
 frei0r-plugins
 openshot

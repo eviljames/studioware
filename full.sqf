@@ -44,6 +44,8 @@ denemo
 dssi
 ecasound
 fontforge
+opencv
+gavl
 frei0r-plugins
 frescobaldi
 giada
