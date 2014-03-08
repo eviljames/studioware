@@ -2,6 +2,8 @@
 
 # Slackware build script for mlt
 # Copyright 2013 Dave Woodfall <dave@studioware.org>
+# Modified by Donald Tanner <mesa@studioware.org>
+# Modifications from slackbuilds.org added 2014
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,7 +24,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=mlt
-VERSION=${VERSION:-0.8.8}
+VERSION=${VERSION:-0.9.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -68,6 +70,10 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+if pkg-config --exists vdpau ; then vdpau="--avformat-vdpau" ; else vdpau="" ; fi
+
+PYTHONSITEPKG=$(python -c "import sys, os; print os.path.join('/usr/lib${LIBDIRSUFFIX}', 'python%s' % sys.version[:3], 'site-packages')")
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -75,8 +81,13 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
+  --enable-gpl \
+  --enable-gpl3 \
+  --swig-languages=python \
   --mandir=/usr/man \
   --infodir=/usr/info \
+  --swig-languages="perl php python ruby tcl" \
+  $vdpau \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
@@ -85,6 +96,40 @@ make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+( cd $TMP/$PRGNAM-$VERSION/src/swig/perl
+    install -D -m 0644 mlt.pm $PKG/usr/share/perl5/mlt.pm
+    install -D -m 0755 play.pl $PKG/usr/share/perl5/play.pl
+    install -D -m 0755 blib/arch/auto/mlt/mlt.so \
+    $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.so
+    install -D -m 0644 blib/arch/auto/mlt/mlt.bs \
+    $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.bs
+)
+
+( cd $TMP/$PRGNAM-$VERSION/src/swig/php
+    install -D -m 0755 mlt.so $PKG/usr/lib$LIBDIRSUFFIX/php/extensions/mlt.so
+    install -D -m 0644 play.php $PKG/usr/doc/$PRGNAM-$VERSION/play.php
+)
+
+( cd $TMP/$PRGNAM-$VERSION/src/swig/python
+    install -D -m 0755 _mlt.so $PKG/$PYTHONSITEPKG/_mlt.so
+    install -D -m 0755 mlt.py $PKG/$PYTHONSITEPKG/mlt.py
+    install -D -m 0755 play.py $PKG/usr/doc/$PRGNAM-$VERSION/play.py
+)
+
+( cd $TMP/$PRGNAM-$VERSION/src/swig/ruby
+    install -D -m 0755 mlt.so \
+    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt.so
+    install -D -m 0755 play.rb $PKG/usr/doc/$PRGNAM-$VERSION/play.rb
+    install -D -m 0755 thumbs.rb $PKG/usr/doc/$PRGNAM-$VERSION/thumbs.rb
+)
+
+( cd $TMP/$PRGNAM-$VERSION/src/swig/tcl
+    . /usr/lib$LIBDIRSUFFIX/tclConfig.sh
+    install -D -m 0755 mlt.so \
+    $PKG/usr/lib$LIBDIRSUFFIX/tcl$TCL_MAJOR_VERSION/$TCL_VERSION/mlt.so
+    install -D -m 0755 play.tcl $PKG/usr/doc/$PRGNAM-$VERSION/play.tcl
+)
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
