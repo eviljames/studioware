@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for mlt
-# Copyright 2013 Dave Woodfall <dave@studioware.org>
-# Modified by Donald Tanner <mesa@studioware.org>
-# Modifications from slackbuilds.org added 2014
+# Slackware build script for libquicktime
+# Copyright 2014 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -23,9 +21,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=mlt
-VERSION=${VERSION:-0.9.0}
-BUILD=${BUILD:-2}
+PRGNAM=libquicktime
+VERSION=${VERSION:-1.2.4}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -64,15 +62,15 @@ rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
 chown -R root:root .
-find . \
- \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
- -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
- -exec chmod 644 {} \;
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+ -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-if pkg-config --exists vdpau ; then vdpau="--avformat-vdpau" ; else vdpau="" ; fi
-
-PYTHONSITEPKG=$(python -c "import sys, os; print os.path.join('/usr/lib${LIBDIRSUFFIX}', 'python%s' % sys.version[:3], 'site-packages')")
+# Fix compatibility with ffmpeg 2.x
+# Thanks to Heinz Wiesinger for this.
+patch -p1 -i $CWD/libquicktime-1.2.4-ffmpeg2.patch
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
@@ -81,64 +79,30 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
-  --enable-gpl \
-  --enable-gpl3 \
   --mandir=/usr/man \
   --infodir=/usr/info \
-  --swig-languages="perl php python ruby tcl" \
-  $vdpau \
+  --enable-gpl \
+  --with-libdv \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
 
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-( cd $TMP/$PRGNAM-$VERSION/src/swig/perl
-    install -D -m 0644 mlt.pm $PKG/usr/share/perl5/mlt.pm
-    install -D -m 0755 play.pl $PKG/usr/share/perl5/play.pl
-    install -D -m 0755 blib/arch/auto/mlt/mlt.so \
-    $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.so
-    install -D -m 0644 blib/arch/auto/mlt/mlt.bs \
-    $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.bs
-)
-
-( cd $TMP/$PRGNAM-$VERSION/src/swig/php
-    install -D -m 0755 mlt.so $PKG/usr/lib$LIBDIRSUFFIX/php/extensions/mlt.so
-    install -D -m 0644 play.php $PKG/usr/doc/$PRGNAM-$VERSION/play.php
-)
-
-( cd $TMP/$PRGNAM-$VERSION/src/swig/python
-    install -D -m 0755 _mlt.so $PKG/$PYTHONSITEPKG/_mlt.so
-    install -D -m 0755 mlt.py $PKG/$PYTHONSITEPKG/mlt.py
-    install -D -m 0755 play.py $PKG/usr/doc/$PRGNAM-$VERSION/play.py
-)
-
-( cd $TMP/$PRGNAM-$VERSION/src/swig/ruby
-    install -D -m 0755 mlt.so \
-    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt.so
-    install -D -m 0755 play.rb $PKG/usr/doc/$PRGNAM-$VERSION/play.rb
-    install -D -m 0755 thumbs.rb $PKG/usr/doc/$PRGNAM-$VERSION/thumbs.rb
-)
-
-( cd $TMP/$PRGNAM-$VERSION/src/swig/tcl
-    . /usr/lib$LIBDIRSUFFIX/tclConfig.sh
-    install -D -m 0755 mlt.so \
-    $PKG/usr/lib$LIBDIRSUFFIX/tcl$TCL_MAJOR_VERSION/$TCL_VERSION/mlt.so
-    install -D -m 0755 play.tcl $PKG/usr/doc/$PRGNAM-$VERSION/play.tcl
-)
+find $PKG/usr/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING ChangeLog NEWS README docs \
+  AUTHORS COPYING ChangeLog INSTALL NEWS README TODO doc \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

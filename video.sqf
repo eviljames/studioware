@@ -6,6 +6,7 @@ x264
 faac
 faad2
 a52dec
+libvpx
 ffmpeg
 zziplib
 milkytracker

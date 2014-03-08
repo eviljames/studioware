@@ -106,6 +106,7 @@ xvidcore
 a52dec
 faad2
 faac
+libvpx
 ffmpeg
 sunvox
 zziplib

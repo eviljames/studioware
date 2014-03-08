@@ -4,4 +4,5 @@ xvidcore
 faac
 libdv
 ffmpeg
+libquicktime
 mlt

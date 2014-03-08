@@ -27,8 +27,8 @@
 # Modified by Dave W <dave@studioware.org>
 
 PRGNAM=ffmpeg
-VERSION=${VERSION:-2.1}
-BUILD=${BUILD:-4}
+VERSION=${VERSION:-2.1.4}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -85,7 +85,6 @@ libgsm=""     ; [ "${GSM:-no}" != "no" ]          && libgsm="--enable-libgsm"
 librtmp=""    ; [ "${RTMP:-no}" != "no" ]         && librtmp="--enable-librtmp"
 dirac_fast="" ; [ "${SCHROEDINGER:-no}" != "no" ] && dirac_fast="--enable-libschroedinger"
 libspeex=""   ; [ "${SPEEX:-no}" != "no" ]        && libspeex="--enable-libspeex"
-libvpx=""     ; [ "${VPX:-no}" != "no" ]          && libvpx="--enable-libvpx"
 libbluray=""  ; [ "${BLURAY:-no}" != "no" ]       && libbluray="--enable-libbluray"
 libass=""     ; [ "${ASS:-no}" != "no" ]          && libass="--enable-libass"
 libopenal=""  ; [ "${OPENAL:-no}" != "no" ]       && libopenal="--enable-openal"
@@ -110,6 +109,7 @@ openjpeg=""     ; [ "${JP2:-no}" != "no" ]      && \
 mp3lame="--enable-libmp3lame" ; [ "${LAME:-yes}" != "yes" ] && mp3lame=""
 libx264="--enable-libx264"    ; [ "${X264:-yes}" != "yes" ] && libx264=""
 libxvid="--enable-libxvid" ; [ "${XVID:-yes}" != "yes" ] && libxvid=""
+libvpx="--enable-libvpx" ; [ "${VPX:-yes}" != "yes" ] && libvpx=""
 
 # opencv support is currently broken: http://code.opencv.org/issues/1925
 #libopencv=""  ; [ "${OPENCV:-no}" != "no" ]       && libopencv="--enable-libopencv"

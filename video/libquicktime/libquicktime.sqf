@@ -1,0 +1,2 @@
+libdv
+libquicktime

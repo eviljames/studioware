@@ -1,0 +1,6 @@
+libquicktime (quicktime/avi/mp4 codec library)
+
+Libquicktime is a library for reading and writing QuickTime files on UNIX
+systems. Video CODECs supported by this library are OpenDivX, MJPA, JPEG Photo,
+PNG, RGB, YUV 4:2:2, and YUV 4:2:0 compression. Supported audio CODECs are Ogg
+Vorbis, IMA4, ulaw, and any linear PCM format.
