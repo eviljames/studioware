@@ -1,4 +1,2 @@
-@clalsadrv
-@clxclient
 @aeolus
 stops

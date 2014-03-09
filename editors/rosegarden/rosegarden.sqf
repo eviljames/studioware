@@ -1,6 +1,6 @@
 @mftrace
 @lilypond
 @liblrdf
-@liblo
+liblo
 @dssi
 rosegarden

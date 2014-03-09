@@ -1,4 +1,3 @@
 libgnomecanvas
-@pangomm
 @gtkmm
 libgnomecanvasmm

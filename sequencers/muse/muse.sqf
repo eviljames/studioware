@@ -1,5 +1,5 @@
 @fluidsynth
-@liblo
+liblo
 @lash
 @dssi
 muse

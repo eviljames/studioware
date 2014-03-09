@@ -2,10 +2,9 @@ jack
 suil
 @lilv
 aubio
-@atkmm
 @gtkmm
 @libgnomecanvasmm
 scons
 @liblrdf
-@liblo
+liblo
 ardour

@@ -2,4 +2,3 @@
 opencv
 lensfun
 digikam
-

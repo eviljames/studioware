@@ -1,9 +1,8 @@
 jack
 suil
 @lilv
-@atkmm
 @gtkmm
-@liblo
+liblo
 aubio
 @liblrdf
 @libgnomecanvasmm

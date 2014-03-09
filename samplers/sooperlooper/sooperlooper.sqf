@@ -2,5 +2,5 @@
 jack
 wxGTK
 libsigc++-legacy12
-@liblo
+liblo
 sooperlooper

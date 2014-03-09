@@ -1,5 +1,5 @@
 jack
-@liblo
+liblo
 libsigc++
 @liblrdf
 ntk

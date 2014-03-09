@@ -1,3 +1,2 @@
-@glibmm
 @cairomm
 pangomm

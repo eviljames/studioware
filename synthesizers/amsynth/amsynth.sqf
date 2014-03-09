@@ -1,4 +1,3 @@
 jack
-@atkmm
 @gtkmm
 amsynth
