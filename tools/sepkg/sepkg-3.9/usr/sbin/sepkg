@@ -22,11 +22,11 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #}}}
-#{{{ Ini
+#{{{ Init
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.8b1"
+    VERSION="3.9b1"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -37,6 +37,7 @@ init()
     TMPROOT=$(mktemp -d -p $OUTPUT $APPNAME-XXXXXX) || exit
     trap "cleanupbad" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     QUEUE=$TMPROOT/queue
+    TMPQ=$TMPROOT/tmp-queue
     PKGLIST=$TMPROOT/pkglist
     WGET="wget --no-check-certificate"
     UP="upgradepkg --reinstall --install-new"
@@ -47,6 +48,7 @@ init()
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
     ERR="0"
+    CWD=$(pwd)
 }
 #}}}
 #{{{ Cleanup and exit
@@ -246,11 +248,74 @@ set_queue()
     listpkgs
 }
 #}}}
-#{{{ List Packages
+#{{{ Make queue
+make_queue()
+{
+    cd $TMPROOT
+    let CNT=1
+
+    while read line
+    do
+        TOP=$(head -n $((CNT-1)) $TMPQ)
+
+        if [ -n "$TOP" ]; then
+            echo "$TOP" > $TMPQ
+        fi
+
+        # subqueue
+        if [ -z "$(echo $line | cut -d@ -f1)" ] && [ -n "$line" ]; then
+            SUB=$(echo $line | cut -d@ -f2)
+            
+            if [ -n "$SUB" ]; then
+                if [ ! -r $CWD/$SUB.sqf ]; then
+                    pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $SUB.tar.gz)
+                    CAT=$(grep -wi $SUB $FILELIST | cut -d/ -f2)
+                    wget $SBSERVER/$CAT/$SUB/$SUB.sqf
+                else
+                    cat $CWD/$SUB.sqf > $SUB.sqf
+                fi
+
+                SWAP=$(cat $SUB.sqf)
+                echo "$SWAP" >> $TMPQ
+                let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
+                unset SWAP
+            fi
+        else
+            echo $line >> $TMPQ
+            let CNT=$((CNT+1))
+        fi
+
+    done < $1
+}
+#}}
+#{{ List Packages
 listpkgs()
 {
     exec <&1
     unset pkgs
+
+    echo "Building queue..."
+
+    while true
+    do
+        if [ -n "$(grep @ $QUEUE)" ]; then
+            echo -n > $TMPQ
+            make_queue $QUEUE
+            cat $TMPQ > $QUEUE
+        else
+            break
+        fi
+    done
+    
+    echo -n > $TMPQ
+    while read line
+    do
+        if [ ! $(grep -x $line $TMPQ) ]; then
+            echo $line >> $TMPQ
+        fi
+    done < $QUEUE
+    
+    cat $TMPQ > $QUEUE
 
     while read line
     do

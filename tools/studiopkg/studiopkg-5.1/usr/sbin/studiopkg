@@ -249,50 +249,46 @@ get_queue()
     listpkgs
 }
 #}}}
-#{{{ Make queue
+#{{ Make queue
 make_queue()
 {
     cd $TMPROOT
+    let CNT=1
 
     while read line
     do
-        name=$(echo $line | awk '{print $1}')
+        TOP=$(head -n $((CNT-1)) $TMPQ)
+
+        if [ -n "$TOP" ]; then
+            echo "$TOP" > $TMPQ
+        fi
 
         # subqueue
-        if [ -z "$(echo $name | cut -d@ -f1)" ]; then
-            SUB=$(echo $name | cut -d@ -f2)
+        if [ -z "$(echo $line | cut -d@ -f1)" ] && [ -n "$line" ]; then
+            SUB=$(echo $line | cut -d@ -f2)
+            
+            if [ -n "$SUB" ]; then
+                if [ ! -r $CWD/$SUB.sqf ]; then
+                    CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
+                    wget $SBSERVER/$CAT/$SUB/$SUB.sqf
+                else
+                    cat $CWD/$SUB.sqf > $SUB.sqf
+                fi
 
-            if [ ! -r $CWD/$SUB.sqf ]; then
-                CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
-                wget $SBSERVER/$CAT/$SUB/$SUB.sqf
-            else
-                cat $CWD/$SUB.sqf > $SUB.sqf
+                SWAP=$(cat $SUB.sqf)
+                echo "$SWAP" >> $TMPQ
+                let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
+                unset SWAP
             fi
-
-            SWAP=$(cat $SUB.sqf)
-
-            # There's probably some wonderful sed command to do this
-            POS=$(grep -nx $name $QUEUE | cut -d: -f1)
-            TOP=$(head -n $((POS-1)) $QUEUE)
-            TAIL=$(tail -n +$((POS+1)) $QUEUE)
-
-            if [ -n "$TOP" ]; then
-                echo "$TOP" > $QUEUE
-                echo "$SWAP" >> $QUEUE
-            else
-                echo "$SWAP" > $QUEUE
-            fi
-
-            if [ -n "$TAIL" ]; then
-                echo "$TAIL" >> $QUEUE
-            fi
-
-            make_queue $SUB.sqf
+        else
+            echo $line >> $TMPQ
+            let CNT=$((CNT+1))
         fi
+
     done < $1
 }
 #}}}
-#{{{ List Packages
+#{{ List Packages
 listpkgs()
 {
     exec <&1
@@ -300,7 +296,28 @@ listpkgs()
     unset INSTALLLIST
     unset MISSING
 
-    make_queue $QUEUE
+    echo "Building queue..."
+
+    while true
+    do
+        if [ -n "$(grep @ $QUEUE)" ]; then
+            echo -n > $TMPQ
+            make_queue $QUEUE
+            cat $TMPQ > $QUEUE
+        else
+            break
+        fi
+    done
+    
+    echo -n > $TMPQ
+    while read line
+    do
+        if [ ! $(grep -x $line $TMPQ) ]; then
+            echo $line >> $TMPQ
+        fi
+    done < $QUEUE
+    
+    cat $TMPQ > $QUEUE
 
     while read line
     do
