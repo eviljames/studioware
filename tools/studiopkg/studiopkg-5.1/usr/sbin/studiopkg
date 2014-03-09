@@ -56,7 +56,7 @@ init()
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/.dev"
+    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
@@ -249,7 +249,7 @@ get_queue()
     listpkgs
 }
 #}}}
-#{{ Make queue
+#{{{ Make queue
 make_queue()
 {
     cd $TMPROOT
@@ -288,7 +288,7 @@ make_queue()
     done < $1
 }
 #}}}
-#{{ List Packages
+#{{{ List Packages
 listpkgs()
 {
     exec <&1
