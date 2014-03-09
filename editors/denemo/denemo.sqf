@@ -4,6 +4,5 @@ portmidi
 portaudio
 @fluidsynth
 gtksourceview
-dconf
 evince
 denemo

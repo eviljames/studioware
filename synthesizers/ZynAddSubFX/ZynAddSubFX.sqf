@@ -1,4 +1,4 @@
 mxml
 fltk
 @lash
-zynaddsubfx
+ZynAddSubFX

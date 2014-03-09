@@ -6,5 +6,4 @@ ufraw
 separate+
 photoprint
 @rawstudio
-@ffmpeg
 @digikam

@@ -2,5 +2,4 @@
 @cinelerra
 @avidemux
 @kdenlive
-@pygoocanvas
 @openshot
