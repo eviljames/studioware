@@ -1,4 +1,3 @@
-liblo
-jack
-lash
+@liblo
+@lash
 timemachine

@@ -1,7 +1,6 @@
 jack
-liblo
+@liblo
 libsigc++
-liblrdf
+@liblrdf
 ntk
-ladspa_sdk
 non

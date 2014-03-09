@@ -1,4 +1,3 @@
-libgnomecanvas
-phat
+@phat
 jack
 specimen

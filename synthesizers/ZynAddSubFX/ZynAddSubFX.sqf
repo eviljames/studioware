@@ -1,5 +1,4 @@
-jack
 mxml
 fltk
-lash
+@lash
 zynaddsubfx

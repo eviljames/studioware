@@ -1,10 +1,8 @@
-jack
-lash
+@lash
 aubio
 portmidi
 portaudio
-ladspa_sdk
-fluidsynth
+@fluidsynth
 gtksourceview
 dconf
 evince

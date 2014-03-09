@@ -1,11 +1,5 @@
-libsigc++
-glibmm
-cairomm
-pangomm
-atkmm
-mm-common
-gtkmm
-ladspa_sdk
-liblrdf
+@pangomm
+@gtkmm
+@liblrdf
 jack
 guitarix2

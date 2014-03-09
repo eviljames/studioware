@@ -1,7 +1,4 @@
-jack
-ladspa_sdk
-clalsadrv
-clthreads
-clxclient
-aeolus
+@clalsadrv
+@clxclient
+@aeolus
 stops

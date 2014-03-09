@@ -1,5 +1,4 @@
 jack
 scons
-ladspa_sdk
-liblrdf
+@liblrdf
 hydrogen

@@ -1,9 +1,4 @@
 jack
-libsigc++
-glibmm
-cairomm
-pangomm
-atkmm
-mm-common
-gtkmm
+@atkmm
+@gtkmm
 amsynth

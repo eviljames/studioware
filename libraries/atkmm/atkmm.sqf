@@ -1,5 +1,3 @@
-libsigc++
-glibmm
-cairomm
-pangomm
+@cairomm
+@pangomm
 atkmm

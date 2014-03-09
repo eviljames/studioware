@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.0b1"
+    VERSION="5.1b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -36,6 +36,7 @@ init()
     esac
 
     QUEUE=$TMPROOT/queue
+    TMPQ=$TMPROOT/tmp-queue
     PKGLIST=$TMPROOT/pkglist
     WGET="wget --no-check-certificate"
     INSTALL="upgradepkg --reinstall --install-new"
@@ -55,13 +56,14 @@ init()
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    SBSERVER="$MAINURL/files/slackbuilds/.dev"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
     STUDIOKEY="Studioware <info@studioware.org>"
     GPG="gpg --verify --trust-model always"
+    CWD=$(pwd)
 }
 #}}}
 #{{{ Cleanup and exit
@@ -247,6 +249,49 @@ get_queue()
     listpkgs
 }
 #}}}
+#{{{ Make queue
+make_queue()
+{
+    cd $TMPROOT
+
+    while read line
+    do
+        name=$(echo $line | awk '{print $1}')
+
+        # subqueue
+        if [ -z "$(echo $name | cut -d@ -f1)" ]; then
+            SUB=$(echo $name | cut -d@ -f2)
+
+            if [ ! -r $CWD/$SUB.sqf ]; then
+                CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
+                wget $SBSERVER/$CAT/$SUB/$SUB.sqf
+            else
+                cat $CWD/$SUB.sqf > $SUB.sqf
+            fi
+
+            SWAP=$(cat $SUB.sqf)
+
+            # There's probably some wonderful sed command to do this
+            POS=$(grep -nx $name $QUEUE | cut -d: -f1)
+            TOP=$(head -n $((POS-1)) $QUEUE)
+            TAIL=$(tail -n +$((POS+1)) $QUEUE)
+
+            if [ -n "$TOP" ]; then
+                echo "$TOP" > $QUEUE
+                echo "$SWAP" >> $QUEUE
+            else
+                echo "$SWAP" > $QUEUE
+            fi
+
+            if [ -n "$TAIL" ]; then
+                echo "$TAIL" >> $QUEUE
+            fi
+
+            make_queue $SUB.sqf
+        fi
+    done < $1
+}
+#}}}
 #{{{ List Packages
 listpkgs()
 {
@@ -255,9 +300,12 @@ listpkgs()
     unset INSTALLLIST
     unset MISSING
 
+    make_queue $QUEUE
+
     while read line
     do
         name=$(echo $line | awk '{print $1}')
+        
         pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
         if [ -n "$pkg" ]; then
             INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "

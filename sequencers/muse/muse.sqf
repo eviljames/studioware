@@ -1,7 +1,5 @@
-ladspa_sdk
-fluidsynth
-liblo
-jack
-lash
-dssi
+@fluidsynth
+@liblo
+@lash
+@dssi
 muse

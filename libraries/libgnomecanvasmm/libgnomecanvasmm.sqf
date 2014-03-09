@@ -1,9 +1,4 @@
 libgnomecanvas
-libsigc++
-glibmm
-cairomm
-pangomm
-atkmm
-mm-common
-gtkmm
+@pangomm
+@gtkmm
 libgnomecanvasmm
