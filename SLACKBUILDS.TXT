@@ -71,7 +71,7 @@ d8eafe8283a8eb16db46063f0ab6e246  ./synthesizers/qsynth/qsynth.tar.gz
 1ad467f26ad00ad3dea9948984dca7e4  ./libraries/gnonlin/gnonlin.tar.gz
 c5f94af5874652ce13f1da6e526fde17  ./libraries/imlib2/imlib2.tar.gz
 71b49b93d2a727085ea81a521de9fe33  ./libraries/cairomm/cairomm.tar.gz
-9989aad188817e32e3fd7a8aadbc6e7e  ./libraries/liblo/liblo.tar.gz
+f02e758bcf803f60e840f7ce6dab998f  ./libraries/liblo/liblo.tar.gz
 873f9127b9b188b1356b42ebbed3c714  ./libraries/clalsadrv/clalsadrv.tar.gz
 586f5dd97157d56ef9edcac12aeb2428  ./libraries/rubberband/rubberband.tar.gz
 8ca085c9d6700c8718a0e6b7ff1da6bd  ./libraries/clxclient/clxclient.tar.gz
