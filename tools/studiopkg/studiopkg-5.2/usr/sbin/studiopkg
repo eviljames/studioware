@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.1b1"
+    VERSION="5.2b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -56,13 +56,13 @@ init()
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    SBSERVER="$MAINURL/files/slackbuilds/.subs"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
     STUDIOKEY="Studioware <info@studioware.org>"
-    GPG="gpg --verify --trust-model always"
+    GPG="gpg --verify"
     CWD=$(pwd)
 }
 #}}}
@@ -233,6 +233,8 @@ get_queue()
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
+    cd $TMPROOT || cleanup
+
     CAT=$(grep -i $1-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
 
     curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
@@ -270,7 +272,10 @@ make_queue()
             if [ -n "$SUB" ]; then
                 if [ ! -r $CWD/$SUB.sqf ]; then
                     CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
-                    wget $SBSERVER/$CAT/$SUB/$SUB.sqf
+
+                    if [ ! -r $SUB.sqf ]; then
+                        wget -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
+                    fi
                 else
                     cat $CWD/$SUB.sqf > $SUB.sqf
                 fi
