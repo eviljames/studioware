@@ -1,7 +1,4 @@
-libsigc++
-glibmm
-cairomm
-pangomm
-atkmm
+@glibmm
+@atkmm
 mm-common
 gtkmm

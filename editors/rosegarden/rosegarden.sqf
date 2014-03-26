@@ -1,12 +1,6 @@
-guile1.8
-t1utils
-potrace
-mftrace
-fontforge
-lilypond
-ladspa_sdk
-liblrdf
+@mftrace
+@lilypond
+@liblrdf
 liblo
-dssi
-jack
+@dssi
 rosegarden

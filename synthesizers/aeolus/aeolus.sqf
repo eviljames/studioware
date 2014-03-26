@@ -1,6 +1,4 @@
 jack
-ladspa_sdk
-clalsadrv
-clthreads
-clxclient
+@clalsadrv
+@clxclient
 aeolus

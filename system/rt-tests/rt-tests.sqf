@@ -1,2 +1,2 @@
-numactl
+@numactl
 rt-tests

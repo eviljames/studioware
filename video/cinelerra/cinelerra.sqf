@@ -1,7 +1,6 @@
 a52dec
-faac
 faad2
-ffmpeg
+@ffmpeg
 imlib2
 libavc1394
 libdv

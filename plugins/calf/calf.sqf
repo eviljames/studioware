@@ -1,4 +1,2 @@
-jack
-ladspa_sdk
-fluidsynth
+@fluidsynth
 calf

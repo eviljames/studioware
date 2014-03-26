@@ -1,3 +1,2 @@
-libsigc++
-glibmm
+@glibmm
 cairomm

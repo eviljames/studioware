@@ -2,7 +2,6 @@ jack
 scons
 portmidi
 libshout
-pysetuptools
-protobuf
+@protobuf
 portaudio
 mixxx

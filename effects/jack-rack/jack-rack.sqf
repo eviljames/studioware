@@ -1,6 +1,4 @@
-jack
-lash
+@lash
 raptor
-ladspa_sdk
-liblrdf
+@liblrdf
 jack-rack

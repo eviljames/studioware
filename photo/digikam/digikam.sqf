@@ -1,5 +1,4 @@
-ffmpeg
+@ffmpeg
 opencv
 lensfun
 digikam
-

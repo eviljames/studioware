@@ -1,5 +1,4 @@
-serd
-sord
+@sord
 lv2
 sratom
 lilv
