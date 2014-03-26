@@ -117,7 +117,7 @@ d18f102172b96aa3f17a9a1beb2aeeb4  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 baaffec7ac0953ae7826a4a05b3017ba  ./plugins/gavl/gavl.tar.gz
 bac999fb1342a9ee1126014b930e7b06  ./video/libvpx/libvpx.tar.gz
 ef5ec1fa78e1148b012eb0d0e30bceb7  ./video/mlt/mlt.tar.gz
-ad63c4f691212a335b374df9fd6b3826  ./video/kdenlive/kdenlive.tar.gz
+e2a53bb753703b5d502d249fd671804e  ./video/kdenlive/kdenlive.tar.gz
 391bd51d15e4a3d1ed9f35201fe916f4  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
 af795ce665c6730ed00ea51c7cab1b4e  ./video/ffmpeg/ffmpeg.tar.gz
