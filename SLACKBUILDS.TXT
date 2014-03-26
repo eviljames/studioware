@@ -14,7 +14,6 @@ aa66c05ee88a54975079c31f830777df  ./recorders/timemachine/timemachine.tar.gz
 7daa506d08c877643716961209c46cc8  ./codecs/a52dec/a52dec.tar.gz
 8e6701f81d85f79fd348f211e5c56e17  ./codecs/xvidcore/xvidcore.tar.gz
 80cf5b9362d740f4397f042c7ec010b7  ./amps/guitarix2/guitarix2.tar.gz
-6b1cf60a4f736b76101692de432959dc  ./tools/studiopkg/studiopkg.tar.gz
 d5318ef54df082699bf38c82440a77ee  ./drums/hydrogen/hydrogen.tar.gz
 28c487cff1d7821d3093b726903fbf90  ./multitrack/qtractor/qtractor.tar.gz
 86e2e8e698ceb8af574cc9e94dcccf65  ./multitrack/ardour/ardour.tar.gz
@@ -74,7 +73,7 @@ a4d9a9d21a0f779563566326dae4fdfa  ./libraries/cairomm/cairomm.tar.gz
 f02e758bcf803f60e840f7ce6dab998f  ./libraries/liblo/liblo.tar.gz
 38a8138a433c2eb6598d134438ee6a9d  ./libraries/clalsadrv/clalsadrv.tar.gz
 6ebd310f9c7824499e29f10b8e86f146  ./libraries/rubberband/rubberband.tar.gz
-eac1f969b9afb97c1dafff36e79ed873  ./libraries/clxclient/clxclient.tar.gz
+0682984353fe65db5bf6bc03d0b62d8c  ./libraries/clxclient/clxclient.tar.gz
 e965cd76590e6037330b6dd1ff5ea29f  ./libraries/sord/sord.tar.gz
 f8221e3e61c8cc5be06bd557b89d7bfa  ./libraries/mm-common/mm-common.tar.gz
 514a54d8d82bee7181fc8f9d633ac7d2  ./libraries/dssi/dssi.tar.gz
