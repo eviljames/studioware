@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.2b1"
+    VERSION="5.3b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -56,7 +56,7 @@ init()
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    SBSERVER="$MAINURL/files/slackbuilds/.subs"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
@@ -220,8 +220,8 @@ localqueue()
     else
         echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
     fi
-    exec <&1
 
+    exec <&1
     listpkgs
 }
 #}}}
@@ -236,7 +236,6 @@ get_queue()
     cd $TMPROOT || cleanup
 
     CAT=$(grep -i $1-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
-
     curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
 
     if [ $? != 0 ]; then
@@ -256,7 +255,8 @@ make_queue()
 {
     cd $TMPROOT
     let CNT=1
-
+    touch $TMPQ
+    
     while read line
     do
         TOP=$(head -n $((CNT-1)) $TMPQ)
@@ -274,7 +274,15 @@ make_queue()
                     CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
 
                     if [ ! -r $SUB.sqf ]; then
-                        wget -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
+                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
+
+                        if [ $? != 0 ]; then
+                            $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
+                        fi
+                        if [ $? != 0 ]; then
+                            echo "$SUB.sqf not found"
+                            cleanup
+                        fi
                     fi
                 else
                     cat $CWD/$SUB.sqf > $SUB.sqf
@@ -327,8 +335,8 @@ listpkgs()
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        
         pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
+        
         if [ -n "$pkg" ]; then
             INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
         else
@@ -355,6 +363,7 @@ listpkgs()
         clear_installed
         listpkgs
     fi
+
     if [ $CHOICE -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
 
@@ -801,3 +810,5 @@ deletecache()
 #}}}
 init
 getflags "$@"
+
+# vim: tw=0

@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="3.9b1"
+    VERSION="4.0b1"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -269,8 +269,24 @@ make_queue()
             if [ -n "$SUB" ]; then
                 if [ ! -r $CWD/$SUB.sqf ]; then
                     pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $SUB.tar.gz)
-                    CAT=$(grep -wi $SUB $FILELIST | cut -d/ -f2)
-                    wget $SBSERVER/$CAT/$SUB/$SUB.sqf
+                    CAT=$(grep -wi $SUB $FILELIST | cut -d/ -f2 | tail -n1)
+
+                    if [ ! -r $SUB.sqf ]; then
+
+                        if [ -n "$CAT" ]; then
+                            if [ "$CAT" = "$SUB" ]; then
+                                $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
+                            else
+                                $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
+                            fi
+                        else
+                            $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
+                        fi
+                        if [ $? != 0 ]; then
+                            echo "$SUB.sqf not found"
+                            cleanup
+                        fi
+                    fi
                 else
                     cat $CWD/$SUB.sqf > $SUB.sqf
                 fi
@@ -287,12 +303,13 @@ make_queue()
 
     done < $1
 }
-#}}
-#{{ List Packages
+#}}}
+#{{{ List Packages
 listpkgs()
 {
     exec <&1
     unset pkgs
+    unset INSTALLLIST
 
     echo "Building queue..."
 
@@ -308,6 +325,7 @@ listpkgs()
     done
     
     echo -n > $TMPQ
+
     while read line
     do
         if [ ! $(grep -x $line $TMPQ) ]; then
@@ -335,12 +353,46 @@ listpkgs()
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
 
     dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+        --help-button --help-label "Clear Inst'd" --help-status \
         --checklist "Choose packages to install:" \
         19 70 13 $INSTALLLIST 2>$PKGLIST
-    if [ $? -ne 0 ]; then cleanup; fi
+    
+    CHOICE=$?
+
+    if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
+        clear_installed
+        listpkgs
+    fi
+
+    if [ $CHOICE -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
 
     installpkgs
+}
+#}}}
+#{{{ Clear Installed
+clear_installed()
+{
+    while read newpkg
+    do
+        for o in $(ls /var/log/packages/$newpkg* 2>/dev/null)
+        do
+            oldpkg=$(echo $o | cut -d/ -f5 | rev | cut -d- -f4- | rev)
+
+            if [ -n "$(echo $oldpkg | grep upgraded)" ]; then
+                oldpkg="NULL"
+            fi
+
+            if [ "$newpkg" == "$oldpkg" ]; then
+                sed -i "/$newpkg$/d" $QUEUE
+            fi
+        done
+    done < $QUEUE
+
+    if [ $(wc -l $QUEUE | awk '{print $1}') = "0" ]; then
+        echo "All packages are already installed."
+        cleanup
+    fi
 }
 #}}}
 #{{{ Install Packages

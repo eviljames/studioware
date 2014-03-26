@@ -61,7 +61,7 @@ d1a2f1a42a2d513165c68768d7065797  ./synthesizers/fluidsynth/fluidsynth.tar.gz
 d72c97cd5bf42ee53131b94ea49ffa19  ./synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 da29fe72c4651da4cc89f37abd024afa  ./synthesizers/bristol/bristol.tar.gz
 ffe70601c9255e51b0a8b535e89cbb6c  ./synthesizers/amsynth/amsynth.tar.gz
-6151ab66d5f854493628e15a58cb5466  ./synthesizers/aeolus/aeolus.tar.gz
+0015cd96d0e39b4f40cf0ba4a613fcbf  ./synthesizers/aeolus/aeolus.tar.gz
 21fce0bf01571b21d071d724ad1e7c19  ./synthesizers/qsynth/qsynth.tar.gz
 44292341eaf57405b01282a70576c716  ./synthesizers/sunvox/sunvox.tar.gz
 4121b867fa3729967050050e409fee9f  ./libraries/liblrdf/liblrdf.tar.gz
