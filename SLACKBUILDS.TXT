@@ -22,7 +22,7 @@ a4dd08de17faaa4b40c801fd5da46570  ./multitrack/ardour3/ardour3.tar.gz
 c5425b908c48a5e612ce03ff8ac88022  ./multitrack/ecasound/ecasound.tar.gz
 ac91dcdd7e964fcb8f4beda57a76e89b  ./editors/mscore/mscore.tar.gz
 ef85af0efb142b14b13ce6ec4214ce10  ./editors/rosegarden/rosegarden.tar.gz
-fd6129062d94462a22240c52be52b348  ./editors/audacity/audacity.tar.gz
+51394124ee0cc4e613bfdfc4e5a2a7e6  ./editors/audacity/audacity.tar.gz
 de92afe769e88dc2c0652986f37e2ec8  ./editors/denemo/denemo.tar.gz
 f45f3955a0d010e916b4a1da1642bb31  ./mixers/qastools/qastools.tar.gz
 f474044de7b8e60ff9beebd7c6278325  ./mixers/mixxx/mixxx.tar.gz
@@ -46,7 +46,7 @@ c7a746651cff09d62897b9bbaab8fea9  ./photo/openjpeg/openjpeg.tar.gz
 42c144470bd339c6c094908c77962b92  ./photo/photoprint/photoprint.tar.gz
 7b5270f0bc0f1b2e771b90d04b0cfb67  ./photo/gtkimageview/gtkimageview.tar.gz
 4cd1338fef96b28ea436654067a75e26  ./photo/rawstudio/rawstudio.tar.gz
-01a77dacbba8934a79dac6c4e95dd26c  ./photo/iccprofiles/iccprofiles.tar.gz
+901d357473eff5005f3835fe20cff61f  ./photo/iccprofiles/iccprofiles.tar.gz
 6ed1cf9e101bcf800f8335aff1562194  ./photo/digikam/digikam.tar.gz
 86937878fd9d3a37219926333846a60a  ./photo/darktable/darktable.tar.gz
 b4500a86f80d1e6859a4481c015ce812  ./photo/ufraw/ufraw.tar.gz
@@ -116,11 +116,11 @@ d18f102172b96aa3f17a9a1beb2aeeb4  ./plugins/frei0r-plugins/frei0r-plugins.tar.gz
 5ba586f046e57abd7bb9d2d1998199cd  ./plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 baaffec7ac0953ae7826a4a05b3017ba  ./plugins/gavl/gavl.tar.gz
 bac999fb1342a9ee1126014b930e7b06  ./video/libvpx/libvpx.tar.gz
-ef5ec1fa78e1148b012eb0d0e30bceb7  ./video/mlt/mlt.tar.gz
-e2a53bb753703b5d502d249fd671804e  ./video/kdenlive/kdenlive.tar.gz
-391bd51d15e4a3d1ed9f35201fe916f4  ./video/avidemux/avidemux.tar.gz
+739da24c5fdcb8754882b6ab3285c6f3  ./video/mlt/mlt.tar.gz
+e8c847e45722789f763d38b1a516d4a5  ./video/kdenlive/kdenlive.tar.gz
+73955ef4afe62aef469b1fb34c83d1fe  ./video/avidemux/avidemux.tar.gz
 fe13a5ef8f3c09e2d2c0f94c8900ca33  ./video/x264/x264.tar.gz
-af795ce665c6730ed00ea51c7cab1b4e  ./video/ffmpeg/ffmpeg.tar.gz
+6b1e29c7b067c9ee48c3606a443369d6  ./video/ffmpeg/ffmpeg.tar.gz
 a588f9e60c843cd48988309e1bed0012  ./video/mjpegtools/mjpegtools.tar.gz
 e252a2d6b4387e3ec0ea46117d8c9b9e  ./video/libdv/libdv.tar.gz
 90e1c8a817b9ac27b8ba376a68af2657  ./video/openshot/openshot.tar.gz

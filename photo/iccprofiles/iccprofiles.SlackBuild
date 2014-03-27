@@ -6,7 +6,7 @@
 
 PRGNAM=iccprofiles
 VERSION=${VERSION:-2011}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 # icc profiles are arch independent
@@ -33,7 +33,7 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 
 if [ "${ADOBE}" != "no" ]; then
-	unzip $CWD/Adobe*.zip
+	unzip -o $CWD/Adobe*.zip
 
 	# install Adobe profiles, without those ugly spaces
 	install -d $PKG/usr/share/color/icc/${ADBNAM// /_}-${VERSION}/
@@ -49,8 +49,8 @@ if [ "${ADOBE}" != "no" ]; then
 fi
 
 if [ "$ECI" != "no" ]; then
-	unzip $CWD/eci_offset*.zip
-	unzip $CWD/ecirgb*.zip
+	unzip -o $CWD/eci_offset*.zip
+	unzip -o $CWD/ecirgb*.zip
 
 	# Install ECI_Offset profiles
 	install -d $PKG/usr/share/color/icc/${ECINAM}-${VERSION}/

@@ -27,7 +27,7 @@
 # Modified by Dave W <dave@studioware.org>
 
 PRGNAM=ffmpeg
-VERSION=${VERSION:-2.1.4}
+VERSION=${VERSION:-0.10.12}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -134,7 +134,6 @@ CXXFLAGS="$SLKCFLAGS" \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --shlibdir=/usr/lib${LIBDIRSUFFIX} \
-  --docdir=/usr/doc/$PRGNAM-$VERSION/html \
   --mandir=/usr/man \
   --disable-debug \
   --enable-shared \
@@ -150,7 +149,6 @@ CXXFLAGS="$SLKCFLAGS" \
   --enable-avfilter \
   --enable-gnutls \
   --enable-libcdio \
-  --enable-libssh \
   --arch=$ARCH \
   $openjpeg \
   $libdc1394 \
