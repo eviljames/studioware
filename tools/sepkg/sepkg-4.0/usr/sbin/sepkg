@@ -26,8 +26,8 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.0b1"
-    CONFDIR=/etc/$APPNAME/
+    VERSION="4.1b1"
+    CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
     touch $CONF
@@ -48,7 +48,17 @@ init()
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/SLACKBUILDS.TXT
     ERR="0"
+    STUDIOKEY="Studioware <info@studioware.org>"
+    GPG="gpg --verify"
     CWD=$(pwd)
+    if [ -z "$CHECKGPG" ]; then
+        echo "CHECKGPG not set in $CONF..."
+        echo "Setting to ON. You can change this later by editing $CONF"
+        echo "CHECKGPG=ON" >> $CONF
+        CHECKGPG="ON"
+        echo -n "Press enter to continue"
+        read <&1
+    fi
 }
 #}}}
 #{{{ Cleanup and exit
@@ -87,6 +97,8 @@ getflags()
     if [ "$1" = "queue" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
     if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
     if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
+    if [ "$1" = "-g" ]; then { importgpg; cleanup; }; fi
+    if [ "$1" = "gpg" ]; then { importgpg; cleanup; }; fi
 }
 #}}}
 #{{{ Info
@@ -133,36 +145,101 @@ latest()
     REMVERS=$(echo $LATEST | cut -db -f1)
     REMBUILD=$(echo $LATEST | cut -db -f2)
 
-    PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
-    MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
-
     echo "Installed version: $VERSION. Latest version: $LATEST."
 
     if [ "$VERSION" != "$LATEST" ]; then
-        echo -n "Newer version available. Download it? (y/n) "
+        echo -n "Newer version available. Download it? (Y/n) "
         read REPLY
 
-        if [ "$REPLY" = "y" ]; then
-            $WGET -q -O $PKG $TOOLURL/$PKG
-            $WGET -q -O $MD5 $TOOLURL/$MD5
+        case "$REPLY" in
+            'y'|'Y'|'')
+                PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
+                ASC=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz.asc
+                MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
+                $WGET -q -O $PKG $TOOLURL/$PKG
+                $WGET -q -O $MD5 $TOOLURL/$MD5
+                $WGET -q -O $ASC $TOOLURL/$ASC
 
-            echo "Package saved to $TMPROOT"
-            echo "Checking md5... "
+                echo "Package saved to $TMPROOT"
+                echo "Checking md5... "
 
-            md5sum -c $MD5
+                md5sum -c $MD5
 
-            if [ $? != 0 ]; then
+                if [ $? != 0 ]; then
+                    cleanup
+                fi
+
+                if [ "$CHECKGPG" = "ON" ]; then
+                    echo "Checking gpg..."
+                    # try to surpress the authority warning...
+                    GPGOUT=$($GPG $ASC $PKG 2>&1 | head -n2)
+
+                    if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
+                        echo "$GPGOUT"
+                        echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                        cleanup
+                    elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
+                            echo "$GPGOUT"
+                            cleanup
+                    else
+                        echo "$GPGOUT"
+                    fi
+                fi
+
+
+                echo
+                echo -n "Upgrade now? (Y/n) "
+                read UREPLY
+
+                case "$UREPLY" in
+                    'y'|'Y'|'')
+                        $UP $PKG
+                        ;;
+                    *)
+                        cleanup
+                        ;;
+                esac
+                ;;
+            *)
                 cleanup
-            fi
-
-            echo
-            echo -n "Upgrade now? (y/n) "
-            read REPLY
-            if [ "$REPLY" = "y" ]; then
-                $UP $PKG
-            fi
-        fi
+                ;;
+        esac
     fi
+#    cd $TMPROOT
+#    
+#    LATEST=$(curl -s $TOOLURL/LATEST)
+#    REMVERS=$(echo $LATEST | cut -db -f1)
+#    REMBUILD=$(echo $LATEST | cut -db -f2)
+#
+#    echo "Installed version: $VERSION. Latest version: $LATEST."
+#
+#    if [ "$VERSION" != "$LATEST" ]; then
+#        echo -n "Newer version available. Download it? (y/n) "
+#        read REPLY
+#
+#        if [ "$REPLY" = "y" ]; then
+#            PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
+#            MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
+#            $WGET -q -O $PKG $TOOLURL/$PKG
+#            $WGET -q -O $MD5 $TOOLURL/$MD5
+#
+#            echo "Package saved to $TMPROOT"
+#            echo "Checking md5... "
+#
+#            md5sum -c $MD5
+#
+#            if [ $? != 0 ]; then
+#                cleanup
+#            fi
+#
+#            echo
+#            echo -n "Upgrade now? (y/n) "
+#            read REPLY
+#            if [ "$REPLY" = "y" ]; then
+#                $UP $PKG
+#            fi
+#        fi
+#    fi
 }
 # }}}
 #{{{ Usage
@@ -496,6 +573,22 @@ search()
             fi
         done
     fi
+}
+#}}}
+#{{{ Import gpg key
+importgpg()
+{
+    # ripped from slackpkg
+    if ! [ -e ~/.gnupg ]; then
+        mkdir ~/.gnupg
+    fi
+
+    cd $TMPROOT || cleanup
+    $WGET -O gpgkey ${PKGSERVER}/GPG-KEY || cleanup
+    gpg --yes --batch --delete-key "$STUDIOKEY"
+    gpg --import gpgkey
+    echo "Studioware GPG key added"
+    cleanup
 }
 #}}}
 #{{{ Delete Cache !DANGER WILL ROBINSON!

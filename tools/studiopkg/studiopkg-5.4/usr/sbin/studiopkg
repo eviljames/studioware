@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.3b2"
+    VERSION="5.4b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
     
@@ -111,55 +111,65 @@ latest()
     REMVERS=$(echo $LATEST | cut -db -f1)
     REMBUILD=$(echo $LATEST | cut -db -f2)
 
-    PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
-    ASC=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz.asc
-    MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
-
     echo "Installed version: $VERSION. Latest version: $LATEST."
 
     if [ "$VERSION" != "$LATEST" ]; then
-        echo -n "Newer version available. Download it? (y/n) "
+        echo -n "Newer version available. Download it? (Y/n) "
         read REPLY
 
-        if [ "$REPLY" = "y" ]; then
-            $WGET -q -O $PKG $TOOLURL/$PKG
-            $WGET -q -O $MD5 $TOOLURL/$MD5
-            $WGET -q -O $ASC $TOOLURL/$ASC
+        case "$REPLY" in
+            'y'|'Y'|'')
+                PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
+                ASC=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz.asc
+                MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
+                $WGET -q -O $PKG $TOOLURL/$PKG
+                $WGET -q -O $MD5 $TOOLURL/$MD5
+                $WGET -q -O $ASC $TOOLURL/$ASC
 
-            echo "Package saved to $TMPROOT"
-            echo "Checking md5... "
+                echo "Package saved to $TMPROOT"
+                echo "Checking md5... "
 
-            md5sum -c $MD5
+                md5sum -c $MD5
 
-            if [ $? != 0 ]; then
-                cleanup
-            fi
-
-            if [ "$CHECKGPG" = "ON" ]; then
-                echo "Checking gpg..."
-                # try to surpress the authority warning...
-                GPGOUT=$($GPG $ASC $PKG 2>&1 | head -n2)
-
-                if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
-                    echo "$GPGOUT"
-                    echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                if [ $? != 0 ]; then
                     cleanup
-                elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
-                        echo "$GPGOUT"
-                        cleanup
-                else
-                    echo "$GPGOUT"
                 fi
-            fi
+
+                if [ "$CHECKGPG" = "ON" ]; then
+                    echo "Checking gpg..."
+                    # try to surpress the authority warning...
+                    GPGOUT=$($GPG $ASC $PKG 2>&1 | head -n2)
+
+                    if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
+                        echo "$GPGOUT"
+                        echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                        cleanup
+                    elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
+                            echo "$GPGOUT"
+                            cleanup
+                    else
+                        echo "$GPGOUT"
+                    fi
+                fi
 
 
-            echo
-            echo -n "Upgrade now? (y/n) "
-            read REPLY
-            if [ "$REPLY" = "y" ]; then
-                $INSTALL $PKG
-            fi
-        fi
+                echo
+                echo -n "Upgrade now? (Y/n) "
+                read UREPLY
+
+                case "$UREPLY" in
+                    'y'|'Y'|'')
+                        $INSTALL $PKG
+                        ;;
+                    *)
+                        cleanup
+                        ;;
+                esac
+                ;;
+            *)
+                cleanup
+                ;;
+        esac
     fi
 }
 # }}}
@@ -553,6 +563,7 @@ cleansystem()
 upgrade()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
             cleanup; } fi
     shift
@@ -573,35 +584,17 @@ upgrade()
 
     if [ -z "$sepkgs" ]; then { echo "No packages to upgrade"; cleanup; } fi
 
- #   for pkg in $sepkgs
- #   do
- #       shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
- #       iversion=$(basename $pkg | rev | cut -d- -f1- | rev)
- #       nversion="$(grep -i $shortname $FILELIST | awk '{print $9}' | \
- #           cut -d'/' -f3 | sed 's/\.txz//' | rev \
- #           | cut -d- -f1- | rev)"
- #       for i in $nversion
- #       do
- #           newshortname=$(echo $i | rev | cut -d- -f4- | rev)
-
- #           if [ "$iversion" != "$i" ] && [ -n "$shortname" ] \
- #               && [ "$newshortname" = "$shortname" ]; then
- #               UPLIST=$UPLIST" "$i" "$shortname" ""on "
- #           fi
- #       done
- #   done
-
     for pkg in $sepkgs
     do
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
-        iversion=$(basename $pkg | rev | cut -d- -f3 | rev)
-        newpkg=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+        iversion=$(basename $pkg | cut -d/ -f3)
+        nversion=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+            cut -d/ -f3 | rev | cut -d. -f2- | rev)
+        package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
             cut -d/ -f3)
-        nversion=$(echo $newpkg | rev | cut -d- -f3 | rev)
         
-        if [ "$iversion" != "$nversion" ]; then # && [ -n "$shortname" ] \
-            #&& [ "$newshortname" = "$shortname" ]; then
-        UPLIST=$UPLIST" "$(echo $newpkg | cut -d/ -f5)" "$shortname" ""on "
+        if [ "$iversion" != "$nversion" ]; then 
+            UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
 
@@ -626,6 +619,8 @@ upgradeall()
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
             cleanup; } fi
+
+    unset UPLIST
     echo "Looking for packages to upgrade..."
 
     sepkgs="$(ls -1 /var/log/packages/*se 2>/dev/null)"
@@ -643,14 +638,14 @@ upgradeall()
     for pkg in $sepkgs
     do
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
-        iversion=$(basename $pkg | rev | cut -d- -f3 | rev)
-        newpkg=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+        iversion=$(basename $pkg | cut -d/ -f3)
+        nversion=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
+            cut -d/ -f3 | rev | cut -d. -f2- | rev)
+        package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
             cut -d/ -f3)
-        nversion=$(echo $newpkg | rev | cut -d- -f3 | rev)
         
-        if [ "$iversion" != "$nversion" ]; then # && [ -n "$shortname" ] \
-            #&& [ "$newshortname" = "$shortname" ]; then
-        UPLIST=$UPLIST" "$(echo $newpkg | cut -d/ -f5)" "$shortname" ""on "
+        if [ "$iversion" != "$nversion" ]; then 
+            UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
 
@@ -663,6 +658,7 @@ upgradeall()
     dialog --separate-output --title upgrade-all --backtitle "$APPNAME $VERSION" \
         --checklist "Choose packages to upgrade:" \
         $rows $cols $mrows $UPLIST 2>$PKGLIST
+
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
 
