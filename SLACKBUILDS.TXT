@@ -37,6 +37,7 @@ d9641bd7c29f8a81b19713cc2f332133  ./audio/development/phat/phat.tar.gz
 e97ac897ae778d92d9ec6079211ca90d  ./audio/development/scons/scons.tar.gz
 3d5966e000576419779ce1ea0b65b8f3  ./audio/recorders/timemachine/timemachine.tar.gz
 76bfb6730e446658059be08200a649bb  ./audio/desktop/evince/evince.tar.gz
+9f636bf488ced22ee846e52ea46027cb  ./audio/codecs/lame/lame.tar.gz
 80cf5b9362d740f4397f042c7ec010b7  ./audio/amps/guitarix2/guitarix2.tar.gz
 7cf049a69d63cdde2380da41ba893e19  ./audio/drums/hydrogen/hydrogen.tar.gz
 8a6bfd877e80cf8c9361e4f54a2d5bea  ./audio/multitrack/qtractor/qtractor.tar.gz
@@ -93,7 +94,6 @@ d49a7cefbd9fa56d87601805a405186b  ./audio/libraries/clthreads/clthreads.tar.gz
 fd6ca8aa64391aab1b83c89fc10419d7  ./audio/libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 091ea91ede0a35e2bfede6b99b81f2d2  ./audio/libraries/gst-python/gst-python.tar.gz
 c18470062d0d9f762d7df31c76119545  ./audio/libraries/libdca/libdca.tar.gz
-9f636bf488ced22ee846e52ea46027cb  ./audio/libraries/lame/lame.tar.gz
 e1a172a65cae7b9d47e28bfd171f86fc  ./audio/libraries/zziplib/zziplib.tar.gz
 caffc43b0d7681e17d849660809e2ea3  ./audio/libraries/libgnomecanvas/libgnomecanvas.tar.gz
 ee2b45c5e8ba0f84fcb98144617732a4  ./audio/libraries/libshout/libshout.tar.gz
