@@ -52,5 +52,4 @@ swh-plugins
 tap-plugins
 @terminatorX
 @timemachine
-@ffmpeg
 sunvox
