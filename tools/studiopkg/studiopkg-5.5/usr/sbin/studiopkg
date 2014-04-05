@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.5b1"
+    VERSION="5.5b2"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -613,11 +613,11 @@ upgrade()
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
         iversion=$(basename $pkg | cut -d/ -f3)
         nversion=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
-            cut -d/ -f3 | rev | cut -d. -f2- | rev)
+            cut -d/ -f4 | rev | cut -d. -f2- | rev)
         package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
-            cut -d/ -f3)
+            cut -d/ -f4)
       
-        if [ "$iversion" != "$nversion" ]; then
+        if [ "$iversion" != "$nversion" ] && [ -n "$package" ]; then
             UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
@@ -664,11 +664,11 @@ upgradeall()
         shortname=$(basename $pkg | rev | cut -d- -f4- | rev)
         iversion=$(basename $pkg | cut -d/ -f3)
         nversion=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
-            cut -d/ -f3 | rev | cut -d. -f2- | rev)
+            cut -d/ -f4 | rev | cut -d. -f2- | rev)
         package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
-            cut -d/ -f3)
+            cut -d/ -f4)
       
-        if [ "$iversion" != "$nversion" ]; then
+        if [ "$iversion" != "$nversion" ] && [ -n "$package" ]; then
             UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
