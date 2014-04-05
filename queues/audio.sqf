@@ -27,7 +27,6 @@ frescobaldi
 @lilypond
 @meterbridge
 @mixxx
-@mlt
 @mscore
 @muse
 @non

@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.1b1"
+    VERSION="4.2b1"
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -279,28 +279,41 @@ update()
     cleanup
 }
 #}}}
-#{{{ Download Queue
+#{{{ Get Queue
 get_queue()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
     cd $TMPROOT || cleanup
-    
-    CAT=$(grep -wi $1 $FILELIST | cut -d/ -f2)
-    APP=$(grep -wi $1 $FILELIST | cut -d/ -f3)
 
-    curl -fs $SBSERVER/$CAT/$APP/$APP.sqf > $QUEUE 
+    case "$1" in
+        'audio'|'video'|'photo'|'full')
+            curl -fs $SBSERVER/queues/$1.sqf > $QUEUE
+            ;;
 
-    if [ $? != 0 ]; then
-        curl -fs $SBSERVER/$1.sqf > $QUEUE 
+        *)
+            CAT=$(grep -i /$1.tar.gz$ $FILELIST | cut -d/ -f2-4)
+            APP=$(grep -i /$1.tar.gz$ $FILELIST | cut -d/ -f4)
+            curl -fs $SBSERVER/$CAT/$APP.sqf > $QUEUE 
 
-        if [ $? != 0 ]; then
-            echo "Queue not found."
-            cleanup
-        fi
-    fi
+            if [ $? != 0 ]; then
+                if [ ! -r $CWD/$1 ] && [ ! -r $1 ]; then
+                    echo "Queue $1 not found."
+                    cleanup
+                else
+                    if [ -r "$CWD/$1" ]; then
+                        cat $CWD/$1 > $QUEUE
+                    else
+                        cat $1 > $QUEUE
+                    fi
+
+                fi
+            fi
+            ;;
+    esac
 
     listpkgs
 }
@@ -339,45 +352,54 @@ make_queue()
             echo "$TOP" > $TMPQ
         fi
 
-        # subqueue
-        if [ -z "$(echo $line | cut -d@ -f1)" ] && [ -n "$line" ]; then
-            SUB=$(echo $line | cut -d@ -f2)
-            
-            if [ -n "$SUB" ]; then
-                if [ ! -r $CWD/$SUB.sqf ]; then
-                    pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $SUB.tar.gz)
-                    CAT=$(grep -wi $SUB $FILELIST | cut -d/ -f2 | tail -n1)
-
-                    if [ ! -r $SUB.sqf ]; then
-
-                        if [ -n "$CAT" ]; then
-                            if [ "$CAT" = "$SUB" ]; then
-                                $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
-                            else
-                                $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
-                            fi
-                        else
-                            $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
-                        fi
-                        if [ $? != 0 ]; then
-                            echo "$SUB.sqf not found"
-                            cleanup
-                        fi
-                    fi
-                else
-                    cat $CWD/$SUB.sqf > $SUB.sqf
-                fi
-
-                SWAP=$(cat $SUB.sqf)
+        case "$line" in
+            'audio'|'video'|'photo'|'full')
+                $WGET -O $line.sqf $SBSERVER/queues/$line.sqf
+                SWAP=$(cat $line.sqf)
                 echo "$SWAP" >> $TMPQ
                 let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
                 unset SWAP
-            fi
-        else
-            echo $line >> $TMPQ
-            let CNT=$((CNT+1))
-        fi
+                ;;
 
+            *)
+                # subqueue
+                if [ -z "$(echo $line | cut -d@ -f1)" ] && [ -n "$line" ]; then
+                    SUB=$(echo $line | cut -d@ -f2)
+
+                    if [ -n "$SUB" ]; then
+                        if [ ! -r $CWD/$SUB.sqf ] && [ ! -r $SUB.sqf ]; then
+                            CAT=$(grep -i /$SUB.tar.gz$ $FILELIST | cut \
+                            -d/ -f2-4)
+
+                            if [ -n "$CAT" ]; then
+                                $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf
+                            else
+                                echo "$SUB.sqf not found."
+                                cleanup
+                            fi
+                            if [ $? != 0 ]; then
+                                echo "$SUB.sqf not found."
+                                cleanup
+                            fi
+                        else
+                            if [ -r $CWD/$SUB.sqf ]; then
+                                cat $CWD/$SUB.sqf > $SUB.sqf
+                            fi
+                        fi
+
+                        if [ -r $SUB.sqf ]; then
+                            SWAP=$(cat $SUB.sqf)
+                            echo "$SWAP" >> $TMPQ
+                            let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
+                            unset SWAP
+                        fi
+                    fi
+                else
+                    echo $line >> $TMPQ
+                    let CNT=$((CNT+1))
+                fi
+                ;;
+        esac
     done < $1
 }
 #}}}
@@ -387,6 +409,7 @@ listpkgs()
     exec <&1
     unset pkgs
     unset INSTALLLIST
+    unset MISSING
 
     echo "Building queue..."
 
@@ -400,7 +423,7 @@ listpkgs()
             break
         fi
     done
-    
+
     echo -n > $TMPQ
 
     while read line
@@ -409,17 +432,28 @@ listpkgs()
             echo $line >> $TMPQ
         fi
     done < $QUEUE
-    
+
     cat $TMPQ > $QUEUE
 
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(cat $FILELIST | cut -d'/' -f4 | grep -xi $name.tar.gz)
-        pkgs=$pkgs" "$pkg
+        pkg=$(grep /$name.tar.gz $FILELIST | cut -d'/' -f5)
+
+        if [ -n "$pkg" ]; then
+            PKGS=$PKGS" "$pkg
+        else
+            MISSING=$name" "$MISSING
+        fi
     done < $QUEUE
 
-    for i in $pkgs
+    if [ -z "$PKGS" ]; then
+        echo "The following applications could not be found:"
+        echo "$MISSING"
+        cleanup
+    fi
+
+    for i in $PKGS
     do
         shortname=$(echo $i | cut -d'.' -f1)
         if [ -n "$i" ]; then

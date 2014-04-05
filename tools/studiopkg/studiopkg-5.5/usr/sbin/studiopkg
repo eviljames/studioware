@@ -22,14 +22,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #}}}
-#{{{ Init 
+#{{{ Init
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.4b1"
+    VERSION="5.5b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
-    
+  
     case "$( uname -m )" in
         i?86) ARCH="" ;;
         x86_64) ARCH=64 ;;
@@ -60,6 +60,7 @@ init()
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
+    SLACKBUILDS=$CACHEDIR/SLACKBUILDS.TXT
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
     STUDIOKEY="Studioware <info@studioware.org>"
     GPG="gpg --verify"
@@ -70,7 +71,7 @@ init()
 cleanup()
 {
     rm -rf $TMPROOT
-    exit 
+    exit
 }
 #}}}
 #{{{ Flags
@@ -106,7 +107,7 @@ getflags()
 latest()
 {
     cd $TMPROOT
-    
+  
     LATEST=$(curl -s $TOOLURL/LATEST)
     REMVERS=$(echo $LATEST | cut -db -f1)
     REMBUILD=$(echo $LATEST | cut -db -f2)
@@ -206,10 +207,11 @@ EOF
 #}}}
 #{{{ Update
 update()
-{   
+{ 
     cd $CACHEDIR || cleanup
     $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT
     $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5
+    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT
     cleanup
 }
 #}}}
@@ -235,7 +237,7 @@ localqueue()
     listpkgs
 }
 #}}}
-#{{{ Download Queue
+#{{{ Get Queue
 get_queue()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
@@ -245,17 +247,36 @@ get_queue()
 
     cd $TMPROOT || cleanup
 
-    CAT=$(grep -i $1-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
-    curl -fs $SBSERVER/$CAT/$1/$1.sqf > $QUEUE 
+    case "$1" in
+        'audio'|'video'|'photo'|'full')
+            curl -fs $SBSERVER/queues/$1.sqf > $QUEUE
+            ;;
 
-    if [ $? != 0 ]; then
-        curl -fs $SBSERVER/$1.sqf > $QUEUE 
+        *)
+            CAT=$(grep -i /$1.tar.gz$ $SLACKBUILDS | cut -d/ -f2-4)
 
-        if [ $? != 0 ]; then
-            echo "Queue not found."
-            cleanup
-        fi
-    fi
+            if [ -n "$CAT" ]; then
+                curl -fs $SBSERVER/$CAT/$1.sqf > $QUEUE
+
+                if [ $? != 0 ]; then
+                    echo "Queue $1.sqf not found."
+                    cleanup
+                fi
+            else
+                if [ ! -r $CWD/$1 ] && [ ! -r $1 ]; then
+                    echo "Queue $1 not found."
+                    cleanup
+                else
+                    if [ -r "$CWD/$1" ]; then
+                        cat $CWD/$1 > $QUEUE
+                    else
+                        cat $1 > $QUEUE
+                    fi
+
+                fi
+            fi
+            ;;
+    esac
 
     listpkgs
 }
@@ -266,7 +287,7 @@ make_queue()
     cd $TMPROOT
     let CNT=1
     touch $TMPQ
-    
+
     while read line
     do
         TOP=$(head -n $((CNT-1)) $TMPQ)
@@ -278,24 +299,28 @@ make_queue()
         # subqueue
         if [ -z "$(echo $line | cut -d@ -f1)" ] && [ -n "$line" ]; then
             SUB=$(echo $line | cut -d@ -f2)
-            
+
             if [ -n "$SUB" ]; then
-                if [ ! -r $CWD/$SUB.sqf ]; then
-                    CAT=$(grep -i $SUB-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f2)
+                if [ ! -r $CWD/$SUB.sqf ] && [ ! -r $SUB.sqf ]; then
+                    CAT=$(grep -i /$SUB.tar.gz$ $SLACKBUILDS | cut -d/ -f2-4)
 
-                    if [ ! -r $SUB.sqf ]; then
-                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB/$SUB.sqf
-
-                        if [ $? != 0 ]; then
-                            $WGET -O $SUB.sqf $SBSERVER/$SUB.sqf
-                        fi
-                        if [ $? != 0 ]; then
-                            echo "$SUB.sqf not found"
-                            cleanup
-                        fi
+                    if [ -n "$CAT" ]; then
+                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf
+                    else
+                        case $SUB in
+                            'full'|'audio'|'video'|'photo')
+                                $WGET -O $SUB.sqf $SBSERVER/queues/$SUB.sqf
+                                ;;
+                            *) 
+                                echo "Queue $SUB.sqf not found."
+                                cleanup
+                            ;;
+                        esac
                     fi
                 else
-                    cat $CWD/$SUB.sqf > $SUB.sqf
+                    if [ -r "$CWD/$SUB.sqf" ]; then
+                        cat $CWD/$SUB.sqf > $SUB.sqf
+                    fi
                 fi
 
                 SWAP=$(cat $SUB.sqf)
@@ -307,7 +332,6 @@ make_queue()
             echo $line >> $TMPQ
             let CNT=$((CNT+1))
         fi
-
     done < $1
 }
 #}}}
@@ -331,7 +355,7 @@ listpkgs()
             break
         fi
     done
-    
+
     echo -n > $TMPQ
     while read line
     do
@@ -339,25 +363,25 @@ listpkgs()
             echo $line >> $TMPQ
         fi
     done < $QUEUE
-    
+
     cat $TMPQ > $QUEUE
 
     while read line
     do
         name=$(echo $line | awk '{print $1}')
-        pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
-        
+        pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f4)
+
         if [ -n "$pkg" ]; then
             INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
         else
-            MISSING=$MISSING" "$name
+            MISSING=$name" "$MISSING
         fi
     done < $QUEUE
 
     if [ -n "$MISSING" ]; then
         echo "The following are in the queue, but not in the file list:"
         echo $MISSING
-        sleep 5
+        cleanup
     fi
 
     if [ -z "$INSTALLLIST" ]; then cleanup; fi
@@ -443,7 +467,7 @@ read
         $rows $cols $mrows $INSTALLLIST 2> $TMPROOT/pkglist
 
     cat $TMPROOT/pkglist
-    read 
+    read
     if [ $? -ne 0 ]; then cleanup; fi
     if [ -z "$(cat $TMPROOT/pkglist)" ]; then cleanup; fi
     installpkgs
@@ -559,7 +583,7 @@ cleansystem()
     done
 }
 #}}}
-#{{{ Upgrade 
+#{{{ Upgrade
 upgrade()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
@@ -577,7 +601,7 @@ upgrade()
     jackold=$(echo "$sepkgs" | grep jack-audio-connection-kit \
         | rev | cut -d- -f4- | rev)
 
-    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then 
+    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then
         echo "You have two versions of jack installed. You need to remove one."
         cleanup
     fi
@@ -592,8 +616,8 @@ upgrade()
             cut -d/ -f3 | rev | cut -d. -f2- | rev)
         package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
             cut -d/ -f3)
-        
-        if [ "$iversion" != "$nversion" ]; then 
+      
+        if [ "$iversion" != "$nversion" ]; then
             UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
@@ -628,7 +652,7 @@ upgradeall()
     jackold=$(echo "$sepkgs" | grep jack-audio-connection-kit \
         | rev | cut -d- -f4- | rev)
 
-    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then 
+    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then
         echo "You have two versions of jack installed. You need to remove one."
         cleanup
     fi
@@ -643,8 +667,8 @@ upgradeall()
             cut -d/ -f3 | rev | cut -d. -f2- | rev)
         package=$(grep -i /$shortname-[^-]*-[^-]*-[^-]*txz$ $FILELIST | \
             cut -d/ -f3)
-        
-        if [ "$iversion" != "$nversion" ]; then 
+      
+        if [ "$iversion" != "$nversion" ]; then
             UPLIST=$UPLIST" "$package" "$shortname" ""on "
         fi
     done
@@ -688,7 +712,7 @@ installpkgs()
             md5sum -c $TXZ.md5
             let exit=$?
 
-            if [ $exit -ne 0 ]; then 
+            if [ $exit -ne 0 ]; then
                 echo "Checksums don't match. Did you run '-u|update' first?"
                 echo "You may need to delete the cache."
                 echo -n "(r)edownload, (a)bort or (c)ontinue? "
@@ -707,7 +731,7 @@ installpkgs()
                     echo "CHECKGPG in $CONF"
                     echo -n "(a)bort or (c)ontinue? "
                     read ANS <&1
-                    
+                  
                     if [ "$ANS" != "c" ]; then cleanup; fi
 
                     echo "Continuing without gpg check..."
@@ -777,7 +801,7 @@ search()
     for p in $(grep -i "$2" $FILELIST | egrep txz$ | awk '{print $9}')
     do
         shortname=$(echo $p | cut -d'/' -f3 | rev | cut -d- -f4- | rev)
-        dir=$(echo $p | cut -d'/' -f2) 
+        dir=$(echo $p | cut -d'/' -f2)
         installed=$(basename $(ls /var/log/packages/$shortname-*se 2>/dev/null) \
             2>/dev/null | rev | cut -d- -f4- | rev)
 #        version=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
@@ -786,7 +810,7 @@ search()
         found=$(echo $p | cut -d'/' -f2-)
 
         in="[Not Installed]	$found"
-        if [ "$shortname" = "$installed" ]; then 
+        if [ "$shortname" = "$installed" ]; then
             in="[Installed]	$found"; fi
         echo "$in"
     done
