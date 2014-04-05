@@ -47,7 +47,7 @@ db1033d6be15c65e0f6851b1b33635b9  ./audio/multitrack/jokosher/jokosher.tar.gz
 12bc52a76516734560255f586f6e5fa0  ./audio/multitrack/ecasound/ecasound.tar.gz
 a90fda6a793263d82fe450340c43fa25  ./audio/editors/mscore/mscore.tar.gz
 f6091602ef6f35252a74a7027ebeb800  ./audio/editors/rosegarden/rosegarden.tar.gz
-1e99d329d252c85520dca88bdbf29c08  ./audio/editors/audacity/audacity.tar.gz
+47ea4eeb5b570ff9874c4d8a8334dbfc  ./audio/editors/audacity/audacity.tar.gz
 dc643744de1d194eeeb8e27d7cb85b7a  ./audio/editors/denemo/denemo.tar.gz
 608b08518b5939c4c3a1d6fcba5ba7fa  ./audio/mixers/qastools/qastools.tar.gz
 9fa18637a3ebd5650a00d23dbcb27d3b  ./audio/mixers/mixxx/mixxx.tar.gz

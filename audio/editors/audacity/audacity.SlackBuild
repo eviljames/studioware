@@ -23,7 +23,7 @@
 
 PRGNAM=audacity
 VERSION=${VERSION:-2.0.5}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
