@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.5b2"
+    VERSION="5.5b3"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -429,50 +429,6 @@ clear_installed()
     fi
 }
 #}}}
-#{{{ Install
-installxx()
-{
-    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
-    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
-        cleanup; } fi
-
-    unset pkgs
-    shift
-
-    cl=$*
-    if [ -z "$cl" ]; then
-        cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
-    else
-        echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
-    fi
-    exec <&1
-
-    while read line
-    do
-        name=$(echo $line | awk '{print $1}')
-        pkg=$(grep -i $name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f3)
-        INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
-    done < $QUEUE
-
-    if [ -z "$INSTALLLIST" ]; then cleanup; fi
-echo $INSTALLLIST
-read
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
-
-    dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
-        --help-button --help-label "Clear Inst'd" --help-status \
-        --checklist "Choose packages to install:" \
-        $rows $cols $mrows $INSTALLLIST 2> $TMPROOT/pkglist
-
-    cat $TMPROOT/pkglist
-    read
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $TMPROOT/pkglist)" ]; then cleanup; fi
-    installpkgs
-}
-#}}}
 #{{{ Install Everything
 installall()
 {
@@ -689,6 +645,72 @@ upgradeall()
     installpkgs
 }
 #}}}
+#{{{ Check md5
+check_md5()
+{
+    echo -n "Checking md5... "
+    md5sum -c $1.md5
+    exit=$?
+    cat $1.md5
+
+    if [ $exit -ne 0 ]; then
+        echo "Checksums don't match. Did you run '-u|update' first?"
+        echo "You may need to delete the cache."
+        echo -n "(r)edownload, (a)bort or (c)ontinue? "
+        read ANS <&1
+
+        if [ "$ANS" = "r" ]; then
+            rm -f $1
+            $WGET -O $1 $2
+        fi
+
+        if [ "$ANS" = "a" ]; then cleanup; fi
+    else
+        echo "OK"
+        return 0
+    fi
+}
+#}}}
+#{{{ Check GPG
+check_gpg()
+{
+    if [ ! "$(which gpg 2>/dev/null)" ]&&[ "$CHECKGPG" = "ON" ]; then
+        echo "gpg package not found"
+        echo "Please install the gnupg package to check signatures and reenable"
+        echo "CHECKGPG in $CONF"
+        echo -n "(a)bort or (c)ontinue? "
+        read ANS <&1
+        
+        if [ "$ANS" != "c" ]; then cleanup; fi
+
+        echo "Continuing without gpg check..."
+        sed -i 's/CHECKGPG=.*/CHECKGPG=OFF/g' $CONF
+        return 0
+    else
+        if [ "$CHECKGPG" = "ON" ]; then
+            echo "Checking gpg..."
+            # try to surpress the authority warning...
+            GPGOUT=$($GPG $1.asc $1 2>&1 | head -n2)
+
+            if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
+                echo "$GPGOUT"
+                echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                cleanup
+            elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
+                    echo "$GPGOUT"
+                    cleanup
+            else
+                echo "$GPGOUT"
+                return 0
+            fi
+        else
+            return 0
+        fi
+    fi
+
+    return 1
+}
+# }}}
 #{{{ Install Packages
 installpkgs()
 {
@@ -708,71 +730,24 @@ installpkgs()
                 $WGET -O $TXZ $PKGSERVER/$REMOTE
             fi
 
-            echo "Checksum..."
-            md5sum -c $TXZ.md5
+            check_md5 $TXZ $PKGSERVER/$REMOTE
             let exit=$?
-
-            if [ $exit -ne 0 ]; then
-                echo "Checksums don't match. Did you run '-u|update' first?"
-                echo "You may need to delete the cache."
-                echo -n "(r)edownload, (a)bort or (c)ontinue? "
-                read ANS <&1
-
-                if [ "$ANS" = "r" ]; then
-                    rm -f $TXZ
-                    $WGET -O $TXZ $PKGSERVER/$REMOTE
-                fi
-
-                if [ "$ANS" = "a" ]; then cleanup; fi
-            else
-                if [ ! "$(which gpg 2>/dev/null)" ]&&[ "$CHECKGPG" = "ON" ]; then
-                    echo "gpg package not found"
-                    echo "Please install the gpg package to check signatures and reenable"
-                    echo "CHECKGPG in $CONF"
-                    echo -n "(a)bort or (c)ontinue? "
-                    read ANS <&1
-                  
-                    if [ "$ANS" != "c" ]; then cleanup; fi
-
-                    echo "Continuing without gpg check..."
-                    sed -i 's/CHECKGPG=.*/CHECKGPG=OFF/g' $CONF
-                    $INSTALL $TXZ
-                else
-                    if [ "$CHECKGPG" = "ON" ]; then
-                        echo "Checking gpg..."
-                        # try to surpress the authority warning...
-                        GPGOUT=$($GPG $TXZ.asc $TXZ 2>&1 | head -n2)
-
-                        if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
-                            echo "$GPGOUT"
-                            echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
-                            cleanup
-                        elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
-                                echo "$GPGOUT"
-                                cleanup
-                        else
-                            echo "$GPGOUT"
-                            $INSTALL $TXZ
-                        fi
-                    else
-                        $INSTALL $TXZ
-                    fi
-                fi
+            
+            if [ $exit -eq 1 ]; then
+                cleanup
             fi
+            
+            check_gpg $TXZ
+
+            if [ $exit -eq 1 ]; then
+                cleanup
+            fi
+            
+
+            $INSTALL $TXZ
         done
     done < $PKGLIST
     cleanup
-}
-#}}}
-#{{{ Check md5
-xxmd5()
-{
-    echo -n "Checking md5sum..."
-    if [ -z "$(grep -i "$1" "$CHECKSUMS"  | sed 's#./##' | md5sum -c - \
-        2>&1 | grep WARNING)" ]; then \
-        echo " OK"; return 0; fi
-    echo " Bad md5sum"
-    return 1
 }
 #}}}
 #{{{ Import gpg key
