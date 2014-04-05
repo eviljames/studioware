@@ -97,7 +97,7 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 
-find . -name *\.desktop -exec \
+find . -name \*.desktop -exec \
     sed -i 's/Categories=.*/Categories=X-Studioware-Audio;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

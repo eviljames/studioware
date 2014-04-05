@@ -1,6 +1,6 @@
 jack
-suil
 @lilv
+suil
 aubio
 @gtkmm
 @libgnomecanvasmm
