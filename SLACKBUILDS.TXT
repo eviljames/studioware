@@ -37,9 +37,6 @@ d9641bd7c29f8a81b19713cc2f332133  ./audio/development/phat/phat.tar.gz
 e97ac897ae778d92d9ec6079211ca90d  ./audio/development/scons/scons.tar.gz
 3d5966e000576419779ce1ea0b65b8f3  ./audio/recorders/timemachine/timemachine.tar.gz
 76bfb6730e446658059be08200a649bb  ./audio/desktop/evince/evince.tar.gz
-516f02daf47a1043bf88d6a5c0c7c063  ./audio/codecs/faac/faac.tar.gz
-c5595415a39d5bece853db1b26c1356a  ./audio/codecs/faad2/faad2.tar.gz
-a9a01595f9aea1f6da5f2f4c18aa9e1d  ./audio/codecs/a52dec/a52dec.tar.gz
 80cf5b9362d740f4397f042c7ec010b7  ./audio/amps/guitarix2/guitarix2.tar.gz
 7cf049a69d63cdde2380da41ba893e19  ./audio/drums/hydrogen/hydrogen.tar.gz
 8a6bfd877e80cf8c9361e4f54a2d5bea  ./audio/multitrack/qtractor/qtractor.tar.gz
