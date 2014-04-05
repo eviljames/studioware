@@ -23,7 +23,7 @@
 
 PRGNAM=muse
 VERSION=${VERSION:-2.1.2}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

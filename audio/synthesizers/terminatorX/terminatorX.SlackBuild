@@ -23,7 +23,7 @@
 
 PRGNAM=terminatorX
 VERSION=${VERSION:-3.84}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

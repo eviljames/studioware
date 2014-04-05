@@ -23,7 +23,7 @@
 
 PRGNAM=specimen
 VERSION=${VERSION:-0.5.1}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

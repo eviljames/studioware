@@ -23,7 +23,7 @@
 
 PRGNAM=mscore
 VERSION=${VERSION:-1.3}
-BUILD=${BUILD:-5}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

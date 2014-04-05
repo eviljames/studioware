@@ -23,7 +23,7 @@
 
 PRGNAM=rosegarden
 VERSION=${VERSION:-13.06}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
