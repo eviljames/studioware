@@ -122,7 +122,7 @@ cb96930f0c0dab38d2a2625c54bd9f0d  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 0998bb020c3a267b385fd5aebbd0dd0d  ./audio/plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 83637d6cce8bcdeffd43ee6916bb906e  ./audio/plugins/gst1-plugins-base/gst1-plugins-base.tar.gz
 4a492a6ec272b198f2d41ec75626e6dd  ./audio/plugins/lv2/lv2.tar.gz
-e5c668455f3fc9fbad9af2b67e276277  ./audio/plugins/calf/calf.tar.gz
+60acc883e768d579eb33de6cf39ecfbf  ./audio/plugins/calf/calf.tar.gz
 dfbfa8766f504568feff9e74ea24bfd7  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 6a3898d110aff14a23c23b2fb2da110c  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
 93316035fe98dda640c92d0a23aa5e00  ./audio/plugins/alsa-plugins/alsa-plugins.tar.gz
