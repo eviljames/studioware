@@ -2,4 +2,13 @@ gnonlin
 pysetuptools
 gst-python
 pyxdg
+calf
+frei0r-plugins
+gavl
+invada-studio-plugins
+lv2
+swh-plugins
+swh-plugins
+tap-plugins
+@gst-plugins-bad
 jokosher
