@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.5b3"
+    VERSION="5.5b4"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -651,7 +651,7 @@ check_md5()
     echo -n "Checking md5... "
     md5sum -c $1.md5
     exit=$?
-    cat $1.md5
+#    cat $1.md5
 
     if [ $exit -ne 0 ]; then
         echo "Checksums don't match. Did you run '-u|update' first?"
@@ -666,7 +666,7 @@ check_md5()
 
         if [ "$ANS" = "a" ]; then cleanup; fi
     else
-        echo "OK"
+#        echo "OK"
         return 0
     fi
 }
@@ -775,7 +775,7 @@ search()
 
     for p in $(grep -i "$2" $FILELIST | egrep txz$ | awk '{print $9}')
     do
-        shortname=$(echo $p | cut -d'/' -f3 | rev | cut -d- -f4- | rev)
+        shortname=$(echo $p | cut -d'/' -f4 | rev | cut -d- -f4- | rev)
         dir=$(echo $p | cut -d'/' -f2)
         installed=$(basename $(ls /var/log/packages/$shortname-*se 2>/dev/null) \
             2>/dev/null | rev | cut -d- -f4- | rev)
