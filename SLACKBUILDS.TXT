@@ -43,7 +43,7 @@ a5e6d29c58f04a96b36ad20e3c2b2b48  ./audio/recorders/timemachine/timemachine.tar.
 52c8e305c932bc13dc2f4a7ce2766222  ./audio/multitrack/qtractor/qtractor.tar.gz
 3f38e85b7a6cb99a0234722ee6c6b5d6  ./audio/multitrack/ardour/ardour.tar.gz
 297de955d680942f6406c6b910900862  ./audio/multitrack/ardour3/ardour3.tar.gz
-59241053f9d2562fcd900bee4222b258  ./audio/multitrack/jokosher/jokosher.tar.gz
+1e791e8d03202a82ed072d95fd42148b  ./audio/multitrack/jokosher/jokosher.tar.gz
 12bc52a76516734560255f586f6e5fa0  ./audio/multitrack/ecasound/ecasound.tar.gz
 a90fda6a793263d82fe450340c43fa25  ./audio/editors/mscore/mscore.tar.gz
 f6091602ef6f35252a74a7027ebeb800  ./audio/editors/rosegarden/rosegarden.tar.gz
@@ -120,14 +120,14 @@ f7d696ca0e99227234411aea1ac0f1c0  ./audio/libraries/libavc1394/libavc1394.tar.gz
 7908f7866122f4934583b3402b2428ce  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 cb96930f0c0dab38d2a2625c54bd9f0d  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 0998bb020c3a267b385fd5aebbd0dd0d  ./audio/plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
+965e55e8698e2c6b385b3a7416a7cf01  ./audio/plugins/gst1-plugins-base/gst1-plugins-base.tar.gz
 4a492a6ec272b198f2d41ec75626e6dd  ./audio/plugins/lv2/lv2.tar.gz
-3049247a33ad04e5a7234d0853f940de  ./audio/plugins/gst-plugins-base/gst-plugins-base.tar.gz
 e5c668455f3fc9fbad9af2b67e276277  ./audio/plugins/calf/calf.tar.gz
 dfbfa8766f504568feff9e74ea24bfd7  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
-99cee1b4586c0ad396927219c6995ffc  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
+6a3898d110aff14a23c23b2fb2da110c  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
 93316035fe98dda640c92d0a23aa5e00  ./audio/plugins/alsa-plugins/alsa-plugins.tar.gz
 aca234ff7ec8d46d467535e086121918  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
-3f4fab9f2803ca8b8748a2a52fa17e9f  ./audio/plugins/gst-plugins-bad/gst-plugins-bad.tar.gz
+7b6e6536ee4fb2ba3c28ebde01b5f993  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 59829cff5e1342e2bb7f88b6cb85a200  ./audio/plugins/gavl/gavl.tar.gz
 1add929003e3e820fc355aebda46c3fd  ./audio/graphics/t1utils/t1utils.tar.gz
 ab0d21418e3880277f7211b4d75a238f  ./audio/graphics/goocanvas/goocanvas.tar.gz

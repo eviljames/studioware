@@ -1,2 +1,0 @@
-gstreamer
-gstreamer-plugins-base

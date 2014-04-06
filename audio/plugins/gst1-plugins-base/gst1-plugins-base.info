@@ -1,4 +1,4 @@
-PRGNAM="gst-plugins-base"
+PRGNAM="gst1-plugins-base"
 VERSION="1.2.3"
 HOMEPAGE="http://gstreamer.freedesktop.org/"
 DOWNLOAD="http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.2.3.tar.xz"
