@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b1"
+    VERSION="4.2b2"
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -595,7 +595,7 @@ search()
     if [ -n "$inrepo" ]; then
         for g in $inrepo
         do
-            shortname=$(echo $g | cut -d'/' -f3)
+            shortname=$(echo $g | cut -d'/' -f4)
             dir=$(echo $g | cut -d'/' -f2)
             installed=$(ls /var/log/packages/$shortname-[0-9]* 2>/dev/null)
 
