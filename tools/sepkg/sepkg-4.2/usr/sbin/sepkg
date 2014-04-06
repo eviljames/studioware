@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b2"
+    VERSION="4.2b3"
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -410,6 +410,8 @@ listpkgs()
     unset pkgs
     unset INSTALLLIST
     unset MISSING
+    unset PKGS
+    echo -n > $PKGLIST
 
     echo "Building queue..."
 
@@ -467,7 +469,7 @@ listpkgs()
         --help-button --help-label "Clear Inst'd" --help-status \
         --checklist "Choose packages to install:" \
         19 70 13 $INSTALLLIST 2>$PKGLIST
-    
+
     CHOICE=$?
 
     if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
@@ -494,7 +496,7 @@ clear_installed()
                 oldpkg="NULL"
             fi
 
-            if [ "$newpkg" == "$oldpkg" ]; then
+            if [ "$newpkg" = "$oldpkg" ]; then
                 sed -i "/$newpkg$/d" $QUEUE
             fi
         done
