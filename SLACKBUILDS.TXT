@@ -121,13 +121,13 @@ f7d696ca0e99227234411aea1ac0f1c0  ./audio/libraries/libavc1394/libavc1394.tar.gz
 cb96930f0c0dab38d2a2625c54bd9f0d  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 0998bb020c3a267b385fd5aebbd0dd0d  ./audio/plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 4a492a6ec272b198f2d41ec75626e6dd  ./audio/plugins/lv2/lv2.tar.gz
-1ed7dc571750903a900df7c1afea2c8e  ./audio/plugins/gst-plugins-base/gst-plugins-base.tar.gz
+3049247a33ad04e5a7234d0853f940de  ./audio/plugins/gst-plugins-base/gst-plugins-base.tar.gz
 e5c668455f3fc9fbad9af2b67e276277  ./audio/plugins/calf/calf.tar.gz
 dfbfa8766f504568feff9e74ea24bfd7  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
+99cee1b4586c0ad396927219c6995ffc  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
 93316035fe98dda640c92d0a23aa5e00  ./audio/plugins/alsa-plugins/alsa-plugins.tar.gz
 aca234ff7ec8d46d467535e086121918  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
-f729ee8a53af97d560fab9a9c9228e17  ./audio/plugins/gst-plugins-bad/gst-plugins-bad.tar.gz
-66fb6916cf51d983eedc0d9130a4bcf8  ./audio/plugins/gstreamer/gstreamer.tar.gz
+3f4fab9f2803ca8b8748a2a52fa17e9f  ./audio/plugins/gst-plugins-bad/gst-plugins-bad.tar.gz
 59829cff5e1342e2bb7f88b6cb85a200  ./audio/plugins/gavl/gavl.tar.gz
 1add929003e3e820fc355aebda46c3fd  ./audio/graphics/t1utils/t1utils.tar.gz
 ab0d21418e3880277f7211b4d75a238f  ./audio/graphics/goocanvas/goocanvas.tar.gz
