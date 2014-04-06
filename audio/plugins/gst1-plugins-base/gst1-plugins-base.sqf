@@ -1,2 +1,2 @@
 gstreamer1
-gstreamer1-plugins-base
+gst1-plugins-base
