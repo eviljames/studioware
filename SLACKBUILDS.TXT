@@ -115,7 +115,7 @@ d04f8ad73a07585a98b8a68c52b373f3  ./audio/libraries/opencv/opencv.tar.gz
 865c2a6668646a8961b88f7f0a1f903e  ./audio/libraries/libslv2/libslv2.tar.gz
 32b40a095d35acd3117caf51638af23c  ./audio/libraries/suil/suil.tar.gz
 f7d696ca0e99227234411aea1ac0f1c0  ./audio/libraries/libavc1394/libavc1394.tar.gz
-39d381d075f6189e354e70a89056edbe  ./audio/libraries/sratom/sratom.tar.gz
+729e41e7f167cebebe1c4086f808a330  ./audio/libraries/sratom/sratom.tar.gz
 02469455012838c2fe75a60a12521f73  ./audio/libraries/fltk/fltk.tar.gz
 7908f7866122f4934583b3402b2428ce  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 cb96930f0c0dab38d2a2625c54bd9f0d  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
