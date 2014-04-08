@@ -14,6 +14,7 @@ studiopkg --upgrade <package>               upgrade package
 studiopkg --upgrade-all                     upgrade all packages
 studiopkg --queue, -q <package>             download and install queue
 studiopkg --latest, -l                      checks for latest version of studiopkg
+studiopkg --new,                            install new packages
 studiopkg --gpg, -g                         import the Studioware GPG key
 studiopkg --help, -h                        help
 studiopkg --version, -v                     give version and exit

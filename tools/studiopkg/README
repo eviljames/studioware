@@ -11,6 +11,7 @@ studiopkg --upgrade &lt;package&gt; ................. upgrade package
 studiopkg --upgrade-all ....................... upgrade all packages
 studiopkg --remove, -r &lt;package&gt; .............. remove package
 studiopkg --queue, -q &lt;appname|category&gt;....... will download and use .sqf 
+studiopkg --new, .............................. install new packages
 studiopkg --gpg, -g ........................... import studioware gpg key
 studiopkg --delete-cache ...................... delete all cached packages
 studiopkg --clean-system ...................... dialog to delete all studioware packages

@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b5"
+    VERSION="5.6b7"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -41,7 +41,7 @@ init()
     CWD=$(pwd)
     LOGFILE=$CWD/$APPNAME.log
     rm -f $LOGFILE
-    WGET="wget --progress=dot:mega --no-check-certificate"
+    WGET="wget --no-check-certificate"
     INSTALL="upgradepkg --reinstall --install-new"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
@@ -111,6 +111,7 @@ getflags()
     contains "$CMD" --upgrade         && { upgrade $ARG; cleanup; }
     contains "$CMD" --clean-system    && { clean_system; cleanup; }
     contains "$CMD" --delete-cache    && { delete_cache; cleanup; }
+    contains "$CMD" --new             && { new_packages; cleanup; }
     contains "$CMD" --gpg             && { import_gpg; cleanup; }
     contains "$CMD" --queue           && { get_queue $ARG; cleanup; }
     contains "$CMD" --help            && { usage; cleanup; }
@@ -148,6 +149,7 @@ $APPNAME --update, -u                      syncs with file server
 $APPNAME --upgrade <package>               upgrade package
 $APPNAME --upgrade-all                     upgrade all packages
 $APPNAME --queue, -q <package>             download and install queue
+$APPNAME --new                             download and install new packages
 $APPNAME --latest, -l                      checks for latest version of $APPNAME
 $APPNAME --gpg, -g                         import the Studioware GPG key
 $APPNAME --help, -h                        help
@@ -181,7 +183,7 @@ latest()
 
     if [ "$VERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it? (Y/n) "
-        read REPLY
+        read REPLY <&1
 
         case "$REPLY" in
             'y'|'Y'|'')
@@ -221,7 +223,7 @@ latest()
 
                 echo
                 echo -n "Upgrade now? (Y/n) "
-                read UREPLY
+                read UREPLY <&1
 
                 case "$UREPLY" in
                     'y'|'Y'|'')
@@ -243,9 +245,9 @@ latest()
 update()
 { 
     cd $CACHEDIR || cleanup
-    $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT | $LOG
-    $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5 | $LOG
-    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT | $LOG
+    $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT 
+    $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5 
+    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT 
     cleanup
 }
 #}}}
@@ -265,6 +267,28 @@ local_queue()
     fi
 
     exec <&1
+    list_pkgs
+}
+#}}}
+#{{{ New packages
+new_packages()
+{
+    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
+    [[ ! -r $FILELIST ]] && { echo "No filelist! Did you run update?"; cleanup; }
+
+    echo -n "" > $QUEUE
+    echo "Looking for new packages..."
+
+    for PKG in $(grep txz$ $FILELIST | cut -d/ -f4)
+    do
+        PRGNAM=$(echo $PKG | rev | cut -d- -f4- | rev)
+        BASE=$(basename $PKG | rev | cut -d. -f2- | rev)
+
+        if [[ ! -r /var/log/packages/$BASE ]]; then
+            echo $PRGNAM >> $QUEUE
+        fi
+    done
+
     list_pkgs
 }
 #}}}
@@ -336,14 +360,14 @@ make_queue()
                     CAT=$(grep -i /$SUB.tar.gz$ $SLACKBUILDS | cut -d/ -f2-4)
 
                     if [ -n "$CAT" ]; then
-                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf | $LOG
+                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf 
                     else
                         case $SUB in
                             'full'|'audio'|'video'|'photo')
-                                $WGET -O $SUB.sqf $SBSERVER/queues/$SUB.sqf | $LOG
+                                $WGET -O $SUB.sqf $SBSERVER/queues/$SUB.sqf 
                                 ;;
                             *) 
-                                echo "Queue $SUB.sqf not found." | $LOG
+                                echo "Queue $SUB.sqf not found." 
                                 cleanup
                             ;;
                         esac
@@ -375,17 +399,17 @@ do_dialog()
     let mrows=$((rows-6))
 
     if [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep remove)" ]; then
-        dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title "Package List" --backtitle "$APPNAME $VERSION" \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2> $PKGLIST
         CHOICE=$?
     elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep upgrade)" ]; then
-        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title "Package List" --backtitle "$APPNAME $VERSION" \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2>$PKGLIST
         CHOICE=$?
     elif [ $NOGUI -eq 0 ]; then
-        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title "Package List" --backtitle "$APPNAME $VERSION" \
             --help-button --help-label "Clear Inst'd" --help-status \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2>$PKGLIST
@@ -399,7 +423,7 @@ do_dialog()
 
         if [ $YESNO -eq 0 ]; then
             echo "Install? (Y/n)"
-            read
+            read <&1
             
             REPLY=$(echo $REPLY | tr 'a-z' 'A-Z')
             [[ "$REPLY" = "" ]] && REPLY="Y"
@@ -494,7 +518,7 @@ clear_installed()
     done < $QUEUE
 
     if [ $(wc -l $QUEUE | awk '{print $1}') = "0" ]; then
-        echo "All packages are already installed."
+        echo "No packages to install."
         cleanup
     fi
 }
@@ -655,14 +679,14 @@ check_md5()
 
     while [ $exit -ne 0 ]
     do
-        echo "Checksums don't match. Did you run '-u|update' first?" | $LOG
-        echo "You may need to delete the cache." | $LOG
-        echo "(r)edownload, (a)bort, (c)ontinue or (s)kip?" | $LOG
+        echo "Checksums don't match. Did you run '-u|update' first?" 
+        echo "You may need to delete the cache." 
+        echo "(r)edownload, (a)bort, (c)ontinue or (s)kip?" 
         
         if [ $YESNO -eq 1 ]; then
             let TRIES=$TRIES+1
-            [[ $TRIES -gt 2 ]] && { echo "Tried 3 times. Skipping." | $LOG; return 2; }
-            echo "Redownloading ($TRIES)" | $LOG
+            [[ $TRIES -gt 2 ]] && { echo "Tried 3 times. Skipping."; return 2; }
+            echo "Redownloading ($TRIES)" 
             ANS="r"
         else
             read ANS <&1
@@ -670,7 +694,7 @@ check_md5()
 
         if [ "$ANS" = "r" ]; then
             rm -f $1
-            $WGET -O $1 $2 2>&1 | $LOG
+            $WGET -O $1 $2 2>&1 
             echo -n "Checking md5..."
             md5sum -c $1.md5
             exit=$?
@@ -690,9 +714,9 @@ check_gpg()
         echo "Please install the gnupg package to check signatures and reenable"
         echo "CHECKGPG in $CONF"
         echo -n "(a)bort or (c)ontinue? "
-        read ANS <&1
+        read <&1
         
-        if [ "$ANS" != "c" ]; then cleanup; fi
+        if [ "$REPLY" != "c" ]; then cleanup; fi
 
         echo "Continuing without gpg check..."
         sed -i 's/CHECKGPG=.*/CHECKGPG=OFF/g' $CONF
@@ -734,24 +758,24 @@ install_pkgs()
 
         while [[ $exit -ne 0 ]]
         do
-            $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5 | $LOG
-            $WGET -O $TXZ.asc $PKGSERVER/$REMOTE.asc | $LOG
+            $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5 
+            $WGET -O $TXZ.asc $PKGSERVER/$REMOTE.asc 
 
             if [ ! -r "$TXZ" ]; then
-                $WGET -O $TXZ $PKGSERVER/$REMOTE | $LOG
+                $WGET -O $TXZ $PKGSERVER/$REMOTE 
             fi
 
-            check_md5 $TXZ $PKGSERVER/$REMOTE | $LOG
+            check_md5 $TXZ $PKGSERVER/$REMOTE 
             let exit=$?
 
             [[ $exit -eq 2 ]] && break
             [[ $exit -eq 1 ]] && cleanup
 
-            check_gpg $TXZ | $LOG
+            check_gpg $TXZ 
 
             [[ $exit -eq 1 ]] && cleanup
             
-            $INSTALL $TXZ 2>&1 | $LOG
+            $INSTALL $TXZ 2>&1
         done
     done < $PKGLIST
     cleanup
