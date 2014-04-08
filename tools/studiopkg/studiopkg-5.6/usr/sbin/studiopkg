@@ -138,6 +138,9 @@ $APPNAME --gpg/-g - import the Studioware GPG key
 $APPNAME -h - help
 $APPNAME -v - give version and exit
 
+--no-gui - disables dialog and uses text input
+--yes - assumes yes to answers (also assumes --no-gui)
+
 Files
 
 /etc/$APPNAME/$APPNAME.conf

@@ -1,6 +1,6 @@
 Studiopkg - The Studioware Package Installer
 
-Options
+studiopkg <command> [options]
 
 studiopkg --update/-u - syncs with file server
 studiopkg --search/-s &lt;grep term&gt; - search for package name or part name
@@ -17,6 +17,9 @@ studiopkg --clean-system - dialog to delete all studioware packages
 studiopkg --latest/-l - check latest version and optionally download/install
 studiopkg -h - help
 studiopkg -v - give version and exit
+
+--no-gui - disables dialog and uses text input
+--yes - assumes yes to answers (also assumes --no-gui)
 
 Files
 
