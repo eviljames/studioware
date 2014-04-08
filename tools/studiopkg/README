@@ -1,6 +1,6 @@
 Studiopkg - The Studioware Package Installer
 
-studiopkg <command> [options]
+studiopkg &lt;command&gt; [options]
 
 studiopkg --update/-u - syncs with file server
 studiopkg --search/-s &lt;grep term&gt; - search for package name or part name
