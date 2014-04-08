@@ -1,2 +1,3 @@
 jack
+rtmidi
 giada

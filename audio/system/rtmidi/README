@@ -1,0 +1,6 @@
+RtMidi ( Midi I/O API )
+
+RtMidi is a set of C++ classes (RtMidiIn, RtMidiOut and API-specific classes)
+that provides a common API (Application Programming Interface) for realtime
+MIDI input/output across Linux (ALSA & Jack), Macintosh OS X (CoreMidi & Jack),
+and Windows (Multimedia Library & Kernel Streaming) operating systems.

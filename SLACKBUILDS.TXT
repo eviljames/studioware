@@ -58,13 +58,14 @@ e891c7164477cc8f0b643006fb1bf80d  ./audio/misc/protobuf/protobuf.tar.gz
 897f502711e7eca8cb65db189a3cda30  ./audio/misc/stops/stops.tar.gz
 c77c75930fd84acf7854fe2d994d6505  ./audio/sequencers/seq24/seq24.tar.gz
 cb7bce4f2f1c0820c64dfa46580af8ff  ./audio/sequencers/muse/muse.tar.gz
+12ba81389b7a96ee2b014ce737bcecb4  ./audio/system/rtmidi/rtmidi.tar.gz
 d7ca3557b2f97cb70db0e10708bb4e00  ./audio/system/meterbridge/meterbridge.tar.gz
 50c95cea63f5bc8503442518814820aa  ./audio/system/set_rlimits/set_rlimits.tar.gz
 889ca91cea6ee6bfc41a4ae05b76967a  ./audio/system/numactl/numactl.tar.gz
 db0f5fa0b9004e839c833f9987427a64  ./audio/system/jack/jack.tar.gz
 20f47d13876008ee76fb63aeb74c7809  ./audio/system/rt-tests/rt-tests.tar.gz
 498e79c7470501d9ee823f67cf39d9c0  ./audio/system/qjackctl/qjackctl.tar.gz
-a810f343c0e99361e57a26ccf2068bff  ./audio/samplers/giada/giada.tar.gz
+4b0cdee0369ed2c05277a0467e78a46f  ./audio/samplers/giada/giada.tar.gz
 ceaae49e6d3674e4720bbfc6c191c757  ./audio/samplers/sooperlooper/sooperlooper.tar.gz
 c8868e60dcf94bdba23e418376f8fa3e  ./audio/samplers/specimen/specimen.tar.gz
 9d496440edeb2042a792bf58a85260a1  ./audio/synthesizers/terminatorX/terminatorX.tar.gz
