@@ -24,7 +24,7 @@
 PRGNAM=giada
 VERSION=${VERSION:-0.7.2}
 SRCVERSION=0.7.2-lin
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
