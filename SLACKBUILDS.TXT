@@ -132,7 +132,7 @@ e062b2c9207e3e09d5bd8b39757ed754  ./audio/plugins/gst1-plugins-bad/gst1-plugins-
 1add929003e3e820fc355aebda46c3fd  ./audio/graphics/t1utils/t1utils.tar.gz
 ab0d21418e3880277f7211b4d75a238f  ./audio/graphics/goocanvas/goocanvas.tar.gz
 90f6f7fa9d793bd84e2b2bf14978bdcf  ./audio/graphics/lilypond/lilypond.tar.gz
-57a9a1c64525dbb6a574b7826023a3c4  ./audio/graphics/frescobaldi/frescobaldi.tar.gz
+6f8e7e03339d15e67d058dc7dc3f89e2  ./audio/graphics/frescobaldi/frescobaldi.tar.gz
 dc52f3f10d89c8e83a162f6757d8850a  ./audio/graphics/potrace/potrace.tar.gz
 2329f134298f72712f2254efdfc73768  ./audio/graphics/mftrace/mftrace.tar.gz
 4f0f528fbbf0b8cd5343ce4dbae7642a  ./audio/graphics/pygoocanvas/pygoocanvas.tar.gz
