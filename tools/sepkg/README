@@ -1,23 +1,29 @@
 Sepkg - The Studioware Package Builder
 
 Options
+<font style="font-family: monospace;">
+sepkg --info, -f &lt;package&gt; ...................... shows info file
+sepkg --update, -u .............................. syncs with file server
+sepkg --search, -s &lt;grep term&gt; .................. search for package name or part name
+sepkg --build, -b package1, package2, ... ....... build packages
+sepkg --install, -i package1, package2, ... ..... install packages
+sepkg --install, -i &lt; &lt;queuefile&gt; ............... install packages from file
+sepkg --read, -r &lt;package&gt; ...................... download and print readme
+sepkg --delete-cache ............................ delete all cached packages
+sepkg --latest, -l .............................. check latest version and download/install
+sepkg --queue, -q &lt;appname|category&gt; ............ will download and use a .sqf
+sepkg -h ........................................ help
+sepkg -v ........................................ give version and exit
 
-sepkg info/-f package - shows info file
-sepkg update/-u - syncs with file server
-sepkg search/-s &lt;grep term&gt; - search for package name or part name
-sepkg build/-b package1, package2, ... - build packages
-sepkg install/-i package1, package2, ... - install packages
-sepkg install/-i &lt; &lt;queuefile&gt; - install packages from file
-sepkg read/-r &lt;package&gt; - download and print readme (needs lynx)
-sepkg delete-cache - delete all cached packages
-sepkg latest/-l - check latest version and optionally download/install
-sepkg queue/-q &lt;appname|category&gt; - will download and use a .sqf
-sepkg -h - help
-sepkg -v - give version and exit
+Extra options:
 
+sepkg --log ...... Creates a sepkg.log build log in current directory
+</font>
 Files:
 /etc/sepkg/sepkg.conf
-This file contains the slackware version.
+This file contains the slackware version:
+
+SWVERSION=14.1
 
 Install options can be given on the command line or in a file:
 

@@ -26,7 +26,8 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b3"
+    VERSION="4.2b4"
+    CWD=$(pwd)
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
     CONF=$CONFDIR/$APPNAME.conf
@@ -39,7 +40,8 @@ init()
     QUEUE=$TMPROOT/queue
     TMPQ=$TMPROOT/tmp-queue
     PKGLIST=$TMPROOT/pkglist
-    WGET="wget --no-check-certificate"
+    LOGFILE=$CWD/$APPNAME.log
+    WGET="wget --progress=dot:mega --no-check-certificate"
     UP="upgradepkg --reinstall --install-new"
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
@@ -50,7 +52,6 @@ init()
     ERR="0"
     STUDIOKEY="Studioware <info@studioware.org>"
     GPG="gpg --verify"
-    CWD=$(pwd)
     if [ -z "$CHECKGPG" ]; then
         echo "CHECKGPG not set in $CONF..."
         echo "Setting to ON. You can change this later by editing $CONF"
@@ -65,6 +66,7 @@ init()
 cleanup()
 {
     rm -rf $TMPROOT
+    [[ -n "$LOGPID" ]] && kill $LOGPID
     exit 0
 }
 #}}}
@@ -72,33 +74,66 @@ cleanup()
 cleanupbad()
 {
     rm -rf $TMPROOT
+    [[ -n "$LOGPID" ]] && kill $LOGPID
     exit 1
+}
+#}}}
+#{{{ Test if string $1 contains $2
+contains()
+{
+    for opt in $1
+    do
+        [[ "$opt" = "$2" ]] && return 0
+    done
+
+    return 1
 }
 #}}}
 #{{{ Flags
 getflags()
 {
-    if [ "$1" = "info" ]; then { info $2; cleanup; }; fi
-    if [ "$1" = "-f" ]; then { info $2; cleanup; }; fi
-    if [ "$1" = "update" ]; then { update; cleanup; }; fi
-    if [ "$1" = "-u" ]; then { update; cleanup; }; fi
-    if [ "$1" = "search" ]; then { search $2; cleanup; }; fi
-    if [ "$1" = "-s" ]; then { search $2; cleanup; }; fi
-    if [ "$1" = "build" ]; then { INSTALL=0; set_queue "$@"; cleanup; }; fi
-    if [ "$1" = "-b" ]; then { INSTALL=0; set_queue "$@"; cleanup; }; fi
-    if [ "$1" = "install" ]; then { INSTALL=1; set_queue "$@"; cleanup; }; fi
-    if [ "$1" = "-i" ]; then { INSTALL=1; set_queue "$@"; cleanup; }; fi
-    if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
-    if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "read" ]; then { readme $2; cleanup; }; fi
-    if [ "$1" = "-r" ]; then { readme $2; cleanup; }; fi
-    if [ "$1" = "-q" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
-    if [ "$1" = "queue" ]; then { INSTALL=1; get_queue $2; cleanup; }; fi
-    if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
-    if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
-    if [ "$1" = "-g" ]; then { importgpg; cleanup; }; fi
-    if [ "$1" = "gpg" ]; then { importgpg; cleanup; }; fi
+    FLAGS=$*
+    contains "$FLAGS" -y && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/-y}; }
+    contains "$FLAGS" -n && { NOGUI=1; FLAGS=${FLAGS/-n}; }
+    contains "$FLAGS" --yes && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/--yes}; }
+    contains "$FLAGS" --no-gui && { NOGUI=1; FLAGS=${FLAGS/--no-gui}; }
+    contains "$FLAGS" --log && { LOG="tee -a $LOGFILE"; FLAGS=${FLAGS/--log}; }
+    if [ -n "$LOG" ]; then    
+        echo -n > $LOGFILE
+        tail -f $LOGFILE &
+        LOGPID=$!
+    fi
+    
+
+    CMD=$(echo $FLAGS | cut -d' ' -f1)
+    ARG=$(echo $FLAGS | cut -d' ' -f2-)
+
+    contains "$CMD" --info          && { info $ARG; cleanup; }
+    contains "$CMD" --update        && { update; cleanup; }
+    contains "$CMD" --search        && { search $ARG; cleanup; }
+    contains "$CMD" --build         && { INSTALL=0; set_queue "$ARG"; cleanup; }
+    contains "$CMD" --install       && { INSTALL=1; set_queue "$ARG"; cleanup; }
+    contains "$CMD" --delete-cache  && { deletecache; cleanup; }
+    contains "$CMD" --latest        && { latest; cleanup; }
+    contains "$CMD" --read          && { readme $ARG; cleanup; }
+    contains "$CMD" --queue         && { INSTALL=1; get_queue $ARG; cleanup; }
+    contains "$CMD" --gpg           && { importgpg; cleanup; }
+    contains "$CMD" -f && { info $ARG; cleanup; }
+    contains "$CMD" -u && { update; cleanup; }
+    contains "$CMD" -s && { search $ARG; cleanup; }
+    contains "$CMD" -b && { INSTALL=0; set_queue "$ARG"; cleanup; }
+    contains "$CMD" -i && { INSTALL=1; set_queue "$ARG"; cleanup; }
+    contains "$CMD" -l && { latest; cleanup; }
+    contains "$CMD" -r && { readme $ARG; cleanup; }
+    contains "$CMD" -q && { INSTALL=1; get_queue $ARG; cleanup; }
+    contains "$CMD" -h && { usage; cleanup; }
+    contains "$CMD" -v && { echo $APPNAME $VERSION; cleanup; }
+    contains "$CMD" -g && { importgpg; cleanup; }
+    
+    usage
+    echo
+    echo "Unknown command: $CMD"
+    cleanup
 }
 #}}}
 #{{{ Info
@@ -176,7 +211,7 @@ latest()
 
                     if [ -n "$(echo $GPGOUT | grep -i 'not found')" ]; then
                         echo "$GPGOUT"
-                        echo "Did you import the Studioware key with 'studiopkg -g|gpg'?"
+                        echo "Did you import the Studioware key with 'sepkg -g|gpg'?"
                         cleanup
                     elif [ -n "$(echo $GPGOUT | grep -i 'bad signature')" ]; then
                             echo "$GPGOUT"
@@ -205,65 +240,32 @@ latest()
                 ;;
         esac
     fi
-#    cd $TMPROOT
-#    
-#    LATEST=$(curl -s $TOOLURL/LATEST)
-#    REMVERS=$(echo $LATEST | cut -db -f1)
-#    REMBUILD=$(echo $LATEST | cut -db -f2)
-#
-#    echo "Installed version: $VERSION. Latest version: $LATEST."
-#
-#    if [ "$VERSION" != "$LATEST" ]; then
-#        echo -n "Newer version available. Download it? (y/n) "
-#        read REPLY
-#
-#        if [ "$REPLY" = "y" ]; then
-#            PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
-#            MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
-#            $WGET -q -O $PKG $TOOLURL/$PKG
-#            $WGET -q -O $MD5 $TOOLURL/$MD5
-#
-#            echo "Package saved to $TMPROOT"
-#            echo "Checking md5... "
-#
-#            md5sum -c $MD5
-#
-#            if [ $? != 0 ]; then
-#                cleanup
-#            fi
-#
-#            echo
-#            echo -n "Upgrade now? (y/n) "
-#            read REPLY
-#            if [ "$REPLY" = "y" ]; then
-#                $UP $PKG
-#            fi
-#        fi
-#    fi
 }
 # }}}
 #{{{ Usage
 usage()
 {
 cat << EOF
-$APPNAME $VERSION
+$APPNAME <command> [options]
 
-Options
+$APPNAME --info, -f package1                    read info file
+$APPNAME --build, -b package1, package2 ...     build packages
+$APPNAME --delete-cache                         delete all cached files
+$APPNAME --install, -i package1, package2 ...   build & install packages
+$APPNAME --install, -i < <queuefile>            install packages from file
+$APPNAME --latest, -l                           checks for newer version of $APPNAME
+$APPNAME --read, -r <package>                   download and print readme (needs lynx)
+$APPNAME --search, -s <name>                    search for package name or part name
+$APPNAME --update, -u                           download filelists
+$APPNAME --queue, -q                            download and install queue from file server
+$APPNAME -h                                     help
+$APPNAME -v                                     give version and exit
 
-$APPNAME info/-f package1 - read info file
-$APPNAME build/-b package1, package2 ... - build packages
-$APPNAME delete-cache - delete all cached files
-$APPNAME install/-i package1, package2 ... - build & install packages
-$APPNAME install/-i < <queuefile> - install packages from file
-$APPNAME latest/-l - checks for newer version of $APPNAME
-$APPNAME read/-r <package> - download and print readme (needs lynx)
-$APPNAME search/-s - search for package name or part name
-$APPNAME update/-u - syncs with file server
-$APPNAME queue/-q - download and install queue from file server
-$APPNAME -h - help
-$APPNAME -v - give version and exit
+Extra options:
 
-Files
+$APPNAME --log  create a sepkg.log build log in current directory
+
+Files:
 
 /etc/$APPNAME/$APPNAME.conf
 
@@ -275,7 +277,7 @@ EOF
 update()
 {   
     cd $CACHEDIR || cleanup
-    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT
+    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT 
     cleanup
 }
 #}}}
@@ -326,7 +328,6 @@ set_queue()
         cleanup; } fi
 
     cd $TMPROOT || cleanup
-    shift
 
     cl=$*
     if [ -z "$cl" ]; then
@@ -354,7 +355,7 @@ make_queue()
 
         case "$line" in
             'audio'|'video'|'photo'|'full')
-                $WGET -O $line.sqf $SBSERVER/queues/$line.sqf
+                $WGET -O $line.sqf $SBSERVER/queues/$line.sqf 2>&1 | $LOG
                 SWAP=$(cat $line.sqf)
                 echo "$SWAP" >> $TMPQ
                 let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
@@ -372,7 +373,8 @@ make_queue()
                             -d/ -f2-4)
 
                             if [ -n "$CAT" ]; then
-                                $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf
+                                $WGET -O $SUB.sqf \
+                                    $SBSERVER/$CAT/$SUB.sqf 2>&1 | $LOG
                             else
                                 echo "$SUB.sqf not found."
                                 cleanup
@@ -523,7 +525,7 @@ installpkgs()
     do
         if [ -n "$i" ]; then
             b=$(basename $i .tar.gz)
-            $WGET -c -O $b.tar.gz $SBSERVER/$i
+            $WGET -c -O $b.tar.gz $SBSERVER/$i | $LOG
             tar xf $b.tar.gz
             (
             cd $b
@@ -540,7 +542,7 @@ installpkgs()
                 while [ -z "$MD5MATCH" ]
                 do
                     if [ ! -r $CACHEDIR/$LOCAL ]; then
-                        $WGET -c -O $CACHEDIR/$LOCAL $D
+                        $WGET -c -O $CACHEDIR/$LOCAL $D | $LOG
                     fi
                     
                     ln -sf $CACHEDIR/$LOCAL $LOCAL
@@ -562,12 +564,30 @@ installpkgs()
             done
 
             options=$(grep -x $b $QUEUE | cut -f2- | sed "s/$b//")
-            eval $options source ./$b.SlackBuild
-            if [ "$INSTALL" = "1" ]; then
-                $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
-            fi
-            if [ -n "$ARCHIVE" ]; then
-                mv $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz} $ARCHIVE
+            echo -n "Starting $b SlackBuild" | $LOG
+            [[ -n "$options" ]] && echo " with options:" | $LOG
+            [[ -n "$options" ]] && echo -n "$options" | $LOG
+            
+            echo | $LOG
+            echo | $LOG
+
+            if [ -n "$LOG" ]; then
+                exec 6<&1
+                exec 1>>$LOGFILE 2>&1
+                eval $options source ./$b.SlackBuild 
+
+                if [ "$INSTALL" = "1" ]; then
+                    $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+                fi
+                
+                exec 1<&6 6<&-
+            else
+                eval $options source ./$b.SlackBuild 
+
+                if [ "$INSTALL" = "1" ]; then
+                    $UP $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+                fi
+
             fi
             )
             ERR=$?

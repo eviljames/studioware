@@ -39,7 +39,7 @@ init()
     TMPQ=$TMPROOT/tmp-queue
     PKGLIST=$TMPROOT/pkglist
     CWD=$(pwd)
-    LOGFILE=$CWD/studiopkg.log
+    LOGFILE=$CWD/$APPNAME.log
     rm -f $LOGFILE
     WGET="wget --progress=dot:mega --no-check-certificate"
     INSTALL="upgradepkg --reinstall --install-new"
@@ -101,6 +101,7 @@ getflags()
 
     CMD=$(echo $FLAGS | cut -d' ' -f1)
     ARG=$(echo $FLAGS | cut -d' ' -f2-)
+
     contains "$CMD" --update          && { update; cleanup; }
     contains "$CMD" --search          && { search $ARG; cleanup; }
     contains "$CMD" --install-all     && { install_all $ARG; cleanup; }
@@ -748,7 +749,11 @@ install_pkgs()
 
             [[ $exit -eq 1 ]] && cleanup
             
-            $INSTALL $TXZ 2>&1 | $LOG
+            if [ -n "$LOG" ]; then
+                $INSTALL $TXZ 2>&1 | $LOG
+            else
+                $INSTALL $TXZ 
+            fi
         done
     done < $PKGLIST
     cleanup
