@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b4"
+    VERSION="5.6b5"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -309,7 +309,7 @@ get_queue()
             ;;
     esac
 
-    listpkgs
+    list_pkgs
 }
 #}}}
 #{{{ Make queue
@@ -505,7 +505,7 @@ install_all()
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
     [[ ! -r $FILELIST ]] && { echo "No filelist! Did you run update?"; cleanup; }
     curl -fs $SBSERVER/queues/full.sqf > $QUEUE
-    listpkgs
+    list_pkgs
 }
 ##}}}
 #{{{ Remove

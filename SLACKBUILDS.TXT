@@ -58,7 +58,7 @@ e891c7164477cc8f0b643006fb1bf80d  ./audio/misc/protobuf/protobuf.tar.gz
 897f502711e7eca8cb65db189a3cda30  ./audio/misc/stops/stops.tar.gz
 c77c75930fd84acf7854fe2d994d6505  ./audio/sequencers/seq24/seq24.tar.gz
 cb7bce4f2f1c0820c64dfa46580af8ff  ./audio/sequencers/muse/muse.tar.gz
-12ba81389b7a96ee2b014ce737bcecb4  ./audio/system/rtmidi/rtmidi.tar.gz
+2742c564c74071ed4cd962d8dd03d8f4  ./audio/system/rtmidi/rtmidi.tar.gz
 d7ca3557b2f97cb70db0e10708bb4e00  ./audio/system/meterbridge/meterbridge.tar.gz
 50c95cea63f5bc8503442518814820aa  ./audio/system/set_rlimits/set_rlimits.tar.gz
 889ca91cea6ee6bfc41a4ae05b76967a  ./audio/system/numactl/numactl.tar.gz
