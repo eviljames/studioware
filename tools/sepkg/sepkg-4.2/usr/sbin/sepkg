@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b4"
+    VERSION="4.2b5"
     CWD=$(pwd)
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
@@ -94,12 +94,14 @@ contains()
 #{{{ Flags
 getflags()
 {
-    FLAGS=$*
+    FLAGS="$*"
+
     contains "$FLAGS" -y && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/-y}; }
     contains "$FLAGS" -n && { NOGUI=1; FLAGS=${FLAGS/-n}; }
     contains "$FLAGS" --yes && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/--yes}; }
     contains "$FLAGS" --no-gui && { NOGUI=1; FLAGS=${FLAGS/--no-gui}; }
     contains "$FLAGS" --log && { LOG="tee -a $LOGFILE"; FLAGS=${FLAGS/--log}; }
+
     if [ -n "$LOG" ]; then    
         echo -n > $LOGFILE
         tail -f $LOGFILE &
@@ -109,6 +111,8 @@ getflags()
 
     CMD=$(echo $FLAGS | cut -d' ' -f1)
     ARG=$(echo $FLAGS | cut -d' ' -f2-)
+
+    [[ "$ARG" = "$CMD" ]] && unset ARG
 
     contains "$CMD" --info          && { info $ARG; cleanup; }
     contains "$CMD" --update        && { update; cleanup; }
@@ -334,6 +338,7 @@ set_queue()
     cd $TMPROOT || cleanup
 
     cl=$*
+
     if [ -z "$cl" ]; then
         cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE 
     else
@@ -359,7 +364,7 @@ make_queue()
 
         case "$line" in
             'audio'|'video'|'photo'|'full')
-                $WGET -O $line.sqf $SBSERVER/queues/$line.sqf 2>&1 | $LOG
+                $WGET -O $line.sqf $SBSERVER/queues/$line.sqf 
                 SWAP=$(cat $line.sqf)
                 echo "$SWAP" >> $TMPQ
                 let CNT=$(wc -l $TMPQ | awk '{print $1}')+1
@@ -377,8 +382,7 @@ make_queue()
                             -d/ -f2-4)
 
                             if [ -n "$CAT" ]; then
-                                $WGET -O $SUB.sqf \
-                                    $SBSERVER/$CAT/$SUB.sqf 2>&1 | $LOG
+                                $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf
                             else
                                 echo "$SUB.sqf not found."
                                 cleanup
@@ -518,13 +522,6 @@ listpkgs()
     TITLE="Choose packages to install:"
     do_dialog
 
-#    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-#        --help-button --help-label "Clear Inst'd" --help-status \
-#        --checklist "Choose packages to install:" \
-#        19 70 13 $INSTALLLIST 2>$PKGLIST
-#
-#    CHOICE=$?
-
     if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
         clear_installed
         listpkgs
@@ -576,7 +573,7 @@ installpkgs()
     do
         if [ -n "$i" ]; then
             b=$(basename $i .tar.gz)
-            $WGET -c -O $b.tar.gz $SBSERVER/$i | $LOG
+            $WGET -c -O $b.tar.gz $SBSERVER/$i 
             tar xf $b.tar.gz
             (
             cd $b
@@ -593,7 +590,7 @@ installpkgs()
                 while [ -z "$MD5MATCH" ]
                 do
                     if [ ! -r $CACHEDIR/$LOCAL ]; then
-                        $WGET -c -O $CACHEDIR/$LOCAL $D | $LOG
+                        $WGET -c -O $CACHEDIR/$LOCAL $D 
                     fi
                     
                     ln -sf $CACHEDIR/$LOCAL $LOCAL
