@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.5b4"
+    VERSION="5.6b1"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -57,6 +57,7 @@ init()
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    SBSERVER="$MAINURL/files/slackbuilds/.testing"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
@@ -65,6 +66,8 @@ init()
     STUDIOKEY="Studioware <info@studioware.org>"
     GPG="gpg --verify"
     CWD=$(pwd)
+    YESNO=0
+    NOGUI=0
 }
 #}}}
 #{{{ Cleanup and exit
@@ -74,33 +77,74 @@ cleanup()
     exit
 }
 #}}}
+#{{{ Test string $1 contains $2
+contains()
+{
+    [[ -n "$(echo $1 | grep -- "$2")" ]] && return 0  || return 1
+}
+#}}}
 #{{{ Flags
 getflags()
 {
-    if [ "$1" = "update" ]; then { update; cleanup; }; fi
-    if [ "$1" = "-u" ]; then { update; cleanup; }; fi
-    if [ "$1" = "search" ]; then { search "$@"; cleanup; }; fi
-    if [ "$1" = "-s" ]; then { search "$@"; cleanup; }; fi
-    if [ "$1" = "install" ]; then { local-queue "$@"; cleanup; }; fi
-    if [ "$1" = "-i" ]; then { localqueue "$@"; cleanup; }; fi
-    if [ "$1" = "install-all" ]; then { installall "$@"; cleanup; }; fi
-    if [ "$1" = "remove" ]; then { remove "$@"; cleanup; }; fi
-    if [ "$1" = "-r" ]; then { remove "$@"; cleanup; }; fi
-    if [ "$1" = "upgrade" ]; then { upgrade "$@"; cleanup; }; fi
-    if [ "$1" = "-up" ]; then { upgrade "$@"; cleanup; }; fi
-    if [ "$1" = "upgrade-all" ]; then { upgradeall; cleanup; }; fi
-    if [ "$1" = "-upall" ]; then { upgradeall; cleanup; }; fi
-    if [ "$1" = "clean-system" ]; then { cleansystem; cleanup; }; fi
-    if [ "$1" = "clean" ]; then { cleansystem; cleanup; }; fi
-    if [ "$1" = "delete-cache" ]; then { deletecache; cleanup; }; fi
-    if [ "$1" = "latest" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "-g" ]; then { importgpg; cleanup; }; fi
-    if [ "$1" = "gpg" ]; then { importgpg; cleanup; }; fi
-    if [ "$1" = "-l" ]; then { latest; cleanup; }; fi
-    if [ "$1" = "-q" ]; then { get_queue $2; cleanup; }; fi
-    if [ "$1" = "queue" ]; then { get_queue $2; cleanup; }; fi
-    if [ "$1" = "-h" ]; then {  usage; cleanup; }; fi
-    if [ "$1" = "-v" ]; then { echo $APPNAME $VERSION; cleanup; }; fi
+    FLAGS=$*
+    contains "$FLAGS" --yes && YESNO=1
+    contains "$FLAGS" --no-gui && NOGUI=1
+    FLAGS=${FLAGS/--yes}
+    FLAGS=${FLAGS/--no-gui}
+    ARG=$(echo $FLAGS | cut -d' ' -f2-)
+    contains "$FLAGS" --update          && { update; cleanup; }
+    contains "$FLAGS" --search          && { search $ARG; cleanup; }
+    contains "$FLAGS" --install-all     && { install_all $ARG; cleanup; }
+    contains "$FLAGS" --install         && { local_queue $ARG; cleanup; }
+    contains "$FLAGS" --remove          && { remove $ARG; cleanup; }
+    contains "$FLAGS" --upgrade-all     && { upgrade_all; cleanup; }
+    contains "$FLAGS" --upgrade         && { upgrade $ARG; cleanup; }
+    contains "$FLAGS" --clean-system    && { clean_system; cleanup; }
+    contains "$FLAGS" --delete-cache    && { delete_cache; cleanup; }
+    contains "$FLAGS" --gpg             && { import_gpg; cleanup; }
+    contains "$FLAGS" --queue           && { get_queue $ARG; cleanup; }
+    contains "$FLAGS" -g && { import_gpg; cleanup; }
+    contains "$FLAGS" -s && { search $ARG; cleanup; }
+    contains "$FLAGS" -u && { update; cleanup; }
+    contains "$FLAGS" -i && { local_queue $ARG; cleanup; }
+    contains "$FLAGS" -r && { remove $ARG; cleanup; }
+    contains "$FLAGS" -l && { latest; cleanup; }
+    contains "$FLAGS" -q && { get_queue $ARG; cleanup; }
+    contains "$FLAGS" -h && { usage; cleanup; }
+    contains "$FLAGS" -v && { echo $APPNAME $VERSION; cleanup; }
+}
+#}}}
+#{{{ Usage
+usage()
+{
+cat << EOF
+$APPNAME $VERSION
+
+$APPNAME <command> [arguments]
+
+$APPNAME --clean-system - remove all studioware packages dialog
+$APPNAME --delete-cache - delete all cached packages
+$APPNAME --install/-i package1 package2 ... - install packages
+$APPNAME --install/-i < <queuefile> - install packages from file
+$APPNAME --install-all - install all packages
+$APPNAME --remove/-r <package> - remove package
+$APPNAME --search/-s - search for package name or part name
+$APPNAME --update/-u - syncs with file server
+$APPNAME --upgrade <package> - upgrade package
+$APPNAME --upgrade-all - upgrade all packages
+$APPNAME --queue/-q <package> - download and install queue from file server
+$APPNAME --latest/-l - checks for latest version of $APPNAME
+$APPNAME --gpg/-g - import the Studioware GPG key
+$APPNAME -h - help
+$APPNAME -v - give version and exit
+
+Files
+
+/etc/$APPNAME/$APPNAME.conf
+
+This file contains the mirror URL and should be edited for Slackware version
+and GPG checking.
+EOF
 }
 #}}}
 #{{{ latest
@@ -174,37 +218,6 @@ latest()
     fi
 }
 # }}}
-#{{{ Usage
-usage()
-{
-cat << EOF
-$APPNAME $VERSION
-
-Options
-
-$APPNAME clean-system/clean - remove all studioware packages dialog
-$APPNAME delete-cache - delete all cached packages
-$APPNAME install/-i package1 package2 ... - install packages
-$APPNAME install/-i < <queuefile> - install packages from file
-$APPNAME install-all - install all packages
-$APPNAME latest/-l - checks for latest version of $APPNAME
-$APPNAME remove/-r <package> - remove package
-$APPNAME search/-s - search for package name or part name
-$APPNAME update/-u - syncs with file server
-$APPNAME upgrade/-up <package> - upgrade package
-$APPNAME upgrade-all/-upall - upgrade all packages
-$APPNAME queue/-q <package> - download and install queue from file server
-$APPNAME -h - help
-$APPNAME -v - give version and exit
-
-Files
-
-/etc/$APPNAME/$APPNAME.conf
-
-This file contains the mirror URL and should be edited for 32bit or 64bit.
-EOF
-}
-#}}}
 #{{{ Update
 update()
 { 
@@ -216,25 +229,22 @@ update()
 }
 #}}}
 #{{{ Local Queue
-localqueue()
+local_queue()
 {
-    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
-
-    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
-        cleanup; } fi
+    cd $CACHEDIR || { echo "No cache exists. Did you run --update?"; cleanup; }
+    [[ ! -r $FILELIST ]] && { echo "No filelist. Did you run --update?"; cleanup; }
 
     unset pkgs
-    shift
-    cl=$*
+    cl="$@"
 
     if [ -z "$cl" ]; then
-        cat /dev/stdin | sed 's/,/\n/g;/^$/d' > $QUEUE
+        cat /dev/stdin | sed 's/,/\n/g;/^$/d' | tr -d ' ' > $QUEUE
     else
-        echo $cl | sed 's/,/\n/g;/^$/d' > $QUEUE
+        echo "$cl" | sed 's/,/\n/g' | tr -d ' ' > $QUEUE
     fi
 
     exec <&1
-    listpkgs
+    list_pkgs
 }
 #}}}
 #{{{ Get Queue
@@ -335,12 +345,56 @@ make_queue()
     done < $1
 }
 #}}}
+#{{{ Dialog
+do_dialog()
+{
+    [[ -z "$LIST" ]] && cleanup
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
+    if [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep remove)" ]; then
+        dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2> $PKGLIST
+        CHOICE=$?
+    elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep upgrade)" ]; then
+        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2>$PKGLIST
+        CHOICE=$?
+    elif [ $NOGUI -eq 0 ]; then
+        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+            --help-button --help-label "Clear Inst'd" --help-status \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2>$PKGLIST
+        CHOICE=$?
+    else
+        for P in $PKGS
+        do
+            echo $P | tr -d ' ' >> $PKGLIST
+            echo $P
+        done
+
+        if [ $YESNO -eq 0 ]; then
+            echo "Install? (Y/n)"
+            read
+            
+            REPLY=$(echo $REPLY | tr 'a-z' 'A-Z')
+            [[ "$REPLY" = "" ]] && REPLY="Y"
+            [[ "$REPLY" = "Y" ]] && CHOICE=0 || cleanup
+        else
+            CHOICE=0
+        fi
+    fi
+}
+#}}}
 #{{{ List Packages
-listpkgs()
+list_pkgs()
 {
     exec <&1
-    unset pkgs
-    unset INSTALLLIST
+    unset PKGS
+    unset LIST
     unset MISSING
 
     echo "Building queue..."
@@ -357,51 +411,46 @@ listpkgs()
     done
 
     echo -n > $TMPQ
-    while read line
+
+    while read name
     do
-        if [ ! $(grep -x $line $TMPQ) ]; then
-            echo $line >> $TMPQ
+        if [ ! $(grep -x $name $TMPQ) ]; then
+            echo $name >> $TMPQ
         fi
     done < $QUEUE
 
     cat $TMPQ > $QUEUE
 
-    while read line
+    while read name
     do
-        name=$(echo $line | awk '{print $1}')
         pkg=$(grep -i /$name-[^-]*-[^-]*-[^-]*txz$ $FILELIST | cut -d/ -f4)
 
         if [ -n "$pkg" ]; then
-            INSTALLLIST=$INSTALLLIST" "$pkg" "$name" ""on "
+            LIST=$LIST" "$pkg" "$name" ""on "
+            PKGS=$pkg" "$PKGS
         else
             MISSING=$name" "$MISSING
         fi
     done < $QUEUE
 
     if [ -n "$MISSING" ]; then
-        echo "The following are in the queue, but not in the file list:"
+        echo "The following are in the queue, but not in the server file list:"
         echo $MISSING
         cleanup
     fi
 
-    if [ -z "$INSTALLLIST" ]; then cleanup; fi
-
-    dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
-        --help-button --help-label "Clear Inst'd" --help-status \
-        --checklist "Choose packages to install:" \
-        19 70 13 $INSTALLLIST 2>$PKGLIST
-
-    CHOICE=$?
+    TITLE="Choose packages to install:"
+    do_dialog
 
     if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
         clear_installed
-        listpkgs
+        list_pkgs
     fi
 
-    if [ $CHOICE -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
+    [[ $CHOICE -ne 0 ]] && cleanup
+    [[ -z "$(cat $PKGLIST)" ]] && cleanup
 
-    installpkgs
+    install_pkgs
 }
 #}}}
 #{{{ Clear Installed
@@ -430,109 +479,69 @@ clear_installed()
 }
 #}}}
 #{{{ Install Everything
-installall()
+install_all()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
-    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
-        cleanup; } fi
-
-    unset pkgs
-
-    exec <&1
-    while read line
-    do
-        name=$(echo $line | egrep .*txz$ | cut -d'/' -f3)
-        if [ -n "$name" ]; then
-            pkgs=$pkgs" "$name
-        fi
-    done < $FILELIST
-
-    for i in $pkgs
-    do
-        shortname=$(echo $i | rev | cut -d- -f4- | rev)
-        version=$(echo $i | rev | cut -d- -f3 | rev)
-        installed=$(ls /var/log/packages/$shortname* 2>/dev/null | grep $version)
-
-        if [ -n "$i" ] && [ -z "$installed" ]; then
-            INSTALLLIST=$INSTALLLIST" "$i" "$shortname" ""on "
-        fi
-    done
-
-    if [ -z "$INSTALLLIST" ]; then cleanup; fi
-
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
-
-    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-        --checklist "Choose packages to install:" $rows $cols $mrows \
-        $INSTALLLIST 2> $PKGLIST
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
-
-    installpkgs
+    [[ ! -r $FILELIST ]] && { echo "No filelist! Did you run update?"; cleanup; }
+    curl -fs $SBSERVER/queues/full.sqf > $QUEUE
+    listpkgs
 }
 ##}}}
 #{{{ Remove
 remove()
 {
-    shift
-    cl=$*
+    cl=$(echo $* | tr -s ',' ' ')
 
-    for i in $cl
+    for p in $cl
     do
-        pkgs=$pkgs" $(ls /var/log/packages/$i*se 2>/dev/null)"
+        for i in /var/log/packages/$p*se
+        do
+            inname=$(basename $i | rev | cut -d- -f4- | rev)
+            if [ "$inname" = "$p" ]; then
+                LIST=$LIST" "$(basename $i)" "$inname" ""on "
+                PKGS=$inname" "$PKGS
+            fi
+        done
     done
 
-    for i in $pkgs
-    do
-        shortname=$(basename $i | rev | cut -d- -f4- | rev)
-        if [ -n "$i" ]; then
-            RMLIST=$RMLIST" "$(basename $i)" "$shortname" ""on "
-        fi
-    done
+    TITLE="Choose packages to remove:"
+    do_dialog
 
-    if [ -z "$RMLIST" ]; then cleanup; fi
+    [[ $CHOICE -ne 0 ]] && cleanup
+    [[ -z "$(cat $PKGLIST)" ]] && cleanup
 
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
-
-    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-        --checklist "Choose packages to remove:" \
-        $rows $cols $mrows $RMLIST 2> $PKGLIST
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
     for i in "$(cat $PKGLIST)"
     do
         removepkg $i
     done
 }
 #}}}
-#{{{ clean-system
-cleansystem()
+#{{{ Clean system
+clean_system()
 {
-    pkgs=$pkgs" $(ls /var/log/packages/*se 2>/dev/null)"
+    pkgs="$(ls /var/log/packages/*se 2>/dev/null)"
 
     for i in $pkgs
     do
-        shortname=$(basename $i | rev | cut -d- -f4- | rev)
+        base=$(basename $i)
+        shortname=$(echo $base | rev | cut -d- -f4- | rev)
         if [ -n "$i" ]; then
-            RMLIST=$RMLIST" "$(basename $i)" "$shortname" ""on "
+            LIST=$LIST" "$base" "$shortname" ""on "
+            PKGS=$base" "$PKGS
         fi
     done
 
-    if [ -z "$RMLIST" ]; then cleanup; fi
+    if [ -z "$LIST" ]; then 
+        echo "No packages found."
+        cleanup
+    fi
 
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
+    TITLE="Choose packages to remove:"
+    do_dialog
 
-    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-        --checklist "Choose packages to remove:" \
-        $rows $cols $mrows $RMLIST 2> $PKGLIST
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
+    [[ $CHOICE -ne 0 ]] && cleanup
+    [[ -z "$(cat $PKGLIST)" ]] && cleanup
+
     for i in "$(cat $PKGLIST)"
     do
         removepkg $i
@@ -542,27 +551,15 @@ cleansystem()
 #{{{ Upgrade
 upgrade()
 {
-    cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
-
-    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
-            cleanup; } fi
-    shift
+    cd $CACHEDIR || { echo "No cache exists. Did you run update?"; cleanup; }
+    [[ ! -r $FILELIST ]] && { echo "No filelist. Did you run update?"; cleanup; }
 
     for i in $*
     do
         sepkgs="$sepkgs $(ls -1 /var/log/packages/$i*se 2>/dev/null)"
     done
 
-    jack=$(echo "$sepkgs" | grep jack | rev | cut -d- -f4- | rev)
-    jackold=$(echo "$sepkgs" | grep jack-audio-connection-kit \
-        | rev | cut -d- -f4- | rev)
-
-    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then
-        echo "You have two versions of jack installed. You need to remove one."
-        cleanup
-    fi
-
-    if [ -z "$sepkgs" ]; then { echo "No packages to upgrade"; cleanup; } fi
+    [[ -z "$sepkgs" ]] && { echo "No packages to upgrade."; cleanup; }
 
     for pkg in $sepkgs
     do
@@ -574,46 +571,32 @@ upgrade()
             cut -d/ -f4)
       
         if [ "$iversion" != "$nversion" ] && [ -n "$package" ]; then
-            UPLIST=$UPLIST" "$package" "$shortname" ""on "
+            LIST=$LIST" "$package" "$shortname" ""on "
+            PKGS="package $PKGS"
         fi
     done
 
-    if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
+    [[ -z "$LIST" ]] && { echo "All up to date."; cleanup; }
+    TITLE="Choose packages to upgrade:"
+    do_dialog
 
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
+    [[ $CHOICE -ne 0 ]] && cleanup
+    [[ -z "$(cat $PKGLIST)" ]] && cleanup
 
-    dialog --separate-output --title upgrade-all --backtitle "$APPNAME $VERSION" \
-        --checklist "Choose packages to upgrade:" \
-        $rows $cols $mrows $UPLIST 2>$PKGLIST
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
-
-    installpkgs
+    install_pkgs
 }
 #}}}
 #{{{ Upgrade All
-upgradeall()
+upgrade_all()
 {
     cd $CACHEDIR || { echo "No cache exists! Did you run update?"; cleanup; }
-    if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
-            cleanup; } fi
+    [[ ! -r $FILELIST ]] && { echo "No filelist! Did you run update?"; cleanup; }
 
-    unset UPLIST
     echo "Looking for packages to upgrade..."
 
     sepkgs="$(ls -1 /var/log/packages/*se 2>/dev/null)"
-    jack=$(echo "$sepkgs" | grep jack | rev | cut -d- -f4- | rev)
-    jackold=$(echo "$sepkgs" | grep jack-audio-connection-kit \
-        | rev | cut -d- -f4- | rev)
 
-    if [ "$jack" = "jack" ] && [ -n "$jackold" ]; then
-        echo "You have two versions of jack installed. You need to remove one."
-        cleanup
-    fi
-
-    if [ -z "$sepkgs" ]; then { echo "No packages to upgrade"; cleanup; } fi
+    [[ -z "$sepkgs" ]] && { echo "No packages to upgrade."; cleanup; }
 
     for pkg in $sepkgs
     do
@@ -625,24 +608,20 @@ upgradeall()
             cut -d/ -f4)
       
         if [ "$iversion" != "$nversion" ] && [ -n "$package" ]; then
-            UPLIST=$UPLIST" "$package" "$shortname" ""on "
+            LIST=$LIST" "$package" "$shortname" ""on "
+            PKGS="$package $PKGS"
         fi
     done
 
-    if [ -z "$UPLIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
+    if [ -z "$LIST" ]; then { echo "No packages to upgrade"; cleanup; } fi
 
-    let rows=$(stty size | cut -f1 -d' ')-4
-    let cols=$(stty size | cut -f2 -d' ')
-    let mrows=$((rows-6))
+    TITLE="Choose packages to upgrade:"
+    do_dialog
 
-    dialog --separate-output --title upgrade-all --backtitle "$APPNAME $VERSION" \
-        --checklist "Choose packages to upgrade:" \
-        $rows $cols $mrows $UPLIST 2>$PKGLIST
+    [[ $CHOICE -ne 0 ]] && cleanup
+    [[ -z "$(cat $PKGLIST)" ]] && cleanup
 
-    if [ $? -ne 0 ]; then cleanup; fi
-    if [ -z "$(cat $PKGLIST)" ]; then cleanup; fi
-
-    installpkgs
+    install_pkgs
 }
 #}}}
 #{{{ Check md5
@@ -651,7 +630,6 @@ check_md5()
     echo -n "Checking md5... "
     md5sum -c $1.md5
     exit=$?
-#    cat $1.md5
 
     if [ $exit -ne 0 ]; then
         echo "Checksums don't match. Did you run '-u|update' first?"
@@ -712,7 +690,7 @@ check_gpg()
 }
 # }}}
 #{{{ Install Packages
-installpkgs()
+install_pkgs()
 {
     exec <&1
 
@@ -743,7 +721,6 @@ installpkgs()
                 cleanup
             fi
             
-
             $INSTALL $TXZ
         done
     done < $PKGLIST
@@ -751,12 +728,9 @@ installpkgs()
 }
 #}}}
 #{{{ Import gpg key
-importgpg()
+import_gpg()
 {
-    # ripped from slackpkg
-    if ! [ -e ~/.gnupg ]; then
-        mkdir ~/.gnupg
-    fi
+    [[ ! -e ~/.gnupg ]] && mkdir ~/.gnupg
 
     cd $TMPROOT || cleanup
     $WGET -O gpgkey ${PKGSERVER}/GPG-KEY || cleanup
@@ -773,14 +747,12 @@ search()
     if [ ! -r $FILELIST ]; then { echo "No filelist! Did you run update?"; \
         cleanup; } fi
 
-    for p in $(grep -i "$2" $FILELIST | egrep txz$ | awk '{print $9}')
+    for p in $(grep -i "$1" $FILELIST | egrep txz$ | awk '{print $9}')
     do
         shortname=$(echo $p | cut -d'/' -f4 | rev | cut -d- -f4- | rev)
         dir=$(echo $p | cut -d'/' -f2)
         installed=$(basename $(ls /var/log/packages/$shortname-*se 2>/dev/null) \
             2>/dev/null | rev | cut -d- -f4- | rev)
-#        version=$(basename $(ls /var/log/packages/$shortname-*se* 2>/dev/null) \
-#            2>/dev/null | rev | cut -d- -f3 | rev)
 
         found=$(echo $p | cut -d'/' -f2-)
 
@@ -792,7 +764,7 @@ search()
 }
 #}}}
 #{{{ Delete Cache !DANGER WILL ROBINSON!
-deletecache()
+delete_cache()
 {
     cd $CACHEDIR || cleanup
     find . -name "*txz" -exec rm -f {} \;
