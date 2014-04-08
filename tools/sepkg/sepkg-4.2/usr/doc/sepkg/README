@@ -14,6 +14,12 @@ sepkg queue/-q <appname|category> - will download and use a .sqf
 sepkg -h - help
 sepkg -v - give version and exit
 
+Extra options:
+
+sepkg --log ...... Creates a sepkg.log build log in current directory
+sepkg --no-gui ..  bypass dialog screen
+sepkg --yes ....... auto-answer any questions (implies --no-gui)
+
 Files:
 /etc/sepkg/sepkg.conf
 This file contains the slackware version.

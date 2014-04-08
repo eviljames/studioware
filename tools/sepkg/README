@@ -1,6 +1,6 @@
 Sepkg - The Studioware Package Builder
 
-Options
+sepkg &lt;command&gt; [options]
 <font style="font-family: monospace;">
 sepkg --info, -f &lt;package&gt; ...................... shows info file
 sepkg --update, -u .............................. syncs with file server
@@ -18,6 +18,8 @@ sepkg -v ........................................ give version and exit
 Extra options:
 
 sepkg --log ...... Creates a sepkg.log build log in current directory
+sepkg --no-gui ... bypass dialog screen
+sepkg --yes ...... auto-answer any questions (implies --no-gui)
 </font>
 Files:
 /etc/sepkg/sepkg.conf

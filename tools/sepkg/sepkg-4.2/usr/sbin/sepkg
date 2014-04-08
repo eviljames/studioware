@@ -60,6 +60,8 @@ init()
         echo -n "Press enter to continue"
         read <&1
     fi
+    YESNO=0
+    NOGUI=0
 }
 #}}}
 #{{{ Cleanup and exit
@@ -263,7 +265,9 @@ $APPNAME -v                                     give version and exit
 
 Extra options:
 
-$APPNAME --log  create a sepkg.log build log in current directory
+$APPNAME --log      create a sepkg.log build log in current directory
+$APPNAME --no-gui   bypass dialog screen
+$APPNAME --yes      auto-answer any questions (implies --no-gui)
 
 Files:
 
@@ -405,12 +409,56 @@ make_queue()
     done < $1
 }
 #}}}
+#{{{ Dialog
+do_dialog()
+{
+    [[ -z "$LIST" ]] && cleanup
+    let rows=$(stty size | cut -f1 -d' ')-4
+    let cols=$(stty size | cut -f2 -d' ')
+    let mrows=$((rows-6))
+
+    if [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep remove)" ]; then
+        dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2> $PKGLIST
+        CHOICE=$?
+    elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep upgrade)" ]; then
+        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2>$PKGLIST
+        CHOICE=$?
+    elif [ $NOGUI -eq 0 ]; then
+        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+            --help-button --help-label "Clear Inst'd" --help-status \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2>$PKGLIST
+        CHOICE=$?
+    else
+        for P in $PKGS
+        do
+            echo $P | tr -d ' ' >> $PKGLIST
+            echo $P
+        done
+
+        if [ $YESNO -eq 0 ]; then
+            echo "Install? (Y/n)"
+            read
+            
+            REPLY=$(echo $REPLY | tr 'a-z' 'A-Z')
+            [[ "$REPLY" = "" ]] && REPLY="Y"
+            [[ "$REPLY" = "Y" ]] && CHOICE=0 || cleanup
+        else
+            CHOICE=0
+        fi
+    fi
+}
+#}}}
 #{{{ List Packages
 listpkgs()
 {
     exec <&1
     unset pkgs
-    unset INSTALLLIST
+    unset LIST
     unset MISSING
     unset PKGS
     echo -n > $PKGLIST
@@ -461,18 +509,21 @@ listpkgs()
     do
         shortname=$(echo $i | cut -d'.' -f1)
         if [ -n "$i" ]; then
-            INSTALLLIST=$INSTALLLIST" "$i" "$shortname" ""on "
+            LIST=$LIST" "$i" "$shortname" ""on "
         fi
     done
 
-    if [ -z "$INSTALLLIST" ]; then cleanup; fi
+    if [ -z "$LIST" ]; then cleanup; fi
 
-    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
-        --help-button --help-label "Clear Inst'd" --help-status \
-        --checklist "Choose packages to install:" \
-        19 70 13 $INSTALLLIST 2>$PKGLIST
+    TITLE="Choose packages to install:"
+    do_dialog
 
-    CHOICE=$?
+#    dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+#        --help-button --help-label "Clear Inst'd" --help-status \
+#        --checklist "Choose packages to install:" \
+#        19 70 13 $INSTALLLIST 2>$PKGLIST
+#
+#    CHOICE=$?
 
     if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
         clear_installed
