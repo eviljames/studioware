@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b3"
+    VERSION="5.6b4"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -113,6 +113,8 @@ getflags()
     contains "$CMD" --delete-cache    && { delete_cache; cleanup; }
     contains "$CMD" --gpg             && { import_gpg; cleanup; }
     contains "$CMD" --queue           && { get_queue $ARG; cleanup; }
+    contains "$CMD" --help            && { usage; cleanup; }
+    contains "$CMD" --version         && { echo $APPNAME $VERSION; cleanup; }
     contains "$CMD" -g && { import_gpg; cleanup; }
     contains "$CMD" -s && { search $ARG; cleanup; }
     contains "$CMD" -u && { update; cleanup; }
@@ -148,8 +150,8 @@ $APPNAME --upgrade-all                     upgrade all packages
 $APPNAME --queue, -q <package>             download and install queue
 $APPNAME --latest, -l                      checks for latest version of $APPNAME
 $APPNAME --gpg, -g                         import the Studioware GPG key
-$APPNAME -h                                help
-$APPNAME -v                                give version and exit
+$APPNAME --help, -h                        help
+$APPNAME --version, -v                     give version and exit
 
 Extra options:
 
@@ -749,11 +751,7 @@ install_pkgs()
 
             [[ $exit -eq 1 ]] && cleanup
             
-            if [ -n "$LOG" ]; then
-                $INSTALL $TXZ 2>&1 | $LOG
-            else
-                $INSTALL $TXZ 
-            fi
+            $INSTALL $TXZ 2>&1 | $LOG
         done
     done < $PKGLIST
     cleanup

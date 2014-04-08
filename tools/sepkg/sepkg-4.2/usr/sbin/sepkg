@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b5"
+    VERSION="4.2b6"
     CWD=$(pwd)
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
@@ -124,6 +124,8 @@ getflags()
     contains "$CMD" --read          && { readme $ARG; cleanup; }
     contains "$CMD" --queue         && { INSTALL=1; get_queue $ARG; cleanup; }
     contains "$CMD" --gpg           && { importgpg; cleanup; }
+    contains "$CMD" --help && { usage; cleanup; }
+    contains "$CMD" --version && { echo $APPNAME $VERSION; cleanup; }
     contains "$CMD" -f && { info $ARG; cleanup; }
     contains "$CMD" -u && { update; cleanup; }
     contains "$CMD" -s && { search $ARG; cleanup; }
@@ -264,8 +266,8 @@ $APPNAME --read, -r <package>                   download and print readme (needs
 $APPNAME --search, -s <name>                    search for package name or part name
 $APPNAME --update, -u                           download filelists
 $APPNAME --queue, -q                            download and install queue from file server
-$APPNAME -h                                     help
-$APPNAME -v                                     give version and exit
+$APPNAME --help, -h                             help
+$APPNAME --version, -v                          give version and exit
 
 Extra options:
 

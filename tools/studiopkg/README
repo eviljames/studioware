@@ -15,8 +15,8 @@ studiopkg --gpg, -g ........................... import studioware gpg key
 studiopkg --delete-cache ...................... delete all cached packages
 studiopkg --clean-system ...................... dialog to delete all studioware packages
 studiopkg --latest, -l ........................ check latest version
-studiopkg -h .................................. help
-studiopkg -v .................................. give version and exit
+studiopkg --help, -h .......................... help
+studiopkg --version, -v ....................... give version and exit
 
 --no-gui .. disables dialog and uses text input
 --yes ..... assumes yes to answers (also implies --no-gui)

@@ -11,8 +11,8 @@ sepkg read/-r <package> - download and print readme (needs lynx)
 sepkg delete-cache - delete all cached packages
 sepkg latest/-l - check latest version and optionally download/install
 sepkg queue/-q <appname|category> - will download and use a .sqf
-sepkg -h - help
-sepkg -v - give version and exit
+sepkg --help, -h - help
+sepkg --version, -v - give version and exit
 
 Extra options:
 

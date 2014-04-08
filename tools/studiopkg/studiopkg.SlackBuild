@@ -23,7 +23,7 @@
 
 PRGNAM=studiopkg
 VERSION=${VERSION:-5.6}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-daw}
 ARCH=noarch
 set -e

@@ -12,8 +12,8 @@ sepkg --read, -r &lt;package&gt; ...................... download and print readm
 sepkg --delete-cache ............................ delete all cached packages
 sepkg --latest, -l .............................. check latest version and download/install
 sepkg --queue, -q &lt;appname|category&gt; ............ will download and use a .sqf
-sepkg -h ........................................ help
-sepkg -v ........................................ give version and exit
+sepkg --help, -h ................................ help
+sepkg --version, -v ............................. give version and exit
 
 Extra options:
 
