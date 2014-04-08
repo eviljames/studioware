@@ -5,6 +5,6 @@ DOWNLOAD="http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1
 MD5SUM="cfd6f303c8df2740b27cc63b945decef"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES=""
+REQUIRES="gst1-plugins-base"
 MAINTAINER="Dave Woodfall"
 EMAIL="dave@studioware.org"
