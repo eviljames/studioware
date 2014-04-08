@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b1"
+    VERSION="5.6b3"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -38,7 +38,10 @@ init()
     QUEUE=$TMPROOT/queue
     TMPQ=$TMPROOT/tmp-queue
     PKGLIST=$TMPROOT/pkglist
-    WGET="wget --no-check-certificate"
+    CWD=$(pwd)
+    LOGFILE=$CWD/studiopkg.log
+    rm -f $LOGFILE
+    WGET="wget --progress=dot:mega --no-check-certificate"
     INSTALL="upgradepkg --reinstall --install-new"
     CONFDIR=/etc/$APPNAME/
     mkdir -p $CONFDIR
@@ -57,7 +60,6 @@ init()
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
     SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/.testing"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
@@ -65,7 +67,6 @@ init()
     CHECKSUMS=$CACHEDIR/CHECKSUMS.md5
     STUDIOKEY="Studioware <info@studioware.org>"
     GPG="gpg --verify"
-    CWD=$(pwd)
     YESNO=0
     NOGUI=0
 }
@@ -77,71 +78,85 @@ cleanup()
     exit
 }
 #}}}
-#{{{ Test string $1 contains $2
+#{{{ Test if string $1 contains $2
 contains()
 {
-    [[ -n "$(echo $1 | grep -- "$2")" ]] && return 0  || return 1
+    for opt in $1
+    do
+        [[ "$opt" = "$2" ]] && return 0
+    done
+
+    return 1
 }
 #}}}
 #{{{ Flags
 getflags()
 {
     FLAGS=$*
-    contains "$FLAGS" --yes && YESNO=1
-    contains "$FLAGS" --no-gui && NOGUI=1
-    FLAGS=${FLAGS/--yes}
-    FLAGS=${FLAGS/--no-gui}
+    contains "$FLAGS" -y && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/-y}; }
+    contains "$FLAGS" -n && { NOGUI=1; FLAGS=${FLAGS/-n}; }
+    contains "$FLAGS" --yes && { YESNO=1; NOGUI=1; FLAGS=${FLAGS/--yes}; }
+    contains "$FLAGS" --no-gui && { NOGUI=1; FLAGS=${FLAGS/--no-gui}; }
+    contains "$FLAGS" --log && { LOG="tee -a $LOGFILE" ; FLAGS=${FLAGS/--log}; }
+
+    CMD=$(echo $FLAGS | cut -d' ' -f1)
     ARG=$(echo $FLAGS | cut -d' ' -f2-)
-    contains "$FLAGS" --update          && { update; cleanup; }
-    contains "$FLAGS" --search          && { search $ARG; cleanup; }
-    contains "$FLAGS" --install-all     && { install_all $ARG; cleanup; }
-    contains "$FLAGS" --install         && { local_queue $ARG; cleanup; }
-    contains "$FLAGS" --remove          && { remove $ARG; cleanup; }
-    contains "$FLAGS" --upgrade-all     && { upgrade_all; cleanup; }
-    contains "$FLAGS" --upgrade         && { upgrade $ARG; cleanup; }
-    contains "$FLAGS" --clean-system    && { clean_system; cleanup; }
-    contains "$FLAGS" --delete-cache    && { delete_cache; cleanup; }
-    contains "$FLAGS" --gpg             && { import_gpg; cleanup; }
-    contains "$FLAGS" --queue           && { get_queue $ARG; cleanup; }
-    contains "$FLAGS" -g && { import_gpg; cleanup; }
-    contains "$FLAGS" -s && { search $ARG; cleanup; }
-    contains "$FLAGS" -u && { update; cleanup; }
-    contains "$FLAGS" -i && { local_queue $ARG; cleanup; }
-    contains "$FLAGS" -r && { remove $ARG; cleanup; }
-    contains "$FLAGS" -l && { latest; cleanup; }
-    contains "$FLAGS" -q && { get_queue $ARG; cleanup; }
-    contains "$FLAGS" -h && { usage; cleanup; }
-    contains "$FLAGS" -v && { echo $APPNAME $VERSION; cleanup; }
+    contains "$CMD" --update          && { update; cleanup; }
+    contains "$CMD" --search          && { search $ARG; cleanup; }
+    contains "$CMD" --install-all     && { install_all $ARG; cleanup; }
+    contains "$CMD" --install         && { local_queue $ARG; cleanup; }
+    contains "$CMD" --remove          && { remove $ARG; cleanup; }
+    contains "$CMD" --upgrade-all     && { upgrade_all; cleanup; }
+    contains "$CMD" --upgrade         && { upgrade $ARG; cleanup; }
+    contains "$CMD" --clean-system    && { clean_system; cleanup; }
+    contains "$CMD" --delete-cache    && { delete_cache; cleanup; }
+    contains "$CMD" --gpg             && { import_gpg; cleanup; }
+    contains "$CMD" --queue           && { get_queue $ARG; cleanup; }
+    contains "$CMD" -g && { import_gpg; cleanup; }
+    contains "$CMD" -s && { search $ARG; cleanup; }
+    contains "$CMD" -u && { update; cleanup; }
+    contains "$CMD" -i && { local_queue $ARG; cleanup; }
+    contains "$CMD" -r && { remove $ARG; cleanup; }
+    contains "$CMD" -l && { latest; cleanup; }
+    contains "$CMD" -q && { get_queue $ARG; cleanup; }
+    contains "$CMD" -h && { usage; cleanup; }
+    contains "$CMD" -v && { echo $APPNAME $VERSION; cleanup; }
+
+    usage
+    echo
+    echo "Unknown command: $CMD"
+    cleanup
 }
 #}}}
 #{{{ Usage
 usage()
 {
 cat << EOF
-$APPNAME $VERSION
-
 $APPNAME <command> [arguments]
 
-$APPNAME --clean-system - remove all studioware packages dialog
-$APPNAME --delete-cache - delete all cached packages
-$APPNAME --install/-i package1 package2 ... - install packages
-$APPNAME --install/-i < <queuefile> - install packages from file
-$APPNAME --install-all - install all packages
-$APPNAME --remove/-r <package> - remove package
-$APPNAME --search/-s - search for package name or part name
-$APPNAME --update/-u - syncs with file server
-$APPNAME --upgrade <package> - upgrade package
-$APPNAME --upgrade-all - upgrade all packages
-$APPNAME --queue/-q <package> - download and install queue from file server
-$APPNAME --latest/-l - checks for latest version of $APPNAME
-$APPNAME --gpg/-g - import the Studioware GPG key
-$APPNAME -h - help
-$APPNAME -v - give version and exit
+$APPNAME --clean-system                    remove all studioware packages dialog
+$APPNAME --delete-cache                    delete all cached packages
+$APPNAME --install, -i package1, package2..install packages
+$APPNAME --install, -i < <queuefile>       install packages from file
+$APPNAME --install-all                     install all packages
+$APPNAME --remove, -r <package>            remove package
+$APPNAME --search, -s <name>               search for package name or part name
+$APPNAME --update, -u                      syncs with file server
+$APPNAME --upgrade <package>               upgrade package
+$APPNAME --upgrade-all                     upgrade all packages
+$APPNAME --queue, -q <package>             download and install queue
+$APPNAME --latest, -l                      checks for latest version of $APPNAME
+$APPNAME --gpg, -g                         import the Studioware GPG key
+$APPNAME -h                                help
+$APPNAME -v                                give version and exit
 
---no-gui - disables dialog and uses text input
---yes - assumes yes to answers (also assumes --no-gui)
+Extra options:
 
-Files
+--no-gui    disables dialog and uses text input
+--yes       assumes yes to answers (also implies --no-gui)
+--log       creates studiopkg.log in current directory
+
+Files:
 
 /etc/$APPNAME/$APPNAME.conf
 
@@ -170,7 +185,7 @@ latest()
                 PKG=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz
                 ASC=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.txz.asc
                 MD5=$APPNAME-$REMVERS-noarch-${REMBUILD}daw.md5
-                $WGET -q -O $PKG $TOOLURL/$PKG
+                $WGET -q -O $PKG $TOOLURL/$PKG 
                 $WGET -q -O $MD5 $TOOLURL/$MD5
                 $WGET -q -O $ASC $TOOLURL/$ASC
 
@@ -207,7 +222,7 @@ latest()
 
                 case "$UREPLY" in
                     'y'|'Y'|'')
-                        $INSTALL $PKG
+                        $INSTALL $PKG 
                         ;;
                     *)
                         cleanup
@@ -225,9 +240,9 @@ latest()
 update()
 { 
     cd $CACHEDIR || cleanup
-    $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT
-    $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5
-    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT
+    $WGET -O FILELIST.TXT $PKGSERVER/FILELIST.TXT | $LOG
+    $WGET -O CHECKSUMS.md5 $PKGSERVER/CHECKSUMS.md5 | $LOG
+    $WGET -O SLACKBUILDS.TXT $SBSERVER/SLACKBUILDS.TXT | $LOG
     cleanup
 }
 #}}}
@@ -318,14 +333,14 @@ make_queue()
                     CAT=$(grep -i /$SUB.tar.gz$ $SLACKBUILDS | cut -d/ -f2-4)
 
                     if [ -n "$CAT" ]; then
-                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf
+                        $WGET -O $SUB.sqf $SBSERVER/$CAT/$SUB.sqf | $LOG
                     else
                         case $SUB in
                             'full'|'audio'|'video'|'photo')
-                                $WGET -O $SUB.sqf $SBSERVER/queues/$SUB.sqf
+                                $WGET -O $SUB.sqf $SBSERVER/queues/$SUB.sqf | $LOG
                                 ;;
                             *) 
-                                echo "Queue $SUB.sqf not found."
+                                echo "Queue $SUB.sqf not found." | $LOG
                                 cleanup
                             ;;
                         esac
@@ -630,26 +645,38 @@ upgrade_all()
 #{{{ Check md5
 check_md5()
 {
-    echo -n "Checking md5... "
+    let TRIES=0
+    echo "Checking md5..."
     md5sum -c $1.md5
     exit=$?
 
-    if [ $exit -ne 0 ]; then
-        echo "Checksums don't match. Did you run '-u|update' first?"
-        echo "You may need to delete the cache."
-        echo -n "(r)edownload, (a)bort or (c)ontinue? "
-        read ANS <&1
+    while [ $exit -ne 0 ]
+    do
+        echo "Checksums don't match. Did you run '-u|update' first?" | $LOG
+        echo "You may need to delete the cache." | $LOG
+        echo "(r)edownload, (a)bort, (c)ontinue or (s)kip?" | $LOG
+        
+        if [ $YESNO -eq 1 ]; then
+            let TRIES=$TRIES+1
+            [[ $TRIES -gt 2 ]] && { echo "Tried 3 times. Skipping." | $LOG; return 2; }
+            echo "Redownloading ($TRIES)" | $LOG
+            ANS="r"
+        else
+            read ANS <&1
+        fi
 
         if [ "$ANS" = "r" ]; then
             rm -f $1
-            $WGET -O $1 $2
+            $WGET -O $1 $2 2>&1 | $LOG
+            echo -n "Checking md5..."
+            md5sum -c $1.md5
+            exit=$?
+
+            [[ $exit -eq 0 ]] && return 0
         fi
 
-        if [ "$ANS" = "a" ]; then cleanup; fi
-    else
-#        echo "OK"
-        return 0
-    fi
+        [[ "$ANS" = "a" ]] && cleanup;
+    done
 }
 #}}}
 #{{{ Check GPG
@@ -704,27 +731,24 @@ install_pkgs()
 
         while [[ $exit -ne 0 ]]
         do
-            $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5
-            $WGET -O $TXZ.asc $PKGSERVER/$REMOTE.asc
+            $WGET -O $TXZ.md5 $PKGSERVER/$REMOTE.md5 | $LOG
+            $WGET -O $TXZ.asc $PKGSERVER/$REMOTE.asc | $LOG
 
             if [ ! -r "$TXZ" ]; then
-                $WGET -O $TXZ $PKGSERVER/$REMOTE
+                $WGET -O $TXZ $PKGSERVER/$REMOTE | $LOG
             fi
 
-            check_md5 $TXZ $PKGSERVER/$REMOTE
+            check_md5 $TXZ $PKGSERVER/$REMOTE | $LOG
             let exit=$?
-            
-            if [ $exit -eq 1 ]; then
-                cleanup
-            fi
-            
-            check_gpg $TXZ
 
-            if [ $exit -eq 1 ]; then
-                cleanup
-            fi
+            [[ $exit -eq 2 ]] && break
+            [[ $exit -eq 1 ]] && cleanup
+
+            check_gpg $TXZ | $LOG
+
+            [[ $exit -eq 1 ]] && cleanup
             
-            $INSTALL $TXZ
+            $INSTALL $TXZ 2>&1 | $LOG
         done
     done < $PKGLIST
     cleanup
@@ -766,7 +790,7 @@ search()
     done
 }
 #}}}
-#{{{ Delete Cache !DANGER WILL ROBINSON!
+#{{{ Delete Cache
 delete_cache()
 {
     cd $CACHEDIR || cleanup

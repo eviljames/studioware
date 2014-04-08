@@ -2,24 +2,25 @@ Studiopkg - The Studioware Package Installer
 
 studiopkg &lt;command&gt; [options]
 
-studiopkg --update/-u - syncs with file server
-studiopkg --search/-s &lt;grep term&gt; - search for package name or part name
-studiopkg --install/-i package1 package2 ... - install packages
-studiopkg --install/-i &lt; <queuefile> - install packages from file
-studiopkg --install-all - install all packages from studioware collection
-studiopkg --upgrade &lt;package&gt; - upgrade package
-studiopkg --upgrade-all - upgrade all packages
-studiopkg --remove/-r &lt;package&gt; - remove package
-studiopkg --queue/-q &lt;appname|category&gt; - will download and use .sqf 
-studiopkg --gpg/-g - import studioware gpg key
-studiopkg --delete-cache - delete all cached packages
-studiopkg --clean-system - dialog to delete all studioware packages
-studiopkg --latest/-l - check latest version and optionally download/install
-studiopkg -h - help
-studiopkg -v - give version and exit
+studiopkg --update, -u                          syncs with file server
+studiopkg --search, -s &lt;grep term&gt;        search for package name or part name
+studiopkg --install, -i package1, package2..    install packages
+studiopkg --install, -i &lt; <queuefile>        install packages from file
+studiopkg --install-all                         install all packages from studioware collection
+studiopkg --upgrade &lt;package&gt;             upgrade package
+studiopkg --upgrade-all                         upgrade all packages
+studiopkg --remove, -r &lt;package&gt;          remove package
+studiopkg --queue, -q &lt;appname|category&gt;  will download and use .sqf 
+studiopkg --gpg, -g                             import studioware gpg key
+studiopkg --delete-cache                        delete all cached packages
+studiopkg --clean-system                        dialog to delete all studioware packages
+studiopkg --latest, -l                          check latest version
+studiopkg -h                                    help
+studiopkg -v                                    give version and exit
 
---no-gui - disables dialog and uses text input
---yes - assumes yes to answers (also assumes --no-gui)
+--no-gui    disables dialog and uses text input
+--yes       assumes yes to answers (also implies --no-gui)
+--log       creates studiopkg.log in current directory
 
 Files
 
