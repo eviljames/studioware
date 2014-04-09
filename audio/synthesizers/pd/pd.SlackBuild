@@ -67,7 +67,7 @@ patch -p1 --verbose < $CWD/pd-0.44.0-disable-oss.patch
 patch -p1 --verbose < $CWD/pd-0.44.0-use-system-libs.patch
 
 # 64 bit fix
-sed -i -e "517s|lib/pd|lib${LIBDIRSUFFIX}/pd|" src/s_main.c
+sed -i -e "513s|lib/pd|lib${LIBDIRSUFFIX}/pd|" src/s_main.c
 
 ./autogen.sh
 
