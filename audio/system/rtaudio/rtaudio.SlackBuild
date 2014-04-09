@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for rtmidi
+# Slackware build script for rtaudio
 # Copyright 2014 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=rtmidi
-VERSION=${VERSION:-2.0.1}
+PRGNAM=rtaudio
+VERSION=${VERSION:-4.0.12}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -68,6 +68,10 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# Taken from an arch patch and fixed to allow static for giada to
+# build
+patch -p1 --verbose < $CWD/rtaudio-fixes.patch
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -78,42 +82,43 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --build=$ARCH-slackware-linux \
   --with-jack \
-  --with-alsa \
-  --build=$ARCH-slackware-linux
+  --with-alsa
 
 make
 
-mkdir -p $PKG/usr/lib$LIBDIRSUFFIX 
-mkdir -p $PKG/usr/include
+# Thanks to ARCH PKGBUILD
 
+mkdir -p $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
+cp librtaudio.a $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
 
-# Taken from ARCH PKGBUILD
-install -Dm755 rtmidi-config "$PKG/usr/bin/rtmidi-config"
+# configure scripts
+sed -i 's@Requires:@Requires: jack @' librtaudio.pc
+install -Dm644 librtaudio.pc "$PKG/usr/lib$LIBDIRSUFFIX/pkgconfig/librtaudio.pc"
+install -Dm755 rtaudio-config "$PKG/usr/bin/rtaudio-config"
 
-# bin
-for _bin in `find tests -type f -perm 755`; do
-install -Dm755 $_bin "$PKG/usr/bin/rtmidi-"`basename $_bin`
-done
+# libs
+install -m755 "librtaudio.so.$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.$VERSION"
+ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.4"
+ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so"
 
-# lib
-install -d "$PKG/usr/lib"
-install -Dm755 librtmidi*.so* "$PKG/usr/lib$LIBDIRSUFFIX/"
+# RtAudio shares RtError.h with rtmidi:RtMidi.h
+# Thus I left out RtError.h and made rtmidi a dependency
+# to place the header file where other packages will expect it
+install -Dm644 RtAudio.h "$PKG/usr/include/RtAudio.h"
 
-# headers
-install -d "$PKG/usr/include"
-install -Dm644 Rt{Midi,Error}.h "$PKG/usr/include"
+# cosmetic fix
+sed -i 's/-lasound -lasound/-lasound/' rtaudio-config
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/tests
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   doc/{html,images} \
+   doc/release.txt readme \
   $PKG/usr/doc/$PRGNAM-$VERSION
-
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
-cp tests/*.{cpp,dsp,dsw} $PKG/usr/doc/$PRGNAM-$VERSION/tests/.
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc

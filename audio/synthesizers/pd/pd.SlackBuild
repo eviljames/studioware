@@ -96,11 +96,10 @@ fi
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-# create and cp KDE desktop icon
+# create and cp KDE desktop 
 mkdir -p $PKG/usr/share/applications
 mkdir -p $PKG/usr/share/$PRGNAM
 cp -a $CWD/$PRGNAM.desktop $PKG/usr/share/applications
-cp $TMP/$PRGNAM\_48-3.xpm $PKG/usr/share/$PRGNAM
 
 mv $PKG/usr/share/man $PKG/usr/man
 

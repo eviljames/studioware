@@ -1,3 +1,4 @@
 jack
 portaudio
+portmidi
 pd
