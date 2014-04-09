@@ -19,7 +19,7 @@ PRGNAM=pd
 SRCVERSION=0.45-3
 VERSION=${VERSION:-0.45-3}
 VERSION=${SRCVERSION/-/.}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -64,11 +64,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+sed "s/@LIBDIRSUFFIX@/$LIBDIRSUFFIX/" $CWD/x86_64-fix.patch | patch -p1 --verbose 
+    
 ./autogen.sh
 
-  CFLAGS="$SLKCFLAGS" \
-  CXXFLAGS="$SLKCFLAGS" \
-  ./configure \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+    ./configure \
     --prefix=/usr \
     --libdir=/usr/lib${LIBDIRSUFFIX} \
     --sysconfdir=/etc \
@@ -77,10 +79,13 @@ find -L . \
     --enable-alsa \
     --enable-setuid \
     --enable-jack \
-    --disable-portaudio \
+    --enable-portaudio \
     --disable-portmidi
+
 make
 make install DESTDIR=$PKG
+
+ln -s /usr/lib$LIBDIRSUFFIX/pd/bin/pd-watchdog $PKG/usr/bin/.
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

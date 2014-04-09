@@ -1,0 +1,12 @@
+diff -Naur a/src/makefile.gnu b/src/makefile.gnu
+--- a/src/makefile.gnu	2013-09-30 22:33:35.000000000 +0100
++++ b/src/makefile.gnu	2014-04-09 02:14:30.619379260 +0100
+@@ -10,7 +10,7 @@
+ exec_prefix = ${prefix}
+ bindir = ${exec_prefix}/bin
+ includedir = ${prefix}/include
+-libdir = ${exec_prefix}/lib
++libdir = ${exec_prefix}/lib@LIBDIRSUFFIX@
+ mandir = ${prefix}/share/man
+ 
+ # varibles to match packages/Makefile.buildlayout so that they can be easily

@@ -101,6 +101,7 @@ getflags()
 
     CMD=$(echo $FLAGS | cut -d' ' -f1)
     ARG=$(echo $FLAGS | cut -d' ' -f2-)
+    [[ "$ARG" = "$CMD" ]] && unset ARG
 
     contains "$CMD" --update          && { update; cleanup; }
     contains "$CMD" --search          && { search $ARG; cleanup; }
