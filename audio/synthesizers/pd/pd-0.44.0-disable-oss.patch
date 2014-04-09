@@ -1,0 +1,36 @@
+Index: pd-0.44-0/configure.ac
+===================================================================
+--- pd-0.44-0.orig/configure.ac
++++ pd-0.44-0/configure.ac
+@@ -132,11 +132,6 @@ AC_CHECK_LIB([pthread], [pthread_create]
+ 
+ AC_HEADER_STDC
+ 
+-dnl Cygwin has sys/soundcard.h but Pd isn't ready for Cygwin since it only 
+-dnl includes OSS for UNIX
+-AC_CHECK_HEADER(sys/soundcard.h, [oss=yes], [oss=no])
+-AM_CONDITIONAL(OSS, test x$oss = xyes)
+-
+ AC_CHECK_HEADER(CoreAudio/CoreAudio.h, [coreaudio=yes], [coreaudio=no])
+ dnl AC_CHECK_HEADER(Jackmp/jack.h, [jack=yes], [jack=no])
+ 
+Index: pd-0.44-0/src/Makefile.am
+===================================================================
+--- pd-0.44-0.orig/src/Makefile.am
++++ pd-0.44-0/src/Makefile.am
+@@ -69,15 +69,6 @@ pd_LDADD += @JACK_LIBS@
+ endif
+ endif
+ 
+-# Cygwin has a function OSS /dev/dsp, but not MIDI, and Pd is only set up to
+-# handle a single MIDI API
+-if OSS
+-if !WINDOWS
+-pd_CFLAGS += -DUSEAPI_OSS
+-pd_SOURCES += s_audio_oss.c s_midi_oss.c
+-endif
+-endif
+-
+ if PORTAUDIO
+ pd_CFLAGS += -DUSEAPI_PORTAUDIO
+ pd_LDADD += -lportaudio

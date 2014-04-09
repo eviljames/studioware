@@ -16,10 +16,8 @@
 # modified by studioware.org
 
 PRGNAM=pd
-SRCVERSION=0.45-4
-VERSION=${VERSION:-0.45-4}
-VERSION=${SRCVERSION/-/.}
-BUILD=${BUILD:-5}
+VERSION=${VERSION:-0.44-0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -54,9 +52,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$SRCVERSION
-tar xvf $CWD/$PRGNAM-$SRCVERSION.src.tar.gz
-cd $PRGNAM-$SRCVERSION
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$VERSION.src.tar.gz
+cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -64,8 +62,10 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-sed "s/@LIBDIRSUFFIX@/$LIBDIRSUFFIX/" $CWD/x86_64-fix.patch | patch -p1 --verbose 
-    
+# Thanks to edogawa in #opensourcemusicians for pointing me at these
+patch -p1 --verbose < $CWD/pd-0.44.0-disable-oss.patch
+patch -p1 --verbose < $CWD/pd-0.44.0-use-system-libs.patch
+
 ./autogen.sh
 
 CFLAGS="$SLKCFLAGS" \
@@ -79,13 +79,19 @@ CXXFLAGS="$SLKCFLAGS" \
     --enable-alsa \
     --enable-setuid \
     --enable-jack \
+    --enable-fftw \
     --enable-portaudio \
-    --disable-portmidi
+    --enable-portmidi
 
 make
 make install DESTDIR=$PKG
 
-ln -s /usr/lib$LIBDIRSUFFIX/pd/bin/pd-watchdog $PKG/usr/bin/.
+# /usr/lib seems to be hardcoded in somewhere that I can't find
+# Answers on a postcard please.
+if [ "$ARCH" = "x86_64" ]; then
+    mkdir -p $PKG/usr/lib
+    ln -s /usr/lib/pd/ $PKG/usr/lib$LIBDIRSUFFIX/pd
+fi
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
@@ -94,11 +100,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 mkdir -p $PKG/usr/share/applications
 mkdir -p $PKG/usr/share/$PRGNAM
 cp -a $CWD/$PRGNAM.desktop $PKG/usr/share/applications
-convert $TMP/$PRGNAM-$SRCVERSION/src/pd.ico $TMP/$PRGNAM\_48.xpm
 cp $TMP/$PRGNAM\_48-3.xpm $PKG/usr/share/$PRGNAM
-
-# copy all header files (for pd_mrpeach)
-cp -p $TMP/$PRGNAM-$SRCVERSION/src/*.h $PKG/usr/include/
 
 mv $PKG/usr/share/man $PKG/usr/man
 
@@ -106,15 +108,11 @@ mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a INSTALL.txt README.txt LICENSE.txt src/CHANGELOG.txt \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
-ln -s /usr/lib/pd/doc/ $PKG/usr/doc/$PRGNAM-$VERSION/docs
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh  > $PKG/install/doinst.sh
 
 cd $PKG
-
-find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

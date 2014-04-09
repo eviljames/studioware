@@ -7,4 +7,4 @@ GenericName=Real-time graphical programming environment for audio, video, and gr
 GenericName[el]=Γραφικό περιβάλλον προγραμματισμού ήχου, midi και εικόνας.
 StartupNotify=true
 Type=Application
-Categories=MIDI;Audio;Sound;AudioVideo;
+Categories=X-Studioware-Audio;
