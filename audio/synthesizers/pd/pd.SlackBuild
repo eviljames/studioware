@@ -17,7 +17,7 @@
 
 PRGNAM=pd
 VERSION=${VERSION:-0.44-0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -66,6 +66,9 @@ find -L . \
 patch -p1 --verbose < $CWD/pd-0.44.0-disable-oss.patch
 patch -p1 --verbose < $CWD/pd-0.44.0-use-system-libs.patch
 
+# 64 bit fix
+sed -i -e "517s|lib/pd|lib${LIBDIRSUFFIX}/pd|" src/s_main.c
+
 ./autogen.sh
 
 CFLAGS="$SLKCFLAGS" \
@@ -85,13 +88,6 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make
 make install DESTDIR=$PKG
-
-# /usr/lib seems to be hardcoded in somewhere that I can't find
-# Answers on a postcard please.
-if [ "$ARCH" = "x86_64" ]; then
-    mkdir -p $PKG/usr/lib
-    ln -s /usr/lib/pd/ $PKG/usr/lib$LIBDIRSUFFIX/pd
-fi
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

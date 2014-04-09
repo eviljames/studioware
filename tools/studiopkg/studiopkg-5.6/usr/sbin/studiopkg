@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b7"
+    VERSION="5.6b8"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -75,6 +75,12 @@ init()
 cleanup()
 {
     rm -rf $TMPROOT
+    
+    if [ -n "$LOG" ]; then
+        echo "========================================================" >> $LOGFILE
+        cat $LOGFILE
+    fi
+
     exit
 }
 #}}}
@@ -99,6 +105,13 @@ getflags()
     contains "$FLAGS" --no-gui && { NOGUI=1; FLAGS=${FLAGS/--no-gui}; }
     contains "$FLAGS" --log && { LOG="tee -a $LOGFILE" ; FLAGS=${FLAGS/--log}; }
 
+    if [ -n "$LOG" ]; then    
+        echo "STUDIOPKG SUMMARY" >> $LOGFILE
+        echo "========================================================" >> $LOGFILE
+        echo "Command line: $(basename $0) $*" >> $LOGFILE
+        echo "========================================================" >> $LOGFILE
+    fi
+    
     CMD=$(echo $FLAGS | cut -d' ' -f1)
     ARG=$(echo $FLAGS | cut -d' ' -f2-)
     [[ "$ARG" = "$CMD" ]] && unset ARG
@@ -290,6 +303,9 @@ new_packages()
         fi
     done
 
+    [[ -z "$(cat $QUEUE)" ]] && { echo "No new packages."; cleanup; }
+    
+    TITLE="Choose new packages to install"
     list_pkgs
 }
 #}}}
@@ -391,10 +407,44 @@ make_queue()
     done < $1
 }
 #}}}
-#{{{ Dialog
+#{{{ Do Dialog
 do_dialog()
 {
-    [[ -z "$LIST" ]] && cleanup
+    [[ -z "$LIST" ]] && { echo "Package list is empty."; cleanup; }
+
+    for PKG in $PKGS
+    do
+        PRGNAM=$(echo $PKG | grep txz | rev | cut -d- -f4- | rev)
+        ARCH=$(echo $PKG | grep txz | rev | cut -d- -f2 | rev)
+        EXISTING=$(find /var/log/packages/ -name $PRGNAM\-\*\-$ARCH\-\*[^se])
+        [[ -n "$EXISTING" ]] && EXISTS=$EXISTS" "$(basename $EXISTING)
+    done
+        
+    if [ -n "$EXISTS" ]; then
+        echo "WARNING! You have the following package(s) already installed:"
+        echo 
+        for P in $EXISTS; do echo $P; done
+        echo 
+        echo "If you continue, the package(s) may be removed or replaced."
+        echo "You can choose which ones to keep in the next step."
+        echo "Press [enter] to continue."
+
+        [[ $YESNO -eq 0 ]] && read
+    fi
+
+    if [ -n "$LOG" ]; then
+        echo "Package list:">> $LOGFILE
+        for P in $PKGS; do echo $P >> $LOGFILE; done
+    
+        if [ -n "$EXISTS" ]; then
+            echo "========================================================" >> $LOGFILE
+            echo "WARNING! You have the following package(s) already installed:" >> $LOGFILE
+            echo "If you continue, the package(s) may be removed or replaced." >> $LOGFILE
+            echo >> $LOGFILE
+            for P in $EXISTS; do echo $P >> $LOGFILE; done
+        fi
+    fi
+
     let rows=$(stty size | cut -f1 -d' ')-4
     let cols=$(stty size | cut -f2 -d' ')
     let mrows=$((rows-6))
@@ -405,6 +455,11 @@ do_dialog()
             $rows $cols $mrows $LIST 2> $PKGLIST
         CHOICE=$?
     elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep upgrade)" ]; then
+        dialog --separate-output --title "Package List" --backtitle "$APPNAME $VERSION" \
+            --checklist "$TITLE" \
+            $rows $cols $mrows $LIST 2>$PKGLIST
+        CHOICE=$?
+    elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep new)" ]; then
         dialog --separate-output --title "Package List" --backtitle "$APPNAME $VERSION" \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2>$PKGLIST
@@ -433,6 +488,7 @@ do_dialog()
             CHOICE=0
         fi
     fi
+    
 }
 #}}}
 #{{{ List Packages
@@ -485,7 +541,7 @@ list_pkgs()
         cleanup
     fi
 
-    TITLE="Choose packages to install:"
+    [[ -z "$TITLE" ]] && TITLE="Choose packages to install:"
     do_dialog
 
     if [ $CHOICE -eq 2 ] && $(sed -i 's%^HELP %%g' $PKGLIST); then
@@ -751,6 +807,7 @@ check_gpg()
 install_pkgs()
 {
     exec <&1
+    echo "========================================================" >> $LOGFILE
 
     while read TXZ
     do
@@ -777,6 +834,10 @@ install_pkgs()
             [[ $exit -eq 1 ]] && cleanup
             
             $INSTALL $TXZ 2>&1
+
+            if [ -n "$LOG" ]; then
+                echo "Installed/Upgraded: $TXZ" >> $LOGFILE
+            fi
         done
     done < $PKGLIST
     cleanup
