@@ -26,6 +26,7 @@ e8c847e45722789f763d38b1a516d4a5  ./video/editors/kdenlive/kdenlive.tar.gz
 de8883a69127533a5b73bee6ab9b5472  ./video/transcoders/mlt/mlt.tar.gz
 ad968b567cd2880a276a46c9c5a1d4a6  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
 76874ac6e9a517c53f8dded2885cc167  ./video/transcoders/mjpegtools/mjpegtools.tar.gz
+85af8649d2f577513466f42a9cf7837f  ./video/frontends/xjadeo/xjadeo.tar.gz
 89e18937dd1bcd5a71a10d57ec0f1ca7  ./audio/development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
 81c05531a8fe7c5d82cfdae0d430cdd8  ./audio/development/guile1.8/guile1.8.tar.gz
 fb3839477bbfc39b7635392cc50ffa6e  ./audio/development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
