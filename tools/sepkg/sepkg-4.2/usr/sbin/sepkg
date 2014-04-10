@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="sepkg"
-    VERSION="4.2b6"
+    MYVERSION="4.2b7"
     CWD=$(pwd)
     CONFDIR=/etc/$APPNAME
     mkdir -p $CONFDIR
@@ -125,7 +125,7 @@ getflags()
     contains "$CMD" --queue         && { INSTALL=1; get_queue $ARG; cleanup; }
     contains "$CMD" --gpg           && { importgpg; cleanup; }
     contains "$CMD" --help && { usage; cleanup; }
-    contains "$CMD" --version && { echo $APPNAME $VERSION; cleanup; }
+    contains "$CMD" --version && { echo $APPNAME $MYVERSION; cleanup; }
     contains "$CMD" -f && { info $ARG; cleanup; }
     contains "$CMD" -u && { update; cleanup; }
     contains "$CMD" -s && { search $ARG; cleanup; }
@@ -135,7 +135,7 @@ getflags()
     contains "$CMD" -r && { readme $ARG; cleanup; }
     contains "$CMD" -q && { INSTALL=1; get_queue $ARG; cleanup; }
     contains "$CMD" -h && { usage; cleanup; }
-    contains "$CMD" -v && { echo $APPNAME $VERSION; cleanup; }
+    contains "$CMD" -v && { echo $APPNAME $MYVERSION; cleanup; }
     contains "$CMD" -g && { importgpg; cleanup; }
     
     usage
@@ -188,9 +188,9 @@ latest()
     REMVERS=$(echo $LATEST | cut -db -f1)
     REMBUILD=$(echo $LATEST | cut -db -f2)
 
-    echo "Installed version: $VERSION. Latest version: $LATEST."
+    echo "Installed version: $MYVERSION. Latest version: $LATEST."
 
-    if [ "$VERSION" != "$LATEST" ]; then
+    if [ "$MYVERSION" != "$LATEST" ]; then
         echo -n "Newer version available. Download it? (Y/n) "
         read REPLY
 
@@ -424,17 +424,17 @@ do_dialog()
     let mrows=$((rows-6))
 
     if [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep remove)" ]; then
-        dialog --separate-output --title install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title install --backtitle "$APPNAME $MYVERSION" \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2> $PKGLIST
         CHOICE=$?
     elif [ $NOGUI -eq 0 ] && [ -n "$(echo $TITLE | grep upgrade)" ]; then
-        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title Install --backtitle "$APPNAME $MYVERSION" \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2>$PKGLIST
         CHOICE=$?
     elif [ $NOGUI -eq 0 ]; then
-        dialog --separate-output --title Install --backtitle "$APPNAME $VERSION" \
+        dialog --separate-output --title Install --backtitle "$APPNAME $MYVERSION" \
             --help-button --help-label "Clear Inst'd" --help-status \
             --checklist "$TITLE" \
             $rows $cols $mrows $LIST 2>$PKGLIST
@@ -624,6 +624,7 @@ installpkgs()
             if [ -n "$LOG" ]; then
                 exec 6<&1
                 exec 1>>$LOGFILE 2>&1
+                unset VERSION
                 eval $options source ./$b.SlackBuild 
 
                 if [ "$INSTALL" = "1" ]; then
@@ -632,6 +633,7 @@ installpkgs()
                 
                 exec 1<&6 6<&-
             else
+                unset VERSION
                 eval $options source ./$b.SlackBuild 
 
                 if [ "$INSTALL" = "1" ]; then
