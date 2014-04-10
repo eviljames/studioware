@@ -43,7 +43,7 @@ a5e6d29c58f04a96b36ad20e3c2b2b48  ./audio/recorders/timemachine/timemachine.tar.
 45410695264fbe5f7d3b9900ecb51892  ./audio/drums/hydrogen/hydrogen.tar.gz
 52c8e305c932bc13dc2f4a7ce2766222  ./audio/multitrack/qtractor/qtractor.tar.gz
 3f38e85b7a6cb99a0234722ee6c6b5d6  ./audio/multitrack/ardour/ardour.tar.gz
-297de955d680942f6406c6b910900862  ./audio/multitrack/ardour3/ardour3.tar.gz
+dfa132ab6757a5df5e18e4ee1f8b030f  ./audio/multitrack/ardour3/ardour3.tar.gz
 1e791e8d03202a82ed072d95fd42148b  ./audio/multitrack/jokosher/jokosher.tar.gz
 12bc52a76516734560255f586f6e5fa0  ./audio/multitrack/ecasound/ecasound.tar.gz
 a90fda6a793263d82fe450340c43fa25  ./audio/editors/mscore/mscore.tar.gz

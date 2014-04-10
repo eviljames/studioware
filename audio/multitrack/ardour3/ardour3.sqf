@@ -6,4 +6,5 @@ liblo
 aubio
 @liblrdf
 @libgnomecanvasmm
+@xjadeo
 ardour3
