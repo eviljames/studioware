@@ -27,7 +27,7 @@
 
 PRGNAM=avidemux
 VERSION=${VERSION:-2.5.6}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -180,6 +180,6 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Video;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Video;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

@@ -1,0 +1,22 @@
+STUDIOPKG SUMMARY
+========================================================
+Command line: studiopkg --log -i
+========================================================
+Package list:
+avidemux-2.5.6-x86_64-3se.txz
+xvidcore-1.3.2-x86_64-1se.txz
+x264-20131101-x86_64-1se.txz
+libdca-0.0.5-x86_64-1se.txz
+lame-3.99.1-x86_64-2se.txz
+faad2-2.7-x86_64-2se.txz
+faac-1.28-x86_64-1se.txz
+a52dec-0.7.4-x86_64-1se.txz
+========================================================
+Installed/Upgraded: a52dec-0.7.4-x86_64-1se.txz
+Installed/Upgraded: faac-1.28-x86_64-1se.txz
+Installed/Upgraded: faad2-2.7-x86_64-2se.txz
+Installed/Upgraded: lame-3.99.1-x86_64-2se.txz
+Installed/Upgraded: libdca-0.0.5-x86_64-1se.txz
+Installed/Upgraded: x264-20131101-x86_64-1se.txz
+Installed/Upgraded: xvidcore-1.3.2-x86_64-1se.txz
+========================================================

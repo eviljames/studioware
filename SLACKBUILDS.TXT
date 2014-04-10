@@ -11,6 +11,8 @@ b961bf94cf60b8c8faa86a0c80a778ba  ./photo/libraries/GraphicsMagick/GraphicsMagic
 011cb1052107ee67605302c461789884  ./photo/plugins/dcraw/dcraw.tar.gz
 721b67fae132d6e7dbb3e4202a0c6550  ./photo/plugins/ufraw/ufraw.tar.gz
 8bbb97d51e6dbc811abaf8151534a015  ./photo/plugins/separate+/separate+.tar.gz
+3e200ad2e2365b6079066620cc00e3b7  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+3d1ba96b8b4e0bc50de582894544f10e  ./menus/xfce/xfce-menus/xfce-menus-0.0.1.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 266f47af48e17dac6ea1ed5917350baf  ./video/codecs/libvpx/libvpx.tar.gz
 923a58bb7163cec94471dd766be8c721  ./video/codecs/faad2/faad2.tar.gz
@@ -20,7 +22,7 @@ b961bf94cf60b8c8faa86a0c80a778ba  ./photo/libraries/GraphicsMagick/GraphicsMagic
 a1ad260a9c9035c66de08534d2b78e3a  ./video/codecs/libdv/libdv.tar.gz
 b99f153dfc16808ee5b1f9c69536ed07  ./video/codecs/libquicktime/libquicktime.tar.gz
 e572523f1db6cafa0872dde36444a5a6  ./video/editors/kdenlive/kdenlive.tar.gz
-795318e00051de2590398e4f3e033a29  ./video/editors/avidemux/avidemux.tar.gz
+ce7bfcce1432f653ff7b8529a45e3e6b  ./video/editors/avidemux/avidemux.tar.gz
 d6d017bb13104ea12f49d22bf244b290  ./video/editors/openshot/openshot.tar.gz
 d66c9ad4b99faa5170ad9a56e66ea8ac  ./video/editors/cinelerra/cinelerra.tar.gz
 de8883a69127533a5b73bee6ab9b5472  ./video/transcoders/mlt/mlt.tar.gz
@@ -53,6 +55,7 @@ dc643744de1d194eeeb8e27d7cb85b7a  ./audio/editors/denemo/denemo.tar.gz
 e9b718fc0785c2f81e5d1b335339fd50  ./audio/mixers/qastools/qastools.tar.gz
 9fa18637a3ebd5650a00d23dbcb27d3b  ./audio/mixers/mixxx/mixxx.tar.gz
 18a506fdf86b662829f8f5fbcef0cec0  ./audio/misc/SimpleSysexxer/SimpleSysexxer.tar.gz
+bb71080fb8e0700a8b878176c475c48a  ./audio/misc/jamin/jamin.tar.gz
 7dd55d096141a515233e359a4e891dea  ./audio/misc/non/non.tar.gz
 a208e355228269a8dbe0c172a598a567  ./audio/misc/milkytracker/milkytracker.tar.gz
 e891c7164477cc8f0b643006fb1bf80d  ./audio/misc/protobuf/protobuf.tar.gz
