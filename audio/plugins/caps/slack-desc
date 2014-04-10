@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+    |-----handy-ruler------------------------------------------------------|
+caps: CAPS ( Audio Plugins )
+caps:
+caps: CAPS is a collection of audio plugins comprising virtual guitar
+caps: amplification and a small range of basic classic effects, signal
+caps: processors and generators of often elementary and occasionally exotic
+caps: nature.
+caps:
+caps: Honepage: http://quitte.de/dsp/caps.html
+caps:
+caps:
+caps:

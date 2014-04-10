@@ -26,7 +26,7 @@
 init()
 {
     APPNAME="studiopkg"
-    VERSION="5.6b8"
+    VERSION="5.6b9"
     TMPROOT=$(mktemp -d -p /tmp $APPNAME-XXXXXX) || exit
     trap "cleanup" HUP INT ABRT QUIT SEGV TERM KILL PIPE STOP TSTP
   
@@ -59,7 +59,7 @@ init()
     MAINURL="http://www.studioware.org"
     TOOLURL="$MAINURL/files/tools/$APPNAME"
     PKGSERVER="$MAINURL/files/packages/slackware$ARCH-$SWVERSION"
-    SBSERVER="$MAINURL/files/slackbuilds/$SWVERSION"
+    SBSERVER="$MAINURL/files/slackbuilds/.testing"
     CACHEDIR=/var/cache/$APPNAME/$SWVERSION
     mkdir -p $CACHEDIR
     FILELIST=$CACHEDIR/FILELIST.TXT
@@ -332,7 +332,8 @@ get_queue()
 
                 if [ $? != 0 ]; then
                     echo "Queue $1.sqf not found."
-                    cleanup
+                    echo "Will try application directly."
+                    local_queue "$@"
                 fi
             else
                 if [ ! -r $CWD/$1 ] && [ ! -r $1 ]; then
@@ -807,7 +808,9 @@ check_gpg()
 install_pkgs()
 {
     exec <&1
-    echo "========================================================" >> $LOGFILE
+    if [ -n "$LOG" ]; then
+        echo "========================================================" >> $LOGFILE
+    fi
 
     while read TXZ
     do
@@ -888,6 +891,7 @@ delete_cache()
     find . -name "*asc" -exec rm -f {} \;
     find . -iname "*txt" -exec rm -f {} \;
     echo "Cache Deleted"
+    unset LOG
     cleanup
 }
 #}}}

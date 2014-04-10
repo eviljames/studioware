@@ -56,7 +56,7 @@ e95a40bd2e33908465e31644ff944c48  ./audio/misc/non/non.tar.gz
 b48f5826c865df21d8f462077d16d2c0  ./audio/misc/milkytracker/milkytracker.tar.gz
 e891c7164477cc8f0b643006fb1bf80d  ./audio/misc/protobuf/protobuf.tar.gz
 897f502711e7eca8cb65db189a3cda30  ./audio/misc/stops/stops.tar.gz
-c77c75930fd84acf7854fe2d994d6505  ./audio/sequencers/seq24/seq24.tar.gz
+0636edf0476a873d1482eaefefb794de  ./audio/sequencers/seq24/seq24.tar.gz
 cb7bce4f2f1c0820c64dfa46580af8ff  ./audio/sequencers/muse/muse.tar.gz
 ff0c4f45efdfa2c108173c03371c941c  ./audio/system/rtaudio/rtaudio.tar.gz
 2742c564c74071ed4cd962d8dd03d8f4  ./audio/system/rtmidi/rtmidi.tar.gz
@@ -121,9 +121,11 @@ f7d696ca0e99227234411aea1ac0f1c0  ./audio/libraries/libavc1394/libavc1394.tar.gz
 02469455012838c2fe75a60a12521f73  ./audio/libraries/fltk/fltk.tar.gz
 7908f7866122f4934583b3402b2428ce  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 cb96930f0c0dab38d2a2625c54bd9f0d  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
+87b2ea9bf329c936429b199b7799746d  ./audio/plugins/caps/caps.tar.gz
 0998bb020c3a267b385fd5aebbd0dd0d  ./audio/plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 ffd09247bdee63ef15da3d2ba50331de  ./audio/plugins/gst1-plugins-base/gst1-plugins-base.tar.gz
 4a492a6ec272b198f2d41ec75626e6dd  ./audio/plugins/lv2/lv2.tar.gz
+366bf068a90c07909f6670178c425dd7  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
 60acc883e768d579eb33de6cf39ecfbf  ./audio/plugins/calf/calf.tar.gz
 dfbfa8766f504568feff9e74ea24bfd7  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 6a3898d110aff14a23c23b2fb2da110c  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
