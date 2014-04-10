@@ -27,9 +27,11 @@
 # Modified by Dave Woodfall <dave@studioware.org>:
 # -DCMAKE_SHARED_LINKER_FLAGS="-llensfun" added.
 
+# Modified by Studioware.org
+
 PRGNAM=digikam
 VERSION=${VERSION:-3.5.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -101,4 +103,8 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
+
+find . -name \*.desktop -exec \
+    sed -i 's/Categories=.*$/Categories=X-Studioware-Photo;/' '{}' \;
+
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

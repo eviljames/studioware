@@ -24,7 +24,7 @@
 SRCNAM=frei0r
 PRGNAM=frei0r-plugins
 VERSION=${VERSION:-1.3}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

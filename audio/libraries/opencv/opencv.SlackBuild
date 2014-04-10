@@ -24,7 +24,7 @@
 
 PRGNAM=opencv
 VERSION=${VERSION:-2.4.7}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

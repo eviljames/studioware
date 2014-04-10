@@ -26,7 +26,7 @@
 
 PRGNAM=ardour
 VERSION=2.8.16
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -152,4 +152,8 @@ cd $PKG/etc/ardour2
 cd -
 
 cd $PKG
+
+find . -name \*.desktop -exec \
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}
