@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=xfce-menus
-VERSION=${VERSION:-0.0.1}
+VERSION=${VERSION:-0.0.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,6 +59,13 @@ mkdir -p $PKG/usr/share/desktop-directories
 cp xfce-studioware-{audio,video,photo}.directory \
     $PKG/usr/share/desktop-directories
 
+mkdir -p $PKG/etc/xdg/menus
+cp xfce-applications.menu.new $PKG/etc/xdg/menus
+
+mkdir -p $PKG/usr/share/icons/hicolor/scalable/categories
+cp studioware-logo-54x54.png \
+    $PKG/usr/share/icons/hicolor/scalable/categories
+
 mkdir -p $PKG/usr/share/icons/studioware/scalable/categories/
 cp studioware-logo-54x54.png \
     $PKG/usr/share/icons/studioware/scalable/categories/
@@ -69,6 +76,7 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
