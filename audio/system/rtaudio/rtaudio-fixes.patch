@@ -1,0 +1,72 @@
+diff -Naur a/Makefile.in b/Makefile.in
+--- a/Makefile.in	2013-04-15 16:30:29.000000000 +0100
++++ b/Makefile.in	2014-04-09 14:39:52.222092785 +0100
+@@ -17,11 +17,11 @@
+ RANLIB   = @RANLIB@
+ 
+ DEFS     = @CPPFLAGS@
+-CFLAGS   = @CXXFLAGS@ -Iinclude -fPIC
++CFLAGS   += @CXXFLAGS@ -Iinclude -fPIC
+ 
+ all : $(LIBRARIES)
+ 
+-tests:
++check:
+ 	cd tests && $(MAKE) all
+ 
+ $(LIBRARIES): $(OBJECTS)
+diff -Naur a/RtAudio.h b/RtAudio.h
+--- a/RtAudio.h	2013-04-15 18:56:31.000000000 +0100
++++ b/RtAudio.h	2014-04-09 14:41:33.065093048 +0100
+@@ -50,7 +50,7 @@
+ #include "RtError.h"
+ 
+ // RtAudio version
+-static const std::string VERSION( "4.0.12" );
++static const std::string MY_VERSION( "4.0.12" );
+ 
+ /*! \typedef typedef unsigned long RtAudioFormat;
+     \brief RtAudio data format type.
+@@ -322,7 +322,7 @@
+   };
+ 
+   //! A static function to determine the current RtAudio version.
+-  static std::string getVersion( void ) { return VERSION; } 
++  static std::string getVersion( void ) { return MY_VERSION; } 
+ 
+   //! A static function to determine the available compiled audio APIs.
+   /*!
+diff -Naur a/librtaudio.pc.in b/librtaudio.pc.in
+--- a/librtaudio.pc.in	2013-04-15 16:30:29.000000000 +0100
++++ b/librtaudio.pc.in	2014-04-09 14:40:38.121092905 +0100
+@@ -1,4 +1,4 @@
+-prefix=/usr/local
++prefix=/usr
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ includedir=${prefix}/include        
+@@ -9,4 +9,4 @@
+ Requires: @req@ 
+ Libs: -L${libdir} -lrtaudio
+ Libs.private: -lpthread
+-Cflags: -pthread -I${includedir} @CPPFLAGS@
+\ No newline at end of file
++Cflags: -pthread -I${includedir} @CPPFLAGS@
+diff -Naur a/rtaudio-config.in b/rtaudio-config.in
+--- a/rtaudio-config.in	2008-11-22 03:32:52.000000000 +0000
++++ b/rtaudio-config.in	2014-04-09 14:39:05.681092663 +0100
+@@ -8,11 +8,11 @@
+ CXXFLAGS="@CXXFLAGS@"
+ CPPFLAGS="@CPPFLAGS@"
+ 
+-if (test "x$1" == "x--libs") ; then
++if (test "x$1" = "x--libs") ; then
+   echo "$LIBRARY"
+-elif (test "x$1" == "x--cxxflags") ; then
++elif (test "x$1" = "x--cxxflags") ; then
+   echo "$CXXFLAGS"
+-elif (test "x$1" == "x--cppflags") ; then
++elif (test "x$1" = "x--cppflags") ; then
+   echo "$CPPFLAGS"
+ else
+   echo "Unknown option: $1"

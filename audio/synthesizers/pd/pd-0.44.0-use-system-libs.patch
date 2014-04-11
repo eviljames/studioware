@@ -1,0 +1,65 @@
+Index: pd-0.44-0/Makefile.am
+===================================================================
+--- pd-0.44-0.orig/Makefile.am
++++ pd-0.44-0/Makefile.am
+@@ -12,14 +12,6 @@ if ASIO
+ EXTRA_SUBDIRS += asio
+ endif
+ 
+-if PORTAUDIO
+-EXTRA_SUBDIRS += portaudio
+-endif
+-
+-if PORTMIDI
+-EXTRA_SUBDIRS += portmidi
+-endif
+-
+ # files that are included but not built
+ EXTRA_DIST = LICENSE.txt README.txt INSTALL.txt
+ 
+@@ -27,7 +19,7 @@ EXTRA_DIST = LICENSE.txt README.txt INST
+ SUBDIRS = $(EXTRA_SUBDIRS) src man tcl po extra
+ 
+ # subdirs that are always included in the dist, etc.
+-DIST_SUBDIRS = asio extra man po portaudio portmidi src tcl
++DIST_SUBDIRS = asio extra man po src tcl
+ 
+ BUILT_SOURCES = 
+ if MSGFMT
+Index: pd-0.44-0/configure.ac
+===================================================================
+--- pd-0.44-0.orig/configure.ac
++++ pd-0.44-0/configure.ac
+@@ -247,7 +247,6 @@ AM_CONDITIONAL(MSGFMT, test x$HAVE_MSGFM
+ AC_CONFIG_FILES([Makefile
+                 asio/Makefile
+                 man/Makefile
+-                portmidi/Makefile
+                 tcl/Makefile
+                 po/Makefile
+                 src/Makefile
+Index: pd-0.44-0/src/Makefile.am
+===================================================================
+--- pd-0.44-0.orig/src/Makefile.am
++++ pd-0.44-0/src/Makefile.am
+@@ -79,8 +79,8 @@ endif
+ endif
+ 
+ if PORTAUDIO
+-pd_CFLAGS += -DUSEAPI_PORTAUDIO  -I$(top_srcdir)/portaudio/include
+-pd_LDADD += $(top_builddir)/portaudio/lib/libportaudio.la
++pd_CFLAGS += -DUSEAPI_PORTAUDIO
++pd_LDADD += -lportaudio
+ pd_SOURCES += s_audio_pa.c s_audio_paring.c
+ endif
+ 
+@@ -90,8 +90,7 @@ pd_LDADD += $(top_builddir)/asio/libasio
+ endif
+ 
+ if PORTMIDI
+-INCLUDES += -I$(top_srcdir)/portmidi/pm_common -I$(top_srcdir)/portmidi/porttime
+-pd_LDADD += $(top_builddir)/portmidi/libportmidi.la
++pd_LDADD += -lportmidi
+ pd_SOURCES += s_midi_pm.c
+ endif
+ 

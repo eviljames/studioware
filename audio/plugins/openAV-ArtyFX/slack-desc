@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+             |-----handy-ruler------------------------------------------------------|
+openAV-ArtyFX: openAV-ArtyFX ( Audio Plugins )
+openAV-ArtyFX:
+openAV-ArtyFX: Arty FX is a plugin bundle of artistic “RT” effects. The aim of this
+openAV-ArtyFX: plugin collection is to allow the designing of your sound just as you
+openAV-ArtyFX: desired using a fast, effiecient workflow. New plugins are being
+openAV-ArtyFX: developed and release all the time, so get in touch via email if you
+openAV-ArtyFX: have an idea for a plugin.
+openAV-ArtyFX:
+openAV-ArtyFX: Homepage: http://openavproductions.com/artyfx/
+openAV-ArtyFX:
+openAV-ArtyFX:

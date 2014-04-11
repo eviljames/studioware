@@ -1,0 +1,11 @@
+xfce-menus ( Custom Studioware Menus for XFCE )
+
+These are needed to create our custom Studioware submenu.
+
+Note that this package backs up you default menu layout file and then copies ours over:
+
+Default: /etc/xdg/menus/xfce-applications.menu.orig
+Ours: /etc/xdg/menus/xfce-applications.menu
+
+If you ever want to remove this package, you need to copy the .orig back to it's original name.
+

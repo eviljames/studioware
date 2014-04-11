@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Exec=zynaddsubfx
-Icon=/usr/share/pixmaps/zynaddsubfx_icon.ico
-Name=ZynAddSubFX
-GenericName=ZynAddSubFX Soft Synth
-StartupNotify=true
-Type=Application
-Categories=AudioVideo;Audio;

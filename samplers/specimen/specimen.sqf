@@ -1,4 +1,0 @@
-libgnomecanvas
-phat
-jack
-specimen

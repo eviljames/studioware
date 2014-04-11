@@ -1,0 +1,3 @@
+libgnomecanvas
+@gtkmm
+libgnomecanvasmm

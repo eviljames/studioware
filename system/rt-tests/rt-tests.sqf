@@ -1,2 +1,0 @@
-numactl
-rt-tests

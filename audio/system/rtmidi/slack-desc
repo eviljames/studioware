@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+      |-----handy-ruler------------------------------------------------------|
+rtmidi: RtMidi ( Midi I/O API )
+rtmidi:
+rtmidi: RtMidi is a set of C++ classes (RtMidiIn, RtMidiOut and API-specific
+rtmidi: classes) that provides a common API (Application Programming 
+rtmidi: Interface) for realtime MIDI input/output across Linux (ALSA & Jack),
+rtmidi: Macintosh OS X (CoreMidi & Jack), and Windows (Multimedia Library & 
+rtmidi: Kernel Streaming) operating systems.
+rtmidi:
+rtmidi: Homepage: http://www.music.mcgill.ca/~gary/rtmidi/
+rtmidi:
+rtmidi:

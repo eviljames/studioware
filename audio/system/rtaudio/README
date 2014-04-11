@@ -1,0 +1,3 @@
+rtaudio ( Realtime Audio API )
+
+A set of C++ classes that provide a common API for realtime audio input/output.

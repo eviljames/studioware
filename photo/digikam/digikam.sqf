@@ -1,5 +1,0 @@
-ffmpeg
-opencv
-lensfun
-digikam
-

@@ -1,0 +1,3 @@
+jack
+portaudio
+qjackctl

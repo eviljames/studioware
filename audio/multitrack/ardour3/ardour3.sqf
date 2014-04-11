@@ -1,0 +1,10 @@
+jack
+@lilv
+suil
+@gtkmm
+liblo
+aubio
+@liblrdf
+@libgnomecanvasmm
+@xjadeo
+ardour3

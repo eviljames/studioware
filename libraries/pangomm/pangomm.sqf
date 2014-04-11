@@ -1,4 +1,0 @@
-libsigc++
-glibmm
-cairomm
-pangomm

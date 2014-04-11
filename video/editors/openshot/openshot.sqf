@@ -1,0 +1,4 @@
+pyxdg
+@pygoocanvas
+@mlt
+openshot

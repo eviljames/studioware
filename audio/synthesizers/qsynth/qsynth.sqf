@@ -1,0 +1,2 @@
+@fluidsynth
+qsynth
