@@ -17,7 +17,7 @@ b961bf94cf60b8c8faa86a0c80a778ba  ./photo/libraries/GraphicsMagick/GraphicsMagic
 923a58bb7163cec94471dd766be8c721  ./video/codecs/faad2/faad2.tar.gz
 699deefab0e5c28b8febe6d1ae23f76c  ./video/codecs/a52dec/a52dec.tar.gz
 227dd86e50f085773fd69e735c12b523  ./video/codecs/x264/x264.tar.gz
-39dbbb3f8ec52f65526748c3fbe5af05  ./video/codecs/xvidcore/xvidcore.tar.gz
+22a3b1d881cc211120fa6cfa44e3342e  ./video/codecs/xvidcore/xvidcore.tar.gz
 a1ad260a9c9035c66de08534d2b78e3a  ./video/codecs/libdv/libdv.tar.gz
 b99f153dfc16808ee5b1f9c69536ed07  ./video/codecs/libquicktime/libquicktime.tar.gz
 e572523f1db6cafa0872dde36444a5a6  ./video/editors/kdenlive/kdenlive.tar.gz
