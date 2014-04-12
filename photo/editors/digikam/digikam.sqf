@@ -1,3 +1,13 @@
+@enblend-enfuse
+@hugin
+jack
+lame
+x264
+xvidcore
+faac
+libvpx
+ffmpeg
+opencv
 @ffmpeg
 opencv
 lensfun
