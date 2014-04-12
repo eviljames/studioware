@@ -1,7 +1,7 @@
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
-25d4864b44869e08c3a93712081c360d  ./photo/editors/digikam/digikam.tar.gz
+d09957df410b86207359e4ba8b899db5  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
-05a89f0aa6c1c39f00ae3effa4584af8  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
+5031310317298c122502db58245b9517  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 a1306a83cab828509f27f7cc96506ca7  ./photo/output/photoprint/photoprint.tar.gz
 df18034260ece67cd722c71d8dec9fbc  ./photo/system/iccprofiles/iccprofiles.tar.gz
 096476694f150c21d618bbcb0b278f3d  ./photo/system/hugin/hugin.tar.gz
@@ -10,7 +10,7 @@ b37909b323fe6c0c46ec5bf7d02016ef  ./photo/libraries/openjpeg/openjpeg.tar.gz
 ec0fd74682a8c08c6a9a53e0f1e06d25  ./photo/libraries/lensfun/lensfun.tar.gz
 e2df4eaa4143dbe881652bd7f6d3a611  ./photo/libraries/gsl/gsl.tar.gz
 8d1602f3389c47c51f97298005f86c0b  ./photo/libraries/libpano13/libpano13.tar.gz
-44d571f191f960645f74f1616c5eb3d8  ./photo/libraries/lcms26/lcms26.tar.gz
+900a60983870cff1a5c05090a57e5753  ./photo/libraries/lcms26/lcms26.tar.gz
 c1e4f20f71de5715b315175e8fd54940  ./photo/libraries/liblqr/liblqr.tar.gz
 5efc6cacac86f8dd0a85a497ece4feac  ./photo/libraries/vigra/vigra.tar.gz
 f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagick.tar.gz
