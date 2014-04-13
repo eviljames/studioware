@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for hydrogen-0.9.6
-# Copyright 2013 Dave Woodfall <dave@studioware.org>
+# Slackware build script for faad2
+
+# Copyright 2007  Niklas "Nille" Åkerström
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -21,9 +22,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=hydrogen
-VERSION=${VERSION:-git20130629}
-BUILD=${BUILD:-5}
+PRGNAM=faad2
+VERSION=${VERSION:-2.7}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -59,51 +60,52 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
 chown -R root:root .
-find . \
- \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
- -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
- -exec chmod 644 {} \;
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+ -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-mkdir build
-cd build
-  cmake \
-    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-    -DMAN_INSTALL_DIR=/usr/man \
-    -DCMAKE_BUILD_TYPE=Release ..
-  make 
-  make install DESTDIR=$PKG
-cd ..
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --mandir=/usr/man \
+  --enable-shared=yes \
+  --enable-static=no \
+  --build=$ARCH-slackware-linux
 
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+# This option is supposed to enable support for decoding Digital Radio Mondiale,
+# but actually breaks the base functionality. -HW
+# --with-drm
 
-mkdir -p $PKG/usr/share/icons/hicolor/scalable/categories
-cp data/img/gray/h2-icon.svg \
-    $PKG/usr/share/icons/hicolor/scalable/categories
+make
+make install-strip DESTDIR=$PKG
+
+# Compress man pages
+mv $PKG/usr/man/manm $PKG/usr/man/man1
+rename .man .1 $PKG/usr/man/man1/*.man
+( cd $PKG/usr/man
+  find . -type f -exec gzip -9 {} \;
+  for i in $( find . -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+)
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  AUTHORS COPYING ChangeLog INSTALL.txt README.txt *.txt \
+cp -a AUTHORS COPYING ChangeLog INSTALL NEWS README* TODO docs/* \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+find $PKG/usr/doc -type f -exec chmod 0644 {} \;
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
-
-find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
-
-#find . -name \*.desktop -exec \
-#    sed -i 's/Icon=.*$/Icon=hydrogen/' '{}' \;
-
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+
+if [ "$1" = "--cleanup" ]; then
+	 rm -rf $PKG $TMP/$PRGNAM-$VERSION
+ fi

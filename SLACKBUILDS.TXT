@@ -1,5 +1,5 @@
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
-d09957df410b86207359e4ba8b899db5  ./photo/editors/digikam/digikam.tar.gz
+86eaf2b3b62419e85f016e418be126c1  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
 5031310317298c122502db58245b9517  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 a1306a83cab828509f27f7cc96506ca7  ./photo/output/photoprint/photoprint.tar.gz
@@ -19,7 +19,9 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 647afff2649296b8097380378171ee29  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
+0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz
 1e17aa4144165461d66e60e7e2863451  ./video/codecs/x264/x264.tar.gz
 c5c6c256a6835863d6843f7cd8426b8d  ./video/codecs/xvidcore/xvidcore.tar.gz
 2d278aa42f42a1a6e089ab02e95ff893  ./video/codecs/libdv/libdv.tar.gz
@@ -29,7 +31,7 @@ c5c6c256a6835863d6843f7cd8426b8d  ./video/codecs/xvidcore/xvidcore.tar.gz
 d3a1255a3d93111afc645a61ce70003f  ./video/editors/openshot/openshot.tar.gz
 3009906648c7a8d5b90c0e64fac6364f  ./video/editors/cinelerra/cinelerra.tar.gz
 4199fa1f6904b6744ee2b246f1a533a8  ./video/transcoders/mlt/mlt.tar.gz
-485e098af9bf83edce7f1272360c4147  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
+ffb5c37d9b810774528adcb568a8b9a2  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
 12dc828942fcc63cf080f6717726fe95  ./video/transcoders/mjpegtools/mjpegtools.tar.gz
 1bdcba777a1b28cceb607d3a44ec0ce0  ./video/frontends/xjadeo/xjadeo.tar.gz
 d0bcedebc19fb2b49d32a440b08c233b  ./audio/development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
@@ -45,7 +47,7 @@ b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2f6c9c18170f0afa6770be53dd5aa61b  ./audio/desktop/evince/evince.tar.gz
 56fe43ddb1a7b95486a194b9db183961  ./audio/codecs/lame/lame.tar.gz
 2f1f18568c7a1a5ce19dbc6111580836  ./audio/amps/guitarix2/guitarix2.tar.gz
-da85ec5d74ea453ba2d457ec7034e847  ./audio/drums/hydrogen/hydrogen.tar.gz
+7c5940dfd001c161a50ca957e7d4983e  ./audio/drums/hydrogen/hydrogen.tar.gz
 96ee1556b732b319dc9e6b5f87fa4821  ./audio/multitrack/qtractor/qtractor.tar.gz
 537a945802365622540679a4576be5dd  ./audio/multitrack/ardour/ardour.tar.gz
 a91a84f905027f308665ef2551163620  ./audio/multitrack/ardour3/ardour3.tar.gz
