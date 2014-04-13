@@ -63,7 +63,8 @@ mkdir -p $PKG/etc/xdg/menus
 cp xfce-applications.menu.new $PKG/etc/xdg/menus
 
 mkdir -p $PKG/usr/share/icons/hicolor/scalable/categories
-cp studioware-logo5.png \
+cp studioware-logo5.png studioware-logo5mono.png \
+    studioware-logo5colour.png\
     $PKG/usr/share/icons/hicolor/scalable/categories
 
 mkdir -p $PKG/usr/share/icons/studioware/scalable/categories/
