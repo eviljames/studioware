@@ -18,7 +18,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 2793e6c2a3a9b1f13b550b5c4a30f45b  ./photo/plugins/dcraw/dcraw.tar.gz
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
-f17c631d457208213ee0ef0aa417b3aa  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+bb931ac2809725abcd95f41e54cef380  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz
@@ -49,8 +49,8 @@ b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2f1f18568c7a1a5ce19dbc6111580836  ./audio/amps/guitarix2/guitarix2.tar.gz
 1cb9316fc3f199c2bf582ee40b14eda0  ./audio/drums/hydrogen/hydrogen.tar.gz
 81071e9b41f33a9709003ae7456ecab9  ./audio/multitrack/qtractor/qtractor.tar.gz
-40274bfbc899298f5702bff304554916  ./audio/multitrack/ardour/ardour.tar.gz
-0d464077d38b692b6570bb173e56f566  ./audio/multitrack/ardour3/ardour3.tar.gz
+9ffcc8d58bed0115eef7c644f096bf00  ./audio/multitrack/ardour/ardour.tar.gz
+39d2f04e457f49b4009dc0c1d3d122e7  ./audio/multitrack/ardour3/ardour3.tar.gz
 cab314ebd9d4e15c526ca67d502e8935  ./audio/multitrack/jokosher/jokosher.tar.gz
 4f9ad9c8cd2d31359d8d9f6915f799a0  ./audio/multitrack/ecasound/ecasound.tar.gz
 88a6d4265766b67dd0e22df99d18a468  ./audio/editors/mscore/mscore.tar.gz
@@ -61,7 +61,7 @@ ab88b9f8ee362a9cdd53fe320198585a  ./audio/editors/denemo/denemo.tar.gz
 50f7d6d3227c4bb075771735c5ae2350  ./audio/mixers/mixxx/mixxx.tar.gz
 83af23543eece48352b6ac3ab34d372e  ./audio/misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 7f806b6e72be13f71721a7a581283158  ./audio/misc/jamin/jamin.tar.gz
-cf39d2c287bee4ace07e973c1ed70702  ./audio/misc/non/non.tar.gz
+830523d74d589a18c240d398e4167fb1  ./audio/misc/non/non.tar.gz
 120f44a90b02f190f8d2e52439906fe1  ./audio/misc/milkytracker/milkytracker.tar.gz
 eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
 8dc4ceacf28c268b5bcf886035a25e35  ./audio/misc/stops/stops.tar.gz
