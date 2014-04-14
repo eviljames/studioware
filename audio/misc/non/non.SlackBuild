@@ -13,7 +13,7 @@
 
 PRGNAM=non
 VERSION=${VERSION:-1.1.0}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 #determine what components we are building
@@ -87,6 +87,17 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+    sed -i
+'s/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+
+find . -name non-timeline.desktop -exec \
+    sed -i
+'s/Categories=.*;/Categories=X-Studioware-Audio-Record;X-Studioware-Audio-Mix;/' '{}' \;
+
+find . -name non-mixer.desktop -exec \
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Mix;/' '{}' \;
+
+find . -name non-sequencer.desktop -exec \
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Midi;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
