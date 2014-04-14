@@ -1,0 +1,9 @@
+Fluxbox Menus (Custom Studioware menus for fluxbox)
+
+To use these, you need to put:
+
+[include] (/usr/share/studioware/fluxbox/studioware-menu)
+
+in your ~/.fluxbox/menu
+
+The included /usr/sbin/pop-sw-menus script will generate menus from .desktop files in /usr/share/applications for you.

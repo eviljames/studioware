@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for xfce-menus
+# Slackware build script for kde-menus
 # Copyright 2014 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=xfce-menus
-VERSION=${VERSION:-0.0.7}
+PRGNAM=kde-menus
+VERSION=${VERSION:-0.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,8 +59,8 @@ mkdir -p $PKG/usr/share/desktop-directories
 cp studioware-{audio*,video,photo}.directory \
     $PKG/usr/share/desktop-directories
 
-mkdir -p $PKG/etc/xdg/menus
-cp xfce-applications.menu.new $PKG/etc/xdg/menus
+mkdir -p $PKG/etc/kde/xdg/menus
+cp applications.menu.new $PKG/etc/kde/xdg/menus
 
 mkdir -p $PKG/usr/share/icons/hicolor/scalable/categories
 cp studioware-logo5.png studioware-logo5mono.png \
