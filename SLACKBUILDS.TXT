@@ -47,7 +47,7 @@ b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2f6c9c18170f0afa6770be53dd5aa61b  ./audio/desktop/evince/evince.tar.gz
 56fe43ddb1a7b95486a194b9db183961  ./audio/codecs/lame/lame.tar.gz
 2f1f18568c7a1a5ce19dbc6111580836  ./audio/amps/guitarix2/guitarix2.tar.gz
-7c5940dfd001c161a50ca957e7d4983e  ./audio/drums/hydrogen/hydrogen.tar.gz
+1cb9316fc3f199c2bf582ee40b14eda0  ./audio/drums/hydrogen/hydrogen.tar.gz
 96ee1556b732b319dc9e6b5f87fa4821  ./audio/multitrack/qtractor/qtractor.tar.gz
 537a945802365622540679a4576be5dd  ./audio/multitrack/ardour/ardour.tar.gz
 a91a84f905027f308665ef2551163620  ./audio/multitrack/ardour3/ardour3.tar.gz

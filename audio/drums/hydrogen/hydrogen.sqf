@@ -1,4 +1,3 @@
 jack
-scons
 @liblrdf
 hydrogen
