@@ -18,7 +18,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 2793e6c2a3a9b1f13b550b5c4a30f45b  ./photo/plugins/dcraw/dcraw.tar.gz
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
-bb931ac2809725abcd95f41e54cef380  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+f38b1e5b30ec576f994c55ea0e8111df  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz

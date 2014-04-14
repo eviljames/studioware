@@ -6,5 +6,11 @@ if [ -z "$(grep Studioware etc/xdg/menus/xfce-applications.menu)" ]; then
         etc/xdg/menus/xfce-applications.menu.orig
 fi
 
+# Move our menu into place
 mv etc/xdg/menus/xfce-applications.menu.new \
     etc/xdg/menus/xfce-applications.menu
+
+# Test to see if we are actually using xfdesktop and reload it
+if [ -n "$(pgrep xfdesktop)" ]; then
+    /usr/bin/xfdesktop --reload
+fi
