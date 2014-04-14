@@ -79,7 +79,7 @@ b2ca5f44c6292943da6fe0ba53be063d  ./audio/samplers/giada/giada.tar.gz
 b482b3ed90fda9a4516300191d13ff90  ./audio/samplers/sooperlooper/sooperlooper.tar.gz
 d85ee214e28059c0dfb94a9e41a8253f  ./audio/samplers/specimen/specimen.tar.gz
 1ea786ee1a7a37020446e20d85f30e0c  ./audio/synthesizers/terminatorX/terminatorX.tar.gz
-6b47b8471b83cf01465e10539cc26ea2  ./audio/synthesizers/pd/pd.tar.gz
+503015999e2d4920a806b38328390bf4  ./audio/synthesizers/pd/pd.tar.gz
 2629fc93935c0d7e66c11020240a9f8c  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
 b12cb183ac17864f1176887cd451b0a0  ./audio/synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 14fadde152692ed4db0732d73b1745fc  ./audio/synthesizers/bristol/bristol.tar.gz
