@@ -1,5 +1,4 @@
 @enblend-enfuse
 @hugin
-@ffmpeg
-opencv
+@opencv
 digikam

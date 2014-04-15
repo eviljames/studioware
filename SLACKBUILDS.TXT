@@ -1,5 +1,5 @@
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
-86eaf2b3b62419e85f016e418be126c1  ./photo/editors/digikam/digikam.tar.gz
+3732f7f65d1b53223c21ba4de9ddd042  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
 5031310317298c122502db58245b9517  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 a1306a83cab828509f27f7cc96506ca7  ./photo/output/photoprint/photoprint.tar.gz
@@ -29,7 +29,7 @@ c5c6c256a6835863d6843f7cd8426b8d  ./video/codecs/xvidcore/xvidcore.tar.gz
 2d278aa42f42a1a6e089ab02e95ff893  ./video/codecs/libdv/libdv.tar.gz
 13627595ae9ec426f631c998bb84405c  ./video/codecs/libquicktime/libquicktime.tar.gz
 6acfd29033ae69ac83fa297691f79439  ./video/editors/kdenlive/kdenlive.tar.gz
-934f88fc886cea8e775be201721bb75c  ./video/editors/avidemux/avidemux.tar.gz
+38e02142a9d179151a217cedf13b9cef  ./video/editors/avidemux/avidemux.tar.gz
 d3a1255a3d93111afc645a61ce70003f  ./video/editors/openshot/openshot.tar.gz
 3009906648c7a8d5b90c0e64fac6364f  ./video/editors/cinelerra/cinelerra.tar.gz
 4199fa1f6904b6744ee2b246f1a533a8  ./video/transcoders/mlt/mlt.tar.gz
@@ -121,7 +121,7 @@ c4105fe76aed40e740160aa50b3fb2f2  ./audio/libraries/lash/lash.tar.gz
 b61d084d50a635b43bbd47d503a52bca  ./audio/libraries/pangomm/pangomm.tar.gz
 09476c964dd76b04cb826230029d5f63  ./audio/libraries/atkmm/atkmm.tar.gz
 c4f23b187f26fd253acf67c666bb8191  ./audio/libraries/serd/serd.tar.gz
-cd497603c18e6d5de5192dda5ceb2d55  ./audio/libraries/opencv/opencv.tar.gz
+9f14f0560963ae1f7565d2438d65b2b5  ./audio/libraries/opencv/opencv.tar.gz
 68e6b2c418f199288a629f3f2caef66e  ./audio/libraries/gtkmm/gtkmm.tar.gz
 315a7d2c42cfc66c16ae088f517314d4  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
 3ee223b3a6a971a7fb7b55d6b1e19ec2  ./audio/libraries/mxml/mxml.tar.gz
