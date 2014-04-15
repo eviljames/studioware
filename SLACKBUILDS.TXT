@@ -29,7 +29,7 @@ c5c6c256a6835863d6843f7cd8426b8d  ./video/codecs/xvidcore/xvidcore.tar.gz
 2d278aa42f42a1a6e089ab02e95ff893  ./video/codecs/libdv/libdv.tar.gz
 13627595ae9ec426f631c998bb84405c  ./video/codecs/libquicktime/libquicktime.tar.gz
 6acfd29033ae69ac83fa297691f79439  ./video/editors/kdenlive/kdenlive.tar.gz
-38e02142a9d179151a217cedf13b9cef  ./video/editors/avidemux/avidemux.tar.gz
+7f69ab599bf9e82f63046364f6250966  ./video/editors/avidemux/avidemux.tar.gz
 d3a1255a3d93111afc645a61ce70003f  ./video/editors/openshot/openshot.tar.gz
 3009906648c7a8d5b90c0e64fac6364f  ./video/editors/cinelerra/cinelerra.tar.gz
 4199fa1f6904b6744ee2b246f1a533a8  ./video/transcoders/mlt/mlt.tar.gz
