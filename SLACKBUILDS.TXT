@@ -8,6 +8,7 @@ df18034260ece67cd722c71d8dec9fbc  ./photo/system/iccprofiles/iccprofiles.tar.gz
 b37909b323fe6c0c46ec5bf7d02016ef  ./photo/libraries/openjpeg/openjpeg.tar.gz
 8bdd889394a351fe4348e821a1cb11a2  ./photo/libraries/flickcurl/flickcurl.tar.gz
 ec0fd74682a8c08c6a9a53e0f1e06d25  ./photo/libraries/lensfun/lensfun.tar.gz
+b48658fd48d8e765760cc4e836af58da  ./photo/libraries/eigen/eigen.tar.gz
 e2df4eaa4143dbe881652bd7f6d3a611  ./photo/libraries/gsl/gsl.tar.gz
 8d1602f3389c47c51f97298005f86c0b  ./photo/libraries/libpano13/libpano13.tar.gz
 900a60983870cff1a5c05090a57e5753  ./photo/libraries/lcms26/lcms26.tar.gz
