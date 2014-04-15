@@ -1,5 +1,5 @@
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
-e3af384446d3dfe0d9788392dbc30548  ./photo/editors/digikam/digikam.tar.gz
+a63754570431482debd762119d9c5fd7  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
 5031310317298c122502db58245b9517  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 a1306a83cab828509f27f7cc96506ca7  ./photo/output/photoprint/photoprint.tar.gz

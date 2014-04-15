@@ -2,4 +2,5 @@
 @hugin
 @opencv
 liblqr
+eigen
 digikam
