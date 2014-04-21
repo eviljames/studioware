@@ -25,15 +25,7 @@ PRGNAM=fluxbox-menus
 VERSION=${VERSION:-0.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
-
-if [ -z "$ARCH" ]; then
-  case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
-    arm*) ARCH=arm ;;
-       *) ARCH=$( uname -m ) ;;
-  esac
-fi
-
+ARCH=noarch
 CWD=$(pwd)
 TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
