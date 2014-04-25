@@ -12,5 +12,5 @@ mv etc/xdg/menus/xfce-applications.menu.new \
 
 # Test to see if we are actually using xfdesktop and reload it
 if [ -n "$(pgrep xfdesktop)" ]; then
-    /usr/bin/xfdesktop --reload
+    /usr/bin/xfdesktop --reload >/dev/null 2>&1
 fi

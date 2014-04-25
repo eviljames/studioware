@@ -20,7 +20,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-8eeb5f7adfc9c60fcd7be390db0baa07  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+2585a1d79fc160799de418253f6a1eb6  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 331c9a06d45783870e84efd74323fdad  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
@@ -46,7 +46,7 @@ ed8780cd960fab18cf26a8d339fbdc5b  ./audio/development/phat/phat.tar.gz
 b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2d4ce17af9e1eb2c231487063e963900  ./audio/development/libsigc++/libsigc++.tar.gz
 14ac3a0f1b31e8f739b0273d601712c7  ./audio/development/scons/scons.tar.gz
-95a2b4705920a2c702fbd35c4e1cbe22  ./audio/recorders/timemachine/timemachine.tar.gz
+3c6620ae4ecb4bb8728de07da0fec12e  ./audio/recorders/timemachine/timemachine.tar.gz
 2f6c9c18170f0afa6770be53dd5aa61b  ./audio/desktop/evince/evince.tar.gz
 56fe43ddb1a7b95486a194b9db183961  ./audio/codecs/lame/lame.tar.gz
 2f1f18568c7a1a5ce19dbc6111580836  ./audio/amps/guitarix2/guitarix2.tar.gz
@@ -56,17 +56,17 @@ a293b0bb9fc91822b5ac4b6964af4912  ./audio/drums/jackbeat/jackbeat.tar.gz
 a03664579e056555fc86f45e0b78982a  ./audio/multitrack/qtractor/qtractor.tar.gz
 9ffcc8d58bed0115eef7c644f096bf00  ./audio/multitrack/ardour/ardour.tar.gz
 39d2f04e457f49b4009dc0c1d3d122e7  ./audio/multitrack/ardour3/ardour3.tar.gz
-cab314ebd9d4e15c526ca67d502e8935  ./audio/multitrack/jokosher/jokosher.tar.gz
+1545e36c2c12b46e5fc29c8523e94656  ./audio/multitrack/jokosher/jokosher.tar.gz
 4f9ad9c8cd2d31359d8d9f6915f799a0  ./audio/multitrack/ecasound/ecasound.tar.gz
 88a6d4265766b67dd0e22df99d18a468  ./audio/editors/mscore/mscore.tar.gz
 4fe5e8f9f4c4a432f518a69b1030d838  ./audio/editors/rosegarden/rosegarden.tar.gz
 a03717060ea4e8aeb40780ab5865781f  ./audio/editors/audacity/audacity.tar.gz
 ab88b9f8ee362a9cdd53fe320198585a  ./audio/editors/denemo/denemo.tar.gz
-3b04c34c43ac18f63f9fd8ded370c9f2  ./audio/mixers/qastools/qastools.tar.gz
+c69c2554350326247c047065d5d63e83  ./audio/mixers/qastools/qastools.tar.gz
 50f7d6d3227c4bb075771735c5ae2350  ./audio/mixers/mixxx/mixxx.tar.gz
 83af23543eece48352b6ac3ab34d372e  ./audio/misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 e97dcb558aa42c6e14c8335ccb645d54  ./audio/misc/vkeybd/vkeybd.tar.gz
-7f806b6e72be13f71721a7a581283158  ./audio/misc/jamin/jamin.tar.gz
+c38a2e5c4c8e611b0d326b8506657764  ./audio/misc/jamin/jamin.tar.gz
 2a96e6bb7034b26608f940777938058a  ./audio/misc/non/non.tar.gz
 120f44a90b02f190f8d2e52439906fe1  ./audio/misc/milkytracker/milkytracker.tar.gz
 eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
@@ -155,7 +155,7 @@ f6ee72a516a4bee7ec49f1d329cc8488  ./audio/plugins/caps/caps.tar.gz
 60239c577b41b833487abedfd5d9dda7  ./audio/plugins/gst1-plugins-base/gst1-plugins-base.tar.gz
 a2cb51352af26d23fc1f93988fe1b8a7  ./audio/plugins/lv2/lv2.tar.gz
 d8df21b1ebd705e7546e6a54ed5257a0  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
-a5cf133378de22d1b07261f6ae55829b  ./audio/plugins/calf/calf.tar.gz
+53b04e97d4257a52ed6df732700826e0  ./audio/plugins/calf/calf.tar.gz
 c2e6bd9112bce8d77f6c898cd8755dd0  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 4a2ff21aaeef263e88d312794c2f5535  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 48d804c0391f01fd06a2b0cdae20ba72  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
@@ -171,5 +171,5 @@ cd94cc8d2486947881f37aee5cb792bf  ./audio/graphics/goocanvas/goocanvas.tar.gz
 8eddc4458d5da249087d422981303559  ./audio/graphics/mftrace/mftrace.tar.gz
 d881877baabf6862b66b7d6537376bb7  ./audio/graphics/pygoocanvas/pygoocanvas.tar.gz
 0d1ba3d87e0d2e47990653fe953e7c35  ./audio/graphics/fontforge/fontforge.tar.gz
-377870d3bd5d9616efe4d7114dfd7987  ./audio/effects/jack-rack/jack-rack.tar.gz
-1071e4edf50fbf21026bd94dd7907a51  ./audio/effects/rakarrack/rakarrack.tar.gz
+b59b40d623eb4ca2b050f28627fbe95c  ./audio/effects/jack-rack/jack-rack.tar.gz
+aa3bc6900163c7e13a77de94009b9a7e  ./audio/effects/rakarrack/rakarrack.tar.gz
