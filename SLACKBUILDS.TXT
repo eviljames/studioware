@@ -20,7 +20,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-ba1cdd3f5399f754819a564317386358  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+8eeb5f7adfc9c60fcd7be390db0baa07  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 331c9a06d45783870e84efd74323fdad  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
@@ -78,9 +78,11 @@ da05743eda0dc3e4847fb1393bc23453  ./audio/system/rtmidi/rtmidi.tar.gz
 732f6ff4a0a49e149bf43cb64b67e397  ./audio/system/jack/jack.tar.gz
 156f7c1a45d044cc2405c4f0d89c5fbd  ./audio/system/rt-tests/rt-tests.tar.gz
 e3875d5a88afa2d133d946d063238555  ./audio/system/qjackctl/qjackctl.tar.gz
+0b5b8b47a6479f6e0e741c9b99111d87  ./audio/samplers/qsampler/qsampler.tar.gz
 b2ca5f44c6292943da6fe0ba53be063d  ./audio/samplers/giada/giada.tar.gz
 b482b3ed90fda9a4516300191d13ff90  ./audio/samplers/sooperlooper/sooperlooper.tar.gz
 d85ee214e28059c0dfb94a9e41a8253f  ./audio/samplers/specimen/specimen.tar.gz
+a7c133bfed4f627f7f3ae990848ef522  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
 1ea786ee1a7a37020446e20d85f30e0c  ./audio/synthesizers/terminatorX/terminatorX.tar.gz
 e941659a34317453da6c7a2aa3c16f5c  ./audio/synthesizers/pd/pd.tar.gz
 2629fc93935c0d7e66c11020240a9f8c  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
@@ -99,6 +101,7 @@ fbbf1d8d897f029a834600e9c9bd74c7  ./audio/libraries/cairomm/cairomm.tar.gz
 15fb99e4a622c6e2a68e0b3103b11175  ./audio/libraries/liblo/liblo.tar.gz
 645993b7997a16aae4b56e567b0c0f38  ./audio/libraries/clalsadrv/clalsadrv.tar.gz
 9f0d87ddee12ecc59e2e10f517d1fa29  ./audio/libraries/rubberband/rubberband.tar.gz
+f8876bd24fe7f86478b4492ba065d494  ./audio/libraries/liblscp/liblscp.tar.gz
 31ce1cf1aba32155e32fc1c75dc9dc92  ./audio/libraries/clxclient/clxclient.tar.gz
 934b63768ec061de45c5a2efacb549a0  ./audio/libraries/sord/sord.tar.gz
 d5b708a0fbd6e2af312c0b23d61208b4  ./audio/libraries/mm-common/mm-common.tar.gz
@@ -127,9 +130,11 @@ c4f23b187f26fd253acf67c666bb8191  ./audio/libraries/serd/serd.tar.gz
 315a7d2c42cfc66c16ae088f517314d4  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
 3ee223b3a6a971a7fb7b55d6b1e19ec2  ./audio/libraries/mxml/mxml.tar.gz
 039a4c02d4c936bf2ec7eb4b0b5972e7  ./audio/libraries/libslv2/libslv2.tar.gz
+195bb92ea6eaded522746f4e32a23641  ./audio/libraries/libgig/libgig.tar.gz
 6d14d7c452f947cc226a72ce3f8bd05e  ./audio/libraries/suil/suil.tar.gz
 49618d545924ac56853c97907c2f45d0  ./audio/libraries/libavc1394/libavc1394.tar.gz
 af4d4735f7fe5e5329463e5ff47b0dd2  ./audio/libraries/sratom/sratom.tar.gz
+45e3c3c28c98dba58a031b77ec291ce3  ./audio/libraries/gigedit/gigedit.tar.gz
 d63a2e002417d8bcc9fc9124ac52db13  ./audio/libraries/fltk/fltk.tar.gz
 e3e70e8f1ece149b5c8130cf1ff7e59c  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 cfa8087122031294dc84852bc00f1269  ./audio/plugins/swh-plugins/swh-plugins.tar.gz

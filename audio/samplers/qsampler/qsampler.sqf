@@ -1,0 +1,3 @@
+@linuxsampler
+gigedit
+qsampler
