@@ -23,7 +23,7 @@
 
 PRGNAM=mscore
 VERSION=${VERSION:-1.3}
-BUILD=${BUILD:-6}
+BUILD=${BUILD:-7}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -92,6 +92,6 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Edit;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

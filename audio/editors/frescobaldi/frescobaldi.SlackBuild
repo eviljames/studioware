@@ -5,7 +5,7 @@
 
 PRGNAM=frescobaldi
 VERSION=${VERSION:-1.2.0}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -62,6 +62,11 @@ cd build
   make
   make install DESTDIR=$PKG
 
+# Messes up xfce menu without this
+mv $PKG/usr/share/applications/kde4/frescobaldi.desktop \
+    $PKG/usr/share/applications
+rm -r $PKG/usr/share/applications/kde4
+
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
@@ -78,9 +83,8 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 
-find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/
-    s/Exec=.*/Exec=dbus-launch frescobaldi %U/' '{}' \;
+find . -name \*desktop -exec \
+sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Edit;/' {} \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
 

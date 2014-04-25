@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for mixxx-1.9.0
-# Copyright 2011 David Woodfall <dave@studioware.org>
+# Slackware build script for milkytracker
+# Copyright 2013 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=mixxx
-VERSION=${VERSION:-1.11.0}
+PRGNAM=milkytracker
+VERSION=${VERSION:-0.90.86}
 BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
@@ -59,28 +59,38 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION-src.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
-
-patch -p1 --verbose < $CWD/desktop.diff
-
 chown -R root:root .
-find . \
- \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
- -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
- -exec chmod 644 {} \;
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+ -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-export QTDIR=/usr/lib$LIBDIRSUFFIX/qt
-scons prefix=/usr optflags="$SLKCFLAGS" shoutcast=0
-scons prefix=/usr install_root=$PKG/usr optflags="$SLKCFLAGS" install
+LDFLAGS="-lasound" \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --with-jack=yes \
+  --mandir=/usr/man \
+  --infodir=/usr/info \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --build=$ARCH-slackware-linux
 
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+make
+make install DESTDIR=$PKG
+
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   COPYING LICENSE README README.macro  \
+  AUTHORS COPYING ChangeLog INSTALL NEWS README docs \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
@@ -88,9 +98,14 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
+mkdir -p $PKG/usr/share/{applications,pixmaps}
+cp $CWD/milkytracker.desktop $PKG/usr/share/applications
+cp resources/pictures/carton.png $PKG/usr/share/pixmaps/milkytracker-icon-128.png
+
+
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Edit;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

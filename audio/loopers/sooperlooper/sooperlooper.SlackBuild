@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for specimen
+# Slackware build script for sooperlooper
 # Copyright 2011 David Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -21,9 +21,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=specimen
-VERSION=${VERSION:-0.5.1}
-BUILD=${BUILD:-4}
+PRGNAM=sooperlooper
+VERSION=${VERSION:-1.6.14}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,18 +68,17 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-# tsk...
-sed -i 's/-Werror//' configure
+sed -i 's%#include <wx/wx.h>%#include <wx-2.8/wx/wx.h>%' src/gui/gui_app.hpp
 
-LDFLAGS="$LDFLAGS -lm" \
-CFLAGS="$SLKCFLAGS -lm" \
-CXXFLAGS="$SLKCFLAGS -lm" \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
 make
@@ -88,21 +87,25 @@ make install DESTDIR=$PKG
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
+mkdir -p $PKG/usr/share/pixmaps
+cp src/gui/pixmaps/sl_logo.xpm $PKG/usr/share/pixmaps
+
 mkdir -p $PKG/usr/share/applications
-cp $CWD/specimen.desktop $PKG/usr/share/applications/
+cp $CWD/sooperlooper.desktop $PKG/usr/share/applications
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING ChangeLog INSTALL NEWS README TODO  \
+   COPYING README  \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Loopers;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

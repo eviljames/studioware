@@ -23,7 +23,7 @@
 
 PRGNAM=sunvox
 VERSION=${VERSION:-1.7.3c}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -82,6 +82,6 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Synths;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

@@ -23,7 +23,7 @@
 
 PRGNAM=xfce-menus
 VERSION=${VERSION:-0.0.6}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

@@ -26,7 +26,7 @@
 
 PRGNAM=portmidi
 VERSION=${VERSION:-217}
-BUILD=${BUILD:-5}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -74,7 +74,6 @@ find . \
 
 # cmake install dir & 64 bit fixes
 patch --verbose -p1 -i $CWD/portmidi-cmake.patch
-patch --verbose -p1 -i $CWD/remove-bloody-java.patch
 
 cmake . \
   -DCMAKE_C_FLAGS="$SLKCFLAGS" \
@@ -90,11 +89,11 @@ cmake . \
 
 # some wrong paths expose with openjdk, fix them
 # https://bugs.archlinux.org/task/29214
-#sed -i "s|pm_java/pm_java|pm_java|" pm_java/CMakeFiles/pmdefaults_target.dir/build.make
+sed -i "s|pm_java/pm_java|pm_java|" pm_java/CMakeFiles/pmdefaults_target.dir/build.make
 
-make all \
-  CFLAGS="-fPIC" \
-  PMFLAGS="-DNEWBUFFER"
+make all -j1 \
+CFLAGS="-fPIC" \
+PMFLAGS="-DNEWBUFFER"
 make install DESTDIR=$PKG
 
 cd $PKG/usr/lib$LIBDIRSUFFIX
@@ -107,7 +106,6 @@ mv $PKG/usr/bin/test $PKG/usr/bin/portmiditest
 
 install -m 0644 -D pm_common/pmutil.h $PKG/usr/include
 install -m 0644 -D $CWD/pmdefaults.desktop $PKG/usr/share/applications/pmdefaults.desktop
-
 install -m 0644 -D pm_java/pmdefaults/pmdefaults-icon.png \
     $PKG/usr/share/icons/hicolor/128x128/apps/pmdefaults-icon.png
 
@@ -123,8 +121,5 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
-
-find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

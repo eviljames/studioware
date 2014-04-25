@@ -23,7 +23,7 @@
 
 PRGNAM=denemo
 VERSION=${VERSION:-1.0.2}
-BUILD=${BUILD:-5}
+BUILD=${BUILD:-6}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -98,6 +98,6 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*/Categories=X-Studioware-Audio;/' '{}' \;
+sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Edit;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

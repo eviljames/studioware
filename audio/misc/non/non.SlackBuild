@@ -13,7 +13,7 @@
 
 PRGNAM=non
 VERSION=${VERSION:-git20140419}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 #determine what components we are building
@@ -90,7 +90,7 @@ find . -name \*.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
 
 find . -name non-timeline.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;X-Studioware-Audio-Mix;/' '{}' \;
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
 
 find . -name non-mixer.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Mix;/' '{}' \;
