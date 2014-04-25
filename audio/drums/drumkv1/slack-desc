@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+       |-----handy-ruler------------------------------------------------------|
+drumkv1: DrumKV1 (Old-school all-digital drum-kit sampler)
+drumkv1:
+drumkv1: drumkv1 is an old-school all-digital drum-kit sampler synthesizer
+drumkv1: with stereo fx.
+drumkv1:
+drumkv1: Features: pure stand-alone JACK client with JACK-session, NSM and
+drumkv1: both JACK MIDI and ALSA MIDI input support;
+drumkv1: LV2 instrument plugin.
+drumkv1:
+drumkv1: http://drumkv1.sourceforge.net/drumkv1-index.html
+drumkv1:

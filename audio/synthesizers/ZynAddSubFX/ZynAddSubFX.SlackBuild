@@ -23,7 +23,7 @@
 
 PRGNAM=ZynAddSubFX
 VERSION=${VERSION:-2.4.3}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -90,13 +90,12 @@ cp $CWD/ZynAddSubFX.desktop $PKG/usr/share/applications
 mkdir -p $PKG/usr/share/pixmaps
 cp zynaddsubfx_icon.ico $PKG/usr/share/pixmaps
 
-mkdir -p $PKG/usr/share/ZynAddSubFX
-cp -a instruments/banks $PKG/usr/share/ZynAddSubFX/
-cp -a instruments/examples $PKG/usr/share/ZynAddSubFX/
+mkdir -p $PKG/usr/share/zynaddsubfx
+cp -a instruments/banks $PKG/usr/share/zynaddsubfx/
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS.txt COPYING ChangeLog README.txt doc *.txt \
+  instruments/examples AUTHORS.txt COPYING ChangeLog README.txt doc *.txt \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

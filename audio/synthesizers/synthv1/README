@@ -1,0 +1,9 @@
+Synthv1 (Old-school polyphonic synthesizer)
+
+Synthv1 is an old-school all-digital 4-oscillator subtractive
+polyphonic synthesizer with stereo fx.
+
+Features:
+Pure stand-alone JACK client with JACK-session, NSM and both JACK
+MIDI and ALSA MIDI input support;
+LV2 instrument plugin.

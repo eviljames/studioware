@@ -1,0 +1,4 @@
+portaudio
+liblo
+jack
+jackbeat

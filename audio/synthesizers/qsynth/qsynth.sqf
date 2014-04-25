@@ -1,2 +1,4 @@
 @fluidsynth
+@lash
+portaudio
 qsynth

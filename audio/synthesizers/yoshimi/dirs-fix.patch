@@ -1,0 +1,21 @@
+diff -Naur a/src/Misc/Config.cpp b/src/Misc/Config.cpp
+--- a/src/Misc/Config.cpp	2014-03-16 17:01:06.000000000 +0000
++++ b/src/Misc/Config.cpp	2014-04-22 15:10:08.280316714 +0100
+@@ -372,7 +372,7 @@
+             xml->exitbranch();
+         }
+     }
+-    if (!count)
++    if (count == 0)
+     {
+         string bankdirs[] = {
+             "/usr/share/yoshimi/banks",
+@@ -405,7 +405,7 @@
+             xml->exitbranch();
+         }
+     }
+-    if (!count)
++    if (count == 0)
+     {
+         string presetdirs[]  = {
+             "/usr/share/yoshimi/presets",

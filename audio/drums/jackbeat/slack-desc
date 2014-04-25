@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+jackbeat: Jackbeat (A Simple Drum Machine)
+jackbeat:
+jackbeat: Jackbeat is an audio sequencer running on Linux, Windows and OS X, for
+jackbeat: musicians and sound artists: Drummachine interface with animations for easy and
+jackbeat: playful editing Built for both composition and live setups with high
+jackbeat: interactivity needs Extremely easy to use but yet powerful by connecting with
+jackbeat: other applications and plugins using JACK and OSC Loads and saves .jab files,
+jackbeat: Jackbeat's xml+tar open file format Supports native audio devices, PulseAudio
+jackbeat: and JACK.
+jackbeat:
+jackbeat: https://bitbucket.org/olivierg/jackbeat/wiki/Home

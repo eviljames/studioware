@@ -1,0 +1,5 @@
+Flowcanvas ( interactive Gtkmm/Gnomecanvasmm widget )
+
+FlowCanvas is an interactive Gtkmm/Gnomecanvasmm widget for “boxes and lines”
+style environments (e.g. modular synths or interactive finite state automata
+diagrams).
