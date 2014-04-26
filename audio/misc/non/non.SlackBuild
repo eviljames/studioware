@@ -98,4 +98,7 @@ find . -name non-mixer.desktop -exec \
 find . -name non-sequencer.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Sequencers;/' '{}' \;
 
+find . -name \*.desktop -exec \
+    sed -i 's/Categories=/Categories=X-Studioware-Audio-Non;/' '{}' \;
+
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

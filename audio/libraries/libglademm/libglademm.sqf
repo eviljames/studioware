@@ -1,0 +1,2 @@
+@gtkmm
+libglademm

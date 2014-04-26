@@ -20,8 +20,8 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-e35d9476491e4952c01f242801bc5573  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
-023a1f42e6fe73143647bf2a44661bee  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
+c24812303598b3c297012ceaa732de2f  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+492a692788bcb56f01fb783bc70cfec8  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 4051bc723c32a8f2b348181a4c6b49d0  ./menus/fluxbox/fluxbox-menus-0.0.1.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
@@ -67,7 +67,7 @@ c69c2554350326247c047065d5d63e83  ./audio/mixers/qastools/qastools.tar.gz
 83af23543eece48352b6ac3ab34d372e  ./audio/misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 e97dcb558aa42c6e14c8335ccb645d54  ./audio/misc/vkeybd/vkeybd.tar.gz
 c38a2e5c4c8e611b0d326b8506657764  ./audio/misc/jamin/jamin.tar.gz
-5fc0cd80b0b8265c15bea1fdb77a946a  ./audio/misc/non/non.tar.gz
+360c1f9535015c58ad5469161568c731  ./audio/misc/non/non.tar.gz
 eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
 8dc4ceacf28c268b5bcf886035a25e35  ./audio/misc/stops/stops.tar.gz
 e2d1a7afbb580160c360f5ae4c74f7f1  ./audio/sequencers/terminatorX/terminatorX.tar.gz
@@ -96,7 +96,7 @@ e941659a34317453da6c7a2aa3c16f5c  ./audio/synthesizers/pd/pd.tar.gz
 14fadde152692ed4db0732d73b1745fc  ./audio/synthesizers/bristol/bristol.tar.gz
 b76c63517d81b41a6298f57bec6099e8  ./audio/synthesizers/amsynth/amsynth.tar.gz
 3a2f32b1fc07d3b0fd9f103d439bd7ad  ./audio/synthesizers/aeolus/aeolus.tar.gz
-4eca05332821fb5fab0822fc7ee58725  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
+9548a0c5af33c757d87c23d0a4775f01  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
 fc5c930676d816af0cc6fd29c03d9411  ./audio/synthesizers/qsynth/qsynth.tar.gz
 1859d92e05e1efd6ed424d7c2d9e3398  ./audio/synthesizers/hexter/hexter.tar.gz
 2275a62049d437db082972e12cd97c3d  ./audio/synthesizers/sunvox/sunvox.tar.gz
@@ -130,7 +130,7 @@ c4105fe76aed40e740160aa50b3fb2f2  ./audio/libraries/lash/lash.tar.gz
 0eb9d06e2f72f46586c10ce1671fa892  ./audio/libraries/lilv/lilv.tar.gz
 dd7e1492ae1294ac5bd43c45f02c55e1  ./audio/libraries/portmidi/portmidi.tar.gz
 4ad6a77a85e711b3157b61f6398d2ae4  ./audio/libraries/glibmm/glibmm.tar.gz
-79a06624e1824c7da1e71f577bf67739  ./audio/libraries/libglademm/libglademm.tar.gz
+247215fac487f75d7e11958b13bed731  ./audio/libraries/libglademm/libglademm.tar.gz
 371594774129829cfe140f9a516d1b95  ./audio/libraries/portaudio/portaudio.tar.gz
 b61d084d50a635b43bbd47d503a52bca  ./audio/libraries/pangomm/pangomm.tar.gz
 bad845334f478592d58e5eb05587cd6b  ./audio/libraries/raul/raul.tar.gz
