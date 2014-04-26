@@ -20,7 +20,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-e4e68c9ce9d7158c7e0f5ddb901eb63f  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+f87fc13c7fd6ffbd89661249c888b40d  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 1c16ecaa1fa6fbfd59928781dd835614  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
