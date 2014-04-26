@@ -21,8 +21,7 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
 c24812303598b3c297012ceaa732de2f  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
-492a692788bcb56f01fb783bc70cfec8  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
-4051bc723c32a8f2b348181a4c6b49d0  ./menus/fluxbox/fluxbox-menus-0.0.1.tar.gz
+1c16ecaa1fa6fbfd59928781dd835614  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz
@@ -64,10 +63,9 @@ f7f7ba8012a66b604462810ab41c987e  ./audio/editors/milkytracker/milkytracker.tar.
 900a4d8c1c36efa669125ec1a0ce701e  ./audio/editors/audacity/audacity.tar.gz
 83a9dc6c00151c5dad67ccdf698804de  ./audio/editors/denemo/denemo.tar.gz
 c69c2554350326247c047065d5d63e83  ./audio/mixers/qastools/qastools.tar.gz
-83af23543eece48352b6ac3ab34d372e  ./audio/misc/SimpleSysexxer/SimpleSysexxer.tar.gz
 e97dcb558aa42c6e14c8335ccb645d54  ./audio/misc/vkeybd/vkeybd.tar.gz
 c38a2e5c4c8e611b0d326b8506657764  ./audio/misc/jamin/jamin.tar.gz
-360c1f9535015c58ad5469161568c731  ./audio/misc/non/non.tar.gz
+ac3ae00818ae151e7682f106fea67f45  ./audio/misc/non/non.tar.gz
 eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
 8dc4ceacf28c268b5bcf886035a25e35  ./audio/misc/stops/stops.tar.gz
 e2d1a7afbb580160c360f5ae4c74f7f1  ./audio/sequencers/terminatorX/terminatorX.tar.gz
@@ -76,10 +74,12 @@ bb06d18bec4752c6a4d74c55eba7f61e  ./audio/sequencers/seq24/seq24.tar.gz
 d70ca43d9dbdc964c3a860c4c8e89aff  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 aeef8db914298e4933176bfcecd27bc3  ./audio/loopers/mixxx/mixxx.tar.gz
 06fcaec94c1d75293c732fe4a6d12e78  ./audio/loopers/specimen/specimen.tar.gz
+4ebdbfcbe9102b4d374287a0b16da7ee  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 2eb916d836acd7f1a971ca8287d88360  ./audio/system/rtaudio/rtaudio.tar.gz
 da05743eda0dc3e4847fb1393bc23453  ./audio/system/rtmidi/rtmidi.tar.gz
 8cb8e21bde9e33687a83d3f6b69622f8  ./audio/system/meterbridge/meterbridge.tar.gz
 21be3151e39a67db69499822b753d5a3  ./audio/system/patchage/patchage.tar.gz
+59ab65fd28da1c6b75f81d967693e604  ./audio/system/pd/pd.tar.gz
 3deac901cffc32877001e9afb9edc946  ./audio/system/set_rlimits/set_rlimits.tar.gz
 49be831bff5b6ca49e7c46665b193fec  ./audio/system/numactl/numactl.tar.gz
 732f6ff4a0a49e149bf43cb64b67e397  ./audio/system/jack/jack.tar.gz
@@ -90,7 +90,6 @@ b2ca5f44c6292943da6fe0ba53be063d  ./audio/samplers/giada/giada.tar.gz
 f9761dddd7fbe258e3ca448909b9f8ed  ./audio/samplers/samplv1/samplv1.tar.gz
 a7c133bfed4f627f7f3ae990848ef522  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
 fff19013628487d4c860cbc02d3a059a  ./audio/synthesizers/synthv1/synthv1.tar.gz
-e941659a34317453da6c7a2aa3c16f5c  ./audio/synthesizers/pd/pd.tar.gz
 94e2db46da41d5f393c7d55abfcaf07d  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
 1ee785257b22fe95157d4b98229bfc6e  ./audio/synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
 14fadde152692ed4db0732d73b1745fc  ./audio/synthesizers/bristol/bristol.tar.gz

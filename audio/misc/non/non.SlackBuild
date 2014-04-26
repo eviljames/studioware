@@ -13,7 +13,7 @@
 
 PRGNAM=non
 VERSION=${VERSION:-git20140419}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 #determine what components we are building
@@ -88,6 +88,9 @@ cd $PKG
 
 find . -name \*.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+
+find . -name non-session-manager.desktop -exec \
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-System;/' '{}' \;
 
 find . -name non-timeline.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
