@@ -1,3 +1,4 @@
+597cca0a8c37bd9593007c2b06c51d4e  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
 a63754570431482debd762119d9c5fd7  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
@@ -16,15 +17,16 @@ c1e4f20f71de5715b315175e8fd54940  ./photo/libraries/liblqr/liblqr.tar.gz
 5efc6cacac86f8dd0a85a497ece4feac  ./photo/libraries/vigra/vigra.tar.gz
 f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagick.tar.gz
 4e99f553017b2a2f99388873fd85ddc9  ./photo/viewers/gtkimageview/gtkimageview.tar.gz
-2793e6c2a3a9b1f13b550b5c4a30f45b  ./photo/plugins/dcraw/dcraw.tar.gz
+876c165f6d7ce2d7ea8645a0f26a702b  ./photo/plugins/dcraw/dcraw.tar.gz
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
 d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-f87fc13c7fd6ffbd89661249c888b40d  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
+c61b77ed5ff6f3b68ae161bac26a72b0  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
 1c16ecaa1fa6fbfd59928781dd835614  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz
+e3b98edc0828c9662229134e52fef514  ./video/codecs/a52dec/a52dec.tar.gz
 1e17aa4144165461d66e60e7e2863451  ./video/codecs/x264/x264.tar.gz
 c5c6c256a6835863d6843f7cd8426b8d  ./video/codecs/xvidcore/xvidcore.tar.gz
 2d278aa42f42a1a6e089ab02e95ff893  ./video/codecs/libdv/libdv.tar.gz
@@ -41,7 +43,7 @@ d0bcedebc19fb2b49d32a440b08c233b  ./audio/development/vamp-plugin-sdk/vamp-plugi
 d0f24ead75bfd3fdc702e4875de97729  ./audio/development/guile1.8/guile1.8.tar.gz
 f3807e8c107eed68594c109d5f4cfbff  ./audio/development/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 f4f6df5900f2a02b0f2bd39c683b9fec  ./audio/development/scrollkeeper/scrollkeeper.tar.gz
-b370f46a9d21a5cdbac3585ceaf5a6d4  ./audio/development/pysetuptools/pysetuptools.tar.gz
+fe4f374076fdc69fc75b81d93ac70aa1  ./audio/development/pysetuptools/pysetuptools.tar.gz
 ed8780cd960fab18cf26a8d339fbdc5b  ./audio/development/phat/phat.tar.gz
 b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2d4ce17af9e1eb2c231487063e963900  ./audio/development/libsigc++/libsigc++.tar.gz
@@ -71,6 +73,7 @@ eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
 e2d1a7afbb580160c360f5ae4c74f7f1  ./audio/sequencers/terminatorX/terminatorX.tar.gz
 bb06d18bec4752c6a4d74c55eba7f61e  ./audio/sequencers/seq24/seq24.tar.gz
 147036e53d054975bf224ed986fd5db8  ./audio/sequencers/muse/muse.tar.gz
+4bf0231ab15dbe3273f3374b7de2d0cd  ./audio/loopers/giada/giada.tar.gz
 d70ca43d9dbdc964c3a860c4c8e89aff  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 aeef8db914298e4933176bfcecd27bc3  ./audio/loopers/mixxx/mixxx.tar.gz
 06fcaec94c1d75293c732fe4a6d12e78  ./audio/loopers/specimen/specimen.tar.gz
@@ -86,7 +89,6 @@ da05743eda0dc3e4847fb1393bc23453  ./audio/system/rtmidi/rtmidi.tar.gz
 156f7c1a45d044cc2405c4f0d89c5fbd  ./audio/system/rt-tests/rt-tests.tar.gz
 e3875d5a88afa2d133d946d063238555  ./audio/system/qjackctl/qjackctl.tar.gz
 0b5b8b47a6479f6e0e741c9b99111d87  ./audio/samplers/qsampler/qsampler.tar.gz
-b2ca5f44c6292943da6fe0ba53be063d  ./audio/samplers/giada/giada.tar.gz
 f9761dddd7fbe258e3ca448909b9f8ed  ./audio/samplers/samplv1/samplv1.tar.gz
 a7c133bfed4f627f7f3ae990848ef522  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
 fff19013628487d4c860cbc02d3a059a  ./audio/synthesizers/synthv1/synthv1.tar.gz

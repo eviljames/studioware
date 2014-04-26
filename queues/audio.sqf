@@ -52,3 +52,13 @@ tap-plugins
 @terminatorX
 @timemachine
 sunvox
+@patchage
+@jamin
+vkeybd
+@samplv1
+@synthv1
+@drunkv1
+@yoshimi
+@hexter
+@jackbeat
+

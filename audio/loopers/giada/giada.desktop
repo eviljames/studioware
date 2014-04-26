@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Giada
+Comment=Hardcore Loop Machine
+GenericName=Giada Loop Machine
+Version=1.0
+Type=Application
+Categories=X-Studioware-Audio-Loopers;
+MimeType=text/xml;
+Exec=giada
+TryExec=giada
+Terminal=false
+StartupNotify=true
+Icon=studioware-logo5

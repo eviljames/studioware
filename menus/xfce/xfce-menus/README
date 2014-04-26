@@ -10,9 +10,9 @@ Ours: /etc/xdg/menus/xfce-applications.menu
 If you ever want to remove this package, you need to copy the .orig back to it's original name.
 
 We have monochrome and colour icons in this pacakge. You can switch between
-them using the included xfce-icon-switch app (as root):
+them using the included studioware-xfce-icon-switch script:
 
-xfce-icon-switch -c
-xfce-icon-switch -m
+studioware-xfce-icon-switch -c
+studioware-xfce-icon-switch -m
 
 You may need to run 'xfdesktop --reload' afterwards to see the changes.
