@@ -1,0 +1,2 @@
+Xdialog
+studioware-scripts

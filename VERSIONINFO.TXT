@@ -1,4 +1,8 @@
-studioware-scripts 0.0.1 1
+Xdialog 2.3.1 1
+studioware-scripts 0.0.1 2
+fluxbox-menus 0.0.2 2
+kde-menus 0.0.1 1
+xfce-menus 0.0.9 1
 rawstudio 2.0 4
 digikam 3.5.0 4
 darktable 1.4.1 2
@@ -20,9 +24,6 @@ gtkimageview 1.6.4 2
 dcraw 9.20 1
 ufraw 0.19.2 1
 separate+ 0.5.8 2
-kde-menus 0.0.1 1
-xfce-menus 0.0.8 1
-fluxbox-menus 0.0.2 2
 faac 1.28 1
 libvpx v1.3.0 1
 faad2 2.7 2
@@ -49,9 +50,10 @@ ntk 1.1.0 1
 libsigc++ 2.2.10 1
 scons 2.2.0 1
 timemachine 0.3.3 7
-evince 3.4.0 1
+evince 3.4.0 2
 lame 3.99.1 2
 guitarix2 0.24.0 3
+ladish git20140427 1
 qtractor 0.5.0 6
 ardour 2.8.16 6
 ardour3 3.5.357 4
@@ -67,7 +69,7 @@ denemo 1.0.2 6
 qastools 0.17.2 3
 vkeybd 0.1.18d 1
 jamin 0.95.0 2
-non git20140419 3
+non git20140419 4
 protobuf 2.5.0 1
 stops 0.3.0 2
 terminatorX 3.84 6
@@ -77,7 +79,7 @@ giada 0.8.4 2
 sooperlooper 1.6.14 6
 mixxx 1.11.0 5
 specimen 0.5.1 5
-SimpleSysexxer 0.3 7
+SimpleSysexxer 0.3 8
 rtaudio 4.0.12 1
 rtmidi 2.0.1 1
 meterbridge 0.9.2 2

@@ -13,7 +13,7 @@
 
 PRGNAM=non
 VERSION=${VERSION:-git20140419}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 #determine what components we are building
@@ -83,23 +83,24 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Audio;/' '{}' \;
 
 find . -name non-session-manager.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-System;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Session;/' '{}' \;
 
 find . -name non-timeline.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Record;/' '{}' \;
 
 find . -name non-mixer.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Mix;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Mix;/' '{}' \;
 
 find . -name non-sequencer.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Sequencers;/' '{}' \;
+    sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Sequencers;/' '{}' \;
 
 find . -name \*.desktop -exec \
     sed -i 's/Categories=/Categories=X-Studioware-Audio-Non;/' '{}' \;

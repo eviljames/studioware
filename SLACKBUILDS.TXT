@@ -1,4 +1,8 @@
-597cca0a8c37bd9593007c2b06c51d4e  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+72d41fe9ca69de154821456cd1945c2d  ./system/desktop/Xdialog/Xdialog.tar.gz
+63b41f9c76d9b0d1f6127dc1e56d4926  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+1c16ecaa1fa6fbfd59928781dd835614  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+d0ae8ec2e2b320a1272b7bd26218df5d  ./system/menus/kde-menus/kde-menus.tar.gz
+925a498dfb0efaa971f715ea6a1079cc  ./system/menus/xfce-menus/xfce-menus.tar.gz
 85293a2cc04dc8b5c683e962a5aec95f  ./photo/editors/rawstudio/rawstudio.tar.gz
 a63754570431482debd762119d9c5fd7  ./photo/editors/digikam/digikam.tar.gz
 194d34d047b870af6cba2fec054850b2  ./photo/editors/darktable/darktable.tar.gz
@@ -20,9 +24,6 @@ f69ca462f96e4c4d18d16ebcae55dc8e  ./photo/libraries/GraphicsMagick/GraphicsMagic
 876c165f6d7ce2d7ea8645a0f26a702b  ./photo/plugins/dcraw/dcraw.tar.gz
 7d9297ad1c5f7abe0dba3e01ed3c321f  ./photo/plugins/ufraw/ufraw.tar.gz
 c577b8645a16548f5049abf82c155bf0  ./photo/plugins/separate+/separate+.tar.gz
-d0ae8ec2e2b320a1272b7bd26218df5d  ./menus/kde/kde-menus/kde-menus.tar.gz
-c61b77ed5ff6f3b68ae161bac26a72b0  ./menus/xfce/xfce-menus/xfce-menus.tar.gz
-1c16ecaa1fa6fbfd59928781dd835614  ./menus/fluxbox/fluxbox-menus/fluxbox-menus.tar.gz
 2e630a9e282affda898c3e30b31dd471  ./video/codecs/faac/faac.tar.gz
 bd5adc10c6a49951d5f0d0847e9a1053  ./video/codecs/libvpx/libvpx.tar.gz
 0ba5e54b0f627dba232587c9a5a048ca  ./video/codecs/faad2/faad2.tar.gz
@@ -49,9 +50,10 @@ b55f799b3c1762d426b7d6ab962157e3  ./audio/development/ntk/ntk.tar.gz
 2d4ce17af9e1eb2c231487063e963900  ./audio/development/libsigc++/libsigc++.tar.gz
 14ac3a0f1b31e8f739b0273d601712c7  ./audio/development/scons/scons.tar.gz
 3c6620ae4ecb4bb8728de07da0fec12e  ./audio/recorders/timemachine/timemachine.tar.gz
-2f6c9c18170f0afa6770be53dd5aa61b  ./audio/desktop/evince/evince.tar.gz
+700b886c1ae17d256204edf493fbffd8  ./audio/desktop/evince/evince.tar.gz
 56fe43ddb1a7b95486a194b9db183961  ./audio/codecs/lame/lame.tar.gz
 55fb7eec594433618354408a52128b33  ./audio/amps/guitarix2/guitarix2.tar.gz
+9e95b5cd741038bf02ed0a2909ac20ad  ./audio/session/ladish/ladish.tar.gz
 a03664579e056555fc86f45e0b78982a  ./audio/multitrack/qtractor/qtractor.tar.gz
 9ffcc8d58bed0115eef7c644f096bf00  ./audio/multitrack/ardour/ardour.tar.gz
 39d2f04e457f49b4009dc0c1d3d122e7  ./audio/multitrack/ardour3/ardour3.tar.gz
@@ -67,7 +69,7 @@ f7f7ba8012a66b604462810ab41c987e  ./audio/editors/milkytracker/milkytracker.tar.
 c69c2554350326247c047065d5d63e83  ./audio/mixers/qastools/qastools.tar.gz
 e97dcb558aa42c6e14c8335ccb645d54  ./audio/misc/vkeybd/vkeybd.tar.gz
 c38a2e5c4c8e611b0d326b8506657764  ./audio/misc/jamin/jamin.tar.gz
-ac3ae00818ae151e7682f106fea67f45  ./audio/misc/non/non.tar.gz
+37a075a696dab1def74f0ee2703525bb  ./audio/misc/non/non.tar.gz
 eb98706d93cbe83447f961f0d6e7515d  ./audio/misc/protobuf/protobuf.tar.gz
 8dc4ceacf28c268b5bcf886035a25e35  ./audio/misc/stops/stops.tar.gz
 e2d1a7afbb580160c360f5ae4c74f7f1  ./audio/sequencers/terminatorX/terminatorX.tar.gz
@@ -77,7 +79,7 @@ bb06d18bec4752c6a4d74c55eba7f61e  ./audio/sequencers/seq24/seq24.tar.gz
 d70ca43d9dbdc964c3a860c4c8e89aff  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 aeef8db914298e4933176bfcecd27bc3  ./audio/loopers/mixxx/mixxx.tar.gz
 06fcaec94c1d75293c732fe4a6d12e78  ./audio/loopers/specimen/specimen.tar.gz
-4ebdbfcbe9102b4d374287a0b16da7ee  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
+4299e4f62fee0b8abc2f5724b4b85cd8  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 2eb916d836acd7f1a971ca8287d88360  ./audio/system/rtaudio/rtaudio.tar.gz
 da05743eda0dc3e4847fb1393bc23453  ./audio/system/rtmidi/rtmidi.tar.gz
 8cb8e21bde9e33687a83d3f6b69622f8  ./audio/system/meterbridge/meterbridge.tar.gz

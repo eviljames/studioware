@@ -7,9 +7,9 @@
                   |-----handy-ruler------------------------------------------------------|
 studioware-scripts: Studioware scripts (Useful set of scripts)
 studioware-scripts:
+studioware-scripts: *Be sure to read the README rergarding menu category changes*
+studioware-scripts:
 studioware-scripts: http://www.studioware.org
-studioware-scripts:
-studioware-scripts:
 studioware-scripts:
 studioware-scripts:
 studioware-scripts:
