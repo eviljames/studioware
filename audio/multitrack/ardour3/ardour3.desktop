@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Ardour3
+Comment=Ardour Digital Audio Workstation
+Exec=ardour3
+Icon=ardour3
+Terminal=false
+MimeType=application/x-ardour3;
+Type=Application
+Categories=X-Studioware-Audio-Record;

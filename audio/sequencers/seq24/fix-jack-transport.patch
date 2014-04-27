@@ -1,0 +1,30 @@
+--- seq24-0.9.2.orig/src/perform.cpp
++++ seq24-0.9.2/src/perform.cpp
+@@ -207,6 +207,7 @@ void perform::init_jack( void )
+             jack_on_shutdown( m_jack_client, jack_shutdown,(void *) this );
+             jack_set_sync_callback(m_jack_client, jack_sync_callback,
+                     (void *) this );
++            jack_set_process_callback(m_jack_client, jack_process_callback, NULL);
+ #ifdef JACK_SESSION
+ 	    if (jack_set_session_callback)
+ 		jack_set_session_callback(m_jack_client, jack_session_callback,
+@@ -1160,6 +1161,9 @@ void* output_thread_func(void *a_pef )
+ 
+ #ifdef JACK_SUPPORT
+ 
++int jack_process_callback(jack_nframes_t nframes, void* arg)
++{return 0;}
++
+ int jack_sync_callback(jack_transport_state_t state,
+         jack_position_t *pos, void *arg)
+ {
+--- seq24-0.9.2.orig/src/perform.h
++++ seq24-0.9.2/src/perform.h
+@@ -375,6 +375,7 @@ void print_jack_pos( jack_position_t* ja
+ void jack_shutdown(void *arg);
+ void jack_timebase_callback(jack_transport_state_t state, jack_nframes_t nframes,
+                             jack_position_t *pos, int new_pos, void *arg);
++int jack_process_callback(jack_nframes_t nframes, void* arg);
+ #ifdef JACK_SESSION
+ void jack_session_callback(jack_session_event_t *ev, void *arg);
+ #endif

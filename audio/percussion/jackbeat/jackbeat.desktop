@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jackbeat
+Comment=Jackbeat Drum Machine
+Exec=jackbeat
+Icon=studioware-logo5
+Terminal=false
+Type=Application
+Categories=X-Studioware-Audio-Percussion;

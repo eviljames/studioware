@@ -1,4 +1,6 @@
-@ffmpeg
-opencv
-lensfun
+@enblend-enfuse
+@hugin
+@opencv
+liblqr
+eigen
 digikam

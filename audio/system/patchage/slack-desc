@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+patchage: Patchage ( Modular patchbay for jack and alsa )
+patchage:
+patchage: Patchage is a modular patch bay for audio and MIDI systems based on
+patchage: Jack and Alsa.
+patchage:
+patchage: Homepage: http://drobilla.net/software/patchage/
+patchage:
+patchage:
+patchage:
+patchage:
+patchage:

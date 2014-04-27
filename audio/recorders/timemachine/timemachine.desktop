@@ -6,4 +6,4 @@ Name=Time Machine
 GenericName=Time Machine Recorder
 StartupNotify=true
 Type=Application
-Categories=AudioVideo;Audio;
+Categories=X-Studioware-Audio-System;

@@ -1,0 +1,7 @@
+Samplv1 (Old-school all-digital polyphonic sampler)
+
+Samplv1 is an old-school all-digital polyphonic sampler synthesizer
+with stereo fx.
+
+Features: pure stand-alone JACK client with JACK-session, NSM and
+both JACK MIDI and ALSA MIDI input support; LV2 instrument plugin.

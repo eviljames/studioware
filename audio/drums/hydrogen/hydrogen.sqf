@@ -1,4 +1,0 @@
-jack
-scons
-@liblrdf
-hydrogen

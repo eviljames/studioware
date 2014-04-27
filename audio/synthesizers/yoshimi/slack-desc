@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+       |-----handy-ruler------------------------------------------------------|
+yoshimi: Yoshimi (Oh Yoshimi, ... you won't let those robots eat me)
+yoshimi:
+yoshimi: soshimi is a software synthesizer for Linux based on the 2.4.0
+yoshimi: release of ZynAddSubFX, written by Nasca Octavian Paul. Yoshimi
+yoshimi: delivers the same synth capabilities, along with very good Jack and
+yoshimi: Alsa midi/audio functionality.
+yoshimi:
+yoshimi: http://yoshimi.sourceforge.net/
+yoshimi:
+yoshimi:
+yoshimi:

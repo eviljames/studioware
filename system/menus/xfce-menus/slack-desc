@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+          |-----handy-ruler------------------------------------------------------|
+xfce-menus: xfce-menus ( Custom Studioware Menus for XFCE )
+xfce-menus:
+xfce-menus: These are needed to create our custom Studioware submenu.
+xfce-menus: Note that this package backs up you default menu layout file and then
+xfce-menus: copies ours over:
+xfce-menus:
+xfce-menus: Default: /etc/xdg/menus/xfce-applications.menu.orig
+xfce-menus: Ours: /etc/xdg/menus/xfce-applications.menu
+xfce-menus:
+xfce-menus: If you ever want to remove this package, you need to copy the .orig
+xfce-menus: back to it's original name.
