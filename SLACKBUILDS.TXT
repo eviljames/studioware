@@ -52,11 +52,11 @@ b57d674b5d2f16ae9917686fd4f965ff  ./audio/development/vamp-plugin-sdk/vamp-plugi
 efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.gz
 ddc12c403209c250d66836b94f677350  ./audio/desktop/evince/evince.tar.gz
 115e7f57c53b4c903a7a486544417084  ./audio/codecs/lame/lame.tar.gz
-806b25dacc5f149754ac8d861ec562fc  ./audio/amps/guitarix2/guitarix2.tar.gz
+941d86b08bea10dcfbe4d02a99432eb2  ./audio/amps/guitarix2/guitarix2.tar.gz
 6749dd95ed127b4d99347316cb7d5fbb  ./audio/session/ladish/ladish.tar.gz
 ce02be987f6b2a49aef0d98df17f67f5  ./audio/multitrack/qtractor/qtractor.tar.gz
 e160b211547ec3198d9ebe4501b0fc3c  ./audio/multitrack/ardour/ardour.tar.gz
-444da6213878defc85bce45e5dd91c46  ./audio/multitrack/ardour3/ardour3.tar.gz
+d2135137578cc24566de0e8eda756231  ./audio/multitrack/ardour3/ardour3.tar.gz
 ecca8f43e4395556f67356182614049e  ./audio/multitrack/jokosher/jokosher.tar.gz
 885ecba79cdc693165cd0bad5c051a5a  ./audio/multitrack/ecasound/ecasound.tar.gz
 c796270b1830a1e021de7fae43da7442  ./audio/editors/mscore/mscore.tar.gz
@@ -64,7 +64,7 @@ c796270b1830a1e021de7fae43da7442  ./audio/editors/mscore/mscore.tar.gz
 e783228d7f4fa1d7f8432baa47b5b432  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 ef73ba5c7d63bdfd50fab9b168a96557  ./audio/editors/milkytracker/milkytracker.tar.gz
 cadb985279c465b6db35aa85de125f53  ./audio/editors/rosegarden/rosegarden.tar.gz
-bac923a5a542ac1b18ecd2964c327da8  ./audio/editors/audacity/audacity.tar.gz
+197feae0a53807aacc3d3df0eec21854  ./audio/editors/audacity/audacity.tar.gz
 88d58f3dfeaede9cc800afa385bba9e9  ./audio/editors/denemo/denemo.tar.gz
 0635175d3f62a5a1488987a8b1bdf0d5  ./audio/mixers/qastools/qastools.tar.gz
 17c8fb10859de1714795537eaa4ba34b  ./audio/misc/vkeybd/vkeybd.tar.gz
@@ -151,7 +151,7 @@ bbdc78fd5aeb1051edd8f6123eb4c359  ./audio/libraries/libsmf/libsmf.tar.gz
 24ac7f01a556440ff40a1ea2e5e86ed1  ./audio/libraries/sratom/sratom.tar.gz
 ed09ba95ed0b55db140eafd4aca37ceb  ./audio/libraries/gigedit/gigedit.tar.gz
 593042772ade9efcf4445872698f8446  ./audio/libraries/fltk/fltk.tar.gz
-e5f78b2631772d2048a50fd2134be3a1  ./audio/percussion/hydrogen/hydrogen.tar.gz
+00bcce4526421f47cd55e055d572ae20  ./audio/percussion/hydrogen/hydrogen.tar.gz
 8c96f433d57412b368dff7db7cdd8712  ./audio/percussion/jackbeat/jackbeat.tar.gz
 19a8f4de6f63e9ae9e4a2db666890efe  ./audio/percussion/drumkv1/drumkv1.tar.gz
 31ba5f9fcbfc9f5d090476b841e7d2e5  ./audio/plugins/tap-plugins/tap-plugins.tar.gz

@@ -52,11 +52,11 @@ scons 2.2.0 1
 timemachine 0.3.3 7
 evince 3.4.0 2
 lame 3.99.1 2
-guitarix2 0.24.0 3
+guitarix2 0.24.0 4
 ladish git20140427 1
 qtractor 0.5.0 6
 ardour 2.8.16 6
-ardour3 3.5.357 4
+ardour3 3.5.357 5
 jokosher 0.11.5 6
 ecasound 2.8.1 3
 mscore 1.3 7
@@ -64,7 +64,7 @@ lilypond 2.16.2 6
 frescobaldi 1.2.0 6
 milkytracker 0.90.86 4
 rosegarden 13.06 6
-audacity 2.0.5 5
+audacity 2.0.5 6
 denemo 1.0.2 6
 qastools 0.17.2 3
 vkeybd 0.1.18d 1
@@ -151,7 +151,7 @@ libsmf 1.3 1
 sratom 0.4.2 1
 gigedit 0.2.0 1
 fltk 1.3.2 2
-hydrogen git20140413 3
+hydrogen git20140413 4
 jackbeat 0.7.6 1
 drumkv1 0.4.1 1
 tap-plugins 0.7.1 1
