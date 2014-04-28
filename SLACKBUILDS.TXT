@@ -1,4 +1,4 @@
-7fe211bac1488d49428a1b81e07e49de  ./system/desktop/Xdialog/Xdialog.tar.gz
+2ba404c6b37e5c6d34cf535a50373f6c  ./system/desktop/Xdialog/Xdialog.tar.gz
 e553e69079166e552be3d68302f7a637  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 c4023d5df8035657bf386ec11446396b  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz

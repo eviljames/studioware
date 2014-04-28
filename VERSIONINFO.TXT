@@ -1,4 +1,4 @@
-Xdialog 2.3.1 1
+Xdialog 2.3.1 2
 studioware-scripts 0.0.1 2
 fluxbox-menus 0.0.2 2
 kde-menus 0.0.1 1
