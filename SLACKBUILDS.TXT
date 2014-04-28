@@ -1,5 +1,5 @@
 2ba404c6b37e5c6d34cf535a50373f6c  ./system/desktop/Xdialog/Xdialog.tar.gz
-f4b861f76eedf4041e14924530a22fd2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+354360f7091fbfeaaebc5504a1c7a7f5  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 f463015fa8ce4a38cfe87f89d4736af8  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
@@ -153,7 +153,7 @@ ed09ba95ed0b55db140eafd4aca37ceb  ./audio/libraries/gigedit/gigedit.tar.gz
 593042772ade9efcf4445872698f8446  ./audio/libraries/fltk/fltk.tar.gz
 00bcce4526421f47cd55e055d572ae20  ./audio/percussion/hydrogen/hydrogen.tar.gz
 8c96f433d57412b368dff7db7cdd8712  ./audio/percussion/jackbeat/jackbeat.tar.gz
-19a8f4de6f63e9ae9e4a2db666890efe  ./audio/percussion/drumkv1/drumkv1.tar.gz
+bedb0950f56156555c641e6ec615f080  ./audio/percussion/drumkv1/drumkv1.tar.gz
 31ba5f9fcbfc9f5d090476b841e7d2e5  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 0bd84061a1ca5fbc3466be0790f12703  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 736f5082d8f2b77be0b36696888411f3  ./audio/plugins/caps/caps.tar.gz

@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=studioware-scripts
-VERSION=${VERSION:-0.0.3}
+VERSION=${VERSION:-0.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 ARCH=noarch
@@ -73,10 +73,6 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
-
-mkdir -p $PKG/usr/share/applications
-cp studioware-core-apps-chooser.desktop \
-    $PKG/usr/share/applications
 
 cd $PKG
 
