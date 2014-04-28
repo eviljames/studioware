@@ -24,7 +24,7 @@
 PRGNAM=ardour3
 SRCNAM=ardour
 VERSION=${VERSION:-3.5.357}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-5}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

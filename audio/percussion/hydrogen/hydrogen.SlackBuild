@@ -23,7 +23,7 @@
 
 PRGNAM=hydrogen
 VERSION=${VERSION:-git20140413}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -76,8 +76,14 @@ cd build
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIB_SUFFIX=${LIBDIRSUFFIX} \
     -DMAN_INSTALL_DIR=/usr/man \
+    -DWANT_LASH=ON \
+    -DWANT_LRDF=ON \
+    -DWANT_PORTAUDIO=ON \
+    -DWANT_PORTMIDI=ON \
+    -DWANT_RUBBERBAND=ON \
+    -DLADSPA_LIBRARIES=/usr/lib$LIBDIRSUFIX/ladspa \
     -DCMAKE_BUILD_TYPE=Release ..
-  make 
+  make
   make install DESTDIR=$PKG
 cd ..
 
@@ -101,6 +107,8 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cd $PKG
 
 find . -name \*desktop -exec \
-sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Percussion;/' '{}' \;
+sed -i \
+'s/Categories=.*/Categories=X-Studioware-Audio-Core;X-Studioware-Audio-Percussion;/' \
+    '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
