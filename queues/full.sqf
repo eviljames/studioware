@@ -1,4 +1,3 @@
 @audio
 @video
 @photo
-@scripts

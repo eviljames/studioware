@@ -5,3 +5,4 @@ studioware-core-apps-chooser:
 A Xdialog/dialog application to select which apps to include in Audio 'Core'.
 
 The '-c' option or outside of X uses dialog instead of Xdialog.
+The '-d' will reset to defaults.
