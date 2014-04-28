@@ -1,6 +1,6 @@
 2ba404c6b37e5c6d34cf535a50373f6c  ./system/desktop/Xdialog/Xdialog.tar.gz
-c1603450e46dc3b30ae9a59c68826deb  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
-c4023d5df8035657bf386ec11446396b  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+f4b861f76eedf4041e14924530a22fd2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+f463015fa8ce4a38cfe87f89d4736af8  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
 d0e6e5221643e7b5192e445999685501  ./photo/editors/rawstudio/rawstudio.tar.gz
