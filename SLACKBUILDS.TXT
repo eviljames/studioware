@@ -5,7 +5,7 @@ dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
 d0e6e5221643e7b5192e445999685501  ./photo/editors/rawstudio/rawstudio.tar.gz
 19ff080d5a1401f229117021d56ed96d  ./photo/editors/digikam/digikam.tar.gz
-4fef6a5a278886e04ac6f8a931a60a4e  ./photo/editors/darktable/darktable.tar.gz
+84225150a40ccb116f100f865acfeef4  ./photo/editors/darktable/darktable.tar.gz
 ed6379cf4ee5f14ff6dc392531b3ece3  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 95f952f91eb9814c7853dd19830a8c2a  ./photo/output/photoprint/photoprint.tar.gz
 26571e17406d5302e6b2147b8d87088d  ./photo/system/iccprofiles/iccprofiles.tar.gz
