@@ -1,5 +1,6 @@
 2ba404c6b37e5c6d34cf535a50373f6c  ./system/desktop/Xdialog/Xdialog.tar.gz
-45a8af9f34ad6296173bbf47f8f22b72  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
+44d29dd65f6ddb4e8b9eb86242163ac2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
@@ -89,7 +90,7 @@ f0ce9ca36ab2baf3e342d7a190451f4d  ./audio/system/rtaudio/rtaudio.tar.gz
 6292f6b5ca7d29458cb7d98534d8329f  ./audio/system/numactl/numactl.tar.gz
 65b962a072006836e9581231d0bef6e2  ./audio/system/jack/jack.tar.gz
 f952edf3ac23d015e4931a819b4ae514  ./audio/system/rt-tests/rt-tests.tar.gz
-8e5987bad704cb9dbdd9c989f626c39c  ./audio/system/qjackctl/qjackctl.tar.gz
+4aa135779ddd1c29822b404d4a34c355  ./audio/system/qjackctl/qjackctl.tar.gz
 d8e6ef7af45fb3551c4e9951bda5368e  ./audio/samplers/qsampler/qsampler.tar.gz
 cad962826fe174a74d8c5846373f4b07  ./audio/samplers/samplv1/samplv1.tar.gz
 617e2b648041fc61fe24cb8d7ef796d5  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
@@ -153,7 +154,7 @@ ed09ba95ed0b55db140eafd4aca37ceb  ./audio/libraries/gigedit/gigedit.tar.gz
 593042772ade9efcf4445872698f8446  ./audio/libraries/fltk/fltk.tar.gz
 00bcce4526421f47cd55e055d572ae20  ./audio/percussion/hydrogen/hydrogen.tar.gz
 8c96f433d57412b368dff7db7cdd8712  ./audio/percussion/jackbeat/jackbeat.tar.gz
-bedb0950f56156555c641e6ec615f080  ./audio/percussion/drumkv1/drumkv1.tar.gz
+7f661389bc8e1cc768a6bb60ce606210  ./audio/percussion/drumkv1/drumkv1.tar.gz
 31ba5f9fcbfc9f5d090476b841e7d2e5  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 0bd84061a1ca5fbc3466be0790f12703  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 736f5082d8f2b77be0b36696888411f3  ./audio/plugins/caps/caps.tar.gz
