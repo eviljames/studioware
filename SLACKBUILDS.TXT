@@ -100,7 +100,7 @@ f5f8fcc513db97789ada38b9f67733d4  ./audio/synthesizers/ZynAddSubFX/ZynAddSubFX.t
 785db260089e02f4bdb85a9d40d64739  ./audio/synthesizers/bristol/bristol.tar.gz
 32495c003be0fae06e17fb170012fbe2  ./audio/synthesizers/amsynth/amsynth.tar.gz
 aa8040c9fc910bcd1e60176ae6b4a89d  ./audio/synthesizers/aeolus/aeolus.tar.gz
-ea70416960b445024c3e224a4e505fb9  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
+79477215a700bf567e9b9c5cbbec9e52  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
 805b8ea4d8759b686a795c6541bcae34  ./audio/synthesizers/qsynth/qsynth.tar.gz
 d7194a63b55851e704e2ee07ba55308b  ./audio/synthesizers/hexter/hexter.tar.gz
 fa7ddd9e884d18ad125ff66a10946fcd  ./audio/synthesizers/sunvox/sunvox.tar.gz

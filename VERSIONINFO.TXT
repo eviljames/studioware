@@ -100,7 +100,7 @@ ZynAddSubFX 2.4.3 6
 bristol 0.60.8 3
 amsynth 1.4.0 7
 aeolus 0.8.4 2
-yoshimi 1.2.0 1
+yoshimi git20140501 1
 qsynth 0.3.8 1
 hexter 1.0.2 1
 sunvox 1.7.3c 4

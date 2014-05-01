@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=yoshimi
-VERSION=${VERSION:-1.2.0}
+VERSION=${VERSION:-git20140501}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
+tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -79,6 +79,7 @@ cd build
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIB_SUFFIX=${LIBDIRSUFFIX} \
     -DMAN_INSTALL_DIR=/usr/man \
+    -DMAX_BANK_ROOT_DIRS=128 \
     -DCMAKE_BUILD_TYPE=Release ..
   make 
   make install DESTDIR=$PKG
