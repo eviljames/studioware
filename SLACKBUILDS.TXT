@@ -4,6 +4,8 @@ c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
+1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
+fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 d0e6e5221643e7b5192e445999685501  ./photo/editors/rawstudio/rawstudio.tar.gz
 19ff080d5a1401f229117021d56ed96d  ./photo/editors/digikam/digikam.tar.gz
 84225150a40ccb116f100f865acfeef4  ./photo/editors/darktable/darktable.tar.gz

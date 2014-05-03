@@ -4,6 +4,8 @@ studioware-scripts 0.0.6 1
 fluxbox-menus 0.0.3 1
 kde-menus 0.0.1 1
 xfce-menus 0.0.9 1
+gnome-vfs 2.24.4 1
+gnome-mime-data 2.18.0 1
 rawstudio 2.0 4
 digikam 3.5.0 4
 darktable 1.4.2 1
