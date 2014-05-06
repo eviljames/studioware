@@ -1,4 +1,3 @@
-2ba404c6b37e5c6d34cf535a50373f6c  ./system/desktop/Xdialog/Xdialog.tar.gz
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 44d29dd65f6ddb4e8b9eb86242163ac2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
