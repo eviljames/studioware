@@ -164,7 +164,7 @@ e85ce1d6bc7353b6d164bb5c06381a17  ./audio/plugins/invada-studio-plugins/invada-s
 eda0d36bc658860564e13e59ab413b08  ./audio/plugins/gst1-plugins-base/gst1-plugins-base.tar.gz
 f0cb448d2f70930b59201537c8fa1d86  ./audio/plugins/lv2/lv2.tar.gz
 448fd5fc61d171b6a2ade0256860123d  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
-516795aca4e5600c5f5becd4ac2f8e82  ./audio/plugins/calf/calf.tar.gz
+21c56666d7b04236c12dc64d02205912  ./audio/plugins/calf/calf.tar.gz
 36429c3e40979e25d24f11ff9af45ada  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 2fc3cfb1b638f6106686762b764deaa8  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 579697734c226230b06839906687ec42  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
