@@ -62,3 +62,11 @@ vkeybd
 @hexter
 @jackbeat
 @system
+alsa-plugins
+@linuxsampler
+@openAV-ArtyFX
+@ladish
+@qsampler
+@gigedit
+caps
+@drumgizmo

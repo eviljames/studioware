@@ -1,7 +1,6 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 44d29dd65f6ddb4e8b9eb86242163ac2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
-80423e5c01aa55a35e2e9789b9b8d42e  ./system/menus/kde-menus/kde-menus.tar.gz
 da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
@@ -55,7 +54,7 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 ddc12c403209c250d66836b94f677350  ./audio/desktop/evince/evince.tar.gz
 115e7f57c53b4c903a7a486544417084  ./audio/codecs/lame/lame.tar.gz
 941d86b08bea10dcfbe4d02a99432eb2  ./audio/amps/guitarix2/guitarix2.tar.gz
-6749dd95ed127b4d99347316cb7d5fbb  ./audio/session/ladish/ladish.tar.gz
+155db3df08ebd3ec45302b0920619a98  ./audio/session/ladish/ladish.tar.gz
 ce02be987f6b2a49aef0d98df17f67f5  ./audio/multitrack/qtractor/qtractor.tar.gz
 e160b211547ec3198d9ebe4501b0fc3c  ./audio/multitrack/ardour/ardour.tar.gz
 d2135137578cc24566de0e8eda756231  ./audio/multitrack/ardour3/ardour3.tar.gz
@@ -94,7 +93,7 @@ f952edf3ac23d015e4931a819b4ae514  ./audio/system/rt-tests/rt-tests.tar.gz
 4aa135779ddd1c29822b404d4a34c355  ./audio/system/qjackctl/qjackctl.tar.gz
 d8e6ef7af45fb3551c4e9951bda5368e  ./audio/samplers/qsampler/qsampler.tar.gz
 cad962826fe174a74d8c5846373f4b07  ./audio/samplers/samplv1/samplv1.tar.gz
-617e2b648041fc61fe24cb8d7ef796d5  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
+f1a84617d6278c43299e6c6342a13f9c  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
 9d8b05334913b14308b297c1e95a083d  ./audio/synthesizers/synthv1/synthv1.tar.gz
 809b8194239be4f89ac2a747d76c68d3  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
 f5f8fcc513db97789ada38b9f67733d4  ./audio/synthesizers/ZynAddSubFX/ZynAddSubFX.tar.gz
@@ -165,9 +164,9 @@ f0cb448d2f70930b59201537c8fa1d86  ./audio/plugins/lv2/lv2.tar.gz
 448fd5fc61d171b6a2ade0256860123d  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
 21c56666d7b04236c12dc64d02205912  ./audio/plugins/calf/calf.tar.gz
 36429c3e40979e25d24f11ff9af45ada  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
-2fc3cfb1b638f6106686762b764deaa8  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
+2a017a55aaed83c1c7e8c570d19466b8  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 579697734c226230b06839906687ec42  ./audio/plugins/gstreamer1/gstreamer1.tar.gz
-6ca79e62ea55a8c0eb5863899420055a  ./audio/plugins/alsa-plugins/alsa-plugins.tar.gz
+4f968affb5aea29a7151519ffcde725f  ./audio/plugins/alsa-plugins/alsa-plugins.tar.gz
 fb9dfb7805a8bf8971f413d8ed35ce7e  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9343e590041bd8eddb61797ab728f23c  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 77d6061fc1f92305757b2eaccc7a0c7b  ./audio/plugins/gavl/gavl.tar.gz

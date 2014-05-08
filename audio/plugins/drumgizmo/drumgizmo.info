@@ -5,6 +5,6 @@ DOWNLOAD="http://www.drumgizmo.org/releases/drumgizmo-0.9.5/drumgizmo-0.9.5.tar.
 MD5SUM="d6c1f1e080e53e01bc3b4eef13bc2b0d"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES=""
+REQUIRES="lv2 libsmf jack"
 MAINTAINER="Dave Woodfall"
 EMAIL="dave@studioware.org"
