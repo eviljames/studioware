@@ -21,8 +21,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=xfce-menus
-VERSION=${VERSION:-0.0.9}
+PRGNAM=desktop-menus
+VERSION=${VERSION:-0.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -61,6 +61,9 @@ cp studioware-{audio*,video,photo}.directory \
 
 mkdir -p $PKG/etc/xdg/menus
 cp xfce-applications.menu.new $PKG/etc/xdg/menus
+
+mkdir -p $PKG/etc/kde/xdg/menus
+cp applications.menu.new $PKG/etc/kde/xdg/menus
 
 mkdir -p $PKG/usr/share/icons/hicolor/scalable/categories
 cp studioware-logo5.png studioware-logo5mono.png \

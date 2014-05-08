@@ -1,4 +1,4 @@
 fluxbox-menus
-xfce-menus
+desktop-menus
 @studioware-scripts
 @gnome-vfs
