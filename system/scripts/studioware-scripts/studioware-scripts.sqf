@@ -1,2 +1,2 @@
-Xdialog
+kaptain
 studioware-scripts

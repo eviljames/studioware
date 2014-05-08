@@ -1,0 +1,7 @@
+gnome-vfs (the GNOME Virtual File System)
+
+This is the GNOME Virtual File System, currently used as one of the
+foundations of the Nautilus file manager.
+
+This version contains a fix to let Thunar and other file managers
+browse and access smb shares.

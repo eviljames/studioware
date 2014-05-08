@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for drumgizmo
-# Copyright 2014 Dave Woodfall <dave@studioware.org>
+# Slackware build script for gnome-vfs
+# Copyright 2014 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -20,11 +20,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Modified by Donald Tanner <mesa@studioware.org> 
 
-PRGNAM=drumgizmo
-VERSION=${VERSION:-0.9.5}
+# This has a fix to make it work with Samba 4.0 and therefore Thunar
+# has networking abilities.
+
+PRGNAM=gnome-vfs
+VERSION=${VERSION:-2.24.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -61,7 +62,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -70,8 +71,9 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# Fix hardcoded lv2 path
-sed "s/@LIBDIRSUFFIX@/$LIBDIRSUFFIX/g" $CWD/lib64-fix.patch | patch -p1 --verbose 
+# Thanks to Erik Hanson for this
+# Fix for the newer glib
+sed -i "/-DG_DISABLE_DEPRECATED/d" */Makefile.*
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
@@ -82,30 +84,20 @@ CXXFLAGS="$SLKCFLAGS" \
   --localstatedir=/var \
   --mandir=/usr/man \
   --infodir=/usr/info \
-  --disable-static \
-  --enable-lv2 \
-  --enable-cli \
-  --enable-editor \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --with-samba-includes=/usr/include/samba-4.0 \
+  --disable-static \
   --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
-
-# Fix lib64
-#if [ "$ARCH" = "x86_64" ]; then
-#    mv $PKG/usr/lib $PKG/usr/lib64
-#fi
-
-# Remove statics
-find $PKG -name \*.la -exec rm -f {} \;
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING ChangeLog INSTALL NEWS README  \
+  AUTHORS COPYING COPYING.LIB ChangeLog HACKING INSTALL MAINTAINERS NEWS README TODO doc \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
@@ -113,8 +105,4 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-
-find . -name \*desktop -exec \
-sed -i 's/Categories=.*/Categories=X-Studioware-Audio-Percussion;/' {} \;
-
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

@@ -1,21 +1,46 @@
 diff -Naur a/src/Misc/Config.cpp b/src/Misc/Config.cpp
---- a/src/Misc/Config.cpp	2014-03-16 17:01:06.000000000 +0000
-+++ b/src/Misc/Config.cpp	2014-04-22 15:10:08.280316714 +0100
-@@ -372,7 +372,7 @@
-             xml->exitbranch();
-         }
-     }
--    if (!count)
-+    if (count == 0)
+--- a/src/Misc/Config.cpp	2014-05-01 06:39:13.699307398 +0100
++++ b/src/Misc/Config.cpp	2014-05-01 09:35:30.416945825 +0100
+@@ -314,7 +314,42 @@
+ 
+     bool isok = true;
+     if (!isRegFile(ConfigFile))
++    {
+         Log("ConfigFile " + ConfigFile + " still not found, will use default settings");
++        int count = 0;
++        string bankdirs[] = {
++            "/usr/share/yoshimi/banks",
++            "/usr/local/share/yoshimi/banks",
++            "/usr/share/zynaddsubfx/banks",
++            "/usr/local/share/zynaddsubfx/banks",
++            string(getenv("HOME")) + "/banks",
++            "../banks",
++            "banks"
++        };
++        const int defaultsCount = 7; // as per bankdirs[] size above
++        for (int i = 0; i < defaultsCount; ++i)
++        {
++            if (bankdirs[i].size() && isDirectory(bankdirs[i]))
++                bankRootDirlist[count++] = bankdirs[i];
++        }
++        if (!currentBankDir.size())
++            currentBankDir = bankRootDirlist[0];
++
++        count = 0;
++        string presetdirs[]  = {
++            "/usr/share/yoshimi/presets",
++            "/usr/local/share/yoshimi/presets",
++            "/usr/share/zynaddsubfx/presets",
++            "/usr/local/share/zynaddsubfx/presets",
++            string(getenv("HOME")) + "/presets",
++            "../presets",
++            "presets"
++        };
++        for (int i = 0; i < defaultsCount; ++i)
++            if (presetdirs[i].size() && isDirectory(presetdirs[i]))
++                presetsDirlist[count++] = presetdirs[i];
++        Log("Loaded default banks and presets");
++    }
+     else
      {
-         string bankdirs[] = {
-             "/usr/share/yoshimi/banks",
-@@ -405,7 +405,7 @@
-             xml->exitbranch();
-         }
-     }
--    if (!count)
-+    if (count == 0)
-     {
-         string presetdirs[]  = {
-             "/usr/share/yoshimi/presets",
+         XMLwrapper *xml = new XMLwrapper();

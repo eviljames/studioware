@@ -1,0 +1,51 @@
+diff -Naur a/configure b/configure
+--- a/configure	2014-04-27 19:51:49.000000000 +0100
++++ b/configure	2014-05-06 06:11:35.307001473 +0100
+@@ -18809,7 +18809,7 @@
+    OUTPUT_PLUGINS="dummy alsa wavfile jackaudio"
+ 
+ 
+-            dgplugindir=${libdir}/drumgizmo
++            dgplugindir=/usr/lib@LIBDIRSUFFIX@/drumgizmo
+ 
+ 
+    INPUT_PLUGIN_DIR=${dgplugindir}/input
+@@ -18819,12 +18819,12 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define INPUT_PLUGIN_DIR "${prefix}/lib/drumgizmo/input"
++#define INPUT_PLUGIN_DIR "${prefix}/lib@LIBDIRSUFFIX@/drumgizmo/input"
+ _ACEOF
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define OUTPUT_PLUGIN_DIR "${prefix}/lib/drumgizmo/output"
++#define OUTPUT_PLUGIN_DIR "${prefix}/lib@LIBDIRSUFFIX@/drumgizmo/output"
+ _ACEOF
+ 
+ else
+diff -Naur a/lv2/Makefile.am b/lv2/Makefile.am
+--- a/lv2/Makefile.am	2014-04-27 19:49:03.000000000 +0100
++++ b/lv2/Makefile.am	2014-05-06 05:36:45.036647513 +0100
+@@ -9,7 +9,7 @@
+ 	$(PLUGIN_GUI_CFLAGS) $(SSEFLAGS)\
+ 	-DUSE_THREAD $(SAMPLERATE_CFLAGS)
+ 
+-plugindir = $(prefix)/lib/lv2/drumgizmo.lv2
++plugindir = $(prefix)/lib@LIBDIRSUFFIX@/lv2/drumgizmo.lv2
+ plugin_LTLIBRARIES = drumgizmo.la
+ plugin_DATA = manifest.ttl drumgizmo.ttl
+ 
+diff -Naur a/lv2/Makefile.in b/lv2/Makefile.in
+--- a/lv2/Makefile.in	2014-04-27 19:51:48.000000000 +0100
++++ b/lv2/Makefile.in	2014-05-06 05:39:58.644648019 +0100
+@@ -446,7 +446,7 @@
+ @ENABLE_LV2_TRUE@	$(PLUGIN_GUI_CFLAGS) $(SSEFLAGS)\
+ @ENABLE_LV2_TRUE@	-DUSE_THREAD $(SAMPLERATE_CFLAGS)
+ 
+-@ENABLE_LV2_TRUE@plugindir = $(prefix)/lib/lv2/drumgizmo.lv2
++@ENABLE_LV2_TRUE@plugindir = $(prefix)/lib@LIBDIRSUFFIX@/lv2/drumgizmo.lv2
+ @ENABLE_LV2_TRUE@plugin_LTLIBRARIES = drumgizmo.la
+ @ENABLE_LV2_TRUE@plugin_DATA = manifest.ttl drumgizmo.ttl
+ @ENABLE_LV2_TRUE@EXTRA_DIST = \
