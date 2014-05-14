@@ -1,7 +1,7 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
-44d29dd65f6ddb4e8b9eb86242163ac2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+7d8a2e8dfaa5f43463ddba2a4ea3923a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
-ffb84dc5d21d9a821556775b4a4b740c  ./system/menus/desktop-menus/desktop-menus.tar.gz
+9261e818956fe8ad77cc77c7b1159f0e  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 d0e6e5221643e7b5192e445999685501  ./photo/editors/rawstudio/rawstudio.tar.gz
