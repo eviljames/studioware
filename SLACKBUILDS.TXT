@@ -1,5 +1,6 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
-7d8a2e8dfaa5f43463ddba2a4ea3923a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+53419339920473a320c2ae78c5fdade3  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 9261e818956fe8ad77cc77c7b1159f0e  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
