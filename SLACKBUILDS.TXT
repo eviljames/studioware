@@ -171,6 +171,7 @@ f0cb448d2f70930b59201537c8fa1d86  ./audio/plugins/lv2/lv2.tar.gz
 fb9dfb7805a8bf8971f413d8ed35ce7e  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9343e590041bd8eddb61797ab728f23c  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 77d6061fc1f92305757b2eaccc7a0c7b  ./audio/plugins/gavl/gavl.tar.gz
+bd52aae72c0258d7b41c5079565e3716  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 4c6aaa7a9e10ead27e6052247b4bb922  ./audio/graphics/t1utils/t1utils.tar.gz
 cbf48cf309df6d0d5b4a38c8d47943a9  ./audio/graphics/goocanvas/goocanvas.tar.gz
 fabdcfa4fd4e1cae3b7ffad4f8f1c8b8  ./audio/graphics/potrace/potrace.tar.gz

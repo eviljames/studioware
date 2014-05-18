@@ -171,6 +171,7 @@ alsa-plugins 1.0.27 1
 swh-plugins-lv2 1.0.15 2
 gst1-plugins-bad 1.2.3 1
 gavl 1.4.0 1
+a2jmidid git20140517 1
 t1utils 1.36 3
 goocanvas 1.0.0 1
 potrace 1.9 3
