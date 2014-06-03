@@ -1,0 +1,16 @@
+a2jmidid
+
+a2jmidid is a daemon for exposing legacy ALSA sequencer applications
+in the JACK MIDI system.
+
+a2jmidid is used as a bridge for legacy ALSA sequencer apps
+such as PHASEX, QSynth, jackctlmmc and seq24.
+
+Start the daemon like so: 'a2j_control start'.
+
+These switches are also available: 'a2j_control start|stop|status'.
+
+This article could prove useful:
+http://manual.ardour.org/setting-up-your-system/setting-up-midi/midi-on-linux/
+
+http://home.gna.org/a2jmidid/

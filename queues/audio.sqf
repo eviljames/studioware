@@ -70,3 +70,4 @@ alsa-plugins
 @gigedit
 caps
 @drumgizmo
+@a2jmidid

@@ -1,7 +1,8 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
-44d29dd65f6ddb4e8b9eb86242163ac2  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+53419339920473a320c2ae78c5fdade3  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
-da22af61273890622d6417879fb4ab25  ./system/menus/xfce-menus/xfce-menus.tar.gz
+9261e818956fe8ad77cc77c7b1159f0e  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 d0e6e5221643e7b5192e445999685501  ./photo/editors/rawstudio/rawstudio.tar.gz
@@ -170,6 +171,7 @@ f0cb448d2f70930b59201537c8fa1d86  ./audio/plugins/lv2/lv2.tar.gz
 fb9dfb7805a8bf8971f413d8ed35ce7e  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9343e590041bd8eddb61797ab728f23c  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 77d6061fc1f92305757b2eaccc7a0c7b  ./audio/plugins/gavl/gavl.tar.gz
+bd52aae72c0258d7b41c5079565e3716  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 4c6aaa7a9e10ead27e6052247b4bb922  ./audio/graphics/t1utils/t1utils.tar.gz
 cbf48cf309df6d0d5b4a38c8d47943a9  ./audio/graphics/goocanvas/goocanvas.tar.gz
 fabdcfa4fd4e1cae3b7ffad4f8f1c8b8  ./audio/graphics/potrace/potrace.tar.gz

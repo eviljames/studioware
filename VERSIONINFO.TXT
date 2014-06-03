@@ -1,7 +1,8 @@
 kaptain 0.73 1
-studioware-scripts 0.0.6 1
+studioware-scripts 0.0.8 1
+extra-desktops 0.0.1 1
 fluxbox-menus 0.0.3 1
-xfce-menus 0.0.9 1
+desktop-menus 0.0.3 1
 gnome-vfs 2.24.4 1
 gnome-mime-data 2.18.0 1
 rawstudio 2.0 4
@@ -170,6 +171,7 @@ alsa-plugins 1.0.27 1
 swh-plugins-lv2 1.0.15 2
 gst1-plugins-bad 1.2.3 1
 gavl 1.4.0 1
+a2jmidid git20140517 1
 t1utils 1.36 3
 goocanvas 1.0.0 1
 potrace 1.9 3
