@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=seq24
-VERSION=${VERSION:-0.9.2}
-BUILD=${BUILD:-7}
+VERSION=${VERSION:-0.9.3}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,8 +68,8 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-patch -p1 --verbose < $CWD/lash-fix.patch
-patch -p1 --verbose < $CWD/fix-jack-transport.patch
+#patch -p1 --verbose < $CWD/lash-fix.patch
+#patch -p1 --verbose < $CWD/fix-jack-transport.patch
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \

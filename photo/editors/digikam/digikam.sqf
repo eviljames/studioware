@@ -1,6 +1,9 @@
 @enblend-enfuse
 @hugin
 @opencv
-liblqr
 eigen
+libkgeomap4
+libkvkontakte
+liblqr
+@libkface
 digikam

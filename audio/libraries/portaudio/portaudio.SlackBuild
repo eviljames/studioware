@@ -23,8 +23,8 @@
 
 PRGNAM=portaudio
 SRCNAM="pa_stable"
-VERSION=${VERSION:-v19_20110326}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-v19_20140130}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

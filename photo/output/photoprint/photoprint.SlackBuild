@@ -24,7 +24,7 @@
 PRGNAM=photoprint
 VERSION=${VERSION:-0.4.2_pre2}
 SRCVERSION=${VERSION/_/-}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=terminatorX
-VERSION=${VERSION:-3.84}
-BUILD=${BUILD:-6}
+VERSION=${VERSION:-4.0.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,8 +68,8 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-sed -i 's#Name=terminatorX#Name=TerminatorX#' gnome-support/terminatorX.desktop
-patch -p1 --verbose < $CWD/tx_midiin.patch
+#sed -i 's#Name=terminatorX#Name=TerminatorX#' gnome-support/terminatorX.desktop
+#patch -p1 --verbose < $CWD/tx_midiin.patch
 
 LDFLAGS="-ldl" \
 CFLAGS="$SLKCFLAGS" \
@@ -93,14 +93,14 @@ find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/share/applications
-cp gnome-support/terminatorX.desktop $PKG/usr/share/applications
+#cp gnome-support/terminatorX.desktop $PKG/usr/share/applications
 
 mkdir -p $PKG/usr/share/pixmaps
-cp gnome-support/terminatorX-app.png $PKG/usr/share/pixmaps
+#cp gnome-support/terminatorX-app.png $PKG/usr/share/pixmaps
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING COPYING-DOCS ChangeLog INSTALL NEWS README.PERFORMANCE README THANKS TODO doc \
+  AUTHORS COPYING COPYING-DOCS ChangeLog INSTALL NEWS README.PERFORMANCE README THANKS TODO \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

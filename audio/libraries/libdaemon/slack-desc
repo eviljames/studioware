@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+libdaemon: libdaemon (C library that eases the writing of UNIX daemons)
+libdaemon:
+libdaemon: libdaemon is a lightweight C library that eases the writing of UNIX daemons. It
+libdaemon: consists of the following parts:
+libdaemon: A wrapper around fork() which does the correct daemonization procedure of a
+libdaemon: process
+libdaemon: A wrapper around syslog() for simpler and compatible log output to Syslog or
+libdaemon: STDERR
+libdaemon: An API for writing PID files An API for serializing UNIX signals into a pipe
+libdaemon: for usage with select() or poll()
+libdaemon: An API for running subprocesses with STDOUT and STDERR redirected to syslog.

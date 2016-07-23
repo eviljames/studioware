@@ -22,9 +22,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=qastools
-SRCNAM=qastools_0.17.2
-VERSION=${VERSION:-0.17.2}
-BUILD=${BUILD:-3}
+SRCNAM=qastools_0.18.1
+VERSION=${VERSION:-0.18.1}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -60,7 +60,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM
-tar xvf $CWD/$SRCNAM.tar.bz2
+tar xvf $CWD/$SRCNAM.tar.xz
 cd $SRCNAM
 chown -R root:root .
 find . \

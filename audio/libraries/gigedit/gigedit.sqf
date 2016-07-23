@@ -1,3 +1,2 @@
-@gtkmm
 @linuxsampler
 gigedit

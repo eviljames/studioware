@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=rtaudio
-VERSION=${VERSION:-4.0.12}
+VERSION=${VERSION:-4.1.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -70,7 +70,7 @@ find -L . \
 
 # Taken from an arch patch and fixed to allow static for giada to
 # build
-patch -p1 --verbose < $CWD/rtaudio-fixes.patch
+#patch -p1 --verbose < $CWD/rtaudio-fixes.patch
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
@@ -87,29 +87,30 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-alsa
 
 make
+make install DESTDIR=$PKG
 
-# Thanks to ARCH PKGBUILD
-
-mkdir -p $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
-cp librtaudio.a $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
-
-# configure scripts
-sed -i 's@Requires:@Requires: jack @' librtaudio.pc
-install -Dm644 librtaudio.pc "$PKG/usr/lib$LIBDIRSUFFIX/pkgconfig/librtaudio.pc"
-install -Dm755 rtaudio-config "$PKG/usr/bin/rtaudio-config"
-
-# libs
-install -m755 "librtaudio.so.$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.$VERSION"
-ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.4"
-ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so"
-
-# RtAudio shares RtError.h with rtmidi:RtMidi.h
-# Thus I left out RtError.h and made rtmidi a dependency
-# to place the header file where other packages will expect it
-install -Dm644 RtAudio.h "$PKG/usr/include/RtAudio.h"
-
-# cosmetic fix
-sed -i 's/-lasound -lasound/-lasound/' rtaudio-config
+## Thanks to ARCH PKGBUILD
+#
+#mkdir -p $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
+#cp librtaudio.a $PKG/usr/lib$LIBDIRSUFFIX/rtaudio
+#
+## configure scripts
+#sed -i 's@Requires:@Requires: jack @' librtaudio.pc
+#install -Dm644 librtaudio.pc "$PKG/usr/lib$LIBDIRSUFFIX/pkgconfig/librtaudio.pc"
+#install -Dm755 rtaudio-config "$PKG/usr/bin/rtaudio-config"
+#
+## libs
+#install -m755 "librtaudio.so.$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.$VERSION"
+#ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so.4"
+#ln -sf librtaudio.so."$VERSION" "$PKG/usr/lib$LIBDIRSUFFIX/librtaudio.so"
+#
+## RtAudio shares RtError.h with rtmidi:RtMidi.h
+## Thus I left out RtError.h and made rtmidi a dependency
+## to place the header file where other packages will expect it
+#install -Dm644 RtAudio.h "$PKG/usr/include/RtAudio.h"
+#
+## cosmetic fix
+#sed -i 's/-lasound -lasound/-lasound/' rtaudio-config
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

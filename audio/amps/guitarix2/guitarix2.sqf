@@ -1,5 +1,4 @@
-@pangomm
-@gtkmm
 @liblrdf
 jack
+@avahi
 guitarix2

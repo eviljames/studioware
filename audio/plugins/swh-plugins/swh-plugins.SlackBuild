@@ -22,7 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=swh-plugins
-VERSION=${VERSION:-0.4.15}
+SRCNAM=ladspa
+VERSION=${VERSION:-0.4.16}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -58,9 +59,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/v$VERSION.tar.gz
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -68,6 +69,7 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+./autogen.sh
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -79,7 +81,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --infodir=/usr/info \
   --build=$ARCH-slackware-linux
 
-sed -i "s%plugindir = /usr/lib/ladspa%plugindir = /usr/lib$LIBDIRSUFFIX/ladspa%" Makefile
+#sed -i "s%plugindir = /usr/lib/ladspa%plugindir = /usr/lib$LIBDIRSUFFIX/ladspa%" Makefile
 
 make
 make install DESTDIR=$PKG

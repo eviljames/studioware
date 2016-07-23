@@ -1,7 +1,6 @@
 jack
 @lilv
 suil
-@gtkmm
 liblo
 aubio
 @liblrdf

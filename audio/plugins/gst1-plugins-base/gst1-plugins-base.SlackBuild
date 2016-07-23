@@ -23,7 +23,7 @@
 
 PRGNAM=gst1-plugins-base
 SRCNAM=gst-plugins-base
-VERSION=${VERSION:-1.2.3}
+VERSION=${VERSION:-1.6.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 

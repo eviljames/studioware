@@ -23,7 +23,7 @@
 
 PRGNAM=gtkimageview
 VERSION=${VERSION:-1.6.4}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,6 +68,10 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# From Larry Hajali's slackbuild at slackbuilds.org
+# Build breaks because functions in gdk-pixbuf are now deprecated
+patch -p1 < $CWD/disable_Werror_for_gdk_pixbuf.patch
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -77,6 +81,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --localstatedir=/var \
   --mandir=/usr/man \
   --infodir=/usr/info \
+  --enable-static=no \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 

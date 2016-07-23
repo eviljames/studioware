@@ -1,4 +1,4 @@
-gtkimageview
+@gtkimageview
 @darktable
 iccprofiles
 dcraw

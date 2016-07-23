@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=amsynth
-VERSION=${VERSION:-1.4.0}
-BUILD=${BUILD:-7}
+VERSION=${VERSION:-1.6.4}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
@@ -68,11 +68,11 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-sed -i 's#Name=amsynth#Name=amSynth#' amsynth.desktop.in
+#sed -i 's#Name=amsynth#Name=amSynth#' amsynth.desktop.in
 
-INCLUDES=`pkg-config --cflags gtk+-2.0 gtkmm-2.4` 
+INCLUDES=`pkg-config --cflags gtk+-2.0 gtkmm-2.4`
 CFLAGS="$SLKCFLAGS $INCLUDES" \
-CXXFLAGS="$SLKCFLAGS $INCLUDES" \
+CXXFLAGS="$SLKCFLAGS $INCLUDES -std=c++11" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \

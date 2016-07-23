@@ -1,2 +1,0 @@
-jack
-alsa-plugins

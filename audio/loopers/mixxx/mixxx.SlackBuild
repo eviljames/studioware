@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=mixxx
-VERSION=${VERSION:-1.11.0}
-BUILD=${BUILD:-5}
+VERSION=${VERSION:-2.0.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -62,7 +62,7 @@ rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION-src.tar.gz
 cd $PRGNAM-$VERSION
 
-patch -p1 --verbose < $CWD/desktop.diff
+#patch -p1 --verbose < $CWD/desktop.diff
 
 chown -R root:root .
 find . \
@@ -80,7 +80,7 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   COPYING LICENSE README README.macro  \
+   COPYING LICENSE README \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

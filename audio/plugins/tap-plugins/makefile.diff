@@ -1,6 +1,6 @@
 diff -Naur a/Makefile b/Makefile
---- a/Makefile	2009-08-17 11:10:57.000000000 +0000
-+++ b/Makefile	2012-06-03 08:54:53.000000000 +0000
+--- a/Makefile	2014-05-26 15:51:56.000000000 +0100
++++ b/Makefile	2016-07-14 13:21:38.120167671 +0100
 @@ -23,8 +23,8 @@
  # Change this if you want to install somewhere else. In particular
  # you may wish to remove the middle "local/" part of the path.
@@ -12,20 +12,20 @@ diff -Naur a/Makefile b/Makefile
  
  # NO EDITING below this line is required
  # if all you want to do is install and use the plugins.
-@@ -143,11 +143,11 @@
+@@ -56,11 +56,11 @@
  # OTHER TARGETS
  
- install: targets
--	-mkdir -p		$(INSTALL_PLUGINS_DIR)
--	cp *.so 		$(INSTALL_PLUGINS_DIR)
--	-mkdir -p		$(INSTALL_LRDF_DIR)
--	cp tap-plugins.rdf 	$(INSTALL_LRDF_DIR)
--	cp tap_reverb.rdf 	$(INSTALL_LRDF_DIR)
-+	-mkdir -p		$(DESTDIR)$(INSTALL_PLUGINS_DIR)
-+	cp *.so 		$(DESTDIR)$(INSTALL_PLUGINS_DIR)
-+	-mkdir -p		$(DESTDIR)$(INSTALL_LRDF_DIR)
-+	cp tap-plugins.rdf 	$(DESTDIR)$(INSTALL_LRDF_DIR)
-+	cp tap_reverb.rdf 	$(DESTDIR)$(INSTALL_LRDF_DIR)
+ install: all
+-	-mkdir -p          $(INSTALL_PLUGINS_DIR)
+-	cp *.so            $(INSTALL_PLUGINS_DIR)
+-	-mkdir -p          $(INSTALL_LRDF_DIR)
+-	cp tap-plugins.rdf $(INSTALL_LRDF_DIR)
+-	cp tap_reverb.rdf  $(INSTALL_LRDF_DIR)
++	-mkdir -p          $(DESTDIR)$(INSTALL_PLUGINS_DIR)
++	cp *.so            $(DESTDIR)$(INSTALL_PLUGINS_DIR)
++	-mkdir -p          $(DESTDIR)$(INSTALL_LRDF_DIR)
++	cp tap-plugins.rdf $(DESTDIR)$(INSTALL_LRDF_DIR)
++	cp tap_reverb.rdf  $(DESTDIR)$(INSTALL_LRDF_DIR)
  
- targets:	$(PLUGINS)
- 
+ clean:
+ 	-rm -f *.so *.o *~

@@ -1,0 +1,4 @@
+libkface (wrapper around libface)
+
+A Qt/C++ wrapper around LibFace library to perform face recognition
+and detection over pictures.

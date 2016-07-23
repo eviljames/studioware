@@ -1,0 +1,2111 @@
+In file included from rawstudio.h:48:0,
+                 from rs-io-job-metadata.c:21:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from rawstudio.h:48:0,
+                 from rs-io-job-tagging.c:21:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-io.h:20,
+                 from rs-io-job-prefetch.c:29:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from rawstudio.h:48:0,
+                 from rs-io-job-checksum.c:21:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-io.c: In function ‘queue_worker’:
+rs-io.c:56:4: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+    g_static_mutex_lock(&count_lock);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c:60:4: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+    g_static_mutex_unlock(&count_lock);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c:67:5: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+     g_static_mutex_lock(&count_lock);
+     ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c:69:5: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+     g_static_mutex_unlock(&count_lock);
+     ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c: In function ‘init’:
+rs-io.c:86:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&init_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c:91:4: warning: ‘g_thread_create_full’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+    g_thread_create_full(queue_worker, queue, 0, FALSE, FALSE, G_THREAD_PRIORITY_LOW, NULL);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:110:10: note: declared here
+ GThread *g_thread_create_full  (GThreadFunc       func,
+          ^
+rs-io.c:93:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&init_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c: In function ‘rs_io_lock’:
+rs-io.c:287:2: warning: ‘g_static_rec_mutex_lock’ is deprecated: Use 'g_rec_mutex_lock' instead [-Wdeprecated-declarations]
+  g_static_rec_mutex_lock(&io_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:179:6: note: declared here
+ void     g_static_rec_mutex_lock        (GStaticRecMutex *mutex);
+      ^
+rs-io.c: In function ‘rs_io_unlock’:
+rs-io.c:296:2: warning: ‘g_static_rec_mutex_unlock’ is deprecated: Use 'g_rec_mutex_unlock' instead [-Wdeprecated-declarations]
+  g_static_rec_mutex_unlock(&io_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:185:6: note: declared here
+ void     g_static_rec_mutex_unlock      (GStaticRecMutex *mutex);
+      ^
+rs-io.c: In function ‘rs_io_get_jobs_left’:
+rs-io.c:323:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&count_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-io.c:325:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&count_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-io.h:20,
+                 from rs-io.c:20:
+rs-io.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-icc-profile.c: In function ‘read_from_memory’:
+rs-icc-profile.c:317:8: warning: variable ‘tag_size’ set but not used [-Wunused-but-set-variable]
+  guint tag_size;
+        ^
+rs-1d-function.c: In function ‘rs_1d_function_new_singleton’:
+rs-1d-function.c:54:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-1d-function.h:23,
+                 from rs-1d-function.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-1d-function.c:57:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-1d-function.h:23,
+                 from rs-1d-function.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-color-space.c: In function ‘rs_color_space_new_singleton’:
+rs-color-space.c:50:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rawstudio.h:28,
+                 from rs-color-space.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-color-space.c:68:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rawstudio.h:28,
+                 from rs-color-space.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from rawstudio.h:48:0,
+                 from rs-color-space.c:20:
+rs-color-space.c: At top level:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from rawstudio.h:48:0,
+                 from rs-color-space-icc.c:20:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-image.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-lens.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-lens-db.c: In function ‘save_db’:
+rs-lens-db.c:118:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-lens-db.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-lens-db.c:122:3: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+   g_static_mutex_unlock(&lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-lens-db.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-lens-db.c:193:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-lens-db.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-lens-db.c: In function ‘rs_lens_db_get_default’:
+rs-lens-db.c:300:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-lens-db.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-lens-db.c:308:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-lens-db.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-lens-db.c:20:
+rs-lens-db.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-lens-db-editor.c:26:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-metadata.c: In function ‘rs_metadata_cache_save’:
+rs-metadata.c:133:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-metadata.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-metadata.c:190:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-metadata.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-metadata.c:20:
+rs-metadata.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-lens-fix.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-filter.c:21:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-filetypes.c: In function ‘filetype_search’:
+rs-filetypes.c:101:3: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+   g_static_mutex_lock(&lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filetypes.c:103:3: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+   g_static_mutex_unlock(&lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filetypes.c: In function ‘filetype_add_to_tree’:
+rs-filetypes.c:130:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filetypes.c:132:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filetypes.c: In function ‘rs_filetype_init’:
+rs-filetypes.c:142:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filetypes.c:148:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-types.h:23,
+                 from rs-filetypes.h:22,
+                 from rs-filetypes.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filter-param.c: In function ‘rs_filter_param_get_float4’:
+rs-filter-param.c:317:17: warning: typedef ‘buh’ locally defined but not used [-Wunused-local-typedefs]
+  typedef gfloat buh[4];
+                 ^
+rs-filter-request.c: In function ‘rs_filter_request_get_quick_singleton’:
+rs-filter-request.c:72:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-filter-request.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-filter-request.c:78:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from rs-filter-request.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from rs-filter-response.c:21:0:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-output.c: In function ‘rs_output_get_parameter_widget’:
+rs-output.c:279:140: warning: passing argument 3 of ‘g_object_set_data’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+In file included from /usr/include/glib-2.0/gobject/gbinding.h:29:0,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-output.c:20:
+/usr/include/glib-2.0/gobject/gobject.h:554:6: note: expected ‘gpointer {aka void *}’ but argument is of type ‘const gchar * {aka const char *}’
+ void        g_object_set_data                 (GObject        *object,
+      ^
+rs-output.c:313:138: warning: passing argument 3 of ‘g_object_set_data’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+In file included from /usr/include/glib-2.0/gobject/gbinding.h:29:0,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-output.c:20:
+/usr/include/glib-2.0/gobject/gobject.h:554:6: note: expected ‘gpointer {aka void *}’ but argument is of type ‘const gchar * {aka const char *}’
+ void        g_object_set_data                 (GObject        *object,
+      ^
+rs-output.c:335:135: warning: passing argument 3 of ‘g_object_set_data’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+In file included from /usr/include/glib-2.0/gobject/gbinding.h:29:0,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-output.c:20:
+/usr/include/glib-2.0/gobject/gobject.h:554:6: note: expected ‘gpointer {aka void *}’ but argument is of type ‘const gchar * {aka const char *}’
+ void        g_object_set_data                 (GObject        *object,
+      ^
+rs-output.c:368:137: warning: passing argument 3 of ‘g_object_set_data’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+In file included from /usr/include/glib-2.0/gobject/gbinding.h:29:0,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-output.c:20:
+/usr/include/glib-2.0/gobject/gobject.h:554:6: note: expected ‘gpointer {aka void *}’ but argument is of type ‘const gchar * {aka const char *}’
+ void        g_object_set_data                 (GObject        *object,
+      ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-output.c:20:
+rs-output.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-plugin-manager.c:21:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-library.c: In function ‘rs_library_dispose’:
+rs-library.c:111:3: warning: ‘g_mutex_free’ is deprecated [-Wdeprecated-declarations]
+   g_mutex_free(library->id_lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:279:6: note: declared here
+ void            g_mutex_free            (GMutex *mutex);
+      ^
+rs-library.c: In function ‘rs_library_init’:
+rs-library.c:285:4: warning: ‘g_mutex_new’ is deprecated [-Wdeprecated-declarations]
+    library->id_lock = g_mutex_new();
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:277:10: note: declared here
+ GMutex *        g_mutex_new             (void);
+          ^
+rs-library.c: In function ‘rs_library_get_singleton’:
+rs-library.c:295:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&singleton_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-library.c:298:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&singleton_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-library.c: In function ‘rs_library_backup_tags’:
+rs-library.c:994:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock (&backup_lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-library.c:1012:3: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+   g_static_mutex_unlock (&backup_lock); 
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-library.c:1055:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock (&backup_lock); 
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from rs-library.h:23,
+                 from rs-library.c:55:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-library.h:26,
+                 from rs-library.c:55:
+rs-library.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-job-queue.c: In function ‘rs_job_queue_dispose’:
+rs-job-queue.c:63:3: warning: ‘g_mutex_free’ is deprecated [-Wdeprecated-declarations]
+   g_mutex_free(job_queue->lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:279:6: note: declared here
+ void            g_mutex_free            (GMutex *mutex);
+      ^
+rs-job-queue.c: In function ‘rs_job_queue_init’:
+rs-job-queue.c:82:2: warning: ‘g_mutex_new’ is deprecated [-Wdeprecated-declarations]
+  job_queue->lock = g_mutex_new();
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:277:10: note: declared here
+ GMutex *        g_mutex_new             (void);
+          ^
+rs-job-queue.c: In function ‘rs_job_queue_get_singleton’:
+rs-job-queue.c:135:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-job-queue.c:138:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-job-queue.c: In function ‘rs_job_queue_add_job’:
+rs-job-queue.c:263:9: warning: ‘g_cond_new’ is deprecated [-Wdeprecated-declarations]
+         job->done_cond = g_cond_new();
+         ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:281:9: note: declared here
+ GCond *         g_cond_new              (void);
+         ^
+rs-job-queue.c:264:9: warning: ‘g_mutex_new’ is deprecated [-Wdeprecated-declarations]
+         job->done_mutex = g_mutex_new();
+         ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:277:10: note: declared here
+ GMutex *        g_mutex_new             (void);
+          ^
+rs-job-queue.c: In function ‘rs_job_queue_wait’:
+rs-job-queue.c:299:2: warning: ‘g_cond_free’ is deprecated [-Wdeprecated-declarations]
+  g_cond_free(job->done_cond);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:283:6: note: declared here
+ void            g_cond_free             (GCond  *cond);
+      ^
+rs-job-queue.c:300:2: warning: ‘g_mutex_free’ is deprecated [-Wdeprecated-declarations]
+  g_mutex_free(job->done_mutex);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-job-queue.c:19:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:279:6: note: declared here
+ void            g_mutex_free            (GMutex *mutex);
+      ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-job-queue.c:19:
+rs-job-queue.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-utils.c: In function ‘rs_get_number_of_processor_cores’:
+rs-utils.c:158:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock (&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-utils.c:194:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock (&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-utils.c: In function ‘rs_detect_cpu_features’:
+rs-utils.c:231:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-utils.c:317:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-utils.c: In function ‘rs_confdir_get’:
+rs-utils.c:357:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-utils.c:365:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rawstudio.h:28,
+                 from rs-utils.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-utils.c:21:
+rs-utils.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-color.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-curve.c:21:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-tiff-ifd.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-tiff.c: In function ‘read_file_header’:
+rs-tiff.c:114:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  gboolean ret = TRUE;
+           ^
+rs-tiff.c: In function ‘read_from_file’:
+rs-tiff.c:154:11: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  gboolean ret = TRUE;
+           ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-tiff.c:20:
+rs-tiff.c: At top level:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-dcp-file.c: In function ‘read_ascii’:
+rs-dcp-file.c:203:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-dcp-file.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-dcp-file.c:206:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-dcp-file.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-huesat-map.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+rs-profile-factory.c: In function ‘rs_profile_factory_new_default’:
+rs-profile-factory.c:160:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-profile-factory.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-profile-factory.c:168:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-profile-factory.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-profile-factory.c: In function ‘rs_profile_factory_get_user_profile_directory’:
+rs-profile-factory.c:179:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-profile-factory.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+rs-profile-factory.c:182:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ./rs-types.h:23,
+                 from ./rs-tiff.h:23,
+                 from rs-dcp-file.h:23,
+                 from rs-profile-factory.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from rawstudio.h:48:0,
+                 from rs-color-space-selector.c:22:
+rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+conf_interface.c: In function ‘rs_conf_get_boolean’:
+conf_interface.c:48:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:67:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_get_boolean_with_default’:
+conf_interface.c:87:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:103:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_set_boolean’:
+conf_interface.c:117:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:126:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_get_string’:
+conf_interface.c:141:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:156:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_set_string’:
+conf_interface.c:188:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:195:3: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+   g_static_mutex_unlock(&lock);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_get_integer’:
+conf_interface.c:218:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:237:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_set_integer’:
+conf_interface.c:270:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:279:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_get_double’:
+conf_interface.c:331:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:349:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_set_double’:
+conf_interface.c:382:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:391:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_get_list_string’:
+conf_interface.c:412:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:422:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_set_list_string’:
+conf_interface.c:435:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:445:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c: In function ‘rs_conf_unset’:
+conf_interface.c:497:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+conf_interface.c:506:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from conf_interface.c:20:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ./rawstudio.h:48:0,
+                 from rs-stock.c:20:
+./rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from cache.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+colorspace-adobergb.c: In function ‘get_gamma_function’:
+colorspace-adobergb.c:144:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-adobergb.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+colorspace-adobergb.c:147:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-adobergb.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from colorspace-adobergb.c:22:
+colorspace-adobergb.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+colorspace-prophoto.c: In function ‘get_gamma_function’:
+colorspace-prophoto.c:144:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-prophoto.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+colorspace-prophoto.c:147:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-prophoto.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from colorspace-prophoto.c:22:
+colorspace-prophoto.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+colorspace-srgb.c: In function ‘get_gamma_function’:
+colorspace-srgb.c:144:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_lock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-srgb.c:23:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+colorspace-srgb.c:147:2: warning: ‘g_static_mutex_get_mutex_impl’ is deprecated: Use 'GMutex' instead [-Wdeprecated-declarations]
+  g_static_mutex_unlock(&lock);
+  ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from colorspace-srgb.c:23:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:154:9: note: declared here
+ GMutex *g_static_mutex_get_mutex_impl (GStaticMutex *mutex);
+         ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from colorspace-srgb.c:23:
+colorspace-srgb.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/colorspace-transform/colorspace_transform.c: In function ‘convert_colorspace8’:
+../../plugins/colorspace-transform/colorspace_transform.c:478:4: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+    t[i].threadid = g_thread_create(start_single_cs8_transform_thread, &t[i], TRUE, NULL);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from ../../plugins/colorspace-transform/colorspace_transform.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/colorspace-transform/colorspace_transform.c:22:
+../../plugins/colorspace-transform/colorspace_transform.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/colorspace-transform/rs-cmm.c: In function ‘rs_cmm_class_init’:
+../../plugins/colorspace-transform/rs-cmm.c:78:3: warning: ‘g_mutex_new’ is deprecated [-Wdeprecated-declarations]
+   is_profile_gamma_22_corrected_linear_lock = g_mutex_new();
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from ../../plugins/colorspace-transform/rs-cmm.h:23,
+                 from ../../plugins/colorspace-transform/rs-cmm.c:21:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:277:10: note: declared here
+ GMutex *        g_mutex_new             (void);
+          ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/colorspace-transform/rs-cmm.h:23,
+                 from ../../plugins/colorspace-transform/rs-cmm.c:21:
+../../plugins/colorspace-transform/rs-cmm.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/colorspace-transform/colorspace_transform_sse2.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from crop.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/dcp/dcp-sse2.c: In function ‘render_SSE2’:
+../../plugins/dcp/dcp-sse2.c:617:8: warning: variable ‘_cm_b’ set but not used [-Wunused-but-set-variable]
+  SETFLOAT4_SAME(_cm_b, dcp->channelmixer_blue);
+        ^
+../../plugins/dcp/dcp-sse2.c:616:8: warning: variable ‘_cm_g’ set but not used [-Wunused-but-set-variable]
+  SETFLOAT4_SAME(_cm_g, dcp->channelmixer_green);
+        ^
+../../plugins/dcp/dcp-sse2.c:615:8: warning: variable ‘_cm_r’ set but not used [-Wunused-but-set-variable]
+  SETFLOAT4_SAME(_cm_r, dcp->channelmixer_red);
+        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/dcp/dcp.h:24,
+                 from ../../plugins/dcp/dcp-sse2.c:20:
+../../plugins/dcp/dcp-sse2.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/dcp/dcp.c: In function ‘get_image’:
+../../plugins/dcp/dcp.c:581:3: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+   t[i].threadid = g_thread_create(start_single_dcp_thread, &t[i], TRUE, NULL);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from ../../plugins/dcp/dcp.h:24,
+                 from ../../plugins/dcp/dcp.c:24:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/dcp/dcp.h:24,
+                 from ../../plugins/dcp/dcp.c:24:
+../../plugins/dcp/dcp.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/dcp/dcp.c: In function ‘render’:
+../../plugins/dcp/dcp.c:1059:38: warning: ‘clip.<Ub5f0>.B’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../../plugins/dcp/dcp.c:1058:38: warning: ‘clip.<Ub1c8>.G’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../../plugins/dcp/dcp.c:1057:38: warning: ‘clip.<U9d10>.R’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../../plugins/dcp/dcp-sse4.c: In function ‘render_SSE4’:
+../../plugins/dcp/dcp-sse4.c:592:26: warning: variable ‘b2’ set but not used [-Wunused-but-set-variable]
+  __m128 r, g, b, r2, g2, b2;
+                          ^
+../../plugins/dcp/dcp-sse4.c:592:22: warning: variable ‘g2’ set but not used [-Wunused-but-set-variable]
+  __m128 r, g, b, r2, g2, b2;
+                      ^
+../../plugins/dcp/dcp-sse4.c:592:18: warning: variable ‘r2’ set but not used [-Wunused-but-set-variable]
+  __m128 r, g, b, r2, g2, b2;
+                  ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/dcp/dcp.h:24,
+                 from ../../plugins/dcp/dcp-sse4.c:20:
+../../plugins/dcp/dcp-sse4.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+demosaic.c: In function ‘ppg_interpolate_INDI’:
+demosaic.c:538:3: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+   t[i].threadid = g_thread_create(start_interp_thread, &t[i], TRUE, NULL);
+   ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from demosaic.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+demosaic.c: In function ‘none_interpolate_INDI’:
+demosaic.c:703:4: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+    t[i].threadid = g_thread_create(start_none_thread_half, &t[i], TRUE, NULL);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from demosaic.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+demosaic.c:705:4: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+    t[i].threadid = g_thread_create(start_none_thread, &t[i], TRUE, NULL);
+    ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from demosaic.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from demosaic.c:22:
+demosaic.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from denoise.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from exposure-mask.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from fuji-rotate.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from input-file.c:20:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from input-image16.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/lensfun/lensfun-sse2.c:22:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+../../plugins/lensfun/lensfun.c: In function ‘get_image’:
+../../plugins/lensfun/lensfun.c:673:6: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+      t[i].threadid = g_thread_create(thread_func, &t[i], TRUE, NULL);
+      ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from ../../plugins/lensfun/lensfun.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+../../plugins/lensfun/lensfun.c:702:6: warning: ‘g_thread_create’ is deprecated: Use 'g_thread_new' instead [-Wdeprecated-declarations]
+      t[i].threadid = g_thread_create(thread_func, &t[i], TRUE, NULL);
+      ^
+In file included from /usr/include/glib-2.0/glib.h:107:0,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:23,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from ../../librawstudio/rs-types.h:23,
+                 from ../../librawstudio/rawstudio.h:28,
+                 from ../../plugins/lensfun/lensfun.c:22:
+/usr/include/glib-2.0/glib/deprecated/gthread.h:104:10: note: declared here
+ GThread *g_thread_create       (GThreadFunc       func,
+          ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from ../../plugins/lensfun/lensfun.c:22:
+../../plugins/lensfun/lensfun.c: At top level:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+dcraw.cc: In member function ‘void DCRaw::vng_interpolate()’:
+dcraw.cc:3974:3: warning: narrowing conversion of ‘128’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+   }, chood[] = { -1,-1, -1,0, -1,+1, 0,+1, +1,+1, +1,0, +1,-1, 0,-1 };
+   ^
+dcraw.cc:3974:3: warning: narrowing conversion of ‘136’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc:3974:3: warning: narrowing conversion of ‘128’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc:3974:3: warning: narrowing conversion of ‘136’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc:3974:3: warning: narrowing conversion of ‘128’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc:3974:3: warning: narrowing conversion of ‘136’ from ‘int’ to ‘signed char’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc: In member function ‘void DCRaw::parse_makernote(int, int)’:
+dcraw.cc:4641:268: warning: operation on ‘((RS_FILE*)((DCRaw*)this)->DCRaw::ifp)->RS_FILE::offset’ may be undefined [-Wsequence-point]
+dcraw.cc:4641:268: warning: operation on ‘((RS_FILE*)((DCRaw*)this)->DCRaw::ifp)->RS_FILE::offset’ may be undefined [-Wsequence-point]
+dcraw.cc:4641:268: warning: operation on ‘((RS_FILE*)((DCRaw*)this)->DCRaw::ifp)->RS_FILE::offset’ may be undefined [-Wsequence-point]
+dcraw.cc: In member function ‘void DCRaw::parse_kodak_ifd(int)’:
+dcraw.cc:4898:73: warning: narrowing conversion of ‘-1’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+   static const unsigned wbtag[] = { 64037,64040,64039,64041,-1,-1,64042 };
+                                                                         ^
+dcraw.cc:4898:73: warning: narrowing conversion of ‘-1’ from ‘int’ to ‘unsigned int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+dcraw.cc: In member function ‘int DCRaw::parse_tiff_ifd(int)’:
+dcraw.cc:4943:12: warning: variable ‘sony_offset’ set but not used [-Wunused-but-set-variable]
+   unsigned sony_offset=0, sony_length=0, sony_key=0;
+            ^
+dcraw.cc:4943:27: warning: variable ‘sony_length’ set but not used [-Wunused-but-set-variable]
+   unsigned sony_offset=0, sony_length=0, sony_key=0;
+                           ^
+dcraw.cc:4943:42: warning: variable ‘sony_key’ set but not used [-Wunused-but-set-variable]
+   unsigned sony_offset=0, sony_length=0, sony_key=0;
+                                          ^
+dcraw.cc: In member function ‘void DCRaw::parse_phase_one(int)’:
+dcraw.cc:5816:26: warning: variable ‘type’ set but not used [-Wunused-but-set-variable]
+   unsigned entries, tag, type, len, data, save, i, j, c;
+                          ^
+dcraw.cc: In member function ‘void DCRaw::adobe_coeff(const char*, const char*)’:
+dcraw.cc:6722:3: warning: narrowing conversion of ‘65535’ from ‘int’ to ‘short int’ inside { } is ill-formed in C++11 [-Wnarrowing]
+   };
+   ^
+dcraw.cc: In member function ‘void DCRaw::kodak_radc_load_raw()’:
+dcraw.cc:2157:29: warning: iteration 386u invokes undefined behavior [-Waggressive-loop-optimizations]
+  buf[c][0][i] = (buf[c][0][i] * val + x) >> s;
+                             ^
+dcraw.cc:2156:19: note: containing loop
+       for (i=0; i < (int) sizeof(buf[0])/(int) sizeof(short); i++)
+                   ^
+dcraw.cc:2148:24: warning: iteration 386u invokes undefined behavior [-Waggressive-loop-optimizations]
+     buf[0][0][i] = 2048;
+                        ^
+dcraw.cc:2147:15: note: containing loop
+   for (i=0; i < (int) sizeof(buf)/(int) sizeof(short); i++)
+               ^
+dcraw.cc: In member function ‘void DCRaw::foveon_interpolate()’:
+dcraw.cc:3128:35: warning: iteration 2u invokes undefined behavior [-Waggressive-loop-optimizations]
+       ddft[0][0][i] = ddft[1][0][i] +
+                                   ^
+dcraw.cc:3127:17: note: containing loop
+     for (i=0; i < 6; i++)
+                 ^
+dcraw.cc:3082:35: warning: iteration 2u invokes undefined behavior [-Waggressive-loop-optimizations]
+       ddft[0][0][i] = ddft[1][0][i] +
+                                   ^
+dcraw.cc:3081:17: note: containing loop
+     for (i=0; i < 6; i++)
+                 ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from dcrawloader.c:20:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+In file included from ../../librawstudio/rawstudio.h:48:0,
+                 from load-gdk.c:20:
+../../librawstudio/rs-image16.h:88:24: warning: inline function ‘rs_image16_get_pixel’ declared but never defined
+ extern inline gushort *rs_image16_get_pixel(RS_IMAGE16 *image, gint x, gint y, gboolean extend_edges);
+                        ^
+exiv2-colorspace.cpp: In function ‘RSColorSpace* exiv2_get_colorspace(const gchar*, gboolean*)’:
+exiv2-colorspace.cpp:128:18: error: invalid use of incomplete type ‘png_info {aka struct png_info_def}’
+      if (info_ptr->valid & PNG_INFO_iCCP)
+                  ^
+In file included from exiv2-colorspace.cpp:28:0:
+/usr/include/libpng16/png.h:489:16: note: forward declaration of ‘png_info {aka struct png_info_def}’
+ typedef struct png_info_def png_info;
+                ^
+exiv2-colorspace.cpp:132:73: error: invalid conversion from ‘png_charpp {aka char**}’ to ‘png_bytepp {aka unsigned char**}’ [-fpermissive]
+              (png_charpp) &icc_profile, (png_uint_32*) &icc_profile_size);
+                                                                         ^
+In file included from exiv2-colorspace.cpp:28:0:
+/usr/include/libpng16/png.h:2115:22: note:   initializing argument 5 of ‘png_uint_32 png_get_iCCP(png_const_structrp, png_inforp, png_charpp, int*, png_bytepp, png_uint_32*)’
+ PNG_EXPORT(158, png_uint_32, png_get_iCCP, (png_const_structrp png_ptr,
+                      ^
+make[3]: *** [exiv2-colorspace.lo] Error 1
+make[2]: *** [all-recursive] Error 1
+make[1]: *** [all-recursive] Error 1
+make: *** [all] Error 2

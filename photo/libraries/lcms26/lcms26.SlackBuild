@@ -23,8 +23,8 @@
 
 PRGNAM=lcms26
 SRCNAM=lcms2
-VERSION=${VERSION:-2.6}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-2.7}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

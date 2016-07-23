@@ -6,7 +6,7 @@
 
 PRGNAM=iccprofiles
 VERSION=${VERSION:-2011}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 # icc profiles are arch independent

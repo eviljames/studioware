@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=tap-plugins
-VERSION=${VERSION:-0.7.1}
+VERSION=${VERSION:-0.7.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -68,6 +68,7 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+# Add DESTDIR and change some paths in Makefile
 patch -p1 --verbose < $CWD/makefile.diff
 
 # 64 bit

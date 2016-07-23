@@ -4,7 +4,6 @@
 # on the right side marks the last column you can put a character in.  You must
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
-
       |-----handy-ruler------------------------------------------------------|
 raptor: raptor ( RDF Generator )
 raptor:
@@ -17,12 +16,3 @@ raptor: RSS, Atom 1.0 and 0.3, GRDDL and microformats for HTML, XHTML and XML.
 raptor: The serializing syntaxes are RDF/XML (regular, and abbreviated), Atom
 raptor: 1.0, GraphViz, JSON, N-Quads, N-Triples, RSS 1.0 and XMP.
 raptor: Homepage: http://librdf.org/raptor/
-
-
-
-
-
-
-
-
-

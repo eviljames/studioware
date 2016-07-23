@@ -1,6 +1,6 @@
 jack
 liblo
-libsigc++
 @liblrdf
+ladspa_sdk
 ntk
 non

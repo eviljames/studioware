@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=darktable
-VERSION=${VERSION:-1.4.2}
+VERSION=${VERSION:-2.0.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -76,6 +76,7 @@ cd build
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIB_SUFFIX=${LIBDIRSUFFIX} \
     -DMAN_INSTALL_DIR=/usr/man \
+    -DDONT_USE_INTERNAL_LUA=Off \
     -DCMAKE_BUILD_TYPE=Release ..
   make 
   make install DESTDIR=$PKG

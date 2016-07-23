@@ -1,2 +1,0 @@
-@cairomm
-pangomm

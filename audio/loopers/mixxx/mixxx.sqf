@@ -1,7 +1,7 @@
 jack
-scons
 portmidi
 libshout
 @protobuf
 portaudio
+chromaprint
 mixxx

@@ -1,5 +1,6 @@
 lensfun
 GraphicsMagick
-openjpeg
 flickcurl
+json-glib
+pugixml
 darktable

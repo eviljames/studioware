@@ -1,0 +1,13 @@
+libpgf (pgf image format)
+
+A popular image file format
+Based on discrete, fast wavelet transform with progressive coding
+features
+Lossless and lossy compression
+Small C++ codec without any dependencies
+Easy codec usage
+Best for natural and aerial images with a better compression efficiency than
+JPEG
+PGF is one of the best image compression algorithms for natural images
+
+http://www.libpgf.org

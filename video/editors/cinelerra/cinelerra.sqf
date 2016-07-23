@@ -1,4 +1,3 @@
-a52dec
 faad2
 @ffmpeg
 imlib2

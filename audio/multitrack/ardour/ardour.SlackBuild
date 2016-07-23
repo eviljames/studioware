@@ -25,8 +25,9 @@
 # Modified by studioware.org
 
 PRGNAM=ardour
-VERSION=2.8.16
-BUILD=${BUILD:-6}
+SRCNAM=Ardour
+VERSION=4.7.0
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -82,9 +83,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.bz2
-cd $PRGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.bz2
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -92,43 +93,28 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-# Make FREEDESKTOP work with DESTDIR
-patch -d gtk2_ardour -p0 -i $CWD/SConscript.diff
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./waf configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --configdir=/etc \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --with-backends="jack,alsa" \
+  --libjack=weak \
+  --optimize \
+  --freedesktop \
+  --no-phone-home \
+  --cxx11
 
-# Omit -O3 from the CFLAGS
-patch -p1 -i $CWD/SConstruct.diff
+./waf build
 
-# Bugfixes from git
-patch -p1 -i $CWD/tempoline_crash.patch
-patch -p1 -i $CWD/lilv.patch
-
-scons \
-  PREFIX=/usr \
-  LIBDIR=/usr/lib${LIBDIRSUFFIX} \
-  DIST_TARGET="$TARGET" \
-  ARCH="$(echo $SLKCFLAGS)" \
-  FREEDESKTOP=1 \
-  SYSLIBS=1 \
-  $wiiopt \
-  $lv2opt \
-  $vstopt
-
-scons \
-  --implicit-deps-unchanged \
-  PREFIX=/usr \
-  LIBDIR=/usr/lib${LIBDIRSUFFIX} \
-  DIST_TARGET="$TARGET" \
-  ARCH="$(echo $SLKCFLAGS)" \
-  FREEDESKTOP=1 \
-  SYSLIBS=1 \
-  $wiiopt \
-  $lv2opt \
-  $vstopt \
-  DESTDIR=$PKG \
-  install
+./waf install \
+  --destdir=$PKG
 
 if [ $vstopt = "VST=1" ]; then
-  ln -s /usr/bin/ardourvst $PKG/usr/bin/ardour2
+  ln -s /usr/bin/ardourvst $PKG/usr/bin/ardour4
 fi
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
@@ -144,10 +130,10 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 # Let's not clobber config files
-cd $PKG/etc/ardour2
+cd $PKG/etc/ardour4
   for i in * ; do
     mv $i $i.new
-    echo "config etc/ardour2/$i.new" >> $PKG/install/doinst.sh
+    echo "config etc/ardour4/$i.new" >> $PKG/install/doinst.sh
   done
 cd -
 
@@ -157,6 +143,6 @@ find . -name \*.desktop -exec \
     sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
 
 find . -name \*.desktop -exec \
-    sed -i 's/Name=.*/Name=Ardour2/' '{}' \;
+    sed -i 's/Name=.*/Name=Ardour/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}

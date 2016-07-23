@@ -24,7 +24,7 @@
 PRGNAM=ardour3
 SRCNAM=ardour
 VERSION=${VERSION:-3.5.357}
-BUILD=${BUILD:-5}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -69,12 +69,14 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+CFLAGS="$SLKCFLAGS -std=c++11" \
+CXXFLAGS="$SLKCFLAGS -std=c++11" \
 ./waf configure -p \
   --prefix=/usr \
   --configdir=/etc \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --mandir=/usr/man \
-  --docdir=/usr/doc/$PRGNAM-$VERSION 
+  --docdir=/usr/doc/$PRGNAM-$VERSION
 
 ./waf
 ./waf install --destdir=$PKG

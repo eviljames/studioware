@@ -3,10 +3,10 @@ pysetuptools
 gst-python
 pyxdg
 @calf
-@frei0r-plugins
 gavl
 @invada-studio-plugins
 lv2
+frei0r-plugins
 swh-plugins
 @swh-plugins-lv2
 tap-plugins

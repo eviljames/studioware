@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+       |-----handy-ruler------------------------------------------------------|
+pugixml: pugixml (a light-weight C++ XML processing library)
+pugixml:
+pugixml: pugixml features:
+pugixml: DOM-like interface with rich traversal/modification capabilities
+pugixml: Extremely fast non-validating XML parser which constructs the DOM
+pugixml: tree from an XML file/buffer
+pugixml: XPath 1.0 implementation for complex data-driven tree queries Full
+pugixml: Unicode support with Unicode interface variants and automatic
+pugixml: encoding conversions
+pugixml:
+pugixml: Homepage: http://pugixml.org/

@@ -1,2 +1,0 @@
-libsigc++
-glibmm

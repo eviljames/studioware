@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=gtksourceview
-VERSION=${VERSION:-3.7.2}
+VERSION=${VERSION:-3.18.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -78,17 +78,19 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --infodir=/usr/info \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --enable-glade-catalog \
   --build=$ARCH-slackware-linux
 
-make
-make install DESTDIR=$PKG
+# borrowed from sbo
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$TMP/$PRGNAM-$VERSION make
+make install-strip DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING.lib COPYING ChangeLog ChangeLog-20090418 ChangeLog.20070526 ChangeLog.soc-2006 HACKING INSTALL MAINTAINERS NEWS README docs \
+  AUTHORS COPYING* ChangeLog HACKING INSTALL MAINTAINERS NEWS README docs \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

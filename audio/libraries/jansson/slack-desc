@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+       |-----handy-ruler------------------------------------------------------|
+jansson: jansson (C library for encoding, decoding and manipulating JSON data)
+jansson:
+jansson: It features:
+jansson:
+jansson: Simple and intuitive API and data model
+jansson: Comprehensive documentation
+jansson: No dependencies on other libraries
+jansson: Full Unicode support (UTF-8)
+jansson: Extensive test suite
+jansson:
+jansson: Homepage: http://www.digip.org/jansson

@@ -24,7 +24,7 @@
 PRGNAM=pysetuptools
 SRCNAM=setuptools
 VERSION=${VERSION:-0.6c11}
-BUILD=${BUILD:-4}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

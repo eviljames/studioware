@@ -24,7 +24,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vamp-plugin-sdk
-VERSION=${VERSION:-2.4}
+VERSION=${VERSION:-2.6}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -83,6 +83,9 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make
 make install DESTDIR=$PKG
+
+# This file messes up build of audacity
+rm $PKG/usr/lib$LIBDIRSUFFIX/libvamp-hostsdk.la
 
 install -m 755 -D $CWD/vamp.sh $PKG/etc/profile.d/vamp.sh
 sed -i "s/@LIBDIRSUFFIX@/$LIBDIRSUFFIX/" $PKG/etc/profile.d/vamp.sh

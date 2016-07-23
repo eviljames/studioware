@@ -3,6 +3,6 @@ aubio
 portmidi
 portaudio
 @fluidsynth
-gtksourceview
+@gtksourceview
 evince
 denemo

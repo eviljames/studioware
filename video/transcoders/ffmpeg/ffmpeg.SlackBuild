@@ -27,7 +27,7 @@
 # Modified by Dave W <dave@studioware.org>
 
 PRGNAM=ffmpeg
-VERSION=${VERSION:-0.10.12}
+VERSION=${VERSION:-3.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -100,9 +100,7 @@ opencore_amr="" ; [ "${OPENCORE:-no}" != "no" ] && \
   opencore_amr="--enable-libopencore-amrnb --enable-libopencore-amrwb"
 ssl=""      ; [ "${OPENSSL:-no}" != "no" ]     && \
   { ssl="--enable-openssl" ; non_free="--enable-nonfree" ; }
-openjpeg=""     ; [ "${JP2:-no}" != "no" ]      && \
-  { openjpeg="--enable-libopenjpeg" ; \
-    SLKCFLAGS="$SLKCFLAGS -I/usr/include/openjpeg-1.5" ; }
+SLKCFLAGS="$SLKCFLAGS -I/usr/include/openjpeg-2.1"
 
 mp3lame="--enable-libmp3lame"
 libx264="--enable-libx264"
@@ -186,8 +184,8 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | \
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/txt
-cp -a Changelog COPYING* CREDITS INSTALL LICENSE MAINTAINERS README RELEASE \
-  VERSION doc/RELEASE_NOTES $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a Changelog COPYING* CREDITS MAINTAINERS RELEASE \
+  VERSION $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a doc/*.txt $PKG/usr/doc/$PRGNAM-$VERSION/txt/
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

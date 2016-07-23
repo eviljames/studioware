@@ -24,8 +24,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=mlt
-VERSION=${VERSION:-0.9.0}
-BUILD=${BUILD:-4}
+VERSION=${VERSION:-6.2.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -70,8 +70,6 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-if pkg-config --exists vdpau ; then vdpau="--avformat-vdpau" ; else vdpau="" ; fi
-
 PYTHONSITEPKG=$(python -c "import sys, os; print os.path.join('/usr/lib${LIBDIRSUFFIX}', 'python%s' % sys.version[:3], 'site-packages')")
 
 CFLAGS="$SLKCFLAGS" \
@@ -85,8 +83,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --enable-gpl \
   --luma-compress \
   --enable-motion-est \
-  $vdpau \
-  --swig-languages="perl php python ruby tcl" \
+  --swig-languages="perl php python tcl" \
   --build=$ARCH-slackware-linux
 
 make clean
@@ -102,7 +99,7 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
     install -D -m 0755 play.pl $PKG/usr/share/perl5/play.pl
     install -D -m 0755 blib/arch/auto/mlt/mlt.so \
     $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.so
-    install -D -m 0644 blib/arch/auto/mlt/mlt.bs \
+    install -D -m 0644 mlt.bs \
     $PKG/usr/lib$LIBDIRSUFFIX/perl5/auto/mlt/mlt.bs
 )
 
@@ -119,14 +116,14 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
     install -D -m 0755 play.py $PKG/usr/doc/$PRGNAM-$VERSION/play.py
 )
 
-( cd $TMP/$PRGNAM-$VERSION/src/swig/ruby
-    install -D -m 0755 mlt_wrap.o \
-    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt_wrap.o
-    install -D -m 0755 mlt.so \
-    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt.so
-    install -D -m 0755 play.rb $PKG/usr/doc/$PRGNAM-$VERSION/play.rb
-    install -D -m 0755 thumbs.rb $PKG/usr/doc/$PRGNAM-$VERSION/thumbs.rb
-)
+#( cd $TMP/$PRGNAM-$VERSION/src/swig/ruby
+#    install -D -m 0755 mlt_wrap.o \
+#    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt_wrap.o
+#    install -D -m 0755 mlt.so \
+#    $PKG$(ruby -e 'print RbConfig::CONFIG["sitearchdir"]')/mlt.so
+#    install -D -m 0755 play.rb $PKG/usr/doc/$PRGNAM-$VERSION/play.rb
+#    install -D -m 0755 thumbs.rb $PKG/usr/doc/$PRGNAM-$VERSION/thumbs.rb
+#)
 
 ( cd $TMP/$PRGNAM-$VERSION/src/swig/tcl
     . /usr/lib$LIBDIRSUFFIX/tclConfig.sh

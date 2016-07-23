@@ -1,10 +1,10 @@
 jack
 @lilv
 suil
-aubio
-@gtkmm
+@aubio
 @libgnomecanvasmm
-scons
 @liblrdf
 liblo
+@rubberband
+@xjadeo
 ardour

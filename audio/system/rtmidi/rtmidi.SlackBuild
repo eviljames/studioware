@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=rtmidi
-VERSION=${VERSION:-2.0.1}
+VERSION=${VERSION:-2.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -83,6 +83,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --build=$ARCH-slackware-linux
 
 make
+make install DESTDIR=$PKG
 
 mkdir -p $PKG/usr/lib$LIBDIRSUFFIX 
 mkdir -p $PKG/usr/include
@@ -97,12 +98,12 @@ install -Dm755 $_bin "$PKG/usr/bin/rtmidi-"`basename $_bin`
 done
 
 # lib
-install -d "$PKG/usr/lib"
-install -Dm755 librtmidi*.so* "$PKG/usr/lib$LIBDIRSUFFIX/"
+#install -d "$PKG/usr/lib"
+#install -Dm755 librtmidi*.so* "$PKG/usr/lib$LIBDIRSUFFIX/"
 
 # headers
 install -d "$PKG/usr/include"
-install -Dm644 Rt{Midi,Error}.h "$PKG/usr/include"
+install -Dm644 RtMidi.h "$PKG/usr/include"
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

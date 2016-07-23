@@ -23,7 +23,7 @@
 
 PRGNAM=libgnomecanvas
 VERSION=${VERSION:-2.30.3}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then

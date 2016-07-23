@@ -1,3 +1,3 @@
 jack
-@gtkmm
+@dssi
 amsynth

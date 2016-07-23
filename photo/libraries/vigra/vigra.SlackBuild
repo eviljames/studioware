@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for vigra-1.10.0-src-with
+# Slackware build script for vigra
 # Copyright 2014 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vigra
-VERSION=${VERSION:-1.10.0}
+VERSION=${VERSION:-1.11.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,7 +59,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION-src-with-docu.tar.gz
+tar xvf $CWD/$PRGNAM-$VERSION-src.tar.gz
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -71,13 +71,16 @@ find -L . \
 mkdir -p build
 cd build
   cmake \
-    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS -I/usr/include/OpenEXR" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS -I/usr/include/OpenEXR" \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-    -DMAN_INSTALL_DIR=/usr/man \
+    -DWITH_OPENEXR=ON \
+    -DOPENEXR_IEX_LIBRARY=/usr/include/OpenEXR \
+    -DOPENEXR_IMATH_LIBRARY=/usr/include/OpenEXR \
+    -DOPENEXR_ILMTHREAD_LIBRARY=/usr/include/OpenEXR \
     -DCMAKE_BUILD_TYPE=Release ..
-  make 
+  make
   make install DESTDIR=$PKG
 cd ..
 

@@ -24,7 +24,7 @@
 # Modified by Dave Woodfall
 
 PRGNAM=libshout
-VERSION=${VERSION:-2.2.2}
+VERSION=${VERSION:-2.4.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
