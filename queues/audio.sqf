@@ -8,6 +8,7 @@ SimpleSysexxer
 @patchage
 @ladish
 @meterbridge
+@yoshimi
 @amsynth
 liblo
 @libgnomecanvasmm
@@ -63,6 +64,7 @@ vkeybd
 @system
 @linuxsampler
 @openAV-ArtyFX
+@qsampler
 caps
 @drumgizmo
 @a2jmidid

@@ -1,8 +1,6 @@
 PRGNAM="gigedit"
-VERSION="0.2.0"
 VERSION="1.0.0"
 HOMEPAGE="http://www.linuxsampler.org"
-DOWNLOAD="http://download.linuxsampler.org/packages/gigedit-0.2.0.tar.gz"
 DOWNLOAD="http://download.linuxsampler.org/packages/gigedit-1.0.0.tar.bz2"
 MD5SUM="5a89759dca7d1ebd70257ededb5a3338"
 DOWNLOAD_x86_64=""

@@ -161,7 +161,7 @@ libsmf 1.3 1
 sratom 0.4.2 1
 gigedit 1.0.0 1
 avahi 0.6.32 1
-fltk 1.3.3 1
+fltk 1.3.x_r11842 1
 hydrogen 0.9.7_beta2 1
 jackbeat 0.7.6 1
 drumkv1 0.6.3 1

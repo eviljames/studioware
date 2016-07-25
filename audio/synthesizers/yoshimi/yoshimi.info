@@ -1,8 +1,6 @@
 PRGNAM="yoshimi"
-VERSION="git20140501"
 VERSION="1.4.0.1"
 HOMEPAGE="http://yoshimi.sourceforge.net/"
-DOWNLOAD="http://studioware.org/files/slackbuilds/source/yoshimi-git20140501.tar.xz"
 DOWNLOAD="http://downloads.sourceforge.net/project/yoshimi/1.4/yoshimi-1.4.0.1.tar.bz2"
 MD5SUM="9d15270d4c48b13a64a95987862c1901"
 DOWNLOAD_x86_64=""
