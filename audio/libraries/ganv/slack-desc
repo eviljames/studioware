@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+    |-----handy-ruler------------------------------------------------------|
+ganv: ganv (interactive Gtk widget)
+ganv:
+ganv: Ganv is an interactive Gtk widget for interactive “boxes and lines” or
+ganv: graph-like environments (e.g. modular synths or finite state machine
+ganv: diagrams).
+ganv:
+ganv: It is used by Ingen, Patchage, and Machina
+ganv:
+ganv: http://drobilla.net/software/ganv
+ganv:
+ganv:

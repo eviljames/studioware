@@ -6,6 +6,8 @@ SimpleSysexxer
 @muse
 @non
 @patchage
+@ladish
+@meterbridge
 @amsynth
 liblo
 @libgnomecanvasmm

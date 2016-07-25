@@ -64,7 +64,7 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 9b8702841256b25e705f4a69422104ea  ./audio/desktop/evince/evince.tar.gz
 115e7f57c53b4c903a7a486544417084  ./audio/codecs/lame/lame.tar.gz
 d1b1798e8ab91d5e68fc688b720d44b0  ./audio/amps/guitarix2/guitarix2.tar.gz
-7ef15604e3297725f1dbac74b4de292f  ./audio/session/ladish/ladish.tar.gz
+5abd568a94d1670874c06fe97a94430a  ./audio/session/ladish/ladish.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 d174ee4f6604e5f69e5eb6c0864d9461  ./audio/multitrack/ardour/ardour.tar.gz
 d2135137578cc24566de0e8eda756231  ./audio/multitrack/ardour3/ardour3.tar.gz
@@ -80,7 +80,7 @@ b854e654345361b4f4aa89535e1503c2  ./audio/editors/rosegarden/rosegarden.tar.gz
 c39bbdd55165bad8546a537467573ae7  ./audio/mixers/qastools/qastools.tar.gz
 17c8fb10859de1714795537eaa4ba34b  ./audio/misc/vkeybd/vkeybd.tar.gz
 dd4387babbcdf06ef26bb5854e118c48  ./audio/misc/jamin/jamin.tar.gz
-bffb7e50d2e7da35e2fa35194004c78c  ./audio/misc/non/non.tar.gz
+b072bac4271b869cebd6005298dfd9a4  ./audio/misc/non/non.tar.gz
 1453648b54ed224e7b7a10b2bea22056  ./audio/misc/protobuf/protobuf.tar.gz
 a8360bfdb1fa8e5195341bb814fdf835  ./audio/misc/protobuf/v3.0.0-beta-3.1.tar.gz
 57254945fc4ca7533f41fa487261179a  ./audio/misc/stops/stops.tar.gz
@@ -94,9 +94,8 @@ d43b44e3e986ebca4be4ec8a9dc59b66  ./audio/loopers/giada/giada.tar.gz
 702f15fbfba7bfd5e1ecb2cc6e75720f  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 791198a43d90db7f2c830e880a6cd2a6  ./audio/system/rtaudio/rtaudio.tar.gz
 53f1ec96acc64f73856b2c1d9b38242b  ./audio/system/rtmidi/rtmidi.tar.gz
-40b0c29b8b1b76655038e3356b4c2678  ./audio/system/meterbridge/meterbridge.tar.gz
-ef5d20761755c88e5b5a0c35f11f670e  ./audio/system/meterbridge/meterbridge-0.9.2.tar.gz
-66f62c9885b9e59e05aecc8bfcb32f4a  ./audio/system/patchage/patchage.tar.gz
+68cddd74e87a9585c548a0b19da217bd  ./audio/system/meterbridge/meterbridge.tar.gz
+ee97e61aad5a7b08b213c9e81a6542b6  ./audio/system/patchage/patchage.tar.gz
 6f2b80e3a57b2bff81a7290c45f81058  ./audio/system/pd/pd.tar.gz
 021696416c594aafa60cb8b7be39d623  ./audio/system/set_rlimits/set_rlimits.tar.gz
 8e33d862ef1f1f79742aa8444b44e35d  ./audio/system/numactl/numactl.tar.gz
@@ -148,6 +147,7 @@ d73b9c7ef9f8e46a0be7a009c1ff84ea  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 9ef8d425322243d20f6cdfc3b4ae4ea7  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
 cf27941e19ffc6a3b424ed0bb4397311  ./audio/libraries/wxGTK/wxGTK.tar.gz
 9bfcb0cc8e402ed6b8883c0d714df056  ./audio/libraries/lash/lash.tar.gz
+e995fa882788ee6bcddc0319430b1cd2  ./audio/libraries/ganv/ganv.tar.gz
 b415ae73a452f1b4b0089b624f19961a  ./audio/libraries/lilv/lilv.tar.gz
 546842bd37b7d65cf08f0be85a3e47ed  ./audio/libraries/portmidi/portmidi.tar.gz
 d93e2bcc45b726629b4baf5ab2ddff0a  ./audio/libraries/libglademm/libglademm.tar.gz

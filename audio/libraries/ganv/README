@@ -1,0 +1,9 @@
+ganv (interactive Gtk widget)
+
+Ganv is an interactive Gtk widget for interactive “boxes and lines” or
+graph-like environments (e.g. modular synths or finite state machine
+diagrams).
+
+It is used by Ingen, Patchage, and Machina
+
+http://drobilla.net/software/ganv

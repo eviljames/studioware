@@ -1,5 +1,5 @@
 PRGNAM="non"
-VERSION="git20140419"
+VERSION="1.1.0"
 HOMEPAGE="http://non.tuxfamily.org"
 DOWNLOAD="http://studioware.org/files/slackbuilds/source/non-1.1.0.tar.gz"
 MD5SUM="606ca2c64404000c1f50bb6b4b3ff6c7"
