@@ -64,9 +64,9 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 9b8702841256b25e705f4a69422104ea  ./audio/desktop/evince/evince.tar.gz
 115e7f57c53b4c903a7a486544417084  ./audio/codecs/lame/lame.tar.gz
 d1b1798e8ab91d5e68fc688b720d44b0  ./audio/amps/guitarix2/guitarix2.tar.gz
-5abd568a94d1670874c06fe97a94430a  ./audio/session/ladish/ladish.tar.gz
+47d3316f13aaa403ed49d980ad24178c  ./audio/session/ladish/ladish.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
-d174ee4f6604e5f69e5eb6c0864d9461  ./audio/multitrack/ardour/ardour.tar.gz
+60e3b919c5bee0bafbfe8ac9e05a60a3  ./audio/multitrack/ardour/ardour.tar.gz
 d2135137578cc24566de0e8eda756231  ./audio/multitrack/ardour3/ardour3.tar.gz
 32f2c11bb84ac179bfc19bef04c20683  ./audio/multitrack/jokosher/jokosher.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
@@ -94,7 +94,7 @@ d43b44e3e986ebca4be4ec8a9dc59b66  ./audio/loopers/giada/giada.tar.gz
 702f15fbfba7bfd5e1ecb2cc6e75720f  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 791198a43d90db7f2c830e880a6cd2a6  ./audio/system/rtaudio/rtaudio.tar.gz
 53f1ec96acc64f73856b2c1d9b38242b  ./audio/system/rtmidi/rtmidi.tar.gz
-68cddd74e87a9585c548a0b19da217bd  ./audio/system/meterbridge/meterbridge.tar.gz
+fc2b14b10bd9b5ac442d27c437622663  ./audio/system/meterbridge/meterbridge.tar.gz
 ee97e61aad5a7b08b213c9e81a6542b6  ./audio/system/patchage/patchage.tar.gz
 6f2b80e3a57b2bff81a7290c45f81058  ./audio/system/pd/pd.tar.gz
 021696416c594aafa60cb8b7be39d623  ./audio/system/set_rlimits/set_rlimits.tar.gz
