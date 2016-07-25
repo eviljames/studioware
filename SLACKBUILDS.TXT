@@ -7,9 +7,9 @@ dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar
 1c9f922f51b11c82cd541bda30b534e4  ./system/libraries/gnome-common/gnome-common.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 ee6bd2a0ef2564ef85f1c9b85020b73a  ./photo/editors/rawstudio/rawstudio.tar.gz
-73d2a9e51b9f709f6203d0aca59877fe  ./photo/editors/digikam/digikam.tar.gz
+7bb2f78bf4b6427a7d7aea753404c53c  ./photo/editors/digikam/digikam.tar.gz
 5f521b786900bcfccc7cf1301017eccb  ./photo/editors/darktable/darktable.tar.gz
-b37438cea6730ffa7c24e65d093543ff  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
+e20b460b6b5dee1e60cff6d58ef06f5f  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 9cac2481ff626d30f473a2f4d8331618  ./photo/output/photoprint/photoprint.tar.gz
 4d417a4016eb52356c0c005e36449843  ./photo/system/ilmbase/ilmbase.tar.gz
 26571e17406d5302e6b2147b8d87088d  ./photo/system/iccprofiles/iccprofiles.tar.gz
@@ -72,7 +72,7 @@ d2135137578cc24566de0e8eda756231  ./audio/multitrack/ardour3/ardour3.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
 10d7c05d7fe2d03d59aa1ff92d28c896  ./audio/editors/mscore/mscore.tar.gz
 7470d929dc5fadd62b266e873857a193  ./audio/editors/lilypond/lilypond.tar.gz
-de9fa7449be29dd1cfd89dad2dd17827  ./audio/editors/frescobaldi/frescobaldi.tar.gz
+437373f8aac24223bc18b99e88482b7f  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 ef73ba5c7d63bdfd50fab9b168a96557  ./audio/editors/milkytracker/milkytracker.tar.gz
 b854e654345361b4f4aa89535e1503c2  ./audio/editors/rosegarden/rosegarden.tar.gz
 9e11fff6ff92e5f570bcbc63b5917807  ./audio/editors/audacity/audacity.tar.gz
@@ -87,7 +87,7 @@ a8360bfdb1fa8e5195341bb814fdf835  ./audio/misc/protobuf/v3.0.0-beta-3.1.tar.gz
 85e40bd4bfd045c0c00529d6d69193f6  ./audio/sequencers/terminatorX/terminatorX.tar.gz
 d231009eafe02b1fbf7f7a8b9ace9aac  ./audio/sequencers/seq24/seq24.tar.gz
 859dc19e1b655d34f06e806cafdc39c2  ./audio/sequencers/muse/muse.tar.gz
-d43b44e3e986ebca4be4ec8a9dc59b66  ./audio/loopers/giada/giada.tar.gz
+5c0a03d17492c4532bb72ff1ea8764c0  ./audio/loopers/giada/giada.tar.gz
 9fd7a2a57c8939a1fd64d5154d013a4a  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 9c0ea4ec75fb3c9eaff4bbb592922789  ./audio/loopers/mixxx/mixxx.tar.gz
 1ad2903206e4b28a7de1fcbe0d1c9982  ./audio/loopers/specimen/specimen.tar.gz
