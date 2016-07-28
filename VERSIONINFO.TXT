@@ -1,7 +1,7 @@
 kaptain 0.73 1
 studioware-scripts 0.0.8 1
 extra-desktops 0.0.1 1
-fluxbox-menus 0.0.3 1
+fluxbox-menus 0.0.4 1
 desktop-menus 0.0.3 1
 gnome-vfs 2.24.4 1
 gnome-common 3.18.0 1

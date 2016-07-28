@@ -1,7 +1,7 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 53419339920473a320c2ae78c5fdade3  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
-dfce89a024a145678cbc34614d4d54f2  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+366395d5cae40718ec57fc76efdab7f8  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 9261e818956fe8ad77cc77c7b1159f0e  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz
@@ -18,7 +18,7 @@ e20b460b6b5dee1e60cff6d58ef06f5f  ./photo/editors/enblend-enfuse/enblend-enfuse.
 ad626cf65c6bfd6fcea1693b7f9f6049  ./photo/libraries/libkface/libkface.tar.gz
 ec8d268ad6d663c1a76caf892b463ff1  ./photo/libraries/openjpeg/openjpeg.tar.gz
 e1b2406bc1395f05573d06b6bd3a90cf  ./photo/libraries/flickcurl/flickcurl.tar.gz
-283bf0d6f4304f37599ff72cb29cfbaa  ./photo/libraries/lensfun/lensfun.tar.gz
+a97a7e7c3eae1eda45daadf8040bf9a7  ./photo/libraries/lensfun/lensfun.tar.gz
 38fde71d7ca5c5d3f4a7343d3b6f58ff  ./photo/libraries/lensfun/lensfun-0.2.8.tar.gz
 bcefbc8efc7788e2b8c338ef7e62679c  ./photo/libraries/eigen/eigen.tar.gz
 9226e9e26e6208c49a8f9e622ebd959e  ./photo/libraries/libpano13/libpano13.tar.gz
@@ -38,7 +38,7 @@ c86faa64cb4be8842af9864f3c278d6e  ./photo/libraries/pugixml/pugixml.tar.gz
 ad7056becffcf07dcea9125629b277a9  ./photo/plugins/separate+/separate+.tar.gz
 0d397909780cca74b54885e70e1e2025  ./video/codecs/faac/faac.tar.gz
 013a4a0ea74dd0b137068625501d7fbf  ./video/codecs/libvpx/libvpx.tar.gz
-0f2fc18fc00d50ef0d522decb854f990  ./video/codecs/faad2/faad2.tar.gz
+d9505b223165466895bf8a85d3c7c340  ./video/codecs/faad2/faad2.tar.gz
 3b69ce0d72c9a36280d08e14652c82f6  ./video/codecs/x264/x264.tar.gz
 17e0d1d34f36176311f9a6e2fd76ae11  ./video/codecs/xvidcore/xvidcore.tar.gz
 573e1bb60424b1e7c06cb2ff8657c8a0  ./video/codecs/libdv/libdv.tar.gz
@@ -66,7 +66,7 @@ a246cbe7ff0ce9f5797be978c99b743e  ./video/libraries/libiec61883/libiec61883.tar.
 352223b7463536cc118af01e2552caf0  ./audio/development/ntk/ntk.tar.gz
 efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.gz
 9b8702841256b25e705f4a69422104ea  ./audio/desktop/evince/evince.tar.gz
-115e7f57c53b4c903a7a486544417084  ./audio/codecs/lame/lame.tar.gz
+0c881916a83ac46f43213ec5b23e146a  ./audio/codecs/lame/lame.tar.gz
 8d427455cdb338ff3bad85902783ef0b  ./audio/amps/guitarix2/guitarix2.tar.gz
 47d3316f13aaa403ed49d980ad24178c  ./audio/session/ladish/ladish.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
