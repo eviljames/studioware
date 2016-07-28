@@ -1,4 +1,4 @@
-PRGNAM="libkgeomap"
+PRGNAM="libkgeomap4"
 VERSION="15.08.3"
 HOMEPAGE="https://projects.kde.org/projects/kde/kdegraphics/libs/libkgeomap"
 DOWNLOAD="http://download.kde.org/stable/applications/15.08.3/src/libkgeomap-15.08.3.tar.xz"

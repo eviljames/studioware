@@ -4,15 +4,16 @@
 # on the right side marks the last column you can put a character in.  You must
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
+
            |-----handy-ruler------------------------------------------------------|
-libkgeomap4: libkgeomap (photo browser and arranger)
-libkgeomap4:
-libkgeomap4: Libkgeomap is a wrapper around different world-map components, to
-libkgeomap4: browse and arrange photos over a map.
-libkgeomap4:
-libkgeomap4: https://quickgit.kde.org/?p=libkgeomap.git
-libkgeomap4:
-libkgeomap4:
-libkgeomap4:
-libkgeomap4:
-libkgeomap4:
+libiec61883: libiec61883 (video streaming API)
+libiec61883:
+libiec61883: A higher level API for streaming DV, MPEG-2 and audio over Linux IEEE
+libiec61883: 1394
+libiec61883:
+libiec61883: https://ieee1394.wiki.kernel.org/index.php/Main_Page
+libiec61883:
+libiec61883:
+libiec61883:
+libiec61883:
+libiec61883:

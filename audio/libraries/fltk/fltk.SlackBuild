@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for fltk-1.1.10
+# Slackware build script for fltk
 # Copyright 2011 David Woodfall <dave@dawoodfall.net>
 # All rights reserved.
 #
@@ -86,9 +86,9 @@ CXXFLAGS="$SLKCFLAGS" \
   --enable-threads \
   --enable-xinerama \
   --enable-xft \
-  --enable-xdbe 
+  --enable-xdbe
 
-make 
+make
 make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \

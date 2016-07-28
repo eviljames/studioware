@@ -1,0 +1,6 @@
+libiec61883 (video streaming API)
+
+A higher level API for streaming DV, MPEG-2 and audio over Linux IEEE
+1394
+
+https://ieee1394.wiki.kernel.org/index.php/Main_Page

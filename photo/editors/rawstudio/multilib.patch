@@ -1,0 +1,85 @@
+diff -Naur a/plugins/output-facebook/Makefile.am b/plugins/output-facebook/Makefile.am
+--- a/plugins/output-facebook/Makefile.am	2011-02-15 17:28:03.000000000 +0000
++++ b/plugins/output-facebook/Makefile.am	2016-07-28 01:41:49.266201483 +0100
+@@ -19,10 +19,10 @@
+ libdir = $(datadir)/rawstudio/plugins/
+ 
+ output_facebook_la_LIBADD = @PACKAGE_LIBS@ 
+-output_facebook_la_LDFLAGS = -module -avoid-version -L/usr/lib -lcurl
++output_facebook_la_LDFLAGS = -module -avoid-version -L/usr/lib64 -lcurl
+ output_facebook_la_SOURCES = output-facebook.c output-facebook.h \
+ 	rs-facebook-client.c rs-facebook-client.h \
+ 	rs-facebook-client-param.c rs-facebook-client-param.h
+ 
+ plugin_DATA = facebook-logo.svg
+-EXTRA_DIST = $(plugin_DATA)
+\ No newline at end of file
++EXTRA_DIST = $(plugin_DATA)
+diff -Naur a/plugins/output-facebook/Makefile.in b/plugins/output-facebook/Makefile.in
+--- a/plugins/output-facebook/Makefile.in	2011-04-07 22:44:00.000000000 +0100
++++ b/plugins/output-facebook/Makefile.in	2016-07-28 01:41:49.268201483 +0100
+@@ -252,7 +252,7 @@
+ 
+ lib_LTLIBRARIES = output_facebook.la
+ output_facebook_la_LIBADD = @PACKAGE_LIBS@ 
+-output_facebook_la_LDFLAGS = -module -avoid-version -L/usr/lib -lcurl
++output_facebook_la_LDFLAGS = -module -avoid-version -L/usr/lib64 -lcurl
+ output_facebook_la_SOURCES = output-facebook.c output-facebook.h \
+ 	rs-facebook-client.c rs-facebook-client.h \
+ 	rs-facebook-client-param.c rs-facebook-client-param.h
+diff -Naur a/plugins/output-flickr/Makefile.am b/plugins/output-flickr/Makefile.am
+--- a/plugins/output-flickr/Makefile.am	2011-02-15 17:28:03.000000000 +0000
++++ b/plugins/output-flickr/Makefile.am	2016-07-28 01:42:17.838201558 +0100
+@@ -18,9 +18,9 @@
+ libdir = $(datadir)/rawstudio/plugins/
+ 
+ output_flickr_la_LIBADD = @PACKAGE_LIBS@ 
+-output_flickr_la_LDFLAGS = -module -avoid-version -L/usr/lib -lflickcurl
++output_flickr_la_LDFLAGS = -module -avoid-version -L/usr/lib64 -lflickcurl
+ output_flickr_la_SOURCES = output-flickr.c output-flickr.h
+ 
+ plugin_DATA = flickr-logo.svg
+ 
+-EXTRA_DIST = $(plugin_DATA)
+\ No newline at end of file
++EXTRA_DIST = $(plugin_DATA)
+diff -Naur a/plugins/output-flickr/Makefile.in b/plugins/output-flickr/Makefile.in
+--- a/plugins/output-flickr/Makefile.in	2011-04-07 22:44:00.000000000 +0100
++++ b/plugins/output-flickr/Makefile.in	2016-07-28 01:42:40.879201618 +0100
+@@ -250,7 +250,7 @@
+ 
+ lib_LTLIBRARIES = output_flickr.la
+ output_flickr_la_LIBADD = @PACKAGE_LIBS@ 
+-output_flickr_la_LDFLAGS = -module -avoid-version -L/usr/lib -lflickcurl
++output_flickr_la_LDFLAGS = -module -avoid-version -L/usr/lib64 -lflickcurl
+ output_flickr_la_SOURCES = output-flickr.c output-flickr.h
+ plugin_DATA = flickr-logo.svg
+ EXTRA_DIST = $(plugin_DATA)
+diff -Naur a/plugins/output-picasa/Makefile.am b/plugins/output-picasa/Makefile.am
+--- a/plugins/output-picasa/Makefile.am	2011-02-15 17:28:03.000000000 +0000
++++ b/plugins/output-picasa/Makefile.am	2016-07-28 01:41:49.268201483 +0100
+@@ -18,9 +18,9 @@
+ libdir = $(datadir)/rawstudio/plugins/
+ 
+ output_picasa_la_LIBADD = @PACKAGE_LIBS@ 
+-output_picasa_la_LDFLAGS = -module -avoid-version -L/usr/lib
++output_picasa_la_LDFLAGS = -module -avoid-version -L/usr/lib64
+ output_picasa_la_SOURCES = output-picasa.c rs-picasa-client.c rs-picasa-client.h
+ 
+ plugin_DATA = picasa-logo.svg
+ 
+-EXTRA_DIST = $(plugin_DATA)
+\ No newline at end of file
++EXTRA_DIST = $(plugin_DATA)
+diff -Naur a/plugins/output-picasa/Makefile.in b/plugins/output-picasa/Makefile.in
+--- a/plugins/output-picasa/Makefile.in	2011-04-07 22:44:01.000000000 +0100
++++ b/plugins/output-picasa/Makefile.in	2016-07-28 01:41:49.268201483 +0100
+@@ -250,7 +250,7 @@
+ 
+ lib_LTLIBRARIES = output_picasa.la
+ output_picasa_la_LIBADD = @PACKAGE_LIBS@ 
+-output_picasa_la_LDFLAGS = -module -avoid-version -L/usr/lib
++output_picasa_la_LDFLAGS = -module -avoid-version -L/usr/lib64
+ output_picasa_la_SOURCES = output-picasa.c rs-picasa-client.c rs-picasa-client.h
+ plugin_DATA = picasa-logo.svg
+ EXTRA_DIST = $(plugin_DATA)

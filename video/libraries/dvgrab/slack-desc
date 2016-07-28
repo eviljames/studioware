@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+dvgrab: dvgrab (grab audio and video data)
+dvgrab:
+dvgrab: dvgrab receives audio and video data from a digital
+dvgrab: camcorder via an IEEE 1394 (widely known as FireWire) link
+dvgrab: and stores them into an AVI file. It features autosplit of
+dvgrab: long video sequences into several files, and supports saving
+dvgrab: the data as raw frames, AVI type 1, AVI type 2, and image
+dvgrab: files.
+dvgrab:
+dvgrab: http://freecode.com/projects/dvgrab
+dvgrab:

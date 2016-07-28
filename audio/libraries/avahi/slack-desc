@@ -5,14 +5,14 @@
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
      |-----handy-ruler------------------------------------------------------|
-avahi: avahi ()
+avahi: avahi (Zero-configuration networking (zeroconf) implementation)
 avahi:
-avahi:
-avahi:
-avahi:
-avahi:
-avahi:
-avahi:
-avahi:
-avahi:
+avahi: Avahi is a free Zero-configuration networking (zeroconf)
+avahi: implementation, including a system for multicast DNS/DNS-SD
+avahi: service discovery. It allows programs to publish and
+avahi: discover services and hosts running on a local network with
+avahi: no specific configuration. For example you can plug into a
+avahi: network and instantly find printers to print to, files to
+avahi: look at and people to talk to. It is licensed under the GNU
+avahi: Lesser General Public License (LGPL).
 avahi:

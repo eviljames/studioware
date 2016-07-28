@@ -1,0 +1,3 @@
+libavc1394
+libiec61883
+dvgrab

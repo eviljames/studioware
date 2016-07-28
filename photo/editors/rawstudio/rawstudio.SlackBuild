@@ -68,10 +68,16 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# Patch to use libpng > 1.5. Pinched from sbo.
+# Patches pinched from sbo.
 patch -p1 --verbose < $CWD/libpng15.patch
+patch -p1 --verbose < $CWD/lensfun03.patch
 
-LDFLAGS="-lgthread-2.0" \
+# Fix multilib issues
+if [ "$LIBDIRSUFFIX" == "64" ]; then
+    patch -p1 --verbose < $CWD/multilib.patch
+fi
+
+LDFLAGS="-lgthread-2.0 -L/usr/lib$LIBDIRSUFFIX" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

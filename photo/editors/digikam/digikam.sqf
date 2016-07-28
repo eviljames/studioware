@@ -6,4 +6,5 @@ libkgeomap4
 libkvkontakte
 liblqr
 @libkface
+libpgf
 digikam

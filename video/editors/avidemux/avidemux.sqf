@@ -1,4 +1,5 @@
 jack
+libdv
 faac
 faad2
 lame

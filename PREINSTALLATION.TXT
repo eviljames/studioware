@@ -1,0 +1,7 @@
+
+1) Install JDK or OpenJDK: http://www.slackware.com/~alien/slackbuilds/openjdk
+
+2) Create Avahi user and group:
+  # groupadd -g 214 avahi
+  # useradd -u 214 -g 214 -c "Avahi" -d /dev/null -s /bin/false avahi
+

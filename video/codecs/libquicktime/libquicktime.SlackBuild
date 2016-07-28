@@ -22,7 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=libquicktime
-VERSION=${VERSION:-1.2.4}
+VERSION=${VERSION:-cvs20160727}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -68,10 +68,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# Fix compatibility with ffmpeg 2.x
-# Thanks to Heinz Wiesinger for this.
-patch -p1 -i $CWD/libquicktime-1.2.4-ffmpeg2.patch
-
+./autogen.sh
+LDFLAGS="-L/usr/lib$LIBDIRSUFFIX" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

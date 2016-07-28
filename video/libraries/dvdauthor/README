@@ -1,0 +1,9 @@
+dvdauthor (DVD authoring tools)
+
+DVDAuthor is a set of tools to help you author the file and
+directory structure of a DVD-Video disc, including programmatic
+commands for implementing interactive behaviour. It is driven by
+command lines and XML control files, though there are other
+programs that provide GUI-based front ends if you prefer.
+
+http://dvdauthor.sourceforge.net/

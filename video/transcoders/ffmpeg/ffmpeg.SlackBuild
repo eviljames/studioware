@@ -151,12 +151,10 @@ CXXFLAGS="$SLKCFLAGS" \
   $openjpeg \
   $libdc1394 \
   $mp3lame \
-  $libfaac \
   $libxvid \
   $libx264 \
   $libspeex \
   $dirac_fast \
-  $non_free \
   $libgsm \
   $libvpx \
   $librtmp \
@@ -172,6 +170,8 @@ CXXFLAGS="$SLKCFLAGS" \
   $libopus \
   $libtwolame \
   $ladspa \
+  $libfaac \
+  $non_free \
   $ssl
 
 make
