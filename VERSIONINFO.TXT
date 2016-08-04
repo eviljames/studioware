@@ -62,6 +62,7 @@ evince 3.20.0 1
 lame 3.99.5 1
 guitarix2 0.35.0 1
 ladish git20160725 1
+lash 0.6.0.594 1
 qtractor 0.6.7 1
 ardour 4.7.0 1
 jokosher 0.11.5 1
@@ -141,7 +142,6 @@ raptor 1.4.21 1
 ladspa_sdk 1.13 1
 python-ly 0.9.4 1
 wxGTK 2.8.12 1
-lash 0.6.0.594 1
 ganv 1.4.2 1
 lilv 0.22.0 1
 portmidi 217 1

@@ -64,6 +64,7 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 804e2855af94f13e1a12d7b95f784559  ./audio/codecs/lame/lame.tar.gz
 8d427455cdb338ff3bad85902783ef0b  ./audio/amps/guitarix2/guitarix2.tar.gz
 47d3316f13aaa403ed49d980ad24178c  ./audio/session/ladish/ladish.tar.gz
+77a41a0c5b40f11a2901d4a05fa759d1  ./audio/session/lash/lash.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 82c46616462f6d46ec756a5506de23de  ./audio/multitrack/ardour/ardour.tar.gz
 32f2c11bb84ac179bfc19bef04c20683  ./audio/multitrack/jokosher/jokosher.tar.gz
@@ -146,7 +147,6 @@ d73b9c7ef9f8e46a0be7a009c1ff84ea  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 9ef8d425322243d20f6cdfc3b4ae4ea7  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
 55aed3c00a57bd3080aa632c4bea405d  ./audio/libraries/python-ly/python-ly.tar.gz
 c8226419f837a095025760e1e56371b0  ./audio/libraries/wxGTK/wxGTK.tar.gz
-77a41a0c5b40f11a2901d4a05fa759d1  ./audio/libraries/lash/lash.tar.gz
 e995fa882788ee6bcddc0319430b1cd2  ./audio/libraries/ganv/ganv.tar.gz
 b415ae73a452f1b4b0089b624f19961a  ./audio/libraries/lilv/lilv.tar.gz
 2be260417c7d7197aee7612d29cd8376  ./audio/libraries/portmidi/portmidi.tar.gz
