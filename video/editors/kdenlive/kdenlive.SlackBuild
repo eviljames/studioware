@@ -105,6 +105,7 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 
 find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Video;/' '{}' \;
+    sed -i \
+'s/Categories=.*;/Categories=X-Studioware-Video;/;s/Exec=.*/Exec=kdenlive/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

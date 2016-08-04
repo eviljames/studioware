@@ -1,2 +1,3 @@
 numpy
+@ffmpeg
 aubio

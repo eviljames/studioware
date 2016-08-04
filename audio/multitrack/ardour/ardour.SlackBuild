@@ -106,6 +106,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --optimize \
   --freedesktop \
   --no-phone-home \
+  --lv2 \
   --cxx11
 
 ./waf build
@@ -120,6 +121,9 @@ fi
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
+mkdir $PKG/usr/share/applications
+cp $CWD/ardour4.desktop $PKG/usr/share/applications
+
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a COPYING PACKAGER_README README \
   $PKG/usr/doc/$PRGNAM-$VERSION
@@ -131,18 +135,18 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 # Let's not clobber config files
 cd $PKG/etc/ardour4
-  for i in * ; do
-    mv $i $i.new
-    echo "config etc/ardour4/$i.new" >> $PKG/install/doinst.sh
-  done
-cd -
+    find . -type f | while read i
+    do
+        mv $i $i.new
+        echo "config etc/ardour4/$i.new" >> $PKG/install/doinst.sh
+    done
 
 cd $PKG
 
-find . -name \*.desktop -exec \
-    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
-
-find . -name \*.desktop -exec \
-    sed -i 's/Name=.*/Name=Ardour/' '{}' \;
+#find . -name \*.desktop -exec \
+#    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
+#
+#find . -name \*.desktop -exec \
+#    sed -i 's/Name=.*/Name=Ardour/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}

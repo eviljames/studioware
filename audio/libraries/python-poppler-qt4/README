@@ -1,0 +1,6 @@
+py-poppler-qt4 (Python binding for libpoppler-qt4)
+
+A Python binding for libpoppler-qt4 that aims for completeness
+and for being actively maintained.
+
+https://pypi.python.org/pypi/python-poppler-qt4/

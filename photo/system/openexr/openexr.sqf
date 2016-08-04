@@ -1,2 +1,0 @@
-ilmbase
-openexr

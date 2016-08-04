@@ -7,4 +7,5 @@ suil
 liblo
 @rubberband
 @xjadeo
+cppunit
 ardour

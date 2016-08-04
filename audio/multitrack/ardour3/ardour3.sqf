@@ -1,9 +1,0 @@
-jack
-@lilv
-suil
-liblo
-aubio
-@liblrdf
-@libgnomecanvasmm
-@xjadeo
-ardour3

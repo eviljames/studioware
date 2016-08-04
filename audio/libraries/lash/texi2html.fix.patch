@@ -1,0 +1,30 @@
+diff -Naur a/docs/Makefile.am b/docs/Makefile.am
+--- a/docs/Makefile.am	2007-11-19 22:00:28.000000000 +0000
++++ b/docs/Makefile.am	2016-07-29 06:00:30.676686741 +0100
+@@ -18,9 +18,9 @@
+ 	  mkdir -lash-manual-html-split; \
+ 	fi
+ 	cd lash-manual-html-one-page && \
+-	  texi2html --number ../$(top_srcdir)/docs/lash-manual.texi
++	  texi2html --number-sections ../$(top_srcdir)/docs/lash-manual.texi
+ 	cd lash-manual-html-split && \
+-	  texi2html --number --split=chapter ../$(top_srcdir)/docs/lash-manual.texi
++	  texi2html --number-sections --split=chapter ../$(top_srcdir)/docs/lash-manual.texi
+ 	touch html-manual-stamp
+ 
+ CLEANFILES = html-manual-stamp lash-manual.cps
+diff -Naur a/docs/Makefile.in b/docs/Makefile.in
+--- a/docs/Makefile.in	2008-11-09 21:45:28.000000000 +0000
++++ b/docs/Makefile.in	2016-07-29 06:00:45.365686779 +0100
+@@ -527,9 +527,9 @@
+ @HAVE_TEXI2HTML_TRUE@	  mkdir -lash-manual-html-split; \
+ @HAVE_TEXI2HTML_TRUE@	fi
+ @HAVE_TEXI2HTML_TRUE@	cd lash-manual-html-one-page && \
+-@HAVE_TEXI2HTML_TRUE@	  texi2html --number ../$(top_srcdir)/docs/lash-manual.texi
++@HAVE_TEXI2HTML_TRUE@	  texi2html --number-sections ../$(top_srcdir)/docs/lash-manual.texi
+ @HAVE_TEXI2HTML_TRUE@	cd lash-manual-html-split && \
+-@HAVE_TEXI2HTML_TRUE@	  texi2html --number --split=chapter ../$(top_srcdir)/docs/lash-manual.texi
++@HAVE_TEXI2HTML_TRUE@	  texi2html --number-sections --split=chapter ../$(top_srcdir)/docs/lash-manual.texi
+ @HAVE_TEXI2HTML_TRUE@	touch html-manual-stamp
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,3 +1,4 @@
+@desktop-menus
 @lilv
 SimpleSysexxer
 @zynaddsubfx
@@ -20,7 +21,7 @@ liblo
 @denemo
 @ecasound
 @frei0r-plugins
-frescobaldi
+@frescobaldi
 @giada
 @guitarix2
 @hydrogen

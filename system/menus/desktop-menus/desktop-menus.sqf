@@ -1,0 +1,2 @@
+@studioware-scripts
+desktop-menus

@@ -1,0 +1,7 @@
+cppunit (framework for unit testing)
+
+CppUnit is the C++ port of the famous JUnit framework for unit
+testing. Test output is in XML for automatic testing and GUI
+based for supervised tests.
+
+https://freedesktop.org/wiki/Software/cppunit/
