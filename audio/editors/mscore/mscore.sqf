@@ -1,2 +1,3 @@
 jack
+portaudio
 mscore

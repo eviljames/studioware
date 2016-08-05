@@ -69,7 +69,7 @@ d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 82c46616462f6d46ec756a5506de23de  ./audio/multitrack/ardour/ardour.tar.gz
 32f2c11bb84ac179bfc19bef04c20683  ./audio/multitrack/jokosher/jokosher.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
-10d7c05d7fe2d03d59aa1ff92d28c896  ./audio/editors/mscore/mscore.tar.gz
+4f0259e4504d8a419e559bb6201cd55b  ./audio/editors/mscore/mscore.tar.gz
 7470d929dc5fadd62b266e873857a193  ./audio/editors/lilypond/lilypond.tar.gz
 c62d79c3295ddb526df61165caa9ebdb  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 ef73ba5c7d63bdfd50fab9b168a96557  ./audio/editors/milkytracker/milkytracker.tar.gz
