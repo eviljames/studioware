@@ -1,8 +1,8 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 4496fd4f225e344c55913e9c100dd67a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
-128f5cf5df2a4c32aa5822b6e9212372  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
-e2852a622f4af1de6cf3b44cf9b09545  ./system/menus/desktop-menus/desktop-menus.tar.gz
+e14e3c32b780ab0f038126f2478d4403  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
