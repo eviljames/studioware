@@ -11,8 +11,10 @@ digikam 4.14.0 1
 darktable 2.0.5 1
 enblend-enfuse 4.2 1
 photoprint 0.4.2_pre2 1
+DisplayCAL 3.1.5.0 1
 iccprofiles 2011 1
 hugin 2016.0.0 1
+rapid-photo-downloader 0.4.11 1
 libkface 15.08.3 1
 flickcurl 1.26 1
 lensfun 0.2.8 1
@@ -58,9 +60,11 @@ pysetuptools 0.6c11 1
 phat 0.4.1 1
 ntk git20160717 1
 timemachine 0.3.3 7
+clearlooks-classic-themes 0.6.2 1
 evince 3.20.0 1
+gtk-engines 2.20.2 1
 lame 3.99.5 1
-guitarix2 0.35.0 1
+guitarix2 0.35.1 1
 ladish git20160725 1
 lash 0.6.0.594 1
 qtractor 0.6.7 1
@@ -75,11 +79,13 @@ rosegarden 16.02 1
 audacity 2.1.1 1
 denemo 2.0.8 1
 qastools 0.18.1 1
+lmms git20160820 1
 vkeybd 0.1.18d 1
 jamin 0.95.0 1
 non 1.1.0 1
 protobuf 3.0.0_beta_3.1 1
 stops 0.3.0 2
+Cadence git20160820 1
 terminatorX 4.0.0 1
 seq24 0.9.3 1
 muse 2.2.1 1

@@ -1,0 +1,10 @@
+jack
+cadence
+@calf
+caps
+swh-plugins
+@swh-plugins-lv2
+tap-plugins
+@gigedit
+portaudio
+lmms

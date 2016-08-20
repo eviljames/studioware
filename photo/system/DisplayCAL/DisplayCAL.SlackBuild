@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Slackware build script for guitarix2
-# Copyright 2011 David Woodfall <dave@dawoodfall.net>
+# Slackware build script for DisplayCAL
+# Copyright 2016 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -21,14 +21,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=guitarix2
-VERSION=${VERSION:-0.35.1}
+PRGNAM=DisplayCAL
+VERSION=${VERSION:-3.1.5.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
+    i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
@@ -39,8 +39,8 @@ TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
@@ -58,40 +58,24 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf guitarix-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
-cd guitarix-$VERSION
-
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+cd $PRGNAM-$VERSION
 chown -R root:root .
-find . \
- \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
- -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
- -exec chmod 644 {} \;
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+ -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# Pass AVAHI=NO to this script to not require avahi:
-AVAHI=${AVAHI:-YES}
+python setup.py install --root=$PKG
 
-if [ "$AVAHI" != "YES" ]; then
-    avahi="--no-avahi"
-fi
-
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
-./waf configure \
-    --install-roboto-font \
-    --prefix=/usr \
-    $avahi \
-    --ladspadir=/usr/lib$LIBDIRSUFFIX/ladspa
-./waf build
-./waf install --destdir=$PKG
-
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   changelog COPYING README.developers README  \
+  LICENSE.txt README-fr.html README.html *.txt \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
@@ -102,8 +86,6 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cd $PKG
 
 find . -name \*.desktop -exec \
-sed -i \
-'s/Categories=.*/Categories=X-Studioware-Audio-Core;X-Studioware-Audio-Amps;/' \
-    '{}' \;
+    sed -i 's/Categories=.*;/Categories=X-Studioware-Photo;/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

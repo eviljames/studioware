@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+       |-----handy-ruler------------------------------------------------------|
+Cadence: Cadence (set of tools useful for audio production)
+Cadence:
+Cadence: Cadence is a set of tools useful for audio production.  Cadence
+Cadence: itself is also an application (the main one).  There are other
+Cadence: applications that are part of the Cadence suite, they are usually
+Cadence: named as the "Cadence tools".
+Cadence:
+Cadence: http://kxstudio.linuxaudio.org/Applications:Cadence
+Cadence:
+Cadence:
+Cadence:
