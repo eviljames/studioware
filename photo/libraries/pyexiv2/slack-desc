@@ -6,14 +6,14 @@
 # customary to leave one space after the ':'.
 
        |-----handy-ruler------------------------------------------------------|
-Cadence: Cadence (set of tools useful for audio production)
-Cadence:
-Cadence: Cadence is a set of tools useful for audio production.  Cadence
-Cadence: itself is also an application (the main one).  There are other
-Cadence: applications that are part of the Cadence suite, they are usually
-Cadence: named as the "Cadence tools".
-Cadence:
-Cadence: http://kxstudio.linuxaudio.org/Applications:Cadence
-Cadence:
-Cadence:
-Cadence:
+pyexiv2: pyexiv2 (Python binding to exiv2)
+pyexiv2:
+pyexiv2: It is a python module that allows your python scripts to read and
+pyexiv2: write metadata (EXIF, IPTC, XMP, thumbnails) embedded in image files
+pyexiv2: (JPEG, TIFF, ...).
+pyexiv2:
+pyexiv2: http://tilloy.net/dev/pyexiv2/
+pyexiv2:
+pyexiv2:
+pyexiv2:
+pyexiv2:

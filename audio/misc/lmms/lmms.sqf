@@ -1,5 +1,4 @@
 jack
-cadence
 @calf
 caps
 swh-plugins

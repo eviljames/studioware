@@ -1,0 +1,11 @@
+jack
+@lilv
+suil
+@aubio
+@libgnomecanvasmm
+@liblrdf
+liblo
+@rubberband
+@xjadeo
+cppunit
+ardour5

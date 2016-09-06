@@ -8,5 +8,5 @@ photoprint
 @rawstudio
 @digikam
 @system
-rapid-photo-downloader
+@rapid-photo-downloader
 DisplayCAL

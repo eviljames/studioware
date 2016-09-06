@@ -1,0 +1,7 @@
+pyexiv2 (Python binding to exiv2)
+
+It is a python module that allows your python scripts to read and
+write metadata (EXIF, IPTC, XMP, thumbnails) embedded in image files
+(JPEG, TIFF, ...).
+
+http://tilloy.net/dev/pyexiv2/

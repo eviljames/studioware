@@ -1,0 +1,7 @@
+libbonobo (CORBA inteface library)
+
+The bonobo library provides GNOME with a framework for handling
+compound documents, such as embedding a spreadsheet in a word
+processor document.
+
+http://www.gnome.org

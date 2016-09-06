@@ -1,0 +1,2 @@
+@libgnome
+gnome-python-gconf

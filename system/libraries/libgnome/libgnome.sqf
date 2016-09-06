@@ -1,0 +1,3 @@
+@gnome-vfs
+@libbonobo
+libgnome

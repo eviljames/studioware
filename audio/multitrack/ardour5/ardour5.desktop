@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=ardour5
+Icon=/usr/share/icons/hicolor/scalable/categories/studioware-logo5.png
+Name=Ardour5
+GenericName=Ardour5 Multitrack
+StartupNotify=true
+Type=Application
+Categories=X-Studioware-Audio-Record;
