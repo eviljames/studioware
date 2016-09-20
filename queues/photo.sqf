@@ -9,4 +9,3 @@ photoprint
 @digikam
 @system
 @rapid-photo-downloader
-DisplayCAL

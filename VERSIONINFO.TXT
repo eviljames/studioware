@@ -15,7 +15,6 @@ digikam 4.14.0 1
 darktable 2.0.5 1
 enblend-enfuse 4.2 1
 photoprint 0.4.2_pre2 1
-DisplayCAL 3.1.5.0 1
 iccprofiles 2011 1
 hugin 2016.0.0 1
 rapid-photo-downloader 0.4.11 1

@@ -15,7 +15,6 @@ ca8c126cf0e6a56d5ff2364181d8fe5f  ./photo/editors/digikam/digikam.tar.gz
 5f521b786900bcfccc7cf1301017eccb  ./photo/editors/darktable/darktable.tar.gz
 e20b460b6b5dee1e60cff6d58ef06f5f  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 9cac2481ff626d30f473a2f4d8331618  ./photo/output/photoprint/photoprint.tar.gz
-e9cb43b132a9f3125cbde240fdd90390  ./photo/system/DisplayCAL/DisplayCAL.tar.gz
 26571e17406d5302e6b2147b8d87088d  ./photo/system/iccprofiles/iccprofiles.tar.gz
 4e098de2b0c20a89e346d1c80ee9db8e  ./photo/system/hugin/hugin.tar.gz
 77228ca7a0a363ebb2b36b3356d2d2da  ./photo/system/rapid-photo-downloader/rapid-photo-downloader.tar.gz
