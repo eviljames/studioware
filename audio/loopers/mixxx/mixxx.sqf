@@ -4,4 +4,5 @@ libshout
 @protobuf
 portaudio
 chromaprint
+@rubberband
 mixxx

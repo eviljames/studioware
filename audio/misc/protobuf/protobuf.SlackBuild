@@ -22,8 +22,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=protobuf
-VERSION=${VERSION:-3.0.0_beta_3.1}
-SRCVERSION=${SRCVERSION:-3.0.0-beta-3.1}
+VERSION=${VERSION:-3.1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -59,9 +58,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$SRCVERSION
-tar xvf $CWD/v$SRCVERSION.tar.gz
-cd $PRGNAM-$SRCVERSION
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/v$VERSION.tar.gz
+cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
