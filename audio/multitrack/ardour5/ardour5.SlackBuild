@@ -26,7 +26,7 @@
 
 PRGNAM=ardour5
 SRCNAM=ardour
-VERSION=${VERSION:-5.3}
+VERSION=${VERSION:-5.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 

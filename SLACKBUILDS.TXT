@@ -75,7 +75,7 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 77a41a0c5b40f11a2901d4a05fa759d1  ./audio/session/lash/lash.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 82c46616462f6d46ec756a5506de23de  ./audio/multitrack/ardour/ardour.tar.gz
-833851ba268619505da042ee58daecd8  ./audio/multitrack/ardour5/ardour5.tar.gz
+4134f9d13dbb7d650704bedbcdb4f77c  ./audio/multitrack/ardour5/ardour5.tar.gz
 32f2c11bb84ac179bfc19bef04c20683  ./audio/multitrack/jokosher/jokosher.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
 4f0259e4504d8a419e559bb6201cd55b  ./audio/editors/mscore/mscore.tar.gz
