@@ -1,7 +1,7 @@
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 4496fd4f225e344c55913e9c100dd67a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
-eef8454eeefcfc16bdfd3782985f8b2b  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+598d78541c420f16e1d42cbc4e482d2f  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz
@@ -28,7 +28,6 @@ bdaee812411697a83973dc8c6b744008  ./photo/libraries/pyexiv2/pyexiv2.tar.gz
 d7cea0664d94961f309f031ccb00ffde  ./photo/libraries/libpgf/libpgf.tar.gz
 81d9699e9502d9791231e3aebd072e04  ./photo/libraries/lcms26/lcms26.tar.gz
 db2094f0fe7a36a8ee2d9a312bf33316  ./photo/libraries/liblqr/liblqr.tar.gz
-ebb6bac089ac938fbbe86ce5ba7f147d  ./photo/libraries/ecm/ecm.tar.gz
 e6a2c1c34053d02f731bf43f17b1279a  ./photo/libraries/libkvkontakte/libkvkontakte.tar.gz
 ded99c094e58cf98f910069be2e9178c  ./photo/libraries/libkgeomap4/libkgeomap4.tar.gz
 e9b7ff4f616999096ca21de96f98908d  ./photo/libraries/vigra/vigra.tar.gz
