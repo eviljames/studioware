@@ -10,6 +10,7 @@ libbonobo 2.32.1 1
 gnome-python-gconf 2.28.1 1
 ORBit2 2.14.19 1
 libgnome 2.32.1 1
+ecm git20160720 1
 rawstudio 2.0 1
 digikam 4.14.0 1
 darktable 2.0.5 1

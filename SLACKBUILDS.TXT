@@ -10,6 +10,8 @@ fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-
 af79bc40e86406b559be1902ddbf6d65  ./system/libraries/gnome-python-gconf/gnome-python-gconf.tar.gz
 1242e7ac42c84f9b0a83cd6248eb4099  ./system/libraries/ORBit2/ORBit2.tar.gz
 b55321f199e117ab8aad47569f30d015  ./system/libraries/libgnome/libgnome.tar.gz
+4730ebd3fa2eec4b175ad544c87c7dc0  ./photo/development/ecm/ecm-git20160720.tar.gz
+ebb6bac089ac938fbbe86ce5ba7f147d  ./photo/development/ecm/ecm.tar.gz
 68e5c2d840cb93e28ef8af8a1ab007f9  ./photo/editors/rawstudio/rawstudio.tar.gz
 ca8c126cf0e6a56d5ff2364181d8fe5f  ./photo/editors/digikam/digikam.tar.gz
 5f521b786900bcfccc7cf1301017eccb  ./photo/editors/darktable/darktable.tar.gz
@@ -29,7 +31,7 @@ d7cea0664d94961f309f031ccb00ffde  ./photo/libraries/libpgf/libpgf.tar.gz
 81d9699e9502d9791231e3aebd072e04  ./photo/libraries/lcms26/lcms26.tar.gz
 db2094f0fe7a36a8ee2d9a312bf33316  ./photo/libraries/liblqr/liblqr.tar.gz
 e6a2c1c34053d02f731bf43f17b1279a  ./photo/libraries/libkvkontakte/libkvkontakte.tar.gz
-ded99c094e58cf98f910069be2e9178c  ./photo/libraries/libkgeomap4/libkgeomap4.tar.gz
+42ad100e62aa52e6702f5964aafe4ce8  ./photo/libraries/libkgeomap4/libkgeomap4.tar.gz
 e9b7ff4f616999096ca21de96f98908d  ./photo/libraries/vigra/vigra.tar.gz
 9e05c7eb8118e6caa85fb748581a777a  ./photo/libraries/json-glib/json-glib.tar.gz
 80e6a2aefed0045a3441015c4df76317  ./photo/libraries/GraphicsMagick/GraphicsMagick.tar.gz
