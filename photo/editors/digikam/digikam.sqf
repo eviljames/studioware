@@ -2,7 +2,7 @@
 @hugin
 @opencv
 eigen
-libkgeomap4
+@libkgeomap4
 libkvkontakte
 liblqr
 @libkface
