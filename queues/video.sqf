@@ -4,3 +4,4 @@
 @kdenlive
 @openshot
 @system
+@DisplayCAL

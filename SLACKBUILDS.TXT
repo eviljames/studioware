@@ -1,12 +1,17 @@
+768d5f4aed43d3d50d27119bac383108  ./system/development/jam/jam.tar.gz
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 4496fd4f225e344c55913e9c100dd67a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
+43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
+2dbfe3e65348e6852c1bceedd0bbe4e6  ./system/system/argyllcms/argyllcms.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 598d78541c420f16e1d42cbc4e482d2f  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz
+d77351a6f86495bf09313edf962c739e  ./system/libraries/wxPython3/wxPython3.tar.gz
 fe15d9cc7e8eea01019e6427b223980d  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 8c94ac2912ad9ba65a409ad020527718  ./system/libraries/libbonobo/libbonobo.tar.gz
+f63588227b246cb2547685cb8c80afa1  ./system/libraries/wxGTK3/wxGTK3.tar.gz
 af79bc40e86406b559be1902ddbf6d65  ./system/libraries/gnome-python-gconf/gnome-python-gconf.tar.gz
 1242e7ac42c84f9b0a83cd6248eb4099  ./system/libraries/ORBit2/ORBit2.tar.gz
 b55321f199e117ab8aad47569f30d015  ./system/libraries/libgnome/libgnome.tar.gz

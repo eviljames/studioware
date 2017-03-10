@@ -1,12 +1,17 @@
+jam 2.5 1
 kaptain 0.73 1
 studioware-scripts 0.0.9 1
+DisplayCAL 3.2.4.0 1
+"argyllcms" 1.9.2 1
 extra-desktops 0.0.1 1
 fluxbox-menus 0.0.7 1
 desktop-menus 0.0.5 1
 gnome-vfs 2.24.4 1
 gnome-common 3.18.0 1
+wxPython3 3.0.2.0 1
 gnome-mime-data 2.18.0 1
 libbonobo 2.32.1 1
+wxGTK3 3.0.2 1
 gnome-python-gconf 2.28.1 1
 ORBit2 2.14.19 1
 libgnome 2.32.1 1
