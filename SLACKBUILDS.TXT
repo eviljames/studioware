@@ -4,7 +4,7 @@ c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
 2dbfe3e65348e6852c1bceedd0bbe4e6  ./system/system/argyllcms/argyllcms.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
-598d78541c420f16e1d42cbc4e482d2f  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+073800f3d64213654a36b41e6b369e68  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz

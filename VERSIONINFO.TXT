@@ -4,7 +4,7 @@ studioware-scripts 0.0.9 1
 DisplayCAL 3.2.4.0 1
 "argyllcms" 1.9.2 1
 extra-desktops 0.0.1 1
-fluxbox-menus 0.0.7 1
+fluxbox-menus 0.0.8 1
 desktop-menus 0.0.5 1
 gnome-vfs 2.24.4 1
 gnome-common 3.18.0 1
