@@ -194,7 +194,7 @@ caefb91a1b8604cb8c9a7f5d7283dd6f  ./audio/plugins/frei0r-plugins/frei0r-plugins.
 0af6c30a952aa375393a7854dc9f735c  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 8769ffd9359e0975129dcb05f5f2f860  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9403b02386eaf62fee5a2a35c958b7a5  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
-60c20b107da5b69e3f11b218aa91f772  ./audio/plugins/gst1-plugins-good/gst1-plugins-good.tar.gz
+b182b103ceafa50d581f245612dd1642  ./audio/plugins/gst1-plugins-good/gst1-plugins-good.tar.gz
 7a76fc9154679295b64802fb1a76c4f5  ./audio/plugins/gavl/gavl.tar.gz
 bd52aae72c0258d7b41c5079565e3716  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 78764d0f56967179f3265b24965e91de  ./audio/graphics/t1utils/t1utils.tar.gz

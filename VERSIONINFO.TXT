@@ -189,7 +189,7 @@ frei0r-plugins git20160720 1
 drumgizmo 0.9.10 1
 swh-plugins-lv2 1.0.15 1
 gst1-plugins-bad 1.6.4 1
-gst1-plugins-good 1.6.4 1
+gst1-plugins-good 0.10.31 1
 gavl 1.4.0 1
 a2jmidid git20140517 1
 t1utils 1.39 1

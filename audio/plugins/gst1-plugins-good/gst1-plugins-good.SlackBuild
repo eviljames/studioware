@@ -23,7 +23,7 @@
 
 PRGNAM=gst1-plugins-good
 SRCNAM=gst-plugins-good
-VERSION=${VERSION:-1.6.4}
+VERSION=${VERSION:-0.10.31}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
@@ -69,6 +69,8 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+patch -p1 --verbose <$CWD/v4l.compile.fixes.diff
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -95,13 +97,12 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
-rm -r $PKG/usr/share/gtk-doc
 rm -r $PKG/usr/share
-#rm -r $PKG/usr/doc/$PRGNAM-$VERSION/docs/plugins/
-rm -r $PKG/usr/lib$LIBDIRSUFFIX/gstreamer-1.0/*
+rm -r $PKG/etc
+rm -r $PKG/usr/lib$LIBDIRSUFFIX/gstreamer-0.10/*
 
-cp ext/jack/.libs/libgstjack.la $PKG/usr/lib$LIBDIRSUFFIX/gstreamer-1.0/
-cp ext/jack/.libs/libgstjack.so $PKG/usr/lib$LIBDIRSUFFIX/gstreamer-1.0/
+cp ext/jack/.libs/libgstjack.{la,so} \
+    $PKG/usr/lib$LIBDIRSUFFIX/gstreamer-0.10/
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
