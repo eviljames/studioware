@@ -10,5 +10,6 @@ frei0r-plugins
 swh-plugins
 @swh-plugins-lv2
 tap-plugins
-@gst1-plugins-bad
+gst1-plugins-bad
+@gst1-plugins-good
 jokosher
