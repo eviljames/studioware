@@ -1,0 +1,2 @@
+jack
+gst-plugins-jack

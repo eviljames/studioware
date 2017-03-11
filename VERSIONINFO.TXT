@@ -182,6 +182,7 @@ tap-plugins 0.7.3 1
 swh-plugins 0.4.16 1
 caps 0.9.24 1
 invada-studio-plugins 0.3.1 1
+gst-plugins-jack 0.10.31 1
 lv2 1.12.0 1
 openAV-ArtyFX 1.2 1
 calf 0.0.60pre5 1
@@ -189,7 +190,6 @@ frei0r-plugins git20160720 1
 drumgizmo 0.9.10 1
 swh-plugins-lv2 1.0.15 1
 gst1-plugins-bad 1.6.4 1
-gst1-plugins-good 0.10.31 1
 gavl 1.4.0 1
 a2jmidid git20140517 1
 t1utils 1.39 1

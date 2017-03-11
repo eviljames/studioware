@@ -1,4 +1,4 @@
-PRGNAM="gst1-plugins-good"
+PRGNAM="gst-plugins-jack"
 VERSION="0.10.31"
 HOMEPAGE="http://gstreamer.freedesktop.org/"
 DOWNLOAD="http://mirrors.slackware.com/slackware/slackware64-14.2/source/l/gst-plugins-good0/gst-plugins-good-0.10.31.tar.xz"

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for gst-plugins-good
+# Slackware build script for gst-plugins-jack
 # Copyright 2017 Dave Woodfall <dave@studioware.org>
 # All rights reserved.
 #
@@ -21,7 +21,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=gst1-plugins-good
+PRGNAM=gst-plugins-jack
 SRCNAM=gst-plugins-good
 VERSION=${VERSION:-0.10.31}
 BUILD=${BUILD:-1}
