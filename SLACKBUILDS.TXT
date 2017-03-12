@@ -89,7 +89,7 @@ b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
 c62d79c3295ddb526df61165caa9ebdb  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 ef73ba5c7d63bdfd50fab9b168a96557  ./audio/editors/milkytracker/milkytracker.tar.gz
 b854e654345361b4f4aa89535e1503c2  ./audio/editors/rosegarden/rosegarden.tar.gz
-8060d9f95723a22a7b849801ea875f3d  ./audio/editors/audacity/audacity.tar.gz
+ccdc9eb45ef9f3f38a0108c9222fcd5f  ./audio/editors/audacity/audacity.tar.gz
 22a49e1585c5b4f3bb851e17fc85eeba  ./audio/editors/denemo/denemo.tar.gz
 c39bbdd55165bad8546a537467573ae7  ./audio/mixers/qastools/qastools.tar.gz
 92aacda02e0764051ff83f79d21fd53e  ./audio/misc/lmms/lmms.tar.gz
