@@ -4,7 +4,7 @@ c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
 2dbfe3e65348e6852c1bceedd0bbe4e6  ./system/system/argyllcms/argyllcms.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
-073800f3d64213654a36b41e6b369e68  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
+f167ea6eec553ba95d51ef2f0dba92bc  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
 1a42d4775a69771e49fcf3c0a7e95640  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz
 f223b2c8edad6d4702f4070a0ceeaa7c  ./system/libraries/gnome-common/gnome-common.tar.gz
@@ -89,7 +89,7 @@ b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
 c62d79c3295ddb526df61165caa9ebdb  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 ef73ba5c7d63bdfd50fab9b168a96557  ./audio/editors/milkytracker/milkytracker.tar.gz
 b854e654345361b4f4aa89535e1503c2  ./audio/editors/rosegarden/rosegarden.tar.gz
-ccdc9eb45ef9f3f38a0108c9222fcd5f  ./audio/editors/audacity/audacity.tar.gz
+4a0d8ffd6fa91ef8b46496885009a316  ./audio/editors/audacity/audacity.tar.gz
 22a49e1585c5b4f3bb851e17fc85eeba  ./audio/editors/denemo/denemo.tar.gz
 c39bbdd55165bad8546a537467573ae7  ./audio/mixers/qastools/qastools.tar.gz
 92aacda02e0764051ff83f79d21fd53e  ./audio/misc/lmms/lmms.tar.gz
@@ -102,7 +102,7 @@ b072bac4271b869cebd6005298dfd9a4  ./audio/misc/non/non.tar.gz
 d231009eafe02b1fbf7f7a8b9ace9aac  ./audio/sequencers/seq24/seq24.tar.gz
 859dc19e1b655d34f06e806cafdc39c2  ./audio/sequencers/muse/muse.tar.gz
 dcb36bad789b773bd9ac30f50168639c  ./audio/loopers/giada/giada.tar.gz
-9fd7a2a57c8939a1fd64d5154d013a4a  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
+fedde4e4914640b9e00e9c3d72c74569  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 c4bfbde8b450badb5db1daca7f40ff00  ./audio/loopers/mixxx/mixxx.tar.gz
 1ad2903206e4b28a7de1fcbe0d1c9982  ./audio/loopers/specimen/specimen.tar.gz
 4d173648686612a922aeb79a703d97a9  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz

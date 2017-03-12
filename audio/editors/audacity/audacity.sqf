@@ -1,4 +1,4 @@
-wxGTK
+wxGTK3
 jack
 lame
 ladspa_sdk
