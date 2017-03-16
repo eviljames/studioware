@@ -56,7 +56,7 @@ e18a6543cf40701325cc885fdf81b810  ./video/codecs/libquicktime/libquicktime.tar.g
 f7336859d5b439d959d982a74e3df73e  ./video/editors/openshot/openshot.tar.gz
 5fc18355e06b9c5148bf36c20129907b  ./video/editors/cinelerra/cinelerra.tar.gz
 3b71201b6d70acdefe59dba9248a14dc  ./video/transcoders/mlt/mlt.tar.gz
-3f129eb2806dd74d6dbe7f0b65db7a1a  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
+c8740f424dcada5aff88ef1437dd5aaa  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
 fcf03b8cd7dfd4f9e4c91ef81f82f973  ./video/transcoders/mjpegtools/mjpegtools.tar.gz
 57bf5dd78976ca9bac972a6511b236f3  ./video/transcoders/mjpegtools/mjpegtools-2.1.0.tar.gz
 e64b32e090978df7f57e0189ef0946de  ./video/frontends/xjadeo/xjadeo.tar.gz
