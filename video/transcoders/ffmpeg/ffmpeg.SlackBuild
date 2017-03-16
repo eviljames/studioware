@@ -94,6 +94,7 @@ libmodplug="";  [ "${MODPLUG:-no}" != "no" ]      && libmodplug="--enable-libmod
 libopus="";     [ "${OPUS:-no}" != "no" ]         && libopus="--enable-libopus"
 libtwolame="";  [ "${TWOLAME:-no}" != "no" ]      && libtwolame="--enable-libtwolame"
 ladspa="";      [ "${LADSPA:-no}" != "no" ]       && ladspa="--enable-ladspa"
+cuda="";        [ "${CUDA:-no}" != "no" ]         && cuda="--enable-nvenc"
 #opencl="";      [ "${OPENCL:-no}" != "no" ]       && opencl="--enable-opencl"
 
 opencore_amr="" ; [ "${OPENCORE:-no}" != "no" ] && \
@@ -171,6 +172,7 @@ CXXFLAGS="$SLKCFLAGS" \
   $libtwolame \
   $ladspa \
   $libfaac \
+  $cuda \
   $non_free \
   $ssl
 
