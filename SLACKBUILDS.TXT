@@ -110,7 +110,7 @@ c4bfbde8b450badb5db1daca7f40ff00  ./audio/loopers/mixxx/mixxx.tar.gz
 c56fccb62a2d0ffc29699be72054f83c  ./audio/system/rtmidi/rtmidi.tar.gz
 fc2b14b10bd9b5ac442d27c437622663  ./audio/system/meterbridge/meterbridge.tar.gz
 ee97e61aad5a7b08b213c9e81a6542b6  ./audio/system/patchage/patchage.tar.gz
-c7e864d4abc46d749a1e6fd1d2caccff  ./audio/system/pd/pd.tar.gz
+4c11fa85b2ebb507840ea4566f8f5e86  ./audio/system/pd/pd.tar.gz
 60503ae08105eae520789caddc059d68  ./audio/system/set_rlimits/set_rlimits.tar.gz
 8e33d862ef1f1f79742aa8444b44e35d  ./audio/system/numactl/numactl.tar.gz
 acf0c28652f9e21ea1dd6489ed6156e3  ./audio/system/jack/jack.tar.gz
