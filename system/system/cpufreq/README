@@ -1,0 +1,6 @@
+cpufreq (CPU Frequency Script)
+
+cpufreq changes or polls the status of cpufreq governors.
+For usage do 'cpufreq -h'
+
+http://www.studioware.org

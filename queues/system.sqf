@@ -3,3 +3,4 @@ desktop-menus
 @studioware-scripts
 @gnome-vfs
 @DisplayCAL
+cpufreq
