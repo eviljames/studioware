@@ -3,7 +3,7 @@ c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 4496fd4f225e344c55913e9c100dd67a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
 2dbfe3e65348e6852c1bceedd0bbe4e6  ./system/system/argyllcms/argyllcms.tar.gz
-cf86f7a20848208c4f102c1b102120a9  ./system/system/cpufreq/cpufreq.tar.gz
+b011da71693b62f0d5aac85c51e41c10  ./system/system/cpufreq/cpufreq.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 8fa09a15fbbd025e829244ac40b38a3e  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 554dd41e12540d6b79fec2bf720d406c  ./system/menus/fluxbox-menus/fluxbox-menus-0.1.0.tar.gz
