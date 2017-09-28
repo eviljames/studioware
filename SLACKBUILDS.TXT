@@ -69,7 +69,6 @@ a246cbe7ff0ce9f5797be978c99b743e  ./video/libraries/libiec61883/libiec61883.tar.
 5f72dd64fc61bda8f6cec4863f4984d7  ./audio/development/glade/glade.tar.gz
 30f3264a24580aaf6ce20ab40ae076ea  ./audio/development/guile1.8/guile1.8.tar.gz
 17e4be5509006ad23190c8013735d8ad  ./audio/development/scrollkeeper/scrollkeeper.tar.gz
-d1cb2aae0370652a257df7a1f488848a  ./audio/development/pysetuptools/pysetuptools.tar.gz
 618de8f40ebfcc080761adcd5efff4f5  ./audio/development/phat/phat.tar.gz
 352223b7463536cc118af01e2552caf0  ./audio/development/ntk/ntk.tar.gz
 efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.gz
@@ -83,7 +82,7 @@ efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 82c46616462f6d46ec756a5506de23de  ./audio/multitrack/ardour/ardour.tar.gz
 4134f9d13dbb7d650704bedbcdb4f77c  ./audio/multitrack/ardour5/ardour5.tar.gz
-75e35851db50d06e51a2afd6b8208fb5  ./audio/multitrack/jokosher/jokosher.tar.gz
+1b98a5d7f705fe65d7d3b675ac6b8ba8  ./audio/multitrack/jokosher/jokosher.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
 4f0259e4504d8a419e559bb6201cd55b  ./audio/editors/mscore/mscore.tar.gz
 7470d929dc5fadd62b266e873857a193  ./audio/editors/lilypond/lilypond.tar.gz
@@ -97,14 +96,14 @@ c39bbdd55165bad8546a537467573ae7  ./audio/mixers/qastools/qastools.tar.gz
 17c8fb10859de1714795537eaa4ba34b  ./audio/misc/vkeybd/vkeybd.tar.gz
 dbda8f0cc5768c98a33199aabbac0bb1  ./audio/misc/jamin/jamin.tar.gz
 b072bac4271b869cebd6005298dfd9a4  ./audio/misc/non/non.tar.gz
-46200eca941906ba3981b11b25c8a40a  ./audio/misc/protobuf/protobuf.tar.gz
+c31a402e2cf124a274795526c4b94086  ./audio/misc/protobuf/protobuf.tar.gz
 57254945fc4ca7533f41fa487261179a  ./audio/misc/stops/stops.tar.gz
 85e40bd4bfd045c0c00529d6d69193f6  ./audio/sequencers/terminatorX/terminatorX.tar.gz
 d231009eafe02b1fbf7f7a8b9ace9aac  ./audio/sequencers/seq24/seq24.tar.gz
 859dc19e1b655d34f06e806cafdc39c2  ./audio/sequencers/muse/muse.tar.gz
 dcb36bad789b773bd9ac30f50168639c  ./audio/loopers/giada/giada.tar.gz
 fedde4e4914640b9e00e9c3d72c74569  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
-c4bfbde8b450badb5db1daca7f40ff00  ./audio/loopers/mixxx/mixxx.tar.gz
+278d67ec5e73150dec605b48508275ba  ./audio/loopers/mixxx/mixxx.tar.gz
 1ad2903206e4b28a7de1fcbe0d1c9982  ./audio/loopers/specimen/specimen.tar.gz
 4d173648686612a922aeb79a703d97a9  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 791198a43d90db7f2c830e880a6cd2a6  ./audio/system/rtaudio/rtaudio.tar.gz
@@ -114,7 +113,7 @@ ee97e61aad5a7b08b213c9e81a6542b6  ./audio/system/patchage/patchage.tar.gz
 4c11fa85b2ebb507840ea4566f8f5e86  ./audio/system/pd/pd.tar.gz
 60503ae08105eae520789caddc059d68  ./audio/system/set_rlimits/set_rlimits.tar.gz
 8e33d862ef1f1f79742aa8444b44e35d  ./audio/system/numactl/numactl.tar.gz
-acf0c28652f9e21ea1dd6489ed6156e3  ./audio/system/jack/jack.tar.gz
+84acc7de369a05976acec4caa2a2811c  ./audio/system/jack/jack.tar.gz
 64db1f71b3c4ce527c6e238b78d750c0  ./audio/system/rt-tests/rt-tests.tar.gz
 a886a832960f4988851a572a40d3fe8e  ./audio/system/qjackctl/qjackctl.tar.gz
 fc486e7e1006c4e0d6baffbd9ca637dd  ./audio/samplers/qsampler/qsampler.tar.gz

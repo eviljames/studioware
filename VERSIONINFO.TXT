@@ -66,7 +66,6 @@ vamp-plugin-sdk 2.6 1
 glade 3.18.3 1
 guile1.8 1.8.8 1
 scrollkeeper 0.3.14 1
-pysetuptools 0.6c11 1
 phat 0.4.1 1
 ntk git20160717 1
 timemachine 0.3.3 7

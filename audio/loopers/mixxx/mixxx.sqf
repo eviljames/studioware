@@ -1,7 +1,7 @@
 jack
 portmidi
 libshout
-@protobuf
+protobuf
 portaudio
 chromaprint
 @rubberband

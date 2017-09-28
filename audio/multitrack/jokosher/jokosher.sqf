@@ -1,5 +1,4 @@
 gnonlin
-pysetuptools
 gst-python
 pyxdg
 @calf
