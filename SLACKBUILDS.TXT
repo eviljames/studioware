@@ -167,7 +167,7 @@ b415ae73a452f1b4b0089b624f19961a  ./audio/libraries/lilv/lilv.tar.gz
 2be260417c7d7197aee7612d29cd8376  ./audio/libraries/portmidi/portmidi.tar.gz
 2dca2dc495f47158d7f73d560d9cfdaf  ./audio/libraries/cppunit/cppunit.tar.gz
 d93e2bcc45b726629b4baf5ab2ddff0a  ./audio/libraries/libglademm/libglademm.tar.gz
-63753a6afa0048b68b9d6fa54ceda7fd  ./audio/libraries/portaudio/portaudio.tar.gz
+c841671e624b03aec094d37a527c27d9  ./audio/libraries/portaudio/portaudio.tar.gz
 506e5c2e58c7d2ce570b5df7aa85f366  ./audio/libraries/raul/raul.tar.gz
 ad8d5b4f74b866f4dbdc9b47a0d1aa98  ./audio/libraries/serd/serd.tar.gz
 7017d2be344a86e975755a29e8a5ce73  ./audio/libraries/opencv/opencv.tar.gz

@@ -162,7 +162,7 @@ lilv 0.22.0 1
 portmidi 217 1
 cppunit 1.13.2 1
 libglademm 2.6.7 1
-portaudio v19_20140130 1
+portaudio v19_20140130 2
 raul 0.8.0 1
 serd 0.22.0 1
 opencv 3.1.0 1

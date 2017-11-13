@@ -1,5 +1,5 @@
 PRGNAM="portaudio"
-VERSION="v1920140130"
+VERSION="v19_20140130"
 HOMEPAGE="http://www.portaudio.com/"
 DOWNLOAD="http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz"
 MD5SUM="7f220406902af9dca009668e198cbd23"
