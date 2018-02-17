@@ -27,7 +27,7 @@
 PRGNAM=fontforge
 VERSION=${VERSION:-20150824}
 BUILD=${BUILD:-1}
-TAG=${TAG:-se}
+TAG=${TAG:-_SBo}
 
 ENABLE_BCINT=${ENABLE_BCINT:-yes}
 FREETYPE=${FREETYPE:-"2.6.3"}
@@ -41,7 +41,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/se}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 

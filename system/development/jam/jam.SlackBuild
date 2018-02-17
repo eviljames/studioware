@@ -25,9 +25,9 @@
 # Thanks to Andrew Brouwers for some improvements.
 
 PRGNAM=jam
-VERSION=2.5
+VERSION=${VERSION:-2.5}
 BUILD=${BUILD:-1}
-TAG=${TAG:-se}
+TAG=${TAG:-_SBo}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -38,7 +38,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/se}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 

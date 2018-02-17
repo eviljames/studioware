@@ -194,7 +194,7 @@ gavl 1.4.0 1
 a2jmidid git20140517 1
 t1utils 1.39 1
 goocanvas 0.15 1
-potrace 1.13 1
+potrace 1.15 1
 mftrace 1.2.18 1
 pygoocanvas 0.14.1 1
 fontforge 20150824 1

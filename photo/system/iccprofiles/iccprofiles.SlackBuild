@@ -7,7 +7,7 @@
 PRGNAM=iccprofiles
 VERSION=${VERSION:-2011}
 BUILD=${BUILD:-1}
-TAG=${TAG:-se}
+TAG=${TAG:-_SBo}
 
 # icc profiles are arch independent
 ARCH=noarch
@@ -21,7 +21,7 @@ ECINAM=ECI_Offset_2009
 RGBNAM=eciRGB_v2_profile
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/se}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 

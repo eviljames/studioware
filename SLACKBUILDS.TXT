@@ -1,4 +1,4 @@
-768d5f4aed43d3d50d27119bac383108  ./system/development/jam/jam.tar.gz
+8e7acd171da7959a8ca86e0f6b7892b9  ./system/development/jam/jam.tar.gz
 c2426b55a99f1f77eb5eda2aec5ec410  ./system/desktop/kaptain/kaptain.tar.gz
 4496fd4f225e344c55913e9c100dd67a  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
 43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
@@ -23,7 +23,7 @@ ebdba1bef4c17a77d1a9471755555abe  ./photo/editors/digikam/digikam.tar.gz
 5f521b786900bcfccc7cf1301017eccb  ./photo/editors/darktable/darktable.tar.gz
 e20b460b6b5dee1e60cff6d58ef06f5f  ./photo/editors/enblend-enfuse/enblend-enfuse.tar.gz
 9cac2481ff626d30f473a2f4d8331618  ./photo/output/photoprint/photoprint.tar.gz
-26571e17406d5302e6b2147b8d87088d  ./photo/system/iccprofiles/iccprofiles.tar.gz
+5b34344c3ef44befe1f7e8b2c0b6d8a9  ./photo/system/iccprofiles/iccprofiles.tar.gz
 4e098de2b0c20a89e346d1c80ee9db8e  ./photo/system/hugin/hugin.tar.gz
 77228ca7a0a363ebb2b36b3356d2d2da  ./photo/system/rapid-photo-downloader/rapid-photo-downloader.tar.gz
 8fe6cc2cce1858d798929a358870b379  ./photo/libraries/libkface/libkface.tar.gz
@@ -139,11 +139,11 @@ c6d4a1038329350ca01704e7c2613f4f  ./audio/libraries/python-poppler-qt4/v0.24.0.t
 2a7e4e71ecccf0e59ff269b331ed73d7  ./audio/libraries/liblo/liblo.tar.gz
 c4d5c209234906b6f2ce589ed8281c93  ./audio/libraries/clalsadrv/clalsadrv.tar.gz
 41636ca49b979cff04f54053f6a9b81a  ./audio/libraries/jansson/jansson.tar.gz
-ba1cee11797dd83da48b604aa10b1a60  ./audio/libraries/rubberband/rubberband.tar.gz
+ef4d40fd24f378ecb21cf1021507f340  ./audio/libraries/rubberband/rubberband.tar.gz
 8f0693241d60ae11178b27ed30a7fbbd  ./audio/libraries/liblscp/liblscp.tar.gz
 609b9a5e7440d25dcd747c2215a73489  ./audio/libraries/clxclient/clxclient.tar.gz
-a3df77c298ae1f496d165215aaf40287  ./audio/libraries/sord/sord.tar.gz
-ac9b7ae9c4738c416ea7b5ed0f393df4  ./audio/libraries/zita-resampler/zita-resampler.tar.gz
+f2f43a3c469da59a8efb747004060a3c  ./audio/libraries/sord/sord.tar.gz
+29bb1610529756815f29dd23cfc36190  ./audio/libraries/zita-resampler/zita-resampler.tar.gz
 5bb8ae17f9003afabead13dc4e831253  ./audio/libraries/dssi/dssi.tar.gz
 8fbe4891942ffa8a9f93b03166106d2a  ./audio/libraries/clthreads/clthreads.tar.gz
 ff559b0828b927b5988c4178aee5bcad  ./audio/libraries/chromaprint/chromaprint.tar.gz
@@ -170,7 +170,7 @@ d93e2bcc45b726629b4baf5ab2ddff0a  ./audio/libraries/libglademm/libglademm.tar.gz
 c841671e624b03aec094d37a527c27d9  ./audio/libraries/portaudio/portaudio.tar.gz
 506e5c2e58c7d2ce570b5df7aa85f366  ./audio/libraries/raul/raul.tar.gz
 ad8d5b4f74b866f4dbdc9b47a0d1aa98  ./audio/libraries/serd/serd.tar.gz
-7017d2be344a86e975755a29e8a5ce73  ./audio/libraries/opencv/opencv.tar.gz
+64bbb7db6d3826257aa34d47a2040e07  ./audio/libraries/opencv/opencv.tar.gz
 f9e5545095b5da7003b971177835bf44  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
 9acdb85b01240376e8bef585ca2e9de0  ./audio/libraries/mxml/mxml.tar.gz
 bee80a2a4d054f6eb07f590a1e5cfb78  ./audio/libraries/libslv2/libslv2.tar.gz
@@ -199,9 +199,9 @@ caefb91a1b8604cb8c9a7f5d7283dd6f  ./audio/plugins/frei0r-plugins/frei0r-plugins.
 bd52aae72c0258d7b41c5079565e3716  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 78764d0f56967179f3265b24965e91de  ./audio/graphics/t1utils/t1utils.tar.gz
 72d327b15cddc431e2a0a7e6002310a3  ./audio/graphics/goocanvas/goocanvas.tar.gz
-07f1e51cabc97bc5317defc912341bbf  ./audio/graphics/potrace/potrace.tar.gz
+e8e7d8bb5bd834c8d8ceafab55d4f88f  ./audio/graphics/potrace/potrace.tar.gz
 495186a8f7f01f0b323ce5d126516e47  ./audio/graphics/mftrace/mftrace.tar.gz
 bbd18107ea670b5df63d303abb28c1f0  ./audio/graphics/pygoocanvas/pygoocanvas.tar.gz
-2b22ff13865fb8e092ba6f4ff98377ff  ./audio/graphics/fontforge/fontforge.tar.gz
+87c05f3a82fc75a7e9c87ae150fc9e30  ./audio/graphics/fontforge/fontforge.tar.gz
 b056d1db3ce3b813bd6591114079ab24  ./audio/effects/jack-rack/jack-rack.tar.gz
 c3b84638ef51b749f221d351f24fe510  ./audio/effects/rakarrack/rakarrack.tar.gz
