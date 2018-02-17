@@ -159,7 +159,7 @@ d73b9c7ef9f8e46a0be7a009c1ff84ea  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 06d3243b0f014fa01d13d49a56410d01  ./audio/libraries/libshout/libshout.tar.gz
 0f29436770addce1851d148617e71d87  ./audio/libraries/raptor/raptor.tar.gz
 992061488af7a9e2d933df6b694bb876  ./audio/libraries/raptor/raptor-1.4.21.tar.gz
-9ef8d425322243d20f6cdfc3b4ae4ea7  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
+ebf993c23e4d00881f89d53f71cca58b  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
 55aed3c00a57bd3080aa632c4bea405d  ./audio/libraries/python-ly/python-ly.tar.gz
 c8226419f837a095025760e1e56371b0  ./audio/libraries/wxGTK/wxGTK.tar.gz
 e995fa882788ee6bcddc0319430b1cd2  ./audio/libraries/ganv/ganv.tar.gz
