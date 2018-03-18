@@ -27,7 +27,6 @@ e9b7ff4f616999096ca21de96f98908d  ./photo/libraries/vigra/vigra.tar.gz
 e1b2406bc1395f05573d06b6bd3a90cf  ./photo/libraries/flickcurl/flickcurl.tar.gz
 9e05c7eb8118e6caa85fb748581a777a  ./photo/libraries/json-glib/json-glib.tar.gz
 bdaee812411697a83973dc8c6b744008  ./photo/libraries/pyexiv2/pyexiv2.tar.gz
-38fde71d7ca5c5d3f4a7343d3b6f58ff  ./photo/libraries/lensfun/lensfun-0.2.8.tar.gz
 a97a7e7c3eae1eda45daadf8040bf9a7  ./photo/libraries/lensfun/lensfun.tar.gz
 d7cea0664d94961f309f031ccb00ffde  ./photo/libraries/libpgf/libpgf.tar.gz
 db2094f0fe7a36a8ee2d9a312bf33316  ./photo/libraries/liblqr/liblqr.tar.gz
@@ -100,7 +99,7 @@ c841671e624b03aec094d37a527c27d9  ./audio/libraries/portaudio/portaudio.tar.gz
 d73b9c7ef9f8e46a0be7a009c1ff84ea  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 f9e5545095b5da7003b971177835bf44  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
 06d3243b0f014fa01d13d49a56410d01  ./audio/libraries/libshout/libshout.tar.gz
-371a1f2c306714038f56865690f3036e  ./audio/libraries/opencv/opencv.tar.gz
+72f46f9e0e62c6442ee0e07e1ea7c925  ./audio/libraries/opencv/opencv.tar.gz
 9bf8bfa4f754d062093d153389c0bd6b  ./audio/libraries/gst-python/gst-python.tar.gz
 ef670793ba535eba363b6fb66d22cfbb  ./audio/libraries/gigedit/gigedit.tar.gz
 49128166259f95a4fd890d76130b3bdf  ./audio/libraries/libdca/libdca.tar.gz
@@ -139,7 +138,7 @@ ff559b0828b927b5988c4178aee5bcad  ./audio/libraries/chromaprint/chromaprint.tar.
 278d67ec5e73150dec605b48508275ba  ./audio/loopers/mixxx/mixxx.tar.gz
 fedde4e4914640b9e00e9c3d72c74569  ./audio/loopers/sooperlooper/sooperlooper.tar.gz
 dcb36bad789b773bd9ac30f50168639c  ./audio/loopers/giada/giada.tar.gz
-1ad2903206e4b28a7de1fcbe0d1c9982  ./audio/loopers/specimen/specimen.tar.gz
+bf70e30abd68f5223928d10777f43048  ./audio/loopers/specimen/specimen.tar.gz
 b854e654345361b4f4aa89535e1503c2  ./audio/editors/rosegarden/rosegarden.tar.gz
 c62d79c3295ddb526df61165caa9ebdb  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 4a0d8ffd6fa91ef8b46496885009a316  ./audio/editors/audacity/audacity.tar.gz
