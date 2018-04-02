@@ -25,14 +25,13 @@
 # Modified by studioware.org
 
 PRGNAM=ardour5
-SRCNAM=ardour
-VERSION=${VERSION:-5.4}
+VERSION=${VERSION:-5.12}
 BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
+    i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
@@ -58,8 +57,8 @@ else
   vstopt="VST=1"
 fi
 
-if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
   TARGET="i386"
 elif [ "$ARCH" = "i686" ]; then
@@ -83,9 +82,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.xz
-cd $SRCNAM-$VERSION
+rm -rf $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
+cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -142,11 +141,5 @@ cd $PKG/etc/ardour5
     done
 
 cd $PKG
-
-#find . -name \*.desktop -exec \
-#    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
-#
-#find . -name \*.desktop -exec \
-#    sed -i 's/Name=.*/Name=Ardour/' '{}' \;
 
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}
