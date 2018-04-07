@@ -51,7 +51,7 @@ dbda8f0cc5768c98a33199aabbac0bb1  ./audio/misc/jamin/jamin.tar.gz
 41f7ea598be1cffe40b454aa1d1066ba  ./audio/misc/protobuf/protobuf.tar.gz
 57254945fc4ca7533f41fa487261179a  ./audio/misc/stops/stops.tar.gz
 efea33451d56113240d92a3ca884e145  ./audio/recorders/timemachine/timemachine.tar.gz
-467abcecaf01359f749a83bf18978500  ./audio/multitrack/ardour5.tar.gz
+136fda6ec74cd72b00ec0e0416e4f894  ./audio/multitrack/ardour5/ardour5.tar.gz
 1b98a5d7f705fe65d7d3b675ac6b8ba8  ./audio/multitrack/jokosher/jokosher.tar.gz
 d048f2b4cb5ebd6db4f53df20ce0e392  ./audio/multitrack/qtractor/qtractor.tar.gz
 b2478ebdc437c93c2b4409311f2b6c50  ./audio/multitrack/ecasound/ecasound.tar.gz
