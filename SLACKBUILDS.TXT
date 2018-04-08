@@ -176,7 +176,7 @@ e85ce1d6bc7353b6d164bb5c06381a17  ./audio/plugins/invada-studio-plugins/invada-s
 54a231a841a41eeb3730b56431008a87  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
 572fca2be985532ce8fd5dda88261c3c  ./audio/plugins/calf/calf.tar.gz
 27b4c1293b1a0e9f1b650695126a0834  ./audio/plugins/caps/caps.tar.gz
-8769ffd9359e0975129dcb05f5f2f860  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
+1ae5296380bc650c82ef580fa8962a13  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 caefb91a1b8604cb8c9a7f5d7283dd6f  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 60c34c345bbceb1ab13344e60e06b6fb  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
 9403b02386eaf62fee5a2a35c958b7a5  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
