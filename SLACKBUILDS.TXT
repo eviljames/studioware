@@ -128,7 +128,7 @@ c4d5c209234906b6f2ce589ed8281c93  ./audio/libraries/clalsadrv/clalsadrv.tar.gz
 64a92355541dd0f62e73eb663bf94595  ./audio/libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 ff559b0828b927b5988c4178aee5bcad  ./audio/libraries/chromaprint/chromaprint.tar.gz
 8fbe4891942ffa8a9f93b03166106d2a  ./audio/libraries/clthreads/clthreads.tar.gz
-2be260417c7d7197aee7612d29cd8376  ./audio/libraries/portmidi/portmidi.tar.gz
+74de10202a495681b74f8d2111d8a209  ./audio/libraries/portmidi/portmidi.tar.gz
 30f3264a24580aaf6ce20ab40ae076ea  ./audio/development/guile1.8/guile1.8.tar.gz
 3f103a4279b9f934309f1dd953e0a0dd  ./audio/development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
 17e4be5509006ad23190c8013735d8ad  ./audio/development/scrollkeeper/scrollkeeper.tar.gz
@@ -169,7 +169,7 @@ bd52aae72c0258d7b41c5079565e3716  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 804e2855af94f13e1a12d7b95f784559  ./audio/codecs/lame/lame.tar.gz
 d0ad6802beb3ee49587bfe055eb3f2dd  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
 7a76fc9154679295b64802fb1a76c4f5  ./audio/plugins/gavl/gavl.tar.gz
-0d634e32ed6d412a02d34cf24f13dc1a  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
+96bccbce048d792483adef568b8e2e3f  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.tar.gz
 e85ce1d6bc7353b6d164bb5c06381a17  ./audio/plugins/invada-studio-plugins/invada-studio-plugins.tar.gz
 362252b9500c7aba7ef2fa5a878ca259  ./audio/plugins/lv2/lv2.tar.gz
 0af6c30a952aa375393a7854dc9f735c  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
@@ -196,7 +196,7 @@ b55321f199e117ab8aad47569f30d015  ./system/libraries/libgnome/libgnome.tar.gz
 8e7acd171da7959a8ca86e0f6b7892b9  ./system/development/jam/jam.tar.gz
 7777dd52f0e17fea2595f2af6fbcb3ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 5431694dc75c10854bd580c1de281e4e  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
-90e8c5801328e2f6d16a09d3e3106764  ./system/menus/desktop-menus/desktop-menus.tar.gz
+7baf86ba57f46f936d4aebe5b7da7d54  ./system/menus/desktop-menus/desktop-menus.tar.gz
 e6e3d0b2d639f1553f04a51cabd813d7  ./system/system/argyllcms/argyllcms.tar.gz
 43bd4acafa929b2e2b21b0fa65d58eb1  ./system/system/DisplayCAL/DisplayCAL.tar.gz
 e87ca351a913b23a8ab222bfa6348435  ./system/system/cpufreq/cpufreq.tar.gz

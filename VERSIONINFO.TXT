@@ -167,7 +167,7 @@ a2jmidid git20140517 1
 lame 3.99.5 1
 tap-plugins 0.7.3 1
 gavl 1.4.0 1
-openAV-ArtyFX 1.2 1
+openAV-ArtyFX 1.2 2
 invada-studio-plugins 0.3.1 1
 lv2 1.12.0 1
 drumgizmo 0.9.10 1
@@ -194,7 +194,7 @@ libgnome 2.32.1 1
 jam 2.5 1
 extra-desktops 0.0.1 1
 fluxbox-menus 0.2.0 1
-desktop-menus 0.0.5 1
+desktop-menus 0.0.5 2
 argyllcms 1.9.2 2
 DisplayCAL 3.2.4.0 1
 cpufreq 0.0.0 1

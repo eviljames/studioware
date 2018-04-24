@@ -1,7 +1,14 @@
+For portmidi:
 
-1) Install JDK or OpenJDK: http://www.slackware.com/~alien/slackbuilds/openjdk
+Install JDK or OpenJDK: http://www.slackware.com/~alien/slackbuilds/openjdk
 
-2) Create Avahi user and group:
+For avahi:
+
+Create Avahi user and group:
   # groupadd -g 214 avahi
   # useradd -u 214 -g 214 -c "Avahi" -d /dev/null -s /bin/false avahi
 
+For yoshimi:
+
+Install fltk. This can be found in the extra/ directory in the slackware
+file tree, or can be installed using slackpkg install fltk.
