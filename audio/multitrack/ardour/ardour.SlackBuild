@@ -32,7 +32,7 @@ TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
+    i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
@@ -58,23 +58,19 @@ else
   vstopt="VST=1"
 fi
 
-if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
-  TARGET="i386"
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
-  TARGET="i686"
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
-  TARGET="x86_64"
   vstopt="VST=0"
 else
   SLKCFLAGS="-O2"
   LIBDIRSUFFIX=""
-  TARGET="$ARCH"
   vstopt="VST=0"
 fi
 
@@ -143,10 +139,4 @@ cd $PKG/etc/ardour4
 
 cd $PKG
 
-#find . -name \*.desktop -exec \
-#    sed -i 's/Categories=.*;/Categories=X-Studioware-Audio-Record;/' '{}' \;
-#
-#find . -name \*.desktop -exec \
-#    sed -i 's/Name=.*/Name=Ardour/' '{}' \;
-
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$TARGET-$BUILD$TAG.${PKGTYPE:-tgz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

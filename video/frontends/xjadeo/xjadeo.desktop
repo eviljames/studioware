@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=xjadeo
+Icon=/usr/share/icons/xjadeo8.xpm
+Name=xjadeo - jack video monitor
+GenericName=xjadeo - jack video monitor
+StartupNotify=true
+Type=Application
+Categories=X-Studioware-Video-Frontends;

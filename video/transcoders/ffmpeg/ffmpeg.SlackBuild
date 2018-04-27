@@ -28,12 +28,12 @@
 
 PRGNAM=ffmpeg
 VERSION=${VERSION:-3.1.1}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
+    i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
@@ -44,8 +44,8 @@ TMP=${TMP:-/tmp/se}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
@@ -105,9 +105,9 @@ SLKCFLAGS="$SLKCFLAGS -I/usr/include/openjpeg-2.1"
 
 mp3lame="--enable-libmp3lame"
 libx264="--enable-libx264"
-libxvid="--enable-libxvid" 
-libvpx="--enable-libvpx" 
-libfaac="--enable-libfaac" ; non_free="--enable-nonfree" ; 
+libxvid="--enable-libxvid"
+libvpx="--enable-libvpx"
+libfaac="--enable-libfaac" ; non_free="--enable-nonfree" ;
 
 # opencv support is currently broken: http://code.opencv.org/issues/1925
 #libopencv=""  ; [ "${OPENCV:-no}" != "no" ]       && libopencv="--enable-libopencv"

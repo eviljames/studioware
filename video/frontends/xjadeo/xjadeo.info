@@ -5,6 +5,6 @@ DOWNLOAD="http://downloads.sourceforge.net/project/xjadeo/xjadeo/v0.8.5/xjadeo-0
 MD5SUM="cc645fd249551cc679ee6f128072bedf"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
+REQUIRES=""
 MAINTAINER="Dave Woodfall"
 EMAIL="dave@studioware.org"
-APPROVED=""
