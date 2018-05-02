@@ -23,7 +23,7 @@
 
 PRGNAM=calf
 VERSION=${VERSION:-0.90.0}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -71,16 +71,17 @@ find . \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
-  --prefix=/usr \
-  --libdir=/usr/lib${LIBDIRSUFFIX} \
-  --sysconfdir=/etc \
-  --localstatedir=/var \
-  --mandir=/usr/man \
-  --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --with-lv2-dir=/usr/lib/lv2 \
-  --enable-sse \
-  --disable-static \
-  --build=$ARCH-slackware-linux
+    --prefix=/usr \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --docdir=/usr/doc/$PRGNAM-$VERSION \
+    --with-lv2-dir=/usr/lib${LIBDIRSUFFIX} \
+    --enable-sse \
+    --disable-static \
+    --enable-experimental \
+    --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
