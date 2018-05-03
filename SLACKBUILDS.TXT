@@ -180,6 +180,7 @@ ce1423cfee76d80034a7c06a563ba1be  ./audio/plugins/calf/calf.tar.gz
 9cc913b8f24294bc8c6448312da35a8f  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 60c34c345bbceb1ab13344e60e06b6fb  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
 0e521ecf437fb46c0f8010b8a6e66284  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
+9e7b01a7e27399872b2daf4a7058e71c  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
 da758e00e7f1a28d293b0a70d2b3a18d  ./audio/session/lash/lash.tar.gz
 0a7d1e36ca744dc8e7eef80b7990f8b5  ./audio/session/ladish/ladish.tar.gz
 957270aa9867376881ee3645fa6e10af  ./audio/effects/jack-rack/jack-rack.tar.gz

@@ -178,6 +178,7 @@ swh-plugins-lv2 1.0.16 2
 frei0r-plugins git20160720 2
 gst-plugins-jack 0.10.31 1
 gst1-plugins-bad 1.6.4 2
+nnls-chroma 1.1 1
 lash 0.6.0.594 2
 ladish git20160725 2
 jack-rack 1.4.7 2
