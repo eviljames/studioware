@@ -5,6 +5,6 @@ DOWNLOAD="https://code.soundsoftware.ac.uk/attachments/download/1691/nnls-chroma
 MD5SUM="6f9267ab2b247e4a63f03d1fd17858dc"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES=""
+REQUIRES="vamp-plugin-sdk"
 MAINTAINER="Dave Woodfall"
 EMAIL="dave@studioware.org"

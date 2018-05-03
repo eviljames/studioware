@@ -71,3 +71,5 @@ caps
 @a2jmidid
 @lmms
 @ardour5
+@nnls-chroma
+@fluid-soundfont

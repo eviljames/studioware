@@ -84,6 +84,7 @@ qjackctl
 rtaudio
 guitarix2
 clearlooks-classic-themes
+fluid-soundfont
 a2jmidid
 openAV-ArtyFX
 invada-studio-plugins
@@ -92,6 +93,7 @@ calf
 swh-plugins-lv2
 frei0r-plugins
 gst-plugins-jack
+nnls-chroma
 lash
 ladish
 jack-rack
