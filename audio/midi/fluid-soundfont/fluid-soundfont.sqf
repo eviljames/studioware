@@ -1,2 +1,2 @@
-fluidsynth
+@fluidsynth
 fluid-soundfont

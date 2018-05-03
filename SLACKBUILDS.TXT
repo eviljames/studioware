@@ -165,7 +165,7 @@ ec76c4c733a40989b69942206386908a  ./audio/system/jack/jack.tar.gz
 09d9400824d1e96e35c7b0ed8f7b0e30  ./audio/desktop/gtk-engines/gtk-engines.tar.gz
 da3a74f999a29eae21a9282b9ef6aac2  ./audio/desktop/evince/evince.tar.gz
 6988061a22b02d70eae2450edb7ea049  ./audio/desktop/clearlooks-classic-themes/clearlooks-classic-themes.tar.gz
-5603d9a2875fe1790f53cfb98d50d550  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
+481d87213965116349096eef7e37f251  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
 c22f60628ccadc1e397c94e6148da28a  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 6e1d83df29ac7bd022632495ce8a93f9  ./audio/codecs/lame/lame.tar.gz
 83549c5f5c93d18eb2306b71a95c1cef  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
