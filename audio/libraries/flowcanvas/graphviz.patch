@@ -1,0 +1,12 @@
+diff -Naur a/wscript b/wscript
+--- a/wscript	2011-01-11 23:09:31.000000000 +0000
++++ b/wscript	2018-05-04 12:03:13.708935065 +0100
+@@ -39,8 +39,6 @@
+ 	autowaf.configure(conf)
+ 	autowaf.display_header('FlowCanvas Configuration')
+ 	conf.check_tool('compiler_cxx')
+-	autowaf.check_pkg(conf, 'libgvc', uselib_store='AGRAPH',
+-	                  atleast_version='2.8', mandatory=False)
+ 	autowaf.check_pkg(conf, 'gtkmm-2.4', uselib_store='GLIBMM',
+ 	                  atleast_version='2.10.0', mandatory=True)
+ 	autowaf.check_pkg(conf, 'libgnomecanvasmm-2.6', uselib_store='GNOMECANVASMM',

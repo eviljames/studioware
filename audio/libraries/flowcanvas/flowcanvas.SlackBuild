@@ -23,7 +23,7 @@
 
 PRGNAM=flowcanvas
 VERSION=${VERSION:-0.7.1}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,12 +68,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+patch -p1 --verbose < $CWD/graphviz.patch
+
 CFLAGS="$SLKCFLAGS -std=c++11" \
 CXXFLAGS="$SLKCFLAGS -std=c++11" \
 ./waf configure \
     --prefix=/usr \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --mandir=/usr/man
+    --libdir=/usr/lib${LIBDIRSUFFIX}
 
 ./waf
 ./waf install --destdir=$PKG
