@@ -76,9 +76,9 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir32=/usr/lib \
   --mandir=/usr/man/man1 \
   --dbus \
-  --classic 
+  --classic
 
-./waf build 
+./waf build
 ./waf install --destdir=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \

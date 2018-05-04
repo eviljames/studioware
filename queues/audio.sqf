@@ -73,3 +73,4 @@ caps
 @ardour5
 @nnls-chroma
 @fluid-soundfont
+@sonic-visualiser

@@ -156,7 +156,7 @@ e6ea5ef14aea7653a77e09979d836868  ./audio/system/patchage/patchage.tar.gz
 ea4477e4e9078a5f37d0f98b46220ebc  ./audio/system/rt-tests/rt-tests.tar.gz
 8dd64ac3e39da20ff2f87c242a43e8fe  ./audio/system/rtmidi/rtmidi.tar.gz
 4c11fa85b2ebb507840ea4566f8f5e86  ./audio/system/pd/pd.tar.gz
-ec76c4c733a40989b69942206386908a  ./audio/system/jack/jack.tar.gz
+cf9a6d46ed99e68c94d715c278a9d1db  ./audio/system/jack/jack.tar.gz
 3503c8313085920494988b3eb4e39fa6  ./audio/system/set_rlimits/set_rlimits.tar.gz
 40b97c534bb3126e476be305986787d1  ./audio/system/qjackctl/qjackctl.tar.gz
 2b2beb64b9cce2c14118876e45533e39  ./audio/system/rtaudio/rtaudio.tar.gz
@@ -165,7 +165,7 @@ ec76c4c733a40989b69942206386908a  ./audio/system/jack/jack.tar.gz
 09d9400824d1e96e35c7b0ed8f7b0e30  ./audio/desktop/gtk-engines/gtk-engines.tar.gz
 da3a74f999a29eae21a9282b9ef6aac2  ./audio/desktop/evince/evince.tar.gz
 6988061a22b02d70eae2450edb7ea049  ./audio/desktop/clearlooks-classic-themes/clearlooks-classic-themes.tar.gz
-481d87213965116349096eef7e37f251  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
+6f1139923bd5604ec5ec16a6e11a3c16  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
 c22f60628ccadc1e397c94e6148da28a  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 6e1d83df29ac7bd022632495ce8a93f9  ./audio/codecs/lame/lame.tar.gz
 83549c5f5c93d18eb2306b71a95c1cef  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
@@ -186,6 +186,8 @@ da758e00e7f1a28d293b0a70d2b3a18d  ./audio/session/lash/lash.tar.gz
 0a7d1e36ca744dc8e7eef80b7990f8b5  ./audio/session/ladish/ladish.tar.gz
 957270aa9867376881ee3645fa6e10af  ./audio/effects/jack-rack/jack-rack.tar.gz
 b473fa7b3b6e158a653f8b8212fff18a  ./audio/effects/rakarrack/rakarrack.tar.gz
+73f4345fca34b7ca4512730880808ce0  ./audio/analysers/sonic-visualiser/sonic-visualiser.tar.gz
+be828bdeb840f337a67263b9b7b4e529  ./audio/analysers/sonic-visualiser-qt5/sonic-visualiser-qt5.tar.gz
 8c94ac2912ad9ba65a409ad020527718  ./system/libraries/libbonobo/libbonobo.tar.gz
 7c380026a5233435ed56179a31a0d003  ./system/libraries/gnome-common/gnome-common.tar.gz
 7b436655d8c9f8998f888600ab8b27fa  ./system/libraries/gnome-vfs/gnome-vfs.tar.gz

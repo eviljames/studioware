@@ -98,6 +98,8 @@ lash
 ladish
 jack-rack
 rakarrack
+sonic-visualiser
+sonic-visualiser-qt5
 libbonobo
 gnome-vfs
 wxPython3

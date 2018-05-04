@@ -184,6 +184,8 @@ lash 0.6.0.594 2
 ladish git20160725 2
 jack-rack 1.4.7 2
 rakarrack 0.6.1 2
+sonic-visualiser 2.3 1
+sonic-visualiser-qt5 3.0.1 1
 libbonobo 2.32.1 1
 gnome-common 3.18.0 2
 gnome-vfs 2.24.4 2
