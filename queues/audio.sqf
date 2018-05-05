@@ -14,7 +14,6 @@ SimpleSysexxer
 liblo
 @libgnomecanvasmm
 @aubio
-@ardour
 @audacity
 @bristol
 @calf

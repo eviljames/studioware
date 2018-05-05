@@ -7,6 +7,6 @@ MD5SUM="3c26444561dcff2ce87d1d3e36f178a3 \
         f942f43b61145dc5095ae83c14f0fff5"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
-REQUIRES="qt5 jack-audio-connection-kit liblrdf rubberband vamp-plugin-sdk sord"
+REQUIRES="jack-audio-connection-kit liblrdf rubberband vamp-plugin-sdk sord"
 MAINTAINER="B. Watson"
 EMAIL="yalhcru@gmail.com"

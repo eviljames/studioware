@@ -4,5 +4,6 @@ portmidi
 portaudio
 @fluidsynth
 @gtksourceview
+@rubberband
 evince
 denemo

@@ -145,7 +145,7 @@ b2e3e5f6765be6299e67eab87fef5b9d  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 d14d8b985fde2f67bbc76375ff5717c7  ./audio/editors/milkytracker/milkytracker.tar.gz
 a00c8aab7fe4cdd1b04ec57f23018185  ./audio/editors/lilypond/lilypond.tar.gz
 241aee802a667ba91c4b5a618ba9cf2d  ./audio/editors/mscore/mscore.tar.gz
-af4b915279d93e012f9c9fc8def589fb  ./audio/editors/denemo/denemo.tar.gz
+69a494e62b2a6ae73980a62d176b0c9f  ./audio/editors/denemo/denemo.tar.gz
 7a04833c1f40cedd28dea2581efa7b8f  ./audio/mixers/qastools/qastools.tar.gz
 b0f5cafd44a1da2ef1b176ec3fb6483e  ./audio/samplers/samplv1/samplv1.tar.gz
 c9706f6b2e310f4cbd32b7c5f3d27cf0  ./audio/samplers/linuxsampler/linuxsampler.tar.gz
@@ -182,11 +182,11 @@ ce1423cfee76d80034a7c06a563ba1be  ./audio/plugins/calf/calf.tar.gz
 60c34c345bbceb1ab13344e60e06b6fb  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
 0e521ecf437fb46c0f8010b8a6e66284  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 aab2caeb3422bc97338180b7b6c7587d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
-da758e00e7f1a28d293b0a70d2b3a18d  ./audio/session/lash/lash.tar.gz
+a600219b6fe868d6ad7929fce3e2ca40  ./audio/session/lash/lash.tar.gz
 0a7d1e36ca744dc8e7eef80b7990f8b5  ./audio/session/ladish/ladish.tar.gz
 957270aa9867376881ee3645fa6e10af  ./audio/effects/jack-rack/jack-rack.tar.gz
 b473fa7b3b6e158a653f8b8212fff18a  ./audio/effects/rakarrack/rakarrack.tar.gz
-73f4345fca34b7ca4512730880808ce0  ./audio/analysers/sonic-visualiser/sonic-visualiser.tar.gz
+a9b864bad23141dd0a489c962f2ee466  ./audio/analysers/sonic-visualiser/sonic-visualiser.tar.gz
 be828bdeb840f337a67263b9b7b4e529  ./audio/analysers/sonic-visualiser-qt5/sonic-visualiser-qt5.tar.gz
 8c94ac2912ad9ba65a409ad020527718  ./system/libraries/libbonobo/libbonobo.tar.gz
 7c380026a5233435ed56179a31a0d003  ./system/libraries/gnome-common/gnome-common.tar.gz
