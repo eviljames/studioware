@@ -72,7 +72,7 @@ efa9b6c604f52a787a3054246a42c442  ./audio/percussion/hydrogen/hydrogen.tar.gz
 3986f74d92dbe22a4287bcc008acd119  ./audio/sequencers/muse/muse.tar.gz
 beb7bdb35facff531ab4e893e6b9da37  ./audio/sequencers/terminatorX/terminatorX.tar.gz
 0314de7681571467e874959f17705670  ./audio/sequencers/seq24/seq24.tar.gz
-d369a32ceff96f28ee2d9efcdcd65fb7  ./audio/graphics/fontforge/fontforge.tar.gz
+7bceb13aab25e5926039ca6f9fe74402  ./audio/graphics/fontforge/fontforge.tar.gz
 e1290dcbf8e8160d047d305df7d10794  ./audio/graphics/t1utils/t1utils.tar.gz
 1eaf39741ff011ad7c88a30ecf7d6b39  ./audio/graphics/potrace/potrace.tar.gz
 57c65c3becd2b7ec3cfc7a74685c8c7f  ./audio/graphics/pygoocanvas/pygoocanvas.tar.gz

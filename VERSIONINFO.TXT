@@ -72,7 +72,7 @@ hydrogen 0.9.7_beta2 2
 muse 2.2.1 2
 terminatorX 4.0.0 2
 seq24 0.9.3 2
-fontforge 20150824 2
+fontforge 20170731 1
 t1utils 1.39 2
 potrace 1.15 2
 pygoocanvas 0.14.1 2
