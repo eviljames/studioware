@@ -140,7 +140,7 @@ af6d1c4b674ba6f61936d9166638969c  ./audio/loopers/sooperlooper/sooperlooper.tar.
 f3c8f78a42377cac3ac9d0942d4728c3  ./audio/loopers/giada/giada.tar.gz
 84fee8cc8a4a8e53306d05def51b50e4  ./audio/loopers/specimen/specimen.tar.gz
 db454d358479eef5b59f8b7aad76dd09  ./audio/editors/rosegarden/rosegarden.tar.gz
-b2e3e5f6765be6299e67eab87fef5b9d  ./audio/editors/frescobaldi/frescobaldi.tar.gz
+a0826d45b09ee1f0de5a8dad8df0cace  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 0d2f4b952ec68a8b916b92ea4aac51ec  ./audio/editors/audacity/audacity.tar.gz
 d14d8b985fde2f67bbc76375ff5717c7  ./audio/editors/milkytracker/milkytracker.tar.gz
 a00c8aab7fe4cdd1b04ec57f23018185  ./audio/editors/lilypond/lilypond.tar.gz
