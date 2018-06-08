@@ -1,8 +1,8 @@
 PRGNAM="opencv"
 VERSION="3.1.0"
 HOMEPAGE="http://opencv.org/"
-DOWNLOAD="http://slackware.uk/sbosrcarch/by-name/libraries/opencv/opencv-3.1.0.tar.gz \
-          http://slackware.uk/sbosrcarch/by-name/libraries/opencv/opencv_contrib-3.1.0.zip"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/opencv-3.1.0.tar.gz \
+          http://studioware.org/files/slackbuilds/source/opencv_contrib-3.1.0.zip"
 MD5SUM="a0669e22172dfc3225835b180744c9f0 \
         0d0bfeabe539542791b465ec1c7c90e6"
 DOWNLOAD_x86_64=""

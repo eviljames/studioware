@@ -99,7 +99,7 @@ ae612f03ccd6074c163592d6ec8aa276  ./audio/libraries/liblo/liblo.tar.gz
 23e1a0f37ef0e999b3e6da47748427ae  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 e83a4388bf9b25776c4300edab467dfe  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
 e631be93d33a637aef4287eee7dd10fc  ./audio/libraries/libshout/libshout.tar.gz
-659a8f21159970215ab5595bb1ee9d14  ./audio/libraries/opencv/opencv.tar.gz
+124373219f5f6f8d06b6a4b685f5510a  ./audio/libraries/opencv/opencv.tar.gz
 502e8acb22372b3db87f69d694c08640  ./audio/libraries/gst-python/gst-python.tar.gz
 89b1985c142fb069f7e0f33590bc03bd  ./audio/libraries/gigedit/gigedit.tar.gz
 b8134192ec976228755cbb84ccfbeb1a  ./audio/libraries/libdca/libdca.tar.gz
