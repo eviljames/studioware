@@ -175,7 +175,7 @@ fc71067d3353daf13a1fcf4f42d19486  ./audio/plugins/openAV-ArtyFX/openAV-ArtyFX.ta
 911161e9b43300bae4a002c8801a3b4f  ./audio/plugins/lv2/lv2.tar.gz
 3ae38badf2c1a4a65b680e28dfbbae93  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 66cddcd7b7bd63f4339d438c51c3dd35  ./audio/plugins/swh-plugins/swh-plugins.tar.gz
-ce1423cfee76d80034a7c06a563ba1be  ./audio/plugins/calf/calf.tar.gz
+1bd94ffb4baca4a8bcf83c0bbd8dc32c  ./audio/plugins/calf/calf.tar.gz
 6380bf73a34cac86fc38a36b2b800af5  ./audio/plugins/caps/caps.tar.gz
 0427d1a3d68241a27958109476f35359  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9cc913b8f24294bc8c6448312da35a8f  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
