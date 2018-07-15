@@ -23,7 +23,7 @@
 
 PRGNAM=amsynth
 VERSION=${VERSION:-1.6.4}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -79,10 +79,23 @@ CXXFLAGS="$SLKCFLAGS $INCLUDES -std=c++11" \
   --mandir=/usr/man \
   --enable-static=no \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --with-alsa \
+  --with-jack \
+  --with-lash \
+  --with-sndfile \
+  --with-dssi \
+  --with-lv2 \
+  --with-vst \
   --build=$ARCH-slackware-linux
 
 make
 make install-strip DESTDIR=$PKG
+
+# keep everything in a standard place on all ARCHes
+if [ "$LIBDIRSUFFIX" = "64" ]; then
+  mkdir -p $PKG/usr/lib
+  mv $PKG/usr/lib64/lv2 $PKG/usr/lib
+fi
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

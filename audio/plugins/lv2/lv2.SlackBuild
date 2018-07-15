@@ -23,7 +23,7 @@
 
 PRGNAM=lv2
 VERSION=${VERSION:-1.12.0}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-4}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -80,6 +80,9 @@ CXXFLAGS="$SLKCFLAGS" \
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+install -m 0755 -D $CWD/lv2.sh $PKG/etc/profile.d/lv2.sh
+install -m 0755 -D $CWD/lv2.csh $PKG/etc/profile.d/lv2.csh
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \

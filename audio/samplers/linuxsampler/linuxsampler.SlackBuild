@@ -23,7 +23,7 @@
 
 PRGNAM=linuxsampler
 VERSION=${VERSION:-2.0.0}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -82,8 +82,14 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
-make 
+make
 make install DESTDIR=$PKG
+
+# keep everything in a standard place on all ARCHes
+if [ "$LIBDIRSUFFIX" = "64" ]; then
+  mkdir -p $PKG/usr/lib
+  mv $PKG/usr/lib64/lv2 $PKG/usr/lib
+fi
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

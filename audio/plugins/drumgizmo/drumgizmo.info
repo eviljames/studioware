@@ -1,8 +1,6 @@
 PRGNAM="drumgizmo"
-VERSION="0.9.5"
 VERSION="0.9.10"
 HOMEPAGE="http://www.drumgizmo.org/wiki/"
-DOWNLOAD="http://www.drumgizmo.org/releases/drumgizmo-0.9.5/drumgizmo-0.9.5.tar.gz"
 DOWNLOAD="http://www.drumgizmo.org/releases/drumgizmo-0.9.10/drumgizmo-0.9.10.tar.gz"
 MD5SUM="5a563751b428248a2b11f63ab6f1d20c"
 DOWNLOAD_x86_64=""
