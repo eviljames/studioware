@@ -24,7 +24,7 @@
 PRGNAM=fluid-soundfont
 VERSION=${VERSION:-3.1}
 PATCHVERSION=5.1
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-se}
 ARCH=noarch
 CWD=$(pwd)
@@ -46,7 +46,8 @@ zcat $CWD/${PRGNAM}_$VERSION-$PATCHVERSION.diff.gz | patch -p1 --verbose
 mkdir -p $PKG/etc/timidity $PKG/usr/doc/$PRGNAM-$VERSION \
   $PKG/usr/share/sounds/sf2
 
-cp *.sf2 $PKG/usr/share/sounds/sf2
+install -m 0644 -D FluidR3_GM.sf2 $PKG/usr/share/sounds/sf2/FluidR3_GM.sf2
+install -m 0644 -D FluidR3_GS.sf2 $PKG/usr/share/sounds/sf2/FluidR3_GS.sf2
 
 chown -R root:root .
 find -L . \

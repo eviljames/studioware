@@ -59,10 +59,10 @@ f82670dcc46fcf0700639cc52744f1c3  ./audio/multitrack/ecasound/ecasound.tar.gz
 b8efbb8600d147cf37404e22d5c735a7  ./audio/synthesizers/qsynth/qsynth.tar.gz
 90510889a5aa377fb4e7c14e15483f76  ./audio/synthesizers/amsynth/amsynth.tar.gz
 7b8037a1e9202ad19a09661336db5f35  ./audio/synthesizers/aeolus/aeolus.tar.gz
-512ab06a44949192bca264b2fcef282e  ./audio/synthesizers/hexter/hexter.tar.gz
+c54708c08f88ca00cfe7142d74d0a726  ./audio/synthesizers/hexter/hexter.tar.gz
 80c27cdf58bb73630e13557681fc28cf  ./audio/synthesizers/synthv1/synthv1.tar.gz
 acdcf749b54e543f72bb8ed6e1faa6ee  ./audio/synthesizers/zynaddsubfx/zynaddsubfx.tar.gz
-297f5c58c4fd5b8ecbf0908082a6b1aa  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
+41c591b27521b03cb6b3c26931b1f396  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
 6f9502a72fdaba2fe57e023cf8ea4c9f  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
 739383cce61c8e98f6ce6ba7d2306fa9  ./audio/synthesizers/sunvox/sunvox.tar.gz
 ce5482eb78342d96c5a67c49f39bb16f  ./audio/synthesizers/bristol/bristol.tar.gz
@@ -70,7 +70,7 @@ ce5482eb78342d96c5a67c49f39bb16f  ./audio/synthesizers/bristol/bristol.tar.gz
 1a02b5d1bb4c1a78b53cd94e3a984fa6  ./audio/percussion/drumkv1/drumkv1.tar.gz
 efa9b6c604f52a787a3054246a42c442  ./audio/percussion/hydrogen/hydrogen.tar.gz
 3986f74d92dbe22a4287bcc008acd119  ./audio/sequencers/muse/muse.tar.gz
-beb7bdb35facff531ab4e893e6b9da37  ./audio/sequencers/terminatorX/terminatorX.tar.gz
+2cba5a402a8665e82876cbc3d788f9cd  ./audio/sequencers/terminatorX/terminatorX.tar.gz
 0314de7681571467e874959f17705670  ./audio/sequencers/seq24/seq24.tar.gz
 7bceb13aab25e5926039ca6f9fe74402  ./audio/graphics/fontforge/fontforge.tar.gz
 e1290dcbf8e8160d047d305df7d10794  ./audio/graphics/t1utils/t1utils.tar.gz
@@ -165,7 +165,7 @@ cf9a6d46ed99e68c94d715c278a9d1db  ./audio/system/jack/jack.tar.gz
 09d9400824d1e96e35c7b0ed8f7b0e30  ./audio/desktop/gtk-engines/gtk-engines.tar.gz
 da3a74f999a29eae21a9282b9ef6aac2  ./audio/desktop/evince/evince.tar.gz
 6988061a22b02d70eae2450edb7ea049  ./audio/desktop/clearlooks-classic-themes/clearlooks-classic-themes.tar.gz
-6f1139923bd5604ec5ec16a6e11a3c16  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
+4841b7a12cc81c40ef6c92c014ec578d  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
 c22f60628ccadc1e397c94e6148da28a  ./audio/midi/a2jmidid/a2jmidid.tar.gz
 6e1d83df29ac7bd022632495ce8a93f9  ./audio/codecs/lame/lame.tar.gz
 83549c5f5c93d18eb2306b71a95c1cef  ./audio/plugins/tap-plugins/tap-plugins.tar.gz
@@ -183,7 +183,7 @@ c6325e09f723ff98b30d58bacce07f3b  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 0e521ecf437fb46c0f8010b8a6e66284  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 aab2caeb3422bc97338180b7b6c7587d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
 a600219b6fe868d6ad7929fce3e2ca40  ./audio/session/lash/lash.tar.gz
-0a7d1e36ca744dc8e7eef80b7990f8b5  ./audio/session/ladish/ladish.tar.gz
+f53e2d29e6fd464423402e4cadb3ea9b  ./audio/session/ladish/ladish.tar.gz
 957270aa9867376881ee3645fa6e10af  ./audio/effects/jack-rack/jack-rack.tar.gz
 b473fa7b3b6e158a653f8b8212fff18a  ./audio/effects/rakarrack/rakarrack.tar.gz
 a9b864bad23141dd0a489c962f2ee466  ./audio/analysers/sonic-visualiser/sonic-visualiser.tar.gz

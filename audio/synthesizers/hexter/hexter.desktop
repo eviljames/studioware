@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hexter
 Comment=Piano Synthesizer
-Exec=jack-dssi-host /usr/lib64/dssi/hexter.so
+Exec=/usr/bin/hexter
 Icon=studioware-logo5
 Terminal=false
 Type=Application

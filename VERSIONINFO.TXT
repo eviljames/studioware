@@ -59,10 +59,10 @@ ardour 4.7.0 1
 qsynth 0.3.8 2
 amsynth 1.6.4 3
 aeolus 0.8.4 3
-hexter 1.0.3 2
+hexter 1.0.3 3
 synthv1 0.6.3 3
 zynaddsubfx 2.5.4 2
-fluidsynth 1.1.6 2
+fluidsynth 1.1.6 3
 yoshimi 1.4.0.1 3
 sunvox 1.9.1 2
 bristol 0.60.11 2
@@ -163,7 +163,7 @@ guitarix2 0.35.1 2
 gtk-engines 2.20.2 1
 evince 3.20.0 2
 clearlooks-classic-themes 0.6.2 1
-fluid-soundfont 3.1 1
+fluid-soundfont 3.1 2
 a2jmidid git20140517 2
 lame 3.99.5 2
 tap-plugins 0.7.3 2
@@ -181,7 +181,7 @@ gst-plugins-jack 0.10.31 1
 gst1-plugins-bad 1.6.4 2
 nnls-chroma 1.1 3
 lash 0.6.0.594 2
-ladish git20160725 2
+ladish git20160725 3
 jack-rack 1.4.7 2
 rakarrack 0.6.1 2
 sonic-visualiser 2.3 2

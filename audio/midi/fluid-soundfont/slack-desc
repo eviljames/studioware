@@ -5,15 +5,15 @@
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
 
-     |-----handy-ruler------------------------------------------------------|
-fluid: fluid-soundfont (Fluid General MIDI SoundFont (GM & GS))
-fluid:
-fluid: These are the GM and GS SoundFonts, for use with any modern MIDI
-fluid: synthesiser: hardware (like the emu10k1 sound card), or software
-fluid: (like FluidSynth).
-fluid:
-fluid: This package provides the GM and GS sound sets, with the Roland Sound
-fluid: Canvas extensions.
-fluid:
-fluid: https://packages.debian.org/sid/fluid-soundfont-gm
-fluid:
+               |-----handy-ruler------------------------------------------------------|
+fluid-soundfont: fluid-soundfont (Fluid General MIDI SoundFont (GM & GS))
+fluid-soundfont:
+fluid-soundfont: These are the GM and GS SoundFonts, for use with any modern MIDI
+fluid-soundfont: synthesiser: hardware (like the emu10k1 sound card), or software
+fluid-soundfont: (like FluidSynth).
+fluid-soundfont:
+fluid-soundfont: This package provides the GM and GS sound sets, with the Roland Sound
+fluid-soundfont: Canvas extensions.
+fluid-soundfont:
+fluid-soundfont: https://packages.debian.org/sid/fluid-soundfont-gm
+fluid-soundfont:
