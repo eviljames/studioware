@@ -113,7 +113,7 @@ dssi 1.1.0 2
 raul 0.8.0 2
 libsmf 1.3 2
 numpy 1.11.1 2
-rubberband 1.8.1 2
+rubberband 1.8.2 1
 liblrdf 0.5.0 2
 mxml 2.10 2
 raptor 1.4.21 2

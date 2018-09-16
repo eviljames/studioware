@@ -114,7 +114,7 @@ d12998b1ae93aa48cde936655c2905ec  ./audio/libraries/dssi/dssi.tar.gz
 68784ad6be3abbdb3e0e89a35189e880  ./audio/libraries/raul/raul.tar.gz
 b864d3a1973cf8f002f24268d6e872a1  ./audio/libraries/libsmf/libsmf.tar.gz
 6b625c448f38c3a07b504c1489763334  ./audio/libraries/numpy/numpy.tar.gz
-2143166d3b63562a1f43b2ca36cfc325  ./audio/libraries/rubberband/rubberband.tar.gz
+4d2465d8dd4c26c4e325f978f6bf6f14  ./audio/libraries/rubberband/rubberband.tar.gz
 6000ef8d7e63775690e2aa932164a68d  ./audio/libraries/liblrdf/liblrdf.tar.gz
 b190e48955434754ff6022f475900a31  ./audio/libraries/mxml/mxml.tar.gz
 6840c649105d90eb098ee2809163b09c  ./audio/libraries/raptor/raptor.tar.gz
@@ -183,7 +183,7 @@ c6325e09f723ff98b30d58bacce07f3b  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 0e521ecf437fb46c0f8010b8a6e66284  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 aab2caeb3422bc97338180b7b6c7587d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
 a600219b6fe868d6ad7929fce3e2ca40  ./audio/session/lash/lash.tar.gz
-f53e2d29e6fd464423402e4cadb3ea9b  ./audio/session/ladish/ladish.tar.gz
+d9d92999a1fa17a192c6316e561adeb2  ./audio/session/ladish/ladish.tar.gz
 957270aa9867376881ee3645fa6e10af  ./audio/effects/jack-rack/jack-rack.tar.gz
 b473fa7b3b6e158a653f8b8212fff18a  ./audio/effects/rakarrack/rakarrack.tar.gz
 a9b864bad23141dd0a489c962f2ee466  ./audio/analysers/sonic-visualiser/sonic-visualiser.tar.gz
