@@ -80,6 +80,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --infodir=/usr/info \
   --disable-debug \
   --disable-static \
+  --disable-qt \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 

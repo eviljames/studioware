@@ -180,7 +180,7 @@ c6325e09f723ff98b30d58bacce07f3b  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 0427d1a3d68241a27958109476f35359  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9cc913b8f24294bc8c6448312da35a8f  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 60c34c345bbceb1ab13344e60e06b6fb  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
-0e521ecf437fb46c0f8010b8a6e66284  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
+791d1148fd13e535bfff4d66f89a2dd4  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 aab2caeb3422bc97338180b7b6c7587d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
 a600219b6fe868d6ad7929fce3e2ca40  ./audio/session/lash/lash.tar.gz
 d9d92999a1fa17a192c6316e561adeb2  ./audio/session/ladish/ladish.tar.gz
