@@ -20,7 +20,7 @@ lcms26 2.7 2
 libkgeomap4 15.08.3 2
 eigen 3.2.9 2
 libkvkontakte 4.12.0 2
-GraphicsMagick 1.3.24 2
+GraphicsMagick 1.3.30 1
 pugixml 1.7 2
 vigra 1.11.0 2
 libkface 15.08.3 2

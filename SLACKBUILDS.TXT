@@ -20,7 +20,7 @@ b7b0f0f7357cfc488f30067469afa447  ./video/codecs/faad2/faad2.tar.gz
 902492ed37fb33dd509ac2c7fe47d375  ./photo/libraries/libkgeomap4/libkgeomap4.tar.gz
 e4e16b33464637d84ae9ef202a1e2e25  ./photo/libraries/eigen/eigen.tar.gz
 fc437dfdf01ef0073754d35515c88af1  ./photo/libraries/libkvkontakte/libkvkontakte.tar.gz
-8fc338a956960a8adf3307eb368da87e  ./photo/libraries/GraphicsMagick/GraphicsMagick.tar.gz
+14b17c679359d29c214ffc0b4abf00f3  ./photo/libraries/GraphicsMagick/GraphicsMagick.tar.gz
 c9480ab47ec1b95cc8cdb03b7f874a39  ./photo/libraries/pugixml/pugixml.tar.gz
 aea1d0b94029c7bdb335ac52d7ae9b0c  ./photo/libraries/vigra/vigra.tar.gz
 0069eb7aa77ba4441b2019c2d9fb7ce7  ./photo/libraries/libkface/libkface.tar.gz
@@ -180,7 +180,7 @@ c6325e09f723ff98b30d58bacce07f3b  ./audio/plugins/drumgizmo/drumgizmo.tar.gz
 0427d1a3d68241a27958109476f35359  ./audio/plugins/swh-plugins-lv2/swh-plugins-lv2.tar.gz
 9cc913b8f24294bc8c6448312da35a8f  ./audio/plugins/frei0r-plugins/frei0r-plugins.tar.gz
 60c34c345bbceb1ab13344e60e06b6fb  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
-791d1148fd13e535bfff4d66f89a2dd4  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
+08570a9dc1c07d97dcf26a3385656a28  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 aab2caeb3422bc97338180b7b6c7587d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
 a600219b6fe868d6ad7929fce3e2ca40  ./audio/session/lash/lash.tar.gz
 d9d92999a1fa17a192c6316e561adeb2  ./audio/session/ladish/ladish.tar.gz
