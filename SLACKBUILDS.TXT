@@ -45,7 +45,7 @@ f4753bffd49fde41e734df3a3eeb1ca5  ./photo/output/photoprint/photoprint.tar.gz
 a71426b453a94476ab2657ee1eae7c92  ./photo/plugins/dcraw/dcraw.tar.gz
 bf5412dde8d33251603bb970a3c508ea  ./photo/plugins/separate+/separate+.tar.gz
 5f92b87d0c20e4888fa07e0f3377daa3  ./audio/misc/vkeybd/vkeybd.tar.gz
-92aacda02e0764051ff83f79d21fd53e  ./audio/misc/lmms/lmms.tar.gz
+81b087bf764c445060a53896d7edffd8  ./audio/misc/lmms/lmms.tar.gz
 964cd4f4b594fb17553628e980a8b128  ./audio/misc/non/non.tar.gz
 f1a20014e31969482bbdb4f7ed21ce00  ./audio/misc/jamin/jamin.tar.gz
 001c0df7f5556e0cc3030c4e7cd125ce  ./audio/misc/protobuf/protobuf.tar.gz

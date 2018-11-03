@@ -1,4 +1,5 @@
 jack
+lame
 @calf
 caps
 swh-plugins
