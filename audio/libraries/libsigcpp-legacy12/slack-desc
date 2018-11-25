@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE12:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the '12:' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the '12:'.
+                  |-----handy-ruler---------------------------------------------------|
+libsigcpp-legacy12: libsigc++ ( typesafe callback system for standard C++ )
+libsigcpp-legacy12:
+libsigcpp-legacy12: libsigc++ implements a typesafe callback system for standard C++.
+libsigcpp-legacy12: It allows you to define signals and to connect those signals to any
+libsigcpp-legacy12: callback function, either global or a member function, regardless
+libsigcpp-legacy12: of whether it is static or virtual.
+libsigcpp-legacy12: It also contains adaptor classes for connection of dissimilar
+libsigcpp-legacy12: callbacks and has an ease of use unmatched by other C++ callback
+libsigcpp-legacy12: libraries. Libsigc++ is licensed under the GNU Library General
+libsigcpp-legacy12: Public License, LGPL.
+libsigcpp-legacy12: Homepage: http://libsigc.sourceforge.net

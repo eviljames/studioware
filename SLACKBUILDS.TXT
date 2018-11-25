@@ -92,7 +92,6 @@ bc5e4c4c5bd26fffe50686401f19145d  ./audio/libraries/serd/serd.tar.gz
 bd4a263e8c1fda2ef59e2c7233a188fb  ./audio/libraries/lilv/lilv.tar.gz
 46b882c65b6a36e7d06cd2f4ce9a0bc8  ./audio/libraries/zziplib/zziplib.tar.gz
 acbd924212614bfa54ca77bf7a8c2bf5  ./audio/libraries/wxGTK/wxGTK.tar.gz
-f43dbd26886502896082b581e65b9acb  ./audio/libraries/libsigc++-legacy12/libsigc++-legacy12.tar.gz
 79e19f3d36257c1214fefed60c7a2b6e  ./audio/libraries/imlib2/imlib2.tar.gz
 2028a9b657b287ba60e1210b0215dfc8  ./audio/libraries/portaudio/portaudio.tar.gz
 ae612f03ccd6074c163592d6ec8aa276  ./audio/libraries/liblo/liblo.tar.gz
@@ -122,6 +121,7 @@ b190e48955434754ff6022f475900a31  ./audio/libraries/mxml/mxml.tar.gz
 1a4b208e36c73d9c3ae4d9a5f1a0c36e  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
 67bb70024200c52ea4e536e54739af90  ./audio/libraries/avahi/avahi.tar.gz
 d0f63fc5d1b5cb3878e4a9db6818f700  ./audio/libraries/clalsadrv/clalsadrv.tar.gz
+11b9f24ae8fd3378f8c209c23586e26b  ./audio/libraries/libsigcpp-legacy12/libsigcpp-legacy12.tar.gz
 2dca2dc495f47158d7f73d560d9cfdaf  ./audio/libraries/cppunit/cppunit.tar.gz
 dc5731351b3b24d1e05d600084e1c58c  ./audio/libraries/zita-resampler/zita-resampler.tar.gz
 02197b7a62ddfc9afec59569ddab8de2  ./audio/libraries/clxclient/clxclient.tar.gz

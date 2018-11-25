@@ -1,6 +1,6 @@
 @rubberband
 jack
 wxGTK
-libsigc++-legacy12
+libsigcpp-legacy12
 liblo
 sooperlooper
