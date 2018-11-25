@@ -195,7 +195,7 @@ ORBit2 2.14.19 1
 gnome-mime-data 2.18.0 2
 gnome-python-gconf 2.28.1 1
 libgnome 2.32.1 1
-jam 2.5 2
+jam 2.5 3
 extra-desktops 0.0.1 2
 fluxbox-menus 0.2.0 2
 desktop-menus 0.0.5 3

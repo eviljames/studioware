@@ -197,7 +197,7 @@ f63588227b246cb2547685cb8c80afa1  ./system/libraries/wxGTK3/wxGTK3.tar.gz
 ffcfbbfa9fc34b61cbe3fb48b98aae08  ./system/libraries/gnome-mime-data/gnome-mime-data.tar.gz
 af79bc40e86406b559be1902ddbf6d65  ./system/libraries/gnome-python-gconf/gnome-python-gconf.tar.gz
 b55321f199e117ab8aad47569f30d015  ./system/libraries/libgnome/libgnome.tar.gz
-47b8dd041b07dc01d0831c897f4d29e2  ./system/development/jam/jam.tar.gz
+b45a63b9e1282fcabe8e19f5b632a430  ./system/development/jam/jam.tar.gz
 213b87d4917c4780904aafb234cb75ab  ./system/menus/extra-desktops/extra-desktops.tar.gz
 fb3a2acd41a9a2e845e9ff3d5fe51180  ./system/menus/fluxbox-menus/fluxbox-menus.tar.gz
 f5f10da66f0cb15f43e353d9e5b027f3  ./system/menus/desktop-menus/desktop-menus.tar.gz

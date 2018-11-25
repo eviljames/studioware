@@ -26,7 +26,7 @@
 
 PRGNAM=jam
 VERSION=${VERSION:-2.5}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -59,7 +59,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-set -eu
+set -e
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
