@@ -58,9 +58,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM
+rm -rf ${PRGNAM}_$VERSION
 tar xvf $CWD/${PRGNAM}_$VERSION.tgz
-cd $PRGNAM
+cd ${PRGNAM}_$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
