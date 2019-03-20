@@ -118,7 +118,6 @@ b864d3a1973cf8f002f24268d6e872a1  ./audio/libraries/libsmf/libsmf.tar.gz
 b190e48955434754ff6022f475900a31  ./audio/libraries/mxml/mxml.tar.gz
 6840c649105d90eb098ee2809163b09c  ./audio/libraries/raptor/raptor.tar.gz
 992061488af7a9e2d933df6b694bb876  ./audio/libraries/raptor/raptor-1.4.21.tar.gz
-1a4b208e36c73d9c3ae4d9a5f1a0c36e  ./audio/libraries/ladspa_sdk/ladspa_sdk.tar.gz
 67bb70024200c52ea4e536e54739af90  ./audio/libraries/avahi/avahi.tar.gz
 d0f63fc5d1b5cb3878e4a9db6818f700  ./audio/libraries/clalsadrv/clalsadrv.tar.gz
 11b9f24ae8fd3378f8c209c23586e26b  ./audio/libraries/libsigcpp-legacy12/libsigcpp-legacy12.tar.gz

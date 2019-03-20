@@ -116,7 +116,7 @@ rubberband 1.8.2 1
 liblrdf 0.5.0 2
 mxml 2.10 2
 raptor 1.4.21 2
-ladspa_sdk 1.13 2
+ladspa_sdk 1.15 1
 avahi 0.6.32 2
 clalsadrv 2.0.0 3
 libsigcpp-legacy12 1.2.7 1
