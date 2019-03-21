@@ -7,5 +7,5 @@ DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="pyxdg gst-python gnonlin"
 MAINTAINER="David Woodfall"
-EMAIL="dave@dawoodfall.net"
+EMAIL="dave@studioware.org"
 
