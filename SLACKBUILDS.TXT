@@ -66,7 +66,7 @@ acdcf749b54e543f72bb8ed6e1faa6ee  ./audio/synthesizers/zynaddsubfx/zynaddsubfx.t
 6f9502a72fdaba2fe57e023cf8ea4c9f  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
 739383cce61c8e98f6ce6ba7d2306fa9  ./audio/synthesizers/sunvox/sunvox.tar.gz
 ce5482eb78342d96c5a67c49f39bb16f  ./audio/synthesizers/bristol/bristol.tar.gz
-6390a8d0e88f58127fa4af7c7d7127fa  ./audio/percussion/jackbeat/jackbeat.tar.gz
+e3c5351558951416b18b9e972b8ad23f  ./audio/percussion/jackbeat/jackbeat.tar.gz
 1a02b5d1bb4c1a78b53cd94e3a984fa6  ./audio/percussion/drumkv1/drumkv1.tar.gz
 efa9b6c604f52a787a3054246a42c442  ./audio/percussion/hydrogen/hydrogen.tar.gz
 3986f74d92dbe22a4287bcc008acd119  ./audio/sequencers/muse/muse.tar.gz
