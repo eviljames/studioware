@@ -81,10 +81,10 @@ cmake . \
   -DCMAKE_INSTALL_PREFIX=/usr \
   -DLIB_SUFFIX="$LIBDIRSUFFIX" \
   -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=$PKG/usr/bin \
+  -DCMAKE_CACHEFILE_DIR=$(pwd) \
   -DJAVA_AWT_INCLUDE_PATH="/usr/lib$LIBDIRSUFFIX/java/include" \
   -DJAVA_INCLUDE_PATH="/usr/lib$LIBDIRSUFFIX/java/include" \
   -DJAVA_INCLUDE_PATH2="/usr/lib$LIBDIRSUFFIX/java/include/linux" \
-  -DCMAKE_CACHEFILE_DIR=$(pwd) \
   -DJAVA_JVM_LIBRARY="/usr/lib$LIBDIRSUFFIX/libjvm.so"
 
 # some wrong paths expose with openjdk, fix them

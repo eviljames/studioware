@@ -45,7 +45,7 @@ f4753bffd49fde41e734df3a3eeb1ca5  ./photo/output/photoprint/photoprint.tar.gz
 a71426b453a94476ab2657ee1eae7c92  ./photo/plugins/dcraw/dcraw.tar.gz
 bf5412dde8d33251603bb970a3c508ea  ./photo/plugins/separate+/separate+.tar.gz
 5f92b87d0c20e4888fa07e0f3377daa3  ./audio/misc/vkeybd/vkeybd.tar.gz
-81b087bf764c445060a53896d7edffd8  ./audio/misc/lmms/lmms.tar.gz
+6d466b1de10230517a0bd1d791d5f057  ./audio/misc/lmms/lmms.tar.gz
 964cd4f4b594fb17553628e980a8b128  ./audio/misc/non/non.tar.gz
 f1a20014e31969482bbdb4f7ed21ce00  ./audio/misc/jamin/jamin.tar.gz
 001c0df7f5556e0cc3030c4e7cd125ce  ./audio/misc/protobuf/protobuf.tar.gz
@@ -56,7 +56,7 @@ f1a20014e31969482bbdb4f7ed21ce00  ./audio/misc/jamin/jamin.tar.gz
 880a89e5bcf58d45644873886cba6eca  ./audio/multitrack/qtractor/qtractor.tar.gz
 f82670dcc46fcf0700639cc52744f1c3  ./audio/multitrack/ecasound/ecasound.tar.gz
 1e44477052557d08d35cf918906dad57  ./audio/multitrack/ardour/ardour.tar.gz
-b8efbb8600d147cf37404e22d5c735a7  ./audio/synthesizers/qsynth/qsynth.tar.gz
+771437b3d2a774ce2f4d1026d321dbf1  ./audio/synthesizers/qsynth/qsynth.tar.gz
 90510889a5aa377fb4e7c14e15483f76  ./audio/synthesizers/amsynth/amsynth.tar.gz
 7b8037a1e9202ad19a09661336db5f35  ./audio/synthesizers/aeolus/aeolus.tar.gz
 c54708c08f88ca00cfe7142d74d0a726  ./audio/synthesizers/hexter/hexter.tar.gz
@@ -93,7 +93,7 @@ bd4a263e8c1fda2ef59e2c7233a188fb  ./audio/libraries/lilv/lilv.tar.gz
 46b882c65b6a36e7d06cd2f4ce9a0bc8  ./audio/libraries/zziplib/zziplib.tar.gz
 acbd924212614bfa54ca77bf7a8c2bf5  ./audio/libraries/wxGTK/wxGTK.tar.gz
 79e19f3d36257c1214fefed60c7a2b6e  ./audio/libraries/imlib2/imlib2.tar.gz
-2028a9b657b287ba60e1210b0215dfc8  ./audio/libraries/portaudio/portaudio.tar.gz
+a638d1772619b442ce8296991373a2fa  ./audio/libraries/portaudio/portaudio.tar.gz
 ae612f03ccd6074c163592d6ec8aa276  ./audio/libraries/liblo/liblo.tar.gz
 23e1a0f37ef0e999b3e6da47748427ae  ./audio/libraries/flowcanvas/flowcanvas.tar.gz
 e83a4388bf9b25776c4300edab467dfe  ./audio/libraries/gtksourceview/gtksourceview.tar.gz
@@ -128,7 +128,7 @@ dc5731351b3b24d1e05d600084e1c58c  ./audio/libraries/zita-resampler/zita-resample
 fcd102563753efa29bbe55eb80cffb5f  ./audio/libraries/libgnomecanvasmm/libgnomecanvasmm.tar.gz
 93d002d9f6dde0c44ff7562d145d0d33  ./audio/libraries/chromaprint/chromaprint.tar.gz
 225b9bfe14b0c07b4153a7d89b78599b  ./audio/libraries/clthreads/clthreads.tar.gz
-3c4b9ad30ab97babe39911b424ff05e5  ./audio/libraries/portmidi/portmidi.tar.gz
+bff0869e0c04445cd646d3c78b3c78ca  ./audio/libraries/portmidi/portmidi.tar.gz
 3678d29910f7b81fffa2ff791be9b5b4  ./audio/development/guile1.8/guile1.8.tar.gz
 7855dbebd7ca1c0182425b7ba0146edf  ./audio/development/vamp-plugin-sdk/vamp-plugin-sdk.tar.gz
 eecbf900cbe14ccb5f87f3459c877c31  ./audio/development/scrollkeeper/scrollkeeper.tar.gz
@@ -144,7 +144,7 @@ a0826d45b09ee1f0de5a8dad8df0cace  ./audio/editors/frescobaldi/frescobaldi.tar.gz
 0d2f4b952ec68a8b916b92ea4aac51ec  ./audio/editors/audacity/audacity.tar.gz
 d14d8b985fde2f67bbc76375ff5717c7  ./audio/editors/milkytracker/milkytracker.tar.gz
 a00c8aab7fe4cdd1b04ec57f23018185  ./audio/editors/lilypond/lilypond.tar.gz
-241aee802a667ba91c4b5a618ba9cf2d  ./audio/editors/mscore/mscore.tar.gz
+d5bf3e6af31d4197b7fbb276c0994f17  ./audio/editors/mscore/mscore.tar.gz
 69a494e62b2a6ae73980a62d176b0c9f  ./audio/editors/denemo/denemo.tar.gz
 7a04833c1f40cedd28dea2581efa7b8f  ./audio/mixers/qastools/qastools.tar.gz
 4c22d9393ecc85d565f09068c41d1fb8  ./audio/samplers/samplv1/samplv1.tar.gz
@@ -158,7 +158,7 @@ ea4477e4e9078a5f37d0f98b46220ebc  ./audio/system/rt-tests/rt-tests.tar.gz
 4c11fa85b2ebb507840ea4566f8f5e86  ./audio/system/pd/pd.tar.gz
 cf9a6d46ed99e68c94d715c278a9d1db  ./audio/system/jack/jack.tar.gz
 d9aa94654ef5c7ce7f6ad76f184edf45  ./audio/system/set_rlimits/set_rlimits.tar.gz
-40b97c534bb3126e476be305986787d1  ./audio/system/qjackctl/qjackctl.tar.gz
+7fd9f41d5b3999fdc99d2837ab7dac42  ./audio/system/qjackctl/qjackctl.tar.gz
 2b2beb64b9cce2c14118876e45533e39  ./audio/system/rtaudio/rtaudio.tar.gz
 2a877540031c41db6590d6f320a33b45  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 81eff1fbb6c711ac23f767adf2bf10e3  ./audio/amps/guitarix2/guitarix2.tar.gz

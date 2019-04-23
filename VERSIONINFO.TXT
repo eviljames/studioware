@@ -56,7 +56,7 @@ jokosher 0.11.5 2
 qtractor 0.6.7 2
 ecasound 2.9.1 2
 ardour 4.7.0 1
-qsynth 0.3.8 2
+qsynth 0.5.6 1
 amsynth 1.6.4 3
 aeolus 0.8.4 3
 hexter 1.0.3 3
@@ -93,7 +93,7 @@ lilv 0.22.0 2
 zziplib 0.13.62 2
 wxGTK 2.8.12 2
 imlib2 1.4.9 2
-portaudio v19_20140130 3
+portaudio v190600_20161030 1
 liblo 0.28 2
 flowcanvas 0.7.1 3
 gtksourceview 3.18.4 2
@@ -156,7 +156,7 @@ rtmidi 2.1.1 2
 pd 0.47.1 1
 jack 1.9.10 2
 set_rlimits 1.3.0 2
-qjackctl 0.3.13 2
+qjackctl 0.5.7 1
 rtaudio 4.1.2 2
 SimpleSysexxer 0.3 2
 guitarix2 0.35.1 2
