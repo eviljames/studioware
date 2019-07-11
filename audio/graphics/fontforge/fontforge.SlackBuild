@@ -22,7 +22,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Currently maintained by David Woodfall <dave@studioware.org>
+# Currently maintained by Studioware <info@studioware.org>
 
 PRGNAM=fontforge
 VERSION=${VERSION:-20170731}

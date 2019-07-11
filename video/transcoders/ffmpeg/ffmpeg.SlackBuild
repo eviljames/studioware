@@ -24,7 +24,7 @@
 
 # Originally written by core (eroc@linuxmail.org)
 # Modified by Robby Workman <rworkman@slackbuilds.org>
-# Modified by Dave W <dave@studioware.org>
+# Modified by Dave W <info@studioware.org>
 
 PRGNAM=ffmpeg
 VERSION=${VERSION:-3.1.1}
