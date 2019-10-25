@@ -74,7 +74,7 @@ d825a612da3675389a08fb1f5767bc41  ./audio/percussion/jackbeat/jackbeat.tar.gz
 232535a07a2cd7110616f5547cf3a22e  ./audio/sequencers/seq24/seq24.tar.gz
 e69403135109bc453cbfb410f63ece68  ./audio/graphics/fontforge/fontforge.tar.gz
 f6a3fed1865f0caed40b06e0d120e820  ./audio/graphics/t1utils/t1utils.tar.gz
-7eb071f90396dbe5943bc054170ea3c6  ./audio/graphics/potrace/potrace.tar.gz
+ac8ebc6822e06d1a9dd6778b794d92f1  ./audio/graphics/potrace/potrace.tar.gz
 a90d1a50016e1bdf9515f11add409268  ./audio/graphics/pygoocanvas/pygoocanvas.tar.gz
 3e0572b8324e78964272bff492509ce6  ./audio/graphics/mftrace/mftrace.tar.gz
 5943e0f7cb6702faa2371293a901339d  ./audio/graphics/goocanvas/goocanvas.tar.gz

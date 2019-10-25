@@ -74,7 +74,7 @@ terminatorX 4.0.0 2
 seq24 0.9.3 2
 fontforge 20170731 1
 t1utils 1.39 2
-potrace 1.15 2
+potrace 1.16 1
 pygoocanvas 0.14.1 2
 mftrace 1.2.18 2
 goocanvas 0.15 2
