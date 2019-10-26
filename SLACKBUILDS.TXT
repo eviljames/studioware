@@ -56,7 +56,7 @@ bf13d7c8225b20ed910e2dd616781919  ./audio/multitrack/ardour5/ardour5.tar.gz
 762b8c00168832d68709800c1416955e  ./audio/multitrack/qtractor/qtractor.tar.gz
 84a3f15b7f6c14bec7bd0485c08cd59b  ./audio/multitrack/ecasound/ecasound.tar.gz
 e2d318ecdd580d769c8b11214a5ff311  ./audio/multitrack/ardour/ardour.tar.gz
-2ebeea35188824141b769174aac137bc  ./audio/synthesizers/qsynth/qsynth.tar.gz
+29f3fff0aa996d87717d5e2c17b179c4  ./audio/synthesizers/qsynth/qsynth.tar.gz
 1b1efaa98514307fbe280506aa1249be  ./audio/synthesizers/amsynth/amsynth.tar.gz
 5eb6c4c09110264db4ba9ec0063e3f93  ./audio/synthesizers/aeolus/aeolus.tar.gz
 edb968ef204bb52f97e6985565be9b1d  ./audio/synthesizers/hexter/hexter.tar.gz
