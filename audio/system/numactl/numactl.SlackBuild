@@ -22,8 +22,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=numactl
-VERSION=${VERSION:-2.0.10}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-2.0.12}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -68,9 +68,6 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-#patch -p1 --verbose < $CWD/prefix.patch
-#sed -i "s/@LIBDIR@/\/usr\/lib$LIBDIRSUFFIX/" Makefile
-./autogen.sh
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -94,7 +91,7 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-   CHANGES README TODO  \
+   README.md test \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

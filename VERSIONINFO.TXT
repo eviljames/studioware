@@ -149,7 +149,7 @@ samplv1 0.6.3 3
 linuxsampler 2.0.0 3
 qsampler svn20140425 2
 meterbridge 0.9.2 2
-numactl 2.0.10 2
+numactl 2.0.12 1
 patchage 1.0.0 2
 rt-tests 1.0 2
 rtmidi 2.1.1 2
