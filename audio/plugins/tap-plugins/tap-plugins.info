@@ -1,7 +1,7 @@
 PRGNAM="tap-plugins"
 VERSION="0.7.3"
 HOMEPAGE="http://tap-plugins.sourceforge.net/"
-DOWNLOAD="http://downloads.sourceforge.net/project/tap-plugins/tap-plugins/0.7.3/tap-plugins-0.7.3.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/tap-plugins-0.7.3.tar.gz"
 MD5SUM="113fa021b2a05e2fd3cf35f65e6ca137"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

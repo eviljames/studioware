@@ -1,7 +1,7 @@
 PRGNAM="bristol"
 VERSION="0.60.11"
 HOMEPAGE="http://bristol.sf.net/"
-DOWNLOAD="http://downloads.sourceforge.net/project/bristol/bristol/0.60/bristol-0.60.11.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/bristol-0.60.11.tar.gz"
 MD5SUM="9ea4dacdac0dba3048156e2f6a5ee4d6"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

@@ -1,7 +1,7 @@
 PRGNAM="muse"
 VERSION="2.2.1"
 HOMEPAGE="http://www.muse-sequencer.org"
-DOWNLOAD="http://downloads.sourceforge.net/project/lmuse/muse-2.2/muse-2.2.1.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/muse-2.2.1.tar.gz"
 MD5SUM="985e96c9513d0b2baad8386bc0adc4d8"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

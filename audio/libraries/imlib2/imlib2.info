@@ -1,7 +1,7 @@
 PRGNAM="imlib2"
 VERSION="1.4.9"
 HOMEPAGE="http://www.enlightenment.org"
-DOWNLOAD="http://downloads.sourceforge.net/enlightenment/imlib2-1.4.9.tar.bz2"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/imlib2-1.4.9.tar.bz2"
 MD5SUM="23ef8b49f2793bc63b16839a2062298b"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
