@@ -158,7 +158,7 @@ fbde2d7bcf6e4c66e67c5bd29ab6a0f8  ./audio/system/rtmidi/rtmidi.tar.gz
 71ce4a48504f2f0d08132d3435f9bd13  ./audio/system/pd/pd.tar.gz
 c7faf58c0e6e21a9cf687e60948ec772  ./audio/system/jack/jack.tar.gz
 c8eaa1b179eaaa4f0b1f0202ec30ca5f  ./audio/system/set_rlimits/set_rlimits.tar.gz
-dd7bc4cb31f4545c2109d75e7a21b622  ./audio/system/qjackctl/qjackctl.tar.gz
+25d1f52c927841827495072fb66028a9  ./audio/system/qjackctl/qjackctl.tar.gz
 b6f39497afcca92ca179520d7f386bb0  ./audio/system/rtaudio/rtaudio.tar.gz
 e754f8f84ad3ec3e0e0e5f7c7a972bb5  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 988726a1cce4a4d0a8a396a9577a8366  ./audio/amps/guitarix2/guitarix2.tar.gz
