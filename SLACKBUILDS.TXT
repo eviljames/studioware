@@ -82,7 +82,7 @@ f5007c6d319afabf87bb4a60ab6fbf2a  ./audio/libraries/libglademm/libglademm.tar.gz
 ba54de515dc2176dfad883bb0c2d748b  ./audio/libraries/ganv/ganv.tar.gz
 956949e3c55b030918b21e6f88e76642  ./audio/libraries/pyxdg/pyxdg.tar.gz
 702197ba7e9f81062d6212d80aef6f46  ./audio/libraries/libslv2/libslv2.tar.gz
-734b6058d210fd65ff95d6288d5b4b39  ./audio/libraries/sratom/sratom.tar.gz
+f61c4e7bc15eb2acf7054adae3e805d2  ./audio/libraries/sratom/sratom.tar.gz
 b7b3dfea2df525f4271dd4d2a0d3d207  ./audio/libraries/libgnomecanvas/libgnomecanvas.tar.gz
 66b9847838f13019652a41273a072f03  ./audio/libraries/aubio/aubio.tar.gz
 29dce35366dbe7036d33a3c39c12208c  ./audio/libraries/python-ly/python-ly.tar.gz
@@ -160,7 +160,7 @@ c7faf58c0e6e21a9cf687e60948ec772  ./audio/system/jack/jack.tar.gz
 c8eaa1b179eaaa4f0b1f0202ec30ca5f  ./audio/system/set_rlimits/set_rlimits.tar.gz
 25d1f52c927841827495072fb66028a9  ./audio/system/qjackctl/qjackctl.tar.gz
 b6f39497afcca92ca179520d7f386bb0  ./audio/system/rtaudio/rtaudio.tar.gz
-e754f8f84ad3ec3e0e0e5f7c7a972bb5  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
+24b55abdf38f216b581521acaeb38b3b  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 988726a1cce4a4d0a8a396a9577a8366  ./audio/amps/guitarix2/guitarix2.tar.gz
 a20398afaed30ae815de9ec20f6b201a  ./audio/desktop/gtk-engines/gtk-engines.tar.gz
 db57d60cd972eac1c2e344822b6eaf82  ./audio/desktop/evince/evince.tar.gz
@@ -204,5 +204,5 @@ bc064b037893152d8f181be9e0e91c5d  ./system/libraries/libgnome/libgnome.tar.gz
 cb075d4169a49b9103d5040af49afd90  ./system/system/argyllcms/argyllcms.tar.gz
 21cccede150125103443f7fe01280171  ./system/system/DisplayCAL/DisplayCAL.tar.gz
 6666010eb660e4e37ffe6b617404c172  ./system/system/cpufreq/cpufreq.tar.gz
-c6ef7eeb048f2df6b72e32b802f47551  ./system/desktop/kaptain/kaptain.tar.gz
+88ae2fb4b07a04f263e6f1802f1057af  ./system/desktop/kaptain/kaptain.tar.gz
 3bb9d58484ab20de8d03a6e6b8ec95d9  ./system/scripts/studioware-scripts/studioware-scripts.tar.gz
