@@ -1,7 +1,7 @@
 PRGNAM="dvgrab"
 VERSION="3.5"
 HOMEPAGE="http://freecode.com/projects/dvgrab"
-DOWNLOAD="http://downloads.sourceforge.net/project/kino/dvgrab/3.5/dvgrab-3.5.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/dvgrab-3.5.tar.gz"
 MD5SUM="b39a242ce63e80fc347ab59931f75649"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

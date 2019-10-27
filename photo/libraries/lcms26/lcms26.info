@@ -1,7 +1,7 @@
 PRGNAM="lcms26"
 VERSION="2.7"
 HOMEPAGE="http://www.littlecms.com/"
-DOWNLOAD="http://downloads.sourceforge.net/project/lcms/lcms/2.7/lcms2-2.7.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/lcms2-2.7.tar.gz"
 MD5SUM="06c1626f625424a811fb4b5eb070839d"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

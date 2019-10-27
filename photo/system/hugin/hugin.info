@@ -1,7 +1,7 @@
 PRGNAM="hugin"
 VERSION="2016.0.0"
 HOMEPAGE="http://hugin.sourceforge.net/"
-DOWNLOAD="http://downloads.sourceforge.net/project/hugin/hugin/hugin-2016.0/hugin-2016.0.0.tar.bz2"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/hugin-2016.0.0.tar.bz2"
 MD5SUM="8407dd7275374a492610221e7ae56be9"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

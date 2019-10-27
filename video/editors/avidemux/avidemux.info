@@ -1,7 +1,7 @@
 PRGNAM="avidemux"
 VERSION="2.6.12"
 HOMEPAGE="http://avidemux.org"
-DOWNLOAD="http://downloads.sourceforge.net/avidemux/avidemux_2.6.12.tar.gz"
+DOWNLOAD="http://studioware.org/files/slackbuilds/source/avidemux_2.6.12.tar.gz"
 MD5SUM="354d8ddf75d48d1f698786e8243ecc54"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
