@@ -157,7 +157,7 @@ db6824dee1d4a16b5d79d837362937a9  ./audio/system/numactl/numactl.tar.gz
 0124450d23844bdd967b881e1132462e  ./audio/system/rt-tests/rt-tests.tar.gz
 fbde2d7bcf6e4c66e67c5bd29ab6a0f8  ./audio/system/rtmidi/rtmidi.tar.gz
 71ce4a48504f2f0d08132d3435f9bd13  ./audio/system/pd/pd.tar.gz
-c7faf58c0e6e21a9cf687e60948ec772  ./audio/system/jack/jack.tar.gz
+c5b5aa08432b6414ed0393be2059d7dd  ./audio/system/jack/jack.tar.gz
 c8eaa1b179eaaa4f0b1f0202ec30ca5f  ./audio/system/set_rlimits/set_rlimits.tar.gz
 25d1f52c927841827495072fb66028a9  ./audio/system/qjackctl/qjackctl.tar.gz
 b6f39497afcca92ca179520d7f386bb0  ./audio/system/rtaudio/rtaudio.tar.gz
