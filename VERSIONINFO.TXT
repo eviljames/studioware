@@ -154,7 +154,7 @@ patchage 1.0.0 2
 rt-tests 1.0 2
 rtmidi 2.1.1 2
 pd 0.47.1 1
-jack 1.9.14 2
+jack 1.9.14 3
 set_rlimits 1.3.0 2
 qjackctl 0.5.4 1
 rtaudio 4.1.2 2
