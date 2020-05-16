@@ -1,15 +1,14 @@
-Installs popular ICC Profiles from Adobe and ECI for color management.  
-Obviously there are many other ICC Profiles available for both 
-printers and scanners, but for general purpose color management, these 
-are fairly ubiquitous.
+The popular ICC Profiles from ECI (European Color Initiative) for better color
+management.                                              
+                                                                      
+This script installs the ECI's RGB, CMYK, and DeviceLink ICC profiles 
+to /usr/share/color/icc/                                              
 
-Krita features built-in color management; GIMP users may wish to 
-install separate+ (also available via SlackBuilds.org) for improved 
-color management and better CMYK support.
+Also installs the Rec709 and related ICC Profiles as defined by the ITU spec
+located at https://www.itu.int/rec/R-REC-BT.709-6-201506-I/en
 
-This script installs both Adobe and ECI profiles by default; exclude 
-one or the other by passing ADOBE=no or ECI=no to the SlackBuild.
+This script installs Creative Commons BY-SA implementations of the ICC
+profiles to /usr/share/color/icc/ITU
 
 http://www.adobe.com
 http://www.eci.org
-

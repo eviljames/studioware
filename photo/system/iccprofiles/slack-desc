@@ -8,11 +8,10 @@
 iccprofiles: iccprofiles (ICC Profiles for color management workflows)
 iccprofiles:
 iccprofiles: ICC Profiles help maintain consistent color across different media
-iccprofiles: and applications.  This installs general-purpose Adobe and ECI
-iccprofiles: profiles.  (For specific profiles, see the website of your printer,
-iccprofiles: scanner, or specialty paper and install to /usr/share/color/icc)
+iccprofiles: and applications.
 iccprofiles:
-iccprofiles: Use ADOBE=no or ECI=no to exclude either the Adobe or ECI profiles.
-iccprofiles:
-iccprofiles: http://www.eci.org
 iccprofiles: http://www.adobe.com
+iccprofiles: http://www.eci.org
+iccprofiles:
+iccprofiles:
+iccprofiles:

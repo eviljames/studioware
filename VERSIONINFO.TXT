@@ -39,7 +39,7 @@ rawstudio 2.0 2
 digikam 4.14.0 2
 hugin 2016.0.0 2
 rapid-photo-downloader 0.4.11 1
-iccprofiles 2011 1
+iccprofiles "2017_08_27" 1
 photoprint 0.4.2_pre2 2
 ufraw 0.22 2
 dcraw 9.20 2

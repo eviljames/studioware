@@ -1,27 +1,29 @@
 #!/bin/sh
+# Slackware build script for ECI (European Color Initiative) ICC profiles
 
-# Slackware build script for ECI and Adobe ICC Profiles
-# Written by klaatu at klaatu@hackerpublicradio.org
-# with a buncha corrections by thrice`
+# Copyright 2019 Klaatu | Lawrence, NZ | klaatu@member.fsf.org
+# GNU All-Permissive License
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved.  This file is offered as-is,
+# without any warranty.
 
 PRGNAM=iccprofiles
-VERSION=${VERSION:-2011}
+SRCNAM="ICC Profiles - hbrendel.com"
+PKGNAM=icc_profiles
+UNION=ITU
+VERSION=${VERSION:-"2017_08_27"}
 BUILD=${BUILD:-1}
-TAG=${TAG:-se}
+TAG=${TAG:-_SBo}
 
-# icc profiles are arch independent
 ARCH=noarch
 
-# get ready for some
-# really bad naming schemes cuz color profile
-# people and artists have no clue about logic or consistency
-
-ADBNAM=Adobe\ ICC\ Profiles\ \(end-user\)
-ECINAM=ECI_Offset_2009
-RGBNAM=eciRGB_v2_profile
+ECINAM=eciRGB_v2_profile
+CMYKNAM=ecicmyk
+DEVICELINK=ecicmyk_devicelinkprofiles_$(echo $VERSION | tr _ -)
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/se}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -30,50 +32,28 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
+rm -rf $PRGNAM-$VERSION $ECINAM ${CMYKNAM}.icc
+rm -rf "$SRCNAM"
 
-if [ "${ADOBE}" != "no" ]; then
-	unzip -o $CWD/Adobe*.zip
+unzip $CWD/ecirgbv20.zip
 
-	# install Adobe profiles, without those ugly spaces
-	install -d $PKG/usr/share/color/icc/${ADBNAM// /_}-${VERSION}/
-	install -m644 "${ADBNAM}"/CMYK\ Profiles/*.icc \
-	  $PKG/usr/share/color/icc/${ADBNAM// /_}-${VERSION}/
-	install -m644 "${ADBNAM}"/RGB\ Profiles/*.icc \
-	  $PKG/usr/share/color/icc/${ADBNAM// /_}-${VERSION}/
+install -d $PKG/usr/share/color/icc/
+install -m644 "${ECINAM}"/*.icc \
+  $PKG/usr/share/color/icc/
 
-	# Add adobe docs
-	mkdir -p $PKG/usr/doc/${PRGNAM}-${VERSION}/${ADBNAM// /_}
-	install -m644 "${ADBNAM}"/*.pdf \
-	  $PKG/usr/doc/${PRGNAM}-${VERSION}/${ADBNAM// /_}/
-fi
+unzip $CWD/$CMYKNAM.zip -d $PKG/usr/share/color/icc/
+unzip $CWD/$DEVICELINK.zip -d $PKG/usr/share/color/icc/
+rm -rf $PKG/usr/share/color/icc/__MACOSX/
 
-if [ "$ECI" != "no" ]; then
-	unzip -o $CWD/eci_offset*.zip
-	unzip -o $CWD/ecirgb*.zip
+unzip $CWD/$PKGNAM.zip
 
-	# Install ECI_Offset profiles
-	install -d $PKG/usr/share/color/icc/${ECINAM}-${VERSION}/
-	install -m644 ${ECINAM}/*.icc \
-	  $PKG/usr/share/color/icc/${ECINAM}-${VERSION}/
-
-	# Add ECI_Offset docs
-	mkdir -p $PKG/usr/doc/${PRGNAM}-${VERSION}/${ECINAM}/
-	install -m644 ${ECINAM}/*.pdf \
-          $PKG/usr/doc/${PRGNAM}-${VERSION}/${ECINAM}/
-
-	# Install eciRGB profiles
-        install -d $PKG/usr/share/color/icc/${RGBNAM}-${VERSION}/
-	install -m644 ${RGBNAM}/*.icc \
-          $PKG/usr/share/color/icc/${RGBNAM}-${VERSION}/
-
-	# Add RGB docs
-	mkdir -p $PKG/usr/doc/${PRGNAM}-${VERSION}/${RGBNAM}/
-	install -m644 ${RGBNAM}/*.rtf \
-	  $PKG/usr/doc/${PRGNAM}-${VERSION}/${RGBNAM}/
-fi
+install -d $PKG/usr/share/color/icc/ITU
+install -m644 "${SRCNAM}"/*.icc \
+  $PKG/usr/share/color/icc/ITU
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+install -m644 "${ECINAM}"/licence.rtf \
+  $PKG/usr/doc/${PRGNAM}-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
