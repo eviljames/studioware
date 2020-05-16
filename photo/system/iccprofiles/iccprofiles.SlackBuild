@@ -10,11 +10,11 @@
 
 PRGNAM=iccprofiles
 SRCNAM="ICC Profiles - hbrendel.com"
-PKGNAM=icc_profiles
+SRCNAM2=icc_profiles
 UNION=ITU
 VERSION=${VERSION:-"2017_08_27"}
-BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+BUILD=${BUILD:-2}
+TAG=${TAG:-se}
 
 ARCH=noarch
 
@@ -45,7 +45,7 @@ unzip $CWD/$CMYKNAM.zip -d $PKG/usr/share/color/icc/
 unzip $CWD/$DEVICELINK.zip -d $PKG/usr/share/color/icc/
 rm -rf $PKG/usr/share/color/icc/__MACOSX/
 
-unzip $CWD/$PKGNAM.zip
+unzip $CWD/$SRCNAM2.zip
 
 install -d $PKG/usr/share/color/icc/ITU
 install -m644 "${SRCNAM}"/*.icc \
