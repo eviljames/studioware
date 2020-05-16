@@ -42,7 +42,7 @@ a7b49478375dc887ed568eb59417f973  ./photo/development/ecm/ecm.tar.gz
 854246ea2d884e6be98b93dd2b6cccb2  ./photo/system/iccprofiles/iccprofiles.tar.gz
 9ad7e0f95d328deb64f2206ce7e81848  ./photo/output/photoprint/photoprint.tar.gz
 a0d77dd6097956f190e23c923e001405  ./photo/plugins/ufraw/ufraw.tar.gz
-ce73dc5e7a4c3e3b1bb622aaf7665099  ./photo/plugins/dcraw/dcraw.tar.gz
+64211d50c3d804e150e89684840580ba  ./photo/plugins/dcraw/dcraw.tar.gz
 e8dbb2b577c5e2471026f7548287a048  ./photo/plugins/separate+/separate+.tar.gz
 a4041518b9564870ee1f4b5d0c2f4e57  ./audio/misc/vkeybd/vkeybd.tar.gz
 378925d585e012c9f418ed1ba308600b  ./audio/misc/lmms/lmms.tar.gz

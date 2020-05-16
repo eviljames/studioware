@@ -30,8 +30,8 @@
 # RAWPHOTO=yes ./dcraw.SlackBuild
 
 PRGNAM=dcraw
-VERSION=${VERSION:-9.20}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-9.28.0}
+BUILD=${BUILD:-1}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -61,10 +61,11 @@ else
   LIBDIRSUFFIX=""
 fi
 
+# Set to yes for studioware
 # build with rawphoto gimp plugin, default is no
-RAWPHOTO=${RAWPHOTO:-no}
+RAWPHOTO=${RAWPHOTO:-yes}
 # build with jasper support, default is no
-JASPER=${JASPER:-no}
+JASPER=${JASPER:-yes}
 
 if [ "${JASPER}" = "yes" ]; then
     JASPER_BUILD_FLAG="-ljasper"

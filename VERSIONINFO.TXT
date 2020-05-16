@@ -42,7 +42,7 @@ rapid-photo-downloader 0.4.11 1
 iccprofiles "2017_08_27" 1
 photoprint 0.4.2_pre2 2
 ufraw 0.22 2
-dcraw 9.20 2
+dcraw 9.28.0 1
 separate+ 0.5.8 2
 vkeybd 0.1.18d 2
 lmms 1.2.0-rc4 1
