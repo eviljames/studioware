@@ -183,7 +183,7 @@ a95d34f54d3c2ce7dc87328a045548bc  ./audio/plugins/frei0r-plugins/frei0r-plugins.
 bd02480eb262c3a076dedd88808b0e19  ./audio/plugins/gst-plugins-jack/gst-plugins-jack.tar.gz
 d9439f875d841be617827c299fe7da26  ./audio/plugins/gst1-plugins-bad/gst1-plugins-bad.tar.gz
 d689e3c7b20e2721bb0a476dfce5fb8d  ./audio/plugins/nnls-chroma/nnls-chroma.tar.gz
-a6305f572da850efd17705583f21dffa  ./audio/session/lash/lash.tar.gz
+a5f55aab3b23706035c85af896e0d8b6  ./audio/session/lash/lash.tar.gz
 afae0fc0647aa004b6cb4689ff27380a  ./audio/session/ladish/ladish.tar.gz
 5648783ebd6e890e4d12074d48c7d96c  ./audio/effects/jack-rack/jack-rack.tar.gz
 6af9309b4e6a9075cdccf890f31e7ce2  ./audio/effects/rakarrack/rakarrack.tar.gz
