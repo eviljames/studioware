@@ -7,7 +7,7 @@ e3be58aad17dc119b27144b5ce9ed964  ./video/libraries/libavc1394/libavc1394.tar.gz
 bb6f4083738a51b741c255f8bdf0ae09  ./video/libraries/dvdauthor/dvdauthor.tar.gz
 964bc57fb746e5dab9b2d5ae9ac92819  ./video/frontends/xjadeo/xjadeo.tar.gz
 cf3a76dab83fa79a1b8f29b5dafcb6e3  ./video/editors/kdenlive/kdenlive.tar.gz
-7b02b6c186f8f85705e14a7539b396db  ./video/editors/cinelerra/cinelerra.tar.gz
+f873531a3f053f2eb4f734ea03b08ef8  ./video/editors/cinelerra/cinelerra.tar.gz
 0e52250bad2a72a864e94e0b4427599c  ./video/editors/openshot/openshot.tar.gz
 2b4cba2c99c4d8ec4fc87def152ff480  ./video/editors/avidemux/avidemux.tar.gz
 fb721e6b0024ba6f3e71ea1146c4f673  ./video/codecs/xvidcore/xvidcore.tar.gz

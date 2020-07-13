@@ -23,9 +23,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=cinelerra
-SRCNAM=CinelerraCV
+SRCNAM=$PRGNAM-cv
 VERSION=${VERSION:-2.3}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-se}
 
 if [ -z "$ARCH" ]; then
@@ -44,21 +44,20 @@ OUTPUT=${OUTPUT:-/tmp}
 if [ "$ARCH" = "i586" ]; then
   SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
+  mmx="--enable-mmx"
+  pic="--without-pic"
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
   LIBDIRSUFFIX=""
+  mmx="--enable-mmx"
+  pic="--without-pic"
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
+  pic="--with-pic"
 else
   SLKCFLAGS="-O2"
   LIBDIRSUFFIX=""
-fi
-
-if [ "$ARCH" = "x86_64" ]; then
-  mmx=""
-else
-  mmx="--enable-mmx"
 fi
 
 set -e
@@ -67,7 +66,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/$SRCNAM-$VERSION.tar.xz
+tar xvf $CWD/$SRCNAM-$VERSION.tar.?z
 cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -93,11 +92,11 @@ CXXFLAGS="$SLKCFLAGS -D__STDC_CONSTANT_MACROS" \
   --with-plugindir=/usr/lib${LIBDIRSUFFIX}/cinelerra \
   --disable-static \
   --mandir=/usr/man \
-  --with-pic \
   --with-x \
   --enable-opengl \
+  $mmx \
+  $pic \
   --build=$ARCH-slackware-linux \
-  $mmx
 
 make
 make install DESTDIR=$PKG

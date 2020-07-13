@@ -2,7 +2,13 @@ Cinelerra is the most advanced non-linear video editor and compositor
 for Linux.   It does primarily 3 main things: capturing, compositing,
 and editing audio and video with sample level accuracy.
 
-This is a development version maintained by official git cinelerra-cv:
-http://git.cinelerra.org/gitweb?p=j6t/cinelerra.git;a=summary
-This build script uses a git snapshot that was downloaded and hosted
-by the script maintainer.
+Cinelerra-CV has been moved to a free platform
+
+The new official website is available at:
+http://cinelerra-cv.wikidot.com
+
+The new official Mailing List:
+https://www.freelists.org/list/cinelerra-cv-team
+
+The new official repo is available at
+https://github.com/cinelerra-cv-team/cinelerra-cv
