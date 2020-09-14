@@ -62,7 +62,7 @@ aeolus 0.8.4 3
 hexter 1.0.3 3
 synthv1 0.6.3 3
 zynaddsubfx 2.5.4 2
-fluidsynth 1.1.6 3
+fluidsynth 1.1.6 4
 yoshimi 1.4.0.1 3
 sunvox 1.9.1 2
 bristol 0.60.11 2

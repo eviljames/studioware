@@ -7,7 +7,8 @@ e3be58aad17dc119b27144b5ce9ed964  ./video/libraries/libavc1394/libavc1394.tar.gz
 bb6f4083738a51b741c255f8bdf0ae09  ./video/libraries/dvdauthor/dvdauthor.tar.gz
 964bc57fb746e5dab9b2d5ae9ac92819  ./video/frontends/xjadeo/xjadeo.tar.gz
 cf3a76dab83fa79a1b8f29b5dafcb6e3  ./video/editors/kdenlive/kdenlive.tar.gz
-f873531a3f053f2eb4f734ea03b08ef8  ./video/editors/cinelerra/cinelerra.tar.gz
+7b02b6c186f8f85705e14a7539b396db  ./video/editors/cinelerra/cinelerra.tar.gz
+1cb2c65b7a0af557d940261e4e34a6ba  ./video/editors/cinelerra/cinelerra-cv-2.3.tar.gz
 0e52250bad2a72a864e94e0b4427599c  ./video/editors/openshot/openshot.tar.gz
 2b4cba2c99c4d8ec4fc87def152ff480  ./video/editors/avidemux/avidemux.tar.gz
 fb721e6b0024ba6f3e71ea1146c4f673  ./video/codecs/xvidcore/xvidcore.tar.gz
@@ -63,7 +64,7 @@ e2d318ecdd580d769c8b11214a5ff311  ./audio/multitrack/ardour/ardour.tar.gz
 9f1a625e3afe0b234f899d5764b0ce9e  ./audio/synthesizers/hexter/hexter.tar.gz
 21e581116779867554a9e4f0fa0d1a64  ./audio/synthesizers/synthv1/synthv1.tar.gz
 91f11ab5fd92e8354d5ffbdb663e4e43  ./audio/synthesizers/zynaddsubfx/zynaddsubfx.tar.gz
-fa9d93eee3be78362cb23a10ccec49a0  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
+92c22dd3bf76e34bdace93e07aa4ed69  ./audio/synthesizers/fluidsynth/fluidsynth.tar.gz
 df7140dc5305cbb94ca9cd70b8d1e890  ./audio/synthesizers/yoshimi/yoshimi.tar.gz
 85e394abd04f0cc9f1612e687752938f  ./audio/synthesizers/sunvox/sunvox.tar.gz
 c15f5ad78c753010d68d874bf1a5fdb7  ./audio/synthesizers/bristol/bristol.tar.gz
