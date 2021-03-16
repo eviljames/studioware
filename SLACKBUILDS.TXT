@@ -1,4 +1,5 @@
 bfa8ab802ebe73ef6c3fca94e6be0f2a  ./video/transcoders/mjpegtools/mjpegtools.tar.gz
+c85d72ed9fff349f9e0d607efcc97355  ./video/transcoders/mjpegtools/mjpegtools-2.1.0.tar.gz
 2ea550d953cb8b8565b425f6df3937b2  ./video/transcoders/ffmpeg/ffmpeg.tar.gz
 ccf9e39688e2f0dd473c1bc470319c30  ./video/transcoders/mlt/mlt.tar.gz
 0e277cfee59b56e0514b3666126d8179  ./video/libraries/libiec61883/libiec61883.tar.gz
@@ -89,7 +90,7 @@ b7b3dfea2df525f4271dd4d2a0d3d207  ./audio/libraries/libgnomecanvas/libgnomecanva
 66b9847838f13019652a41273a072f03  ./audio/libraries/aubio/aubio.tar.gz
 29dce35366dbe7036d33a3c39c12208c  ./audio/libraries/python-ly/python-ly.tar.gz
 dc54b7ce76974153e0ae64bc2840f971  ./audio/libraries/gnonlin/gnonlin.tar.gz
-dffbf370769b99c80e18cd1b9b9167e5  ./audio/libraries/sord/sord.tar.gz
+02672080c47a179542060c707638d227  ./audio/libraries/sord/sord.tar.gz
 f163e677f27d509aed2f1fe33285ea16  ./audio/libraries/serd/serd.tar.gz
 e5a54c4f521d87c0951a5dedff209eea  ./audio/libraries/lilv/lilv.tar.gz
 7ba77778c4c8ea9c8e967faf7b63caee  ./audio/libraries/zziplib/zziplib.tar.gz
