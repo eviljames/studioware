@@ -90,7 +90,7 @@ b7b3dfea2df525f4271dd4d2a0d3d207  ./audio/libraries/libgnomecanvas/libgnomecanva
 66b9847838f13019652a41273a072f03  ./audio/libraries/aubio/aubio.tar.gz
 29dce35366dbe7036d33a3c39c12208c  ./audio/libraries/python-ly/python-ly.tar.gz
 dc54b7ce76974153e0ae64bc2840f971  ./audio/libraries/gnonlin/gnonlin.tar.gz
-02672080c47a179542060c707638d227  ./audio/libraries/sord/sord.tar.gz
+dffbf370769b99c80e18cd1b9b9167e5  ./audio/libraries/sord/sord.tar.gz
 f163e677f27d509aed2f1fe33285ea16  ./audio/libraries/serd/serd.tar.gz
 e5a54c4f521d87c0951a5dedff209eea  ./audio/libraries/lilv/lilv.tar.gz
 7ba77778c4c8ea9c8e967faf7b63caee  ./audio/libraries/zziplib/zziplib.tar.gz
@@ -166,7 +166,7 @@ b6f39497afcca92ca179520d7f386bb0  ./audio/system/rtaudio/rtaudio.tar.gz
 24b55abdf38f216b581521acaeb38b3b  ./audio/system/SimpleSysexxer/SimpleSysexxer.tar.gz
 b60756b413bf48b81f1b0b684dd31d11  ./audio/amps/guitarix2/guitarix2.tar.gz
 a20398afaed30ae815de9ec20f6b201a  ./audio/desktop/gtk-engines/gtk-engines.tar.gz
-db57d60cd972eac1c2e344822b6eaf82  ./audio/desktop/evince/evince.tar.gz
+588871ea229817c4cae2fd60fe9e83d1  ./audio/desktop/evince/evince.tar.gz
 9e2b6431d6ffa46acd1b23538b698741  ./audio/desktop/clearlooks-classic-themes/clearlooks-classic-themes.tar.gz
 42dfb89f0f536986f2bcaf16578c843c  ./audio/midi/fluid-soundfont/fluid-soundfont.tar.gz
 ad806680e4367ff1b235d88f55a96e1f  ./audio/midi/a2jmidid/a2jmidid.tar.gz
